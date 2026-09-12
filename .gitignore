@@ -8,3 +8,5 @@ example/__pycache__/*
 CMakeLists.txt.user
 example/.ipynb_checkpoints/example-checkpoint.ipynb
 example/mppi_demo.gif
+.venv/*
+*.gif

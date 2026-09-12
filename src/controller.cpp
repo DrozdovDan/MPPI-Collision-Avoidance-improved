@@ -5,6 +5,41 @@
 
 namespace mppica {
 
+    void Controller::setObstacles(const std::vector<Polygon> &polygons) {
+        for (const auto &polygon : polygons) {
+            if (polygon.size() < 3) throw std::invalid_argument("An obstacle needs at least three vertices");
+            double area = 0;
+            for (size_t i = 0; i < polygon.size(); ++i) {
+                const auto &p = polygon[i];
+                const auto &q = polygon[(i+1)%polygon.size()];
+                if (!std::isfinite(p[0]) || !std::isfinite(p[1]))
+                    throw std::invalid_argument("Obstacle vertices must be finite");
+                area += p[0]*q[1]-p[1]*q[0];
+            }
+            if (std::abs(area) < 1e-12) throw std::invalid_argument("Obstacle must have nonzero area");
+        }
+        obstacles = polygons;
+    }
+
+    bool Controller::obstacleCollision(const Point2 &a, const Point2 &b) const {
+        for (const auto &polygon : obstacles)
+            if (polygonCollision(a, b, polygon, agent_size + rad_eps)) return true;
+        return false;
+    }
+
+    bool Controller::controlSequenceHitsObstacle() {
+        xt::xtensor<double, 1> state = xt::view(generated_trajectories, 0, 0);
+        for (size_t t = 0; t < time_steps-1; ++t) {
+            xt::xtensor<double, 1> u = xt::view(control_sequence, t);
+            xt::xtensor<double, 1> next;
+            if (use_car_like_dyn) next = state + car_like_dyn.shift(state, dt) + car_like_dyn.dynamic(state, u, dt);
+            else next = state + dyn_model.shift(state, dt) + dyn_model.dynamic(state, u, dt);
+            if (obstacleCollision({state[0], state[1]}, {next[0], next[1]})) return true;
+            state = next;
+        }
+        return false;
+    }
+
 	Controller::Controller() {
 		step = 0;
 		controller_id = 0;
@@ -135,9 +170,12 @@ namespace mppica {
 	void Controller::computeRunningCosts(size_t batch, size_t time_step, const xt::xtensor<double, 1> &initial_state,
 										 const xt::xtensor<double, 1> &goal_state, const xt::xtensor<double, 1> &neighbors_sizes) {
 		if (excluded_traj[batch]) return;
-
-
-
+        if (obstacleCollision({generated_trajectories(batch,time_step,0), generated_trajectories(batch,time_step,1)},
+                              {generated_trajectories(batch,time_step+1,0), generated_trajectories(batch,time_step+1,1)})) {
+            traj_costs[batch] += 1e10;
+            excluded_traj[batch] = true;
+            return;
+        }
 		commonStateCost(batch, time_step, initial_state, goal_state);
 		if (ma_cost_en) multiAgentCost(batch, time_step, goal_state, neighbors_sizes);
 		controlCost(batch, time_step);
@@ -261,6 +299,25 @@ namespace mppica {
 	}
 
 	void Controller::updateControlSequence() {
+        if (!obstacles.empty()) {
+            double best_cost = std::numeric_limits<double>::infinity();
+            size_t best = batch_size;
+            for (size_t b = 0; b < batch_size; ++b)
+                if (!excluded_traj[b] && traj_costs[b] < best_cost) { best_cost = traj_costs[b]; best = b; }
+            if (best == batch_size) { control_sequence.fill(0.0); return; }
+            xt::xtensor<double, 1> weights = xt::zeros<double>({batch_size});
+            double total = 0;
+            for (size_t b = 0; b < batch_size; ++b) {
+                if (!excluded_traj[b]) weights[b] = std::exp(-(traj_costs[b]-best_cost)/lambda);
+                total += weights[b];
+            }
+            weights /= total;
+            control_sequence = xt::sum(xt::view(weights, xt::all(), xt::newaxis(), xt::newaxis()) * sampled_controls, {0},
+                                      xt::evaluation_strategy::immediate);
+            // Safe samples can average to a path through an obstacle.
+            if (controlSequenceHitsObstacle()) control_sequence = xt::view(sampled_controls, best);
+            return;
+        }
 
 		auto beta = xt::amin(traj_costs, xt::evaluation_strategy::immediate);
 		auto eta =
@@ -311,6 +368,7 @@ namespace mppica {
 		common_terminal_cost_weight = alg_params.terminal_cost_weight;
 		ma_cost_en = alg_params.ma_cost_en;
 		max_neighbors_num = alg_params.max_neighbors_num;
+        max_safe_distr_step = alg_params.max_safe_distr_step;
 		ma_dist_weight = alg_params.ma_dist_weight;
 		ma_collision_value = alg_params.ma_collision_value;
 		ma_dist_threshold = alg_params.ma_dist_threshold;

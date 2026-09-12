@@ -86,7 +86,12 @@ namespace mppica {
 
 			void reset();
 
+            void setObstacles(const std::vector<Polygon> &polygons);
+
 		private:
+            std::vector<Polygon> obstacles;
+            bool obstacleCollision(const Point2 &a, const Point2 &b) const;
+            bool controlSequenceHitsObstacle();
 			void resetControlSeq();
 
 			void resetTrajectories(const xt::xtensor<double, 1> &initial_state);

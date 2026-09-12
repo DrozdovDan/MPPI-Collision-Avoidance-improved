@@ -98,6 +98,22 @@ AGENTS_NUM = 5 # number of agents
 ```
 
 
+### Static polygon obstacles
+
+Pass `obstacles=[[(x0, y0), (x1, y1), (x2, y2), ...], ...]` to
+`utils.launch_mppi`, or call `controller.set_obstacles(obstacles)` directly.
+Vertices must describe a simple polygon in boundary order (either winding).
+Concave polygons are supported; holes are not. Use `[]` to clear obstacles.
+MPPI excludes samples whose motion segments intersect a polygon expanded by
+the agent radius plus `RAD_EPS`, including the final segment. It checks the
+averaged control trajectory too, falling back to the best valid sample or
+stopping when all samples collide. Obstacles are independent of the ORCA and
+multi-agent cost settings. This local planner does not guarantee reaching a
+goal around arbitrary obstacles.
+
+The example contains a central 3-by-3 square, drawn in the plot and animation.
+Its collision count also includes agent-obstacle contacts along executed segments.
+
 ## References
 
 1. [Williams, G., Wagener, N., Goldfain, B., Drews, P., Rehg, J. M., Boots, B., and Theodorou, E. A. (2017b). Information theoretic MPC for model-based reinforcement learning. In 2017 IEEE International Conference on Robotics and Automation (ICRA), pages 1714–1721](https://homes.cs.washington.edu/~bboots/files/InformationTheoreticMPC.pdf)

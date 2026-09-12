@@ -10,6 +10,12 @@
 #ifndef MPPI_CA_CPP_GEOMETRY_HPP
 #define MPPI_CA_CPP_GEOMETRY_HPP
 
+#include <array>
+#include <vector>
+using Point2 = std::array<double, 2>;
+using Polygon = std::vector<Point2>;
+bool polygonCollision(const Point2 &a, const Point2 &b, const Polygon &polygon, double radius);
+
 double pointToLineSegmentDistance(const xt::xtensor<double, 1> &line_p1,
 								  const xt::xtensor<double, 1> &line_p2,
 								  const xt::xtensor<double, 1> &point);

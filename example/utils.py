@@ -71,6 +71,7 @@ def launch_mppi(
     positions_std=0.0,
     direction_std=0.0,
     velocities_std=0.0,
+    obstacles=None,
 ):
 
     if seed is None:
@@ -95,6 +96,7 @@ def launch_mppi(
         alp = mppi_ca_cpp.convert_alg_params(alg_params)
         controllers[a_id].set_agent_params(agp)
         controllers[a_id].set_alg_params(alp)
+        controllers[a_id].set_obstacles([] if obstacles is None else obstacles)
         agents_sizes.append(agents_params[a_id][AGENT_SIZE])
         agents_r_vis.append(agents_params[a_id][VISIBILITY_RADIUS])
 
@@ -109,6 +111,7 @@ def launch_mppi(
 
     t_start = time.time()
     for iter in range(max_sim_steps):
+        previous_states = agents_states.copy()
         step_traj = []
         steps += 1
 
@@ -174,6 +177,14 @@ def launch_mppi(
                 log_traj.append(step_traj.copy())
 
         collisions += check_collisions(agents_states, agents_sizes)
+        if obstacles is not None:
+            for a_id in range(agents_num):
+                collisions += any(
+                    mppi_ca_cpp.polygon_collision(
+                        previous_states[a_id, :2], agents_states[a_id, :2],
+                        polygon, agents_sizes[a_id]
+                    ) for polygon in obstacles
+                )
 
         done = True
         for a_id in range(agents_num):
