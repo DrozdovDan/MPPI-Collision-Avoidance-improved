@@ -21,6 +21,8 @@ PYBIND11_MODULE(mppi_ca_cpp, m) {
             .def("set_obstacles", &mppica::Controller::setObstacles, py::arg("polygons"))
 			.def("set_alg_params", &mppica::Controller::setAlgParams);
     m.def("polygon_collision", &polygonCollision, py::arg("start"), py::arg("end"), py::arg("polygon"), py::arg("radius") = 0.0);
+    m.def("set_random_seed", [](unsigned int seed) { xt::random::seed(seed); },
+          py::arg("seed"), "Seed the shared MPPI sampler after constructing controllers.");
 
 	m.def("convert_agent_params", &convertAgentParams, "Coverts agent params");
 	m.def("convert_alg_params", &convertAlgParams, "Coverts alg parameters");

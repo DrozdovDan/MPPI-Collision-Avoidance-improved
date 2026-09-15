@@ -114,6 +114,17 @@ goal around arbitrary obstacles.
 The example contains a central 3-by-3 square, drawn in the plot and animation.
 Its collision count also includes agent-obstacle contacts along executed segments.
 
+## Bench-MR Evaluation
+
+The [benchmark notebook](benchmarks/bench_mr.ipynb) and
+[adapter documentation](benchmarks/README.md) import Bench-MR polygon scenes
+and runs the current controller on its published task coordinates, saving
+trajectories, collision checks, goal errors, and timing metrics.
+
+```bash
+.venv/bin/python benchmarks/bench_mr.py run --repeats 3
+```
+
 ## References
 
 1. [Williams, G., Wagener, N., Goldfain, B., Drews, P., Rehg, J. M., Boots, B., and Theodorou, E. A. (2017b). Information theoretic MPC for model-based reinforcement learning. In 2017 IEEE International Conference on Robotics and Automation (ICRA), pages 1714–1721](https://homes.cs.washington.edu/~bboots/files/InformationTheoreticMPC.pdf)
