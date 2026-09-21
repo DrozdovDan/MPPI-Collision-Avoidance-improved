@@ -114,6 +114,33 @@ goal around arbitrary obstacles.
 The example contains a central 3-by-3 square, drawn in the plot and animation.
 Its collision count also includes agent-obstacle contacts along executed segments.
 
+### Anchor polygonal paths
+
+An optional ordered polyline can guide each controller along a global path:
+
+```python
+controller.set_anchor_path([(-4.0, 0.0), (-2.0, -2.3),
+                            (2.0, -2.3), (4.0, 0.0)])
+```
+
+Pass `[]` to disable path following. The MPPI running cost penalizes distance
+from the untraversed part of the polyline, and the terminal cost aims at a point
+`terminal_lookahead_distance` ahead along it. `anchor_path_weight` controls the
+running path-distance penalty and defaults to `1.0`; it usually needs to be
+scaled alongside `dist_to_goal_weight`. The last path point should normally be
+the goal. Paths are supplied by the caller—the controller does not generate or
+search for them.
+
+For the multi-agent helper, pass one path per agent as
+`utils.launch_mppi(..., anchor_paths=[path_for_agent_0, ...])`. A complete
+single-agent scenario with a handmade route around an obstacle is in
+[`example/anchor_path_demo.py`](example/anchor_path_demo.py).
+
+The multi-agent notebook
+[`example/anchor_path_example.ipynb`](example/anchor_path_example.ipynb)
+contains four handmade paths around a central obstacle and renders both a
+static comparison and an animated GIF with the anchor paths visible.
+
 ## Bench-MR Evaluation
 
 The [benchmark notebook](benchmarks/bench_mr.ipynb) and

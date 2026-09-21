@@ -2,12 +2,12 @@ import numpy as np
 import os
 import time
 import sys
+from pathlib import Path
 from scipy.spatial import KDTree
 
 from params_names import *
-from os.path import dirname
 
-sys.path.append(dirname("../build/release/mppi_ca_cpp.so"))
+sys.path.append(str(Path(__file__).resolve().parents[1] / "build/release"))
 import mppi_ca_cpp
 
 
@@ -72,11 +72,15 @@ def launch_mppi(
     direction_std=0.0,
     velocities_std=0.0,
     obstacles=None,
+    anchor_paths=None,
 ):
 
     if seed is None:
         seed = int.from_bytes(os.urandom(4), byteorder="little")
     np.random.seed(seed)
+
+    if anchor_paths is not None and len(anchor_paths) != agents_num:
+        raise ValueError("anchor_paths must contain one path per agent")
 
     # if type(exp_params) is not dict:
     #     exp_params = exp_params.__dict__
@@ -87,6 +91,9 @@ def launch_mppi(
     agents_sizes = []
     agents_r_vis = []
     controllers = [mppi_ca_cpp.Controller() for a_id in range(agents_num)]
+    # Controller construction seeds the shared native sampler. Apply the
+    # requested experiment seed afterwards so notebook runs are reproducible.
+    mppi_ca_cpp.set_random_seed(seed)
 
     for a_id in range(agents_num):
         # if type(agents_params[a_id]) is not dict:
@@ -97,6 +104,9 @@ def launch_mppi(
         controllers[a_id].set_agent_params(agp)
         controllers[a_id].set_alg_params(alp)
         controllers[a_id].set_obstacles([] if obstacles is None else obstacles)
+        controllers[a_id].set_anchor_path(
+            [] if anchor_paths is None else anchor_paths[a_id]
+        )
         agents_sizes.append(agents_params[a_id][AGENT_SIZE])
         agents_r_vis.append(agents_params[a_id][VISIBILITY_RADIUS])
 

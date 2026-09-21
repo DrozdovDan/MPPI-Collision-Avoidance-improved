@@ -19,6 +19,8 @@ PYBIND11_MODULE(mppi_ca_cpp, m) {
 			.def("next_step", &mppica::Controller::nextStep)
 			.def("set_agent_params", &mppica::Controller::setAgentParams)
             .def("set_obstacles", &mppica::Controller::setObstacles, py::arg("polygons"))
+			.def("set_anchor_path", &mppica::Controller::setAnchorPath, py::arg("points"),
+				 "Set an ordered polygonal anchor path, or pass [] to disable path following.")
 			.def("set_alg_params", &mppica::Controller::setAlgParams);
     m.def("polygon_collision", &polygonCollision, py::arg("start"), py::arg("end"), py::arg("polygon"), py::arg("radius") = 0.0);
     m.def("set_random_seed", [](unsigned int seed) { xt::random::seed(seed); },

@@ -10,6 +10,7 @@ example/.ipynb_checkpoints/example-checkpoint.ipynb
 example/mppi_demo.gif
 .venv/*
 *.gif
+!example/anchor_path_multi_agent.gif
 .ipynb_checkpoints/
 benchmarks/__pycache__/
 benchmarks/results/

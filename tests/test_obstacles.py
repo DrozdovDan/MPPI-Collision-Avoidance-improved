@@ -39,6 +39,25 @@ class PolygonTests(unittest.TestCase):
         np.testing.assert_array_equal(control, [0., 0.])
         controller.set_obstacles([])
 
+    def test_anchor_path_validation_and_execution(self):
+        controller = mppi.Controller()
+        for path in (
+            [(0., 0.)],
+            [(0., 0.), (0., 0.)],
+            [(0., 0.), (float('inf'), 1.)],
+        ):
+            with self.assertRaises(ValueError):
+                controller.set_anchor_path(path)
+
+        controller.set_anchor_path([(0., 0.), (0., -2.), (3., -2.), (3., 0.)])
+        mppi.set_random_seed(42)
+        control, trajectories = controller.next_step(
+            np.zeros(5), np.empty((0, 4)), np.empty(0), np.array([3., 0., 0.])
+        )
+        self.assertTrue(np.isfinite(control).all())
+        self.assertTrue(np.isfinite(trajectories).all())
+        controller.set_anchor_path([])
+
 
 if __name__ == '__main__':
     unittest.main()

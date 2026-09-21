@@ -1,9 +1,85 @@
 #include "controller.hpp"
+#include <algorithm>
 #include <chrono>
 #include <vector>
 #include <unistd.h>
 
 namespace mppica {
+
+	void Controller::setAnchorPath(const std::vector<Point2> &path) {
+		if (path.empty()) {
+			anchor_path.clear();
+			anchor_path_lengths.clear();
+			anchor_path_length = 0.0;
+			anchor_progress = 0.0;
+			anchor_progress_initialized = false;
+			return;
+		}
+		if (path.size() < 2)
+			throw std::invalid_argument("An anchor path needs at least two points");
+
+		std::vector<double> cumulative(path.size(), 0.0);
+		for (size_t i = 0; i < path.size(); ++i) {
+			if (!std::isfinite(path[i][0]) || !std::isfinite(path[i][1]))
+				throw std::invalid_argument("Anchor path points must be finite");
+			if (i > 0) {
+				double dx = path[i][0] - path[i - 1][0];
+				double dy = path[i][1] - path[i - 1][1];
+				cumulative[i] = cumulative[i - 1] + std::hypot(dx, dy);
+			}
+		}
+		if (cumulative.back() <= 1e-12)
+			throw std::invalid_argument("Anchor path must contain a nonzero-length segment");
+
+		anchor_path = path;
+		anchor_path_lengths = std::move(cumulative);
+		anchor_path_length = anchor_path_lengths.back();
+		anchor_progress = 0.0;
+		anchor_progress_initialized = false;
+	}
+
+	Controller::PathProjection Controller::projectToAnchorPath(const Point2 &point, double min_progress) const {
+		min_progress = std::clamp(min_progress, 0.0, anchor_path_length);
+		PathProjection best{std::numeric_limits<double>::infinity(), min_progress, anchor_path.front()};
+		double best_distance_squared = std::numeric_limits<double>::infinity();
+
+		for (size_t i = 0; i + 1 < anchor_path.size(); ++i) {
+			double dx = anchor_path[i + 1][0] - anchor_path[i][0];
+			double dy = anchor_path[i + 1][1] - anchor_path[i][1];
+			double segment_length = anchor_path_lengths[i + 1] - anchor_path_lengths[i];
+			if (segment_length <= 1e-12 || anchor_path_lengths[i + 1] + 1e-12 < min_progress)
+				continue;
+
+			double t_min = std::clamp((min_progress - anchor_path_lengths[i]) / segment_length, 0.0, 1.0);
+			double segment_length_squared = dx * dx + dy * dy;
+			double t = ((point[0] - anchor_path[i][0]) * dx +
+						(point[1] - anchor_path[i][1]) * dy) / segment_length_squared;
+			t = std::clamp(t, t_min, 1.0);
+			Point2 projected{anchor_path[i][0] + t * dx, anchor_path[i][1] + t * dy};
+			double ex = point[0] - projected[0];
+			double ey = point[1] - projected[1];
+			double distance_squared = ex * ex + ey * ey;
+			double progress = anchor_path_lengths[i] + t * segment_length;
+			if (distance_squared < best_distance_squared - 1e-12) {
+				best_distance_squared = distance_squared;
+				best = {std::sqrt(distance_squared), progress, projected};
+			}
+		}
+		return best;
+	}
+
+	Point2 Controller::anchorPointAt(double progress) const {
+		progress = std::clamp(progress, 0.0, anchor_path_length);
+		for (size_t i = 0; i + 1 < anchor_path.size(); ++i) {
+			double segment_length = anchor_path_lengths[i + 1] - anchor_path_lengths[i];
+			if (segment_length <= 1e-12 || progress > anchor_path_lengths[i + 1])
+				continue;
+			double t = std::clamp((progress - anchor_path_lengths[i]) / segment_length, 0.0, 1.0);
+			return {anchor_path[i][0] + t * (anchor_path[i + 1][0] - anchor_path[i][0]),
+					anchor_path[i][1] + t * (anchor_path[i + 1][1] - anchor_path[i][1])};
+		}
+		return anchor_path.back();
+	}
 
     void Controller::setObstacles(const std::vector<Polygon> &polygons) {
         for (const auto &polygon : polygons) {
@@ -53,6 +129,11 @@ namespace mppica {
 
 	auto Controller::nextStep(const xt::xtensor<double, 1> &curr_state, const xt::xtensor<double, 2> &neighbors_states, const xt::xtensor<double, 1> &neighbors_sizes,
 							  const xt::xtensor<double, 1> &goal_state) -> std::tuple<xt::xtensor<double, 1>, xt::xtensor<double, 3>> {
+		if (!anchor_path.empty()) {
+			double min_progress = anchor_progress_initialized ? anchor_progress : 0.0;
+			anchor_progress = projectToAnchorPath({curr_state[0], curr_state[1]}, min_progress).progress;
+			anchor_progress_initialized = true;
+		}
 		do {
 			resetTrajectories(curr_state);
 			if(ma_cost_en) {
@@ -92,6 +173,8 @@ namespace mppica {
 	}
 
 	void Controller::reset() {
+		anchor_progress = 0.0;
+		anchor_progress_initialized = false;
         resetTrajectories(xt::zeros<double>({DD_STATE_DIM})); // TODO: Generalize to common dynamics
 		resetControlSeq();
 		resetSamples();
@@ -177,6 +260,7 @@ namespace mppica {
             return;
         }
 		commonStateCost(batch, time_step, initial_state, goal_state);
+		if (!anchor_path.empty()) anchorPathCost(batch, time_step);
 		if (ma_cost_en) multiAgentCost(batch, time_step, goal_state, neighbors_sizes);
 		controlCost(batch, time_step);
 		computeVelocityCost(batch, time_step, goal_state);
@@ -257,6 +341,16 @@ namespace mppica {
 		traj_costs[batch] += common_run_cost_weight * dist;
 	}
 
+	void Controller::anchorPathCost(size_t batch, size_t time_step) {
+		// Score the state produced by this control, not the shared state at the
+		// beginning of the step. Restrict projection to the untraversed suffix so
+		// rollouts are not rewarded for moving backwards along the polyline.
+		Point2 point{generated_trajectories[{batch, time_step + 1, static_cast<size_t>(0)}],
+					 generated_trajectories[{batch, time_step + 1, static_cast<size_t>(1)}]};
+		auto projection = projectToAnchorPath(point, anchor_progress);
+		traj_costs[batch] += anchor_path_weight * projection.distance;
+	}
+
 	void Controller::computeTerminalCosts(size_t batch, const xt::xtensor<double, 1> &goal_state) {
 		if (excluded_traj[batch] or not orca_complete) return;
 		commonTerminalCost(batch, goal_state);
@@ -265,6 +359,15 @@ namespace mppica {
 	void Controller::commonTerminalCost(size_t batch, const xt::xtensor<double, 1> &goal_state) {
 
 		auto last_pos = xt::view(generated_trajectories, batch, -1, xt::range(0, 2));
+		if (!anchor_path.empty()) {
+			// A finite MPPI horizon should aim down the path, rather than directly
+			// through corners toward the final goal.
+			auto target = anchorPointAt(anchor_progress + terminal_lookahead_distance);
+			double dx = last_pos[0] - target[0];
+			double dy = last_pos[1] - target[1];
+			traj_costs[batch] += common_terminal_cost_weight * std::hypot(dx, dy);
+			return;
+		}
 		auto goal_pos = xt::view(goal_state, xt::range(0, 2));
 		auto goal_vector = goal_pos - xt::view(generated_trajectories, batch, 0, xt::range(0, 2));
 		double goal_vector_len = xt::linalg::norm(goal_vector, 2);
@@ -357,6 +460,8 @@ namespace mppica {
 	}
 
 	void Controller::setAlgParams(const MPPIParams &alg_params) {
+		if (!std::isfinite(alg_params.anchor_path_weight) || alg_params.anchor_path_weight < 0.0)
+			throw std::invalid_argument("Anchor path weight must be finite and nonnegative");
 		time_steps = alg_params.time_steps;
 		batch_size = alg_params.batch_size;
 		mean = alg_params.mean;
@@ -384,6 +489,7 @@ namespace mppica {
 		orca_responsibility_factor = alg_params.orca_responsibility_factor;
 		ma_exclude_collision_traj = alg_params.ma_exclude_collision_traj;
 		velocity_cost_close_to_goal_dist = alg_params.velocity_cost_close_to_goal_dist;
+		anchor_path_weight = alg_params.anchor_path_weight;
 		reset();
 	}
 

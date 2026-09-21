@@ -32,6 +32,7 @@ ORCA_TIME_BOUNDARY = "orca_time_boundary"
 ORCA_RESPONSIBILITY_FACTOR = "orca_responsibility_factor"
 MA_EXCLUDE_COLLISION_TRAJ = "ma_exclude_collision_traj"
 VELOCITY_COST_CLOSE_TO_GOAL_DIST = "velocity_cost_close_to_goal_dist"
+ANCHOR_PATH_WEIGHT = "anchor_path_weight"
 
 
 
@@ -39,5 +40,4 @@ VELOCITY_COST_CLOSE_TO_GOAL_DIST = "velocity_cost_close_to_goal_dist"
 EXP_TIME_STEP       = 'timestep'
 XY_GOAL_TOLERANCE   = 'xy_goal_tolerance'
 MAX_EXP_STEPS       = 'max_steps'
-
 

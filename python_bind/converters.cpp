@@ -42,6 +42,10 @@ mppica::MPPIParams convertAlgParams(const py::dict &params_dict) {
 	params.orca_responsibility_factor = getValue(params_dict, "orca_responsibility_factor", params.orca_responsibility_factor);
 	params.ma_exclude_collision_traj = getValue(params_dict, "ma_exclude_collision_traj", params.ma_exclude_collision_traj);
 	params.velocity_cost_close_to_goal_dist = getValue(params_dict, "velocity_cost_close_to_goal_dist", params.velocity_cost_close_to_goal_dist);
+	// Added as an optional, backward-compatible setting: old parameter
+	// dictionaries should not emit a missing-value warning.
+	if (params_dict.contains("anchor_path_weight"))
+		params.anchor_path_weight = params_dict["anchor_path_weight"].cast<double>();
 	params.car_like_dyn = getValue(params_dict, "car_like_dyn", params.car_like_dyn);
 	if (params.car_like_dyn) {
 		params.dist_between_axles = getValue(params_dict, "dist_between_axles", params.dist_between_axles);

@@ -56,6 +56,7 @@ namespace mppica {
 		double orca_responsibility_factor = 0.5;
 		bool ma_exclude_collision_traj = true;
 		double velocity_cost_close_to_goal_dist = 0.3;
+		double anchor_path_weight = 1.0;
 
 		int max_safe_distr_step = 0; // TODO: Add constraints for several steps
 		size_t max_neighbors_num = 100; // TODO: Sort neighbors by distance
@@ -88,10 +89,27 @@ namespace mppica {
 
             void setObstacles(const std::vector<Polygon> &polygons);
 
+			// An empty path disables path following. Otherwise the points define an
+			// ordered polyline; they are not treated as a closed polygon.
+			void setAnchorPath(const std::vector<Point2> &path);
+
 		private:
+			struct PathProjection {
+				double distance;
+				double progress;
+				Point2 point;
+			};
+
             std::vector<Polygon> obstacles;
+			std::vector<Point2> anchor_path;
+			std::vector<double> anchor_path_lengths;
+			double anchor_path_length = 0.0;
+			double anchor_progress = 0.0;
+			bool anchor_progress_initialized = false;
             bool obstacleCollision(const Point2 &a, const Point2 &b) const;
             bool controlSequenceHitsObstacle();
+			PathProjection projectToAnchorPath(const Point2 &point, double min_progress) const;
+			Point2 anchorPointAt(double progress) const;
 			void resetControlSeq();
 
 			void resetTrajectories(const xt::xtensor<double, 1> &initial_state);
@@ -117,6 +135,8 @@ namespace mppica {
 
 			void commonStateCost(size_t batch, size_t time_step, const xt::xtensor<double, 1> &initial_state,
 								 const xt::xtensor<double, 1> &goal_state);
+
+			void anchorPathCost(size_t batch, size_t time_step);
 
 			void controlCost(size_t batch, size_t time_step);
 
@@ -202,6 +222,7 @@ namespace mppica {
 			double velocity_cost_weight;
 
 			double velocity_cost_close_to_goal_dist;
+			double anchor_path_weight;
 
 			double terminal_lookahead_distance;
 
