@@ -28,6 +28,45 @@ are written to `benchmarks/results/current/`: full states and controls in
 `trajectories.png`, plus a readable `REPORT.md`. Runs are sequential and results are saved after each run.
 Use a separate `--output` directory to preserve a previous experiment.
 
+## RRT-Connect anchor paths
+
+`rrt_connect.py` provides a reusable bidirectional RRT-Connect planner for the
+polygon worlds. It expands obstacles by the circular robot radius plus a
+configurable clearance, constrains samples and edges to the world bounds, and
+applies collision-checked shortcut smoothing before returning the anchor path.
+
+```python
+from rrt_connect import RRTConnectPlanner
+
+planner = RRTConnectPlanner(
+    world['obstacles'], world['bounds'], robot_radius=0.3,
+    clearance=0.08, step_size=0.6, seed=42,
+)
+result = planner.plan(task['start'][:2], task['goal'][:2])
+controller.set_anchor_path(result.path)
+```
+
+`rrt_connect_multiagent.ipynb` runs the published `parking1_2` and
+`testing_parking1` tasks concurrently in their shared Bench-MR world. It shows
+the raw RRT paths, smoothed anchor paths, executed trajectories, and an animated
+multi-agent run. This is an integration example, not a Bench-MR score: the two
+source tasks are combined into a concurrent scenario and ORCA is consequently
+active.
+
+`rrt_connect_warehouse2_multiagent.ipynb` is the large-map example. It exposes
+editable `CUSTOM_STARTS` and `CUSTOM_GOALS` arrays and runs four agents through
+the central bottleneck. The corner routes include the published
+`testing_warehouse2` top-left pose and bottom-right goal; two additional
+middle-lane routes create close interaction without an exact head-on deadlock.
+The notebook reports the closest center distance and surface clearance over
+every pair. Its controller profile is intentionally faster and smaller-batch
+than the parking example so the long routes remain practical to execute
+interactively. Set `SCENARIO = 'symmetric_head_on_deadlock'` to run the second
+variant, where exact reverse anchors intentionally produce a collision-free
+local deadlock at a one-robot-wide gate inserted into the existing central
+bottleneck. The notebook reports the unfinished agents that stop moving, and
+writes that animation to `rrt_connect_warehouse2_deadlock.gif`.
+
 Regenerate plots and the report without rerunning the controller:
 
 ```bash
@@ -71,6 +110,10 @@ as in the source notebooks. Unsupported curves, compound paths, and transforms
 are rejected. Imported data retains its MIT license in `BENCH_MR_LICENSE`.
 
 ## Evaluation contract
+
+This section describes the original `bench_mr.py`/`bench_mr.ipynb` baseline.
+The separate RRT-Connect multi-agent notebook intentionally adds a global
+planner and concurrent neighbors, as described above.
 
 - Robot: circular radius 0.3, differential drive, forward speed up to 1.0,
   reverse speed down to -0.01, angular speed up to 2.0 rad/s. This is the current

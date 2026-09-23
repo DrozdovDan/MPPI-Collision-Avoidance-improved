@@ -11,6 +11,9 @@ example/mppi_demo.gif
 .venv/*
 *.gif
 !example/anchor_path_multi_agent.gif
+!benchmarks/rrt_connect_multiagent.gif
+!benchmarks/rrt_connect_warehouse2_multiagent.gif
+!benchmarks/rrt_connect_warehouse2_deadlock.gif
 .ipynb_checkpoints/
 benchmarks/__pycache__/
 benchmarks/results/

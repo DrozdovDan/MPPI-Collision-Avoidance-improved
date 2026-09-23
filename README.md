@@ -141,6 +141,21 @@ The multi-agent notebook
 contains four handmade paths around a central obstacle and renders both a
 static comparison and an animated GIF with the anchor paths visible.
 
+For generated anchors, [`benchmarks/rrt_connect.py`](benchmarks/rrt_connect.py)
+implements bidirectional RRT-Connect with obstacle inflation and shortcut
+smoothing. The accompanying
+[`benchmarks/rrt_connect_multiagent.ipynb`](benchmarks/rrt_connect_multiagent.ipynb)
+runs two published Bench-MR tasks concurrently and visualizes the raw paths,
+smoothed anchors, and executed multi-agent trajectories.
+
+[`benchmarks/rrt_connect_warehouse2_multiagent.ipynb`](benchmarks/rrt_connect_warehouse2_multiagent.ipynb)
+provides editable custom poses for four routes through the central bottleneck
+of the `testing_warehouse2` map. It reports the closest approach across every
+agent pair in addition to rendering their anchors and executed trajectories.
+The selectable `symmetric_head_on_deadlock` variant adds a one-robot-wide gate
+to the existing bottleneck and demonstrates exact reverse anchors that safely
+stop face-to-face instead of reaching every goal.
+
 ## Bench-MR Evaluation
 
 The [benchmark notebook](benchmarks/bench_mr.ipynb) and
