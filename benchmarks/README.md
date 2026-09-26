@@ -62,10 +62,24 @@ The notebook reports the closest center distance and surface clearance over
 every pair. Its controller profile is intentionally faster and smaller-batch
 than the parking example so the long routes remain practical to execute
 interactively. Set `SCENARIO = 'symmetric_head_on_deadlock'` to run the second
-variant, where exact reverse anchors intentionally produce a collision-free
-local deadlock at a one-robot-wide gate inserted into the existing central
-bottleneck. The notebook reports the unfinished agents that stop moving, and
-writes that animation to `rrt_connect_warehouse2_deadlock.gif`.
+variant, where exact reverse anchors create deadlock-prone head-on traffic at
+the central bottleneck. The agents may stall or pass, depending on the sampled
+controls. The included `rrt_connect_warehouse2_deadlock.gif` captures a run
+that stalled without colliding.
+
+The default `close_crossing` uses anchor-heading alignment, a steering-change
+cost, and a 10 rad/s² turn-acceleration limit for steadier tracking. The
+head-on variant retains the original controller profile for comparison.
+Rebuild `mppi_all` and restart the Jupyter kernel after C++ changes.
+
+The [larger-agent example](rrt_connect_warehouse2_large_agents.ipynb) compares
+radius-0.30 and radius-0.70 agents at narrow square-shelf gaps. It shows the
+inflated obstacles, plans detours for two large agents, and animates their
+concurrent ORCA-MPPI execution.
+
+This notebook also enables anchor heading alignment, a modest steering-change
+cost, and a 10 rad/s² angular-acceleration limit to reduce the visible
+zigzagging that unconstrained MPPI sampling produced along the shelves.
 
 Regenerate plots and the report without rerunning the controller:
 

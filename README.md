@@ -131,6 +131,13 @@ scaled alongside `dist_to_goal_weight`. The last path point should normally be
 the goal. Paths are supplied by the caller—the controller does not generate or
 search for them.
 
+For steadier polyline tracking, set optional
+anchor_heading_weight and control_smoothness_weight in the MPPI parameters.
+The first penalizes pointing away from the path direction; the second
+penalizes changes in angular velocity. Set w_accel_max in the agent parameters
+to limit angular acceleration in every sampled rollout and executed step.
+All three settings default to zero, preserving existing controller behavior.
+
 For the multi-agent helper, pass one path per agent as
 `utils.launch_mppi(..., anchor_paths=[path_for_agent_0, ...])`. A complete
 single-agent scenario with a handmade route around an obstacle is in
@@ -155,6 +162,10 @@ agent pair in addition to rendering their anchors and executed trajectories.
 The selectable `symmetric_head_on_deadlock` variant adds a one-robot-wide gate
 to the existing bottleneck and demonstrates exact reverse anchors that safely
 stop face-to-face instead of reaching every goal.
+
+The [larger-agent warehouse notebook](benchmarks/rrt_connect_warehouse2_large_agents.ipynb)
+shows two agents navigating around square shelf gaps that admit a smaller
+robot, with inflated obstacles and an animated ORCA-MPPI run.
 
 ## Bench-MR Evaluation
 

@@ -12,6 +12,8 @@ params.dd_v_max = params_dict["v_max"].cast<double>();
 params.dd_v_min = params_dict["v_min"].cast<double>();
 params.dd_w_max = params_dict["w_max"].cast<double>();
 params.dd_w_min = params_dict["w_min"].cast<double>();
+if (params_dict.contains("w_accel_max"))
+	params.dd_w_accel_max = params_dict["w_accel_max"].cast<double>();
 
 return params;
 }
@@ -46,6 +48,10 @@ mppica::MPPIParams convertAlgParams(const py::dict &params_dict) {
 	// dictionaries should not emit a missing-value warning.
 	if (params_dict.contains("anchor_path_weight"))
 		params.anchor_path_weight = params_dict["anchor_path_weight"].cast<double>();
+	if (params_dict.contains("control_smoothness_weight"))
+		params.control_smoothness_weight = params_dict["control_smoothness_weight"].cast<double>();
+	if (params_dict.contains("anchor_heading_weight"))
+		params.anchor_heading_weight = params_dict["anchor_heading_weight"].cast<double>();
 	params.car_like_dyn = getValue(params_dict, "car_like_dyn", params.car_like_dyn);
 	if (params.car_like_dyn) {
 		params.dist_between_axles = getValue(params_dict, "dist_between_axles", params.dist_between_axles);

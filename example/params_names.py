@@ -3,6 +3,7 @@ DIFF_DRIVE_V_MAX    = 'v_max'
 DIFF_DRIVE_V_MIN    = 'v_min'
 DIFF_DRIVE_W_MAX    = 'w_max'
 DIFF_DRIVE_W_MIN    = 'w_min'
+DIFF_DRIVE_W_ACCEL_MAX = 'w_accel_max'
 AGENT_SIZE          = 'size'
 VISIBILITY_RADIUS   = 'r_vis'
 
@@ -33,6 +34,8 @@ ORCA_RESPONSIBILITY_FACTOR = "orca_responsibility_factor"
 MA_EXCLUDE_COLLISION_TRAJ = "ma_exclude_collision_traj"
 VELOCITY_COST_CLOSE_TO_GOAL_DIST = "velocity_cost_close_to_goal_dist"
 ANCHOR_PATH_WEIGHT = "anchor_path_weight"
+CONTROL_SMOOTHNESS_WEIGHT = "control_smoothness_weight"
+ANCHOR_HEADING_WEIGHT = "anchor_heading_weight"
 
 
 

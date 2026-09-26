@@ -59,5 +59,33 @@ class PolygonTests(unittest.TestCase):
         controller.set_anchor_path([])
 
 
+    def test_angular_acceleration_limit(self):
+        controller = mppi.Controller()
+        params = {
+            'size': .7, 'r_vis': 10., 'v_max': 5., 'v_min': 0.,
+            'w_max': 5., 'w_min': -5., 'w_accel_max': 10.,
+        }
+        controller.set_agent_params(mppi.convert_agent_params(params))
+        controller.set_anchor_path([(0., 0.), (10., 0.)])
+        mppi.set_random_seed(17)
+        state = np.array([0., 0., np.pi / 2, 0., 0.])
+        previous_angular = 0.
+        observed_angular = []
+        for _ in range(12):
+            control, rollouts = controller.next_step(
+                state, np.empty((0, 4)), np.empty(0), np.array([10., 0., 0.])
+            )
+            self.assertLessEqual(abs(control[1] - previous_angular), 1.000001)
+            rollout_turn_rates = np.diff(rollouts[:, :, 2], axis=1) / .1
+            rollout_changes = np.diff(rollout_turn_rates, axis=1)
+            self.assertLessEqual(np.max(np.abs(rollout_changes)), 1.000001)
+            observed_angular.append(control[1])
+            state[0] += .1 * control[0] * np.cos(state[2])
+            state[1] += .1 * control[0] * np.sin(state[2])
+            state[2] += .1 * control[1]
+            previous_angular = control[1]
+        self.assertGreater(max(abs(value) for value in observed_angular), .1)
+
+
 if __name__ == '__main__':
     unittest.main()

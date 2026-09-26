@@ -57,6 +57,8 @@ namespace mppica {
 		bool ma_exclude_collision_traj = true;
 		double velocity_cost_close_to_goal_dist = 0.3;
 		double anchor_path_weight = 1.0;
+		double control_smoothness_weight = 0.0;
+		double anchor_heading_weight = 0.0;
 
 		int max_safe_distr_step = 0; // TODO: Add constraints for several steps
 		size_t max_neighbors_num = 100; // TODO: Sort neighbors by distance
@@ -71,6 +73,7 @@ namespace mppica {
 		double dd_v_min = -1.0;
 		double dd_w_max = 2.0;
 		double dd_w_min = -2.0;
+		double dd_w_accel_max = 0.0; // Zero disables the angular acceleration limit.
 	};
 
 
@@ -184,6 +187,7 @@ namespace mppica {
 			xt::xtensor<double, 1> mean;
 			xt::xtensor<double, 2> sample_std;
 			xt::xtensor<double, 2> control_limits;
+			double angular_accel_limit = 0.0;
 			xt::xtensor<double, 1> initial_values;
 
 			double dt;
@@ -195,6 +199,7 @@ namespace mppica {
 			xt::xtensor<double, 3> sampled_controls;
 			xt::xtensor<double, 3> samples;
 			xt::xtensor<double, 2> control_sequence;
+			double last_angular_control = 0.0;
 			xt::xtensor<double, 3> generated_trajectories;
 			xt::xtensor<double, 1> traj_costs;
 			xt::xtensor<double, 3> neighbors_traj;
@@ -223,6 +228,8 @@ namespace mppica {
 
 			double velocity_cost_close_to_goal_dist;
 			double anchor_path_weight;
+			double control_smoothness_weight;
+			double anchor_heading_weight;
 
 			double terminal_lookahead_distance;
 

@@ -166,6 +166,7 @@ namespace mppica {
 		}
 
 		auto result = getCurrentControl();
+		last_angular_control = result[1];
 		shiftControlSequence();
 		step += 1;
 
@@ -173,6 +174,7 @@ namespace mppica {
 	}
 
 	void Controller::reset() {
+		last_angular_control = initial_values[1];
 		anchor_progress = 0.0;
 		anchor_progress_initialized = false;
         resetTrajectories(xt::zeros<double>({DD_STATE_DIM})); // TODO: Generalize to common dynamics
@@ -220,6 +222,12 @@ namespace mppica {
 			sampled_controls[{batch, time_step, i}] = xt::clip(xt::view(sampled_controls, batch, time_step, i),
 															   control_limits[{i, static_cast<size_t>(0)}],
 															   control_limits[{i, static_cast<size_t>(1)}]);
+		}
+		if (angular_accel_limit > 0.0) {
+			double previous_angular = time_step == 0 ? last_angular_control : sampled_controls(batch, time_step - 1, 1);
+			double max_change = angular_accel_limit * dt;
+			sampled_controls(batch, time_step, 1) = std::clamp(
+				sampled_controls(batch, time_step, 1), previous_angular - max_change, previous_angular + max_change);
 		}
 
 	}
@@ -294,6 +302,11 @@ namespace mppica {
 
 
 	void Controller::controlCost(size_t batch, size_t time_step) {
+		if (control_smoothness_weight > 0.0) {
+			double previous_angular = time_step == 0 ? last_angular_control : sampled_controls(batch, time_step - 1, 1);
+			double delta_angular = sampled_controls(batch, time_step, 1) - previous_angular;
+			traj_costs[batch] += control_smoothness_weight * delta_angular * delta_angular;
+		}
 		traj_costs[batch] += lambda/2 * sampled_controls[{batch, time_step, static_cast<size_t>(0)}] *
 			sampled_controls[{batch, time_step, static_cast<size_t>(0)}] / (sample_std[{0, 0}] * sample_std[{0, 0}]);
 		traj_costs[batch] += lambda/2 * sampled_controls[{batch, time_step, static_cast<size_t>(1)}] *
@@ -349,6 +362,20 @@ namespace mppica {
 					 generated_trajectories[{batch, time_step + 1, static_cast<size_t>(1)}]};
 		auto projection = projectToAnchorPath(point, anchor_progress);
 		traj_costs[batch] += anchor_path_weight * projection.distance;
+		if (anchor_heading_weight > 0.0) {
+			// Face one unit ahead along the polyline. At its end, use the
+			// final segment so the direction remains defined.
+			Point2 ahead = anchorPointAt(std::min(projection.progress + 1.0, anchor_path_length));
+			double dx = ahead[0] - projection.point[0];
+			double dy = ahead[1] - projection.point[1];
+			if (std::hypot(dx, dy) <= 1e-9) {
+				Point2 behind = anchorPointAt(std::max(0.0, projection.progress - 1.0));
+				dx = projection.point[0] - behind[0];
+				dy = projection.point[1] - behind[1];
+			}
+			double heading = generated_trajectories(batch, time_step + 1, 2);
+			traj_costs[batch] += anchor_heading_weight * (1.0 - std::cos(heading - std::atan2(dy, dx)));
+		}
 	}
 
 	void Controller::computeTerminalCosts(size_t batch, const xt::xtensor<double, 1> &goal_state) {
@@ -462,6 +489,10 @@ namespace mppica {
 	void Controller::setAlgParams(const MPPIParams &alg_params) {
 		if (!std::isfinite(alg_params.anchor_path_weight) || alg_params.anchor_path_weight < 0.0)
 			throw std::invalid_argument("Anchor path weight must be finite and nonnegative");
+		if (!std::isfinite(alg_params.control_smoothness_weight) || alg_params.control_smoothness_weight < 0.0)
+			throw std::invalid_argument("Control smoothness weight must be finite and nonnegative");
+		if (!std::isfinite(alg_params.anchor_heading_weight) || alg_params.anchor_heading_weight < 0.0)
+			throw std::invalid_argument("Anchor heading weight must be finite and nonnegative");
 		time_steps = alg_params.time_steps;
 		batch_size = alg_params.batch_size;
 		mean = alg_params.mean;
@@ -490,15 +521,20 @@ namespace mppica {
 		ma_exclude_collision_traj = alg_params.ma_exclude_collision_traj;
 		velocity_cost_close_to_goal_dist = alg_params.velocity_cost_close_to_goal_dist;
 		anchor_path_weight = alg_params.anchor_path_weight;
+		anchor_heading_weight = alg_params.anchor_heading_weight;
+		control_smoothness_weight = alg_params.control_smoothness_weight;
 		reset();
 	}
 
 	void Controller::setAgentParams(const AgentParams &ag_params) {
+		if (!std::isfinite(ag_params.dd_w_accel_max) || ag_params.dd_w_accel_max < 0.0)
+			throw std::invalid_argument("Angular acceleration limit must be finite and nonnegative");
         // TODO: Generalize to common dynamics
         agent_size = ag_params.size;
 		vis_radius = ag_params.vis_radius;
 		control_limits = {{ag_params.dd_v_min, ag_params.dd_v_max},
 						  {ag_params.dd_w_min, ag_params.dd_w_max}};
+		angular_accel_limit = ag_params.dd_w_accel_max;
 		reset();
 	}
 
