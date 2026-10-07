@@ -16,14 +16,17 @@ PYBIND11_MODULE(mppi_ca_cpp, m) {
 			.def(py::init<>());
 	py::class_<mppica::Controller>(m, "Controller")
 			.def(py::init<>())
-			.def("next_step", &mppica::Controller::nextStep)
+			.def("next_step", &mppica::Controller::nextStep,
+				 "Car mode takes [x,y,heading,v,steering,acceleration] and returns [jerk,steering_rate] "
+				 "plus six-state rollouts. Differential-drive mode takes [x,y,heading,vx,vy] "
+				 "and returns [speed,turn_rate] plus pose rollouts. Neighbors are [x,y,vx,vy].")
 			.def("set_agent_params", &mppica::Controller::setAgentParams)
             .def("set_obstacles", &mppica::Controller::setObstacles, py::arg("polygons"))
 			.def("set_anchor_path", &mppica::Controller::setAnchorPath, py::arg("points"),
 				 "Set an ordered polygonal anchor path, or pass [] to disable path following.")
 			.def("set_alg_params", &mppica::Controller::setAlgParams);
     m.def("polygon_collision", &polygonCollision, py::arg("start"), py::arg("end"), py::arg("polygon"), py::arg("radius") = 0.0);
-    m.def("set_random_seed", [](unsigned int seed) { xt::random::seed(seed); },
+    m.def("set_random_seed", &mppica::seedSampler,
           py::arg("seed"), "Seed the shared MPPI sampler after constructing controllers.");
 
 	m.def("convert_agent_params", &convertAgentParams, "Coverts agent params");

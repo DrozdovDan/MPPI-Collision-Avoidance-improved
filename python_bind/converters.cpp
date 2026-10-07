@@ -10,10 +10,24 @@ params.vis_radius = params_dict["r_vis"].cast<double>();
 
 params.dd_v_max = params_dict["v_max"].cast<double>();
 params.dd_v_min = params_dict["v_min"].cast<double>();
+if (params_dict.contains("v_accel_max"))
+	params.dd_v_accel_max = params_dict["v_accel_max"].cast<double>();
+if (params_dict.contains("v_brake_max"))
+	params.dd_v_brake_max = params_dict["v_brake_max"].cast<double>();
 params.dd_w_max = params_dict["w_max"].cast<double>();
 params.dd_w_min = params_dict["w_min"].cast<double>();
 if (params_dict.contains("w_accel_max"))
 	params.dd_w_accel_max = params_dict["w_accel_max"].cast<double>();
+// Legacy car speed-change limits map to signed acceleration bounds.
+if (params.dd_v_accel_max > 0.0) params.a_max = params.dd_v_accel_max;
+if (params.dd_v_brake_max > 0.0) params.a_min = -params.dd_v_brake_max;
+if (params.dd_w_accel_max > 0.0) params.steering_rate_max = params.dd_w_accel_max;
+if (params_dict.contains("a_min")) params.a_min = params_dict["a_min"].cast<double>();
+if (params_dict.contains("a_max")) params.a_max = params_dict["a_max"].cast<double>();
+if (params_dict.contains("j_min")) params.j_min = params_dict["j_min"].cast<double>();
+if (params_dict.contains("j_max")) params.j_max = params_dict["j_max"].cast<double>();
+if (params_dict.contains("steering_rate_max"))
+	params.steering_rate_max = params_dict["steering_rate_max"].cast<double>();
 
 return params;
 }
@@ -50,6 +64,14 @@ mppica::MPPIParams convertAlgParams(const py::dict &params_dict) {
 		params.anchor_path_weight = params_dict["anchor_path_weight"].cast<double>();
 	if (params_dict.contains("control_smoothness_weight"))
 		params.control_smoothness_weight = params_dict["control_smoothness_weight"].cast<double>();
+	if (params_dict.contains("jerk_cost_weight"))
+		params.jerk_cost_weight = params_dict["jerk_cost_weight"].cast<double>();
+	if (params_dict.contains("steering_rate_cost_weight"))
+		params.steering_rate_cost_weight = params_dict["steering_rate_cost_weight"].cast<double>();
+	if (params_dict.contains("jerk_change_cost_weight"))
+		params.jerk_change_cost_weight = params_dict["jerk_change_cost_weight"].cast<double>();
+	if (params_dict.contains("steering_rate_change_cost_weight"))
+		params.steering_rate_change_cost_weight = params_dict["steering_rate_change_cost_weight"].cast<double>();
 	if (params_dict.contains("anchor_heading_weight"))
 		params.anchor_heading_weight = params_dict["anchor_heading_weight"].cast<double>();
 	params.car_like_dyn = getValue(params_dict, "car_like_dyn", params.car_like_dyn);

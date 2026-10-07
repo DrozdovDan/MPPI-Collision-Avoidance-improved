@@ -48,6 +48,17 @@ class ImportTests(unittest.TestCase):
         np.testing.assert_array_equal(a, b)
         np.testing.assert_array_equal(ta, tb)
 
+        # Reset the actual rollout sampler without constructing another controller.
+        # A seed applied only in the binding's DSO could otherwise appear to work
+        # because both constructors seed their own generator within the same second.
+        first, second = mppi.Controller(), mppi.Controller()
+        mppi.set_random_seed(123)
+        a, ta = first.next_step(np.zeros(5), np.empty((0, 4)), np.empty(0), np.array([3., 0., 0.]))
+        mppi.set_random_seed(123)
+        b, tb = second.next_step(np.zeros(5), np.empty((0, 4)), np.empty(0), np.array([3., 0., 0.]))
+        np.testing.assert_array_equal(a, b)
+        np.testing.assert_array_equal(ta, tb)
+
     def test_custom_task_is_available_to_result_renderers(self):
         suite = {'tasks': []}
         run = {'task': 'custom_map', 'world': 'map', 'group': 'custom',

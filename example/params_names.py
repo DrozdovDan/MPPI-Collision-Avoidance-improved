@@ -1,6 +1,13 @@
 # Agents parameters
 DIFF_DRIVE_V_MAX    = 'v_max'
 DIFF_DRIVE_V_MIN    = 'v_min'
+SPEED_ACCEL_MAX     = 'v_accel_max'
+SPEED_BRAKE_MAX     = 'v_brake_max'
+LONGITUDINAL_ACCEL_MIN = 'a_min'
+LONGITUDINAL_ACCEL_MAX = 'a_max'
+LONGITUDINAL_JERK_MIN = 'j_min'
+LONGITUDINAL_JERK_MAX = 'j_max'
+STEERING_RATE_MAX = 'steering_rate_max'
 DIFF_DRIVE_W_MAX    = 'w_max'
 DIFF_DRIVE_W_MIN    = 'w_min'
 DIFF_DRIVE_W_ACCEL_MAX = 'w_accel_max'
@@ -35,6 +42,10 @@ MA_EXCLUDE_COLLISION_TRAJ = "ma_exclude_collision_traj"
 VELOCITY_COST_CLOSE_TO_GOAL_DIST = "velocity_cost_close_to_goal_dist"
 ANCHOR_PATH_WEIGHT = "anchor_path_weight"
 CONTROL_SMOOTHNESS_WEIGHT = "control_smoothness_weight"
+JERK_COST_WEIGHT = "jerk_cost_weight"
+STEERING_RATE_COST_WEIGHT = "steering_rate_cost_weight"
+JERK_CHANGE_COST_WEIGHT = "jerk_change_cost_weight"
+STEERING_RATE_CHANGE_COST_WEIGHT = "steering_rate_change_cost_weight"
 ANCHOR_HEADING_WEIGHT = "anchor_heading_weight"
 
 
@@ -43,4 +54,3 @@ ANCHOR_HEADING_WEIGHT = "anchor_heading_weight"
 EXP_TIME_STEP       = 'timestep'
 XY_GOAL_TOLERANCE   = 'xy_goal_tolerance'
 MAX_EXP_STEPS       = 'max_steps'
-

@@ -90,6 +90,7 @@ def launch_mppi(
 
     agents_sizes = []
     agents_r_vis = []
+    car_like = alg_params.get(USE_CAR_LIKE_DYN, False)
     controllers = [mppi_ca_cpp.Controller() for a_id in range(agents_num)]
     # Controller construction seeds the shared native sampler. Apply the
     # requested experiment seed afterwards so notebook runs are reproducible.
@@ -103,6 +104,8 @@ def launch_mppi(
         alp = mppi_ca_cpp.convert_alg_params(alg_params)
         controllers[a_id].set_agent_params(agp)
         controllers[a_id].set_alg_params(alp)
+        if car_like:
+            dyn_models[a_id].configure_limits(agents_params[a_id])
         controllers[a_id].set_obstacles([] if obstacles is None else obstacles)
         controllers[a_id].set_anchor_path(
             [] if anchor_paths is None else anchor_paths[a_id]
@@ -127,15 +130,19 @@ def launch_mppi(
 
         for a_id in range(agents_num):
 
-            curr_state = new_states[a_id, 0:5].copy()
+            curr_state = new_states[a_id].copy() if car_like else new_states[a_id, 0:5].copy()
             goal_state = goal_states[a_id, 0:3].copy()
             neighbours_id = get_neighbors(
                 a_id, agents_states[:, 0:2], agents_r_vis[a_id]
             )
             neighbours_states = agents_states[neighbours_id]
-            neighbours_states = neighbours_states[
-                :, np.array([True, True, False, True, True])
-            ]
+            if car_like:
+                # ORCA still consumes Cartesian velocity, not speed/steering.
+                neighbours_states = np.c_[neighbours_states[:, :2],
+                    neighbours_states[:, 3] * np.cos(neighbours_states[:, 2]),
+                    neighbours_states[:, 3] * np.sin(neighbours_states[:, 2])]
+            else:
+                neighbours_states = neighbours_states[:, [0, 1, 3, 4]]
             neighbours_sizes = agents_sizes[neighbours_id]
 
             noized_curr_state = curr_state.copy()
@@ -155,9 +162,11 @@ def launch_mppi(
                 noized_curr_state[2] = np.random.normal(curr_state[2], direction_std, 1)
 
             if velocities_std != 0.0:
-                noized_curr_state[3:] = np.random.normal(
-                    curr_state[3:], velocities_std, 2
-                )
+                if car_like:
+                    noized_curr_state[3] = np.clip(np.random.normal(curr_state[3], velocities_std),
+                        agents_params[a_id][DIFF_DRIVE_V_MIN], agents_params[a_id][DIFF_DRIVE_V_MAX])
+                else:
+                    noized_curr_state[3:] = np.random.normal(curr_state[3:], velocities_std, 2)
                 for i in range(len(neighbours_states)):
                     noized_neighbours_states[i, 2:] = np.random.normal(
                         neighbours_states[i, 2:], velocities_std, 2
@@ -173,11 +182,14 @@ def launch_mppi(
             if save_logs and save_traj_lines:
                 step_traj.append(traj)
 
-            new_states[a_id, 0:3] = dyn_models[a_id].state_shift(
-                curr_state[0:3], dt
-            ) + dyn_models[a_id].dynamic_model(curr_state[0:3], u, dt)
-
-            new_states[a_id, 3:5] = (new_states[a_id, 0:2] - curr_state[0:2]) / dt
+            if car_like:
+                new_states[a_id] = (dyn_models[a_id].state_shift(curr_state, dt)
+                                   + dyn_models[a_id].dynamic_model(curr_state, u, dt))
+            else:
+                new_states[a_id, 0:3] = dyn_models[a_id].state_shift(
+                    curr_state[0:3], dt
+                ) + dyn_models[a_id].dynamic_model(curr_state[0:3], u, dt)
+                new_states[a_id, 3:5] = (new_states[a_id, 0:2] - curr_state[0:2]) / dt
 
         agents_states = new_states.copy()
 

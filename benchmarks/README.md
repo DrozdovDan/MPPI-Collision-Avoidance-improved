@@ -81,6 +81,53 @@ This notebook also enables anchor heading alignment, a modest steering-change
 cost, and a 10 rad/s² angular-acceleration limit to reduce the visible
 zigzagging that unconstrained MPPI sampling produced along the shelves.
 
+`rrt_connect_warehouse2_car_like_multiagent.ipynb` restores the original
+three-car crossing scenario, including the published `testing_warehouse2`
+start and goal. `rrt_connect_warehouse2_car_like_traffic_jam.ipynb` keeps the
+ten-car opposing-queue stress case. Both use the same `warehouse2` map and
+bicycle-model wheelbase, steering, acceleration, jerk, and braking limits.
+Both allow reverse at 0.6 map units/s and pass smoothly through zero speed when changing direction.
+The three-car notebook also includes a separate reverse-then-forward maneuver
+on the same map. Car state is `[x, y, heading, v, steering_angle, a]`, and MPPI
+samples `[jerk, steering_rate]`, integrating acceleration, velocity, and steering
+within physical bounds throughout each rollout. Configure `a_min`, `a_max`,
+`j_min`, `j_max`, and
+`steering_rate_max` in the agent parameters. Animations mark each car's front
+and rear, and raw plots show velocity, acceleration, jerk, steering angle,
+and steering rate. Both profiles penalize the squared bounded controls inside
+MPPI: the three-car profile uses `jerk_cost_weight=100`,
+`steering_rate_cost_weight=300`, and sampling variances `[0.25, 0.04]`;
+the jam uses magnitude weights `300/300` and variances `[0.0625, 0.0025]`.
+Both add `jerk_change_cost_weight=500` and
+`steering_rate_change_cost_weight=1000`, penalizing squared changes between
+bounded commands inside rollouts. At the horizon boundary, the previous
+command is the last executed jerk/steering rate, rather than the shifted
+warm-start plan. The sampling standard deviations are `0.5/0.2` and
+`0.25/0.05`, respectively. Steering noise stays at 0.2 for the three-car
+case because that is only 10% of its hard bound and smaller values hurt
+exploration of its tight starting turns. Hard jerk and steering-rate limits remain
+unchanged. The three-car notebook includes a seeded two-bend free-space
+comparison against the previous magnitude-only settings, saving raw comparison
+plots to `car_control_regularization_comparison.png` and RMS control,
+successive-command-change, saturation, and progress metrics to
+`car_control_regularization_metrics.json`. Neither profile filters commands
+or introduces another derivative into the state.
+The three-car run permits 65 simulated seconds to finish its original routes
+with the gentler command transitions; the jam retains its 60-second budget.
+Each notebook saves a matching `*_dynamics.png` for review. The jam notebook
+also reports queue occupancy, stopping, clearance, and unfinished agents. The
+car body fits inside the circular collision radius used by RRT-Connect, ORCA,
+and obstacle checks. These are concurrent inference examples, not Bench-MR scores.
+The jerk-controlled jam uses a 2.5-second prediction horizon, a 5-second ORCA
+warning time, 0.15 map units of controller clearance, full avoidance
+responsibility, and a 1.2-unit/s forward cruise limit. Its earlier
+acceleration-control profile reacted too late for the longer stopping response
+introduced by jerk limits.
+The run budget is 60 simulated seconds, so the reduced cruise speed does not
+make the route lengths impossible solely because of the step limit.
+ORCA additionally reserves each moving car's jerk-limited stopping distance
+plus one step of travel as clearance; the reported gaps use the body envelope.
+
 Regenerate plots and the report without rerunning the controller:
 
 ```bash

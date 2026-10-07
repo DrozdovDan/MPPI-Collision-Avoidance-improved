@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 namespace mppica {
+	void seedSampler(unsigned int seed) { xt::random::seed(seed); }
 
 	void Controller::setAnchorPath(const std::vector<Point2> &path) {
 		if (path.empty()) {
@@ -105,8 +106,14 @@ namespace mppica {
 
     bool Controller::controlSequenceHitsObstacle() {
         xt::xtensor<double, 1> state = xt::view(generated_trajectories, 0, 0);
+        double previous_speed = last_linear_control;
         for (size_t t = 0; t < time_steps-1; ++t) {
             xt::xtensor<double, 1> u = xt::view(control_sequence, t);
+            if (use_car_like_dyn) u = car_like_dyn.limitControl(state, u, dt);
+            else {
+                u[0] = limitSpeed(u[0], previous_speed);
+                previous_speed = u[0];
+            }
             xt::xtensor<double, 1> next;
             if (use_car_like_dyn) next = state + car_like_dyn.shift(state, dt) + car_like_dyn.dynamic(state, u, dt);
             else next = state + dyn_model.shift(state, dt) + dyn_model.dynamic(state, u, dt);
@@ -119,16 +126,27 @@ namespace mppica {
 	Controller::Controller() {
 		step = 0;
 		controller_id = 0;
-		xt::random::seed(getpid() * time(NULL));
+		seedSampler(getpid() * time(NULL));
 		setAlgParams(MPPIParams());
 		setAgentParams(AgentParams());
 		dyn_model = DiffDrive();
-		car_like_dyn = CarLike();
 		reset();
 	}
 
 	auto Controller::nextStep(const xt::xtensor<double, 1> &curr_state, const xt::xtensor<double, 2> &neighbors_states, const xt::xtensor<double, 1> &neighbors_sizes,
 							  const xt::xtensor<double, 1> &goal_state) -> std::tuple<xt::xtensor<double, 1>, xt::xtensor<double, 3>> {
+		if (use_car_like_dyn) {
+			if (curr_state.size() != CAR_STATE_DIM || !xt::all(xt::isfinite(curr_state)))
+				throw std::invalid_argument("Car state must be finite [x, y, heading, velocity, steering angle, acceleration]");
+			if (car_like_dyn.steering_min <= -std::acos(-1.0) / 2 ||
+				car_like_dyn.steering_max >= std::acos(-1.0) / 2)
+				throw std::invalid_argument("Car steering angle limits must lie strictly inside (-pi/2, pi/2)");
+			if (curr_state[3] < car_like_dyn.v_min - 1e-9 || curr_state[3] > car_like_dyn.v_max + 1e-9 ||
+				curr_state[4] < car_like_dyn.steering_min - 1e-9 || curr_state[4] > car_like_dyn.steering_max + 1e-9 ||
+				curr_state[5] < car_like_dyn.a_min - 1e-9 || curr_state[5] > car_like_dyn.a_max + 1e-9)
+				throw std::invalid_argument("Measured car velocity, steering angle or acceleration is outside the physical limits");
+			car_like_dyn.jerkBounds(curr_state, dt);
+		}
 		if (!anchor_path.empty()) {
 			double min_progress = anchor_progress_initialized ? anchor_progress : 0.0;
 			anchor_progress = projectToAnchorPath({curr_state[0], curr_state[1]}, min_progress).progress;
@@ -166,6 +184,7 @@ namespace mppica {
 		}
 
 		auto result = getCurrentControl();
+		last_linear_control = result[0];
 		last_angular_control = result[1];
 		shiftControlSequence();
 		step += 1;
@@ -174,20 +193,22 @@ namespace mppica {
 	}
 
 	void Controller::reset() {
+		last_linear_control = initial_values[0];
 		last_angular_control = initial_values[1];
 		anchor_progress = 0.0;
 		anchor_progress_initialized = false;
-        resetTrajectories(xt::zeros<double>({DD_STATE_DIM})); // TODO: Generalize to common dynamics
+        resetTrajectories(xt::zeros<double>({use_car_like_dyn ? CAR_STATE_DIM : DD_STATE_DIM}));
 		resetControlSeq();
 		resetSamples();
 		resetNeighborsTrajectories();
 	}
 
 	void Controller::resetTrajectories(const xt::xtensor<double, 1> &initial_state) {
-        generated_trajectories = xt::zeros<double>({batch_size, time_steps, DD_STATE_DIM}); // TODO: Generalize to common dynamics
+        size_t state_dim = use_car_like_dyn ? CAR_STATE_DIM : DD_STATE_DIM;
+        generated_trajectories = xt::zeros<double>({batch_size, time_steps, state_dim});
 		traj_costs = xt::zeros<double>({batch_size});
 		excluded_traj = std::vector<bool>(batch_size, false);
-		xt::view(generated_trajectories, xt::all(), 0) = xt::view(initial_state, xt::range(0, 3));
+		xt::view(generated_trajectories, xt::all(), 0) = xt::view(initial_state, xt::range(0, state_dim));
 	}
 
 	void Controller::resetControlSeq() {
@@ -216,13 +237,29 @@ namespace mppica {
 																  xt::view(samples, batch, time_step, xt::all());
 	}
 
+	double Controller::limitSpeed(double desired, double previous) const {
+		desired = std::clamp(desired, control_limits(0, 0), control_limits(0, 1));
+		double rate_limit = std::abs(desired) > std::abs(previous) ? linear_accel_limit : linear_brake_limit;
+		if (rate_limit > 0.0)
+			desired = std::clamp(desired, previous - rate_limit * dt, previous + rate_limit * dt);
+		return std::clamp(desired, control_limits(0, 0), control_limits(0, 1));
+	}
+
 	void Controller::limitControl(size_t batch, size_t time_step) {
+		if (use_car_like_dyn) {
+			xt::view(sampled_controls, batch, time_step) = car_like_dyn.limitControl(
+				xt::view(generated_trajectories, batch, time_step),
+				xt::view(sampled_controls, batch, time_step), dt);
+			return;
+		}
 		// TODO: Generalize to common dynamics
         for (size_t i = 0; i < DD_CONTROL_DIM; ++i) {
 			sampled_controls[{batch, time_step, i}] = xt::clip(xt::view(sampled_controls, batch, time_step, i),
 															   control_limits[{i, static_cast<size_t>(0)}],
 															   control_limits[{i, static_cast<size_t>(1)}]);
 		}
+		double previous_speed = time_step == 0 ? last_linear_control : sampled_controls(batch, time_step - 1, 0);
+		sampled_controls(batch, time_step, 0) = limitSpeed(sampled_controls(batch, time_step, 0), previous_speed);
 		if (angular_accel_limit > 0.0) {
 			double previous_angular = time_step == 0 ? last_angular_control : sampled_controls(batch, time_step - 1, 1);
 			double max_change = angular_accel_limit * dt;
@@ -302,9 +339,33 @@ namespace mppica {
 
 
 	void Controller::controlCost(size_t batch, size_t time_step) {
+		if (use_car_like_dyn) {
+			// Use the physically constrained controls actually integrated by the rollout.
+			const double jerk = sampled_controls(batch, time_step, 0);
+			const double steering_rate = sampled_controls(batch, time_step, 1);
+			traj_costs[batch] += jerk_cost_weight * jerk * jerk +
+				steering_rate_cost_weight * steering_rate * steering_rate;
+			// Penalize changes in feasible controls, across horizons as well as
+			// inside each rollout. The warm-start sequence is not the previous command.
+			const double previous_jerk = time_step == 0 ? last_linear_control :
+				sampled_controls(batch, time_step - 1, 0);
+			const double previous_rate = time_step == 0 ? last_angular_control :
+				sampled_controls(batch, time_step - 1, 1);
+			const double jerk_change = jerk - previous_jerk;
+			const double rate_change = steering_rate - previous_rate;
+			traj_costs[batch] += jerk_change_cost_weight * jerk_change * jerk_change +
+				steering_rate_change_cost_weight * rate_change * rate_change;
+		}
 		if (control_smoothness_weight > 0.0) {
-			double previous_angular = time_step == 0 ? last_angular_control : sampled_controls(batch, time_step - 1, 1);
-			double delta_angular = sampled_controls(batch, time_step, 1) - previous_angular;
+			double delta_angular;
+			if (use_car_like_dyn) {
+				// Keep the existing steering-change cost in angle units.
+				delta_angular = generated_trajectories(batch, time_step + 1, 4) -
+					generated_trajectories(batch, time_step, 4);
+			} else {
+				double previous_angular = time_step == 0 ? last_angular_control : sampled_controls(batch, time_step - 1, 1);
+				delta_angular = sampled_controls(batch, time_step, 1) - previous_angular;
+			}
 			traj_costs[batch] += control_smoothness_weight * delta_angular * delta_angular;
 		}
 		traj_costs[batch] += lambda/2 * sampled_controls[{batch, time_step, static_cast<size_t>(0)}] *
@@ -374,6 +435,10 @@ namespace mppica {
 				dy = projection.point[1] - behind[1];
 			}
 			double heading = generated_trajectories(batch, time_step + 1, 2);
+			double speed = use_car_like_dyn ? generated_trajectories(batch, time_step + 1, 3)
+				: sampled_controls(batch, time_step, 0);
+			if (speed < 0.0)
+				heading += std::acos(-1.0); // Reverse motion points opposite the car's nose.
 			traj_costs[batch] += anchor_heading_weight * (1.0 - std::cos(heading - std::atan2(dy, dx)));
 		}
 	}
@@ -434,7 +499,7 @@ namespace mppica {
             size_t best = batch_size;
             for (size_t b = 0; b < batch_size; ++b)
                 if (!excluded_traj[b] && traj_costs[b] < best_cost) { best_cost = traj_costs[b]; best = b; }
-            if (best == batch_size) { control_sequence.fill(0.0); return; }
+            if (best == batch_size) { setBrakingControlSequence(); return; }
             xt::xtensor<double, 1> weights = xt::zeros<double>({batch_size});
             double total = 0;
             for (size_t b = 0; b < batch_size; ++b) {
@@ -449,6 +514,10 @@ namespace mppica {
             return;
         }
 
+		if (std::all_of(excluded_traj.begin(), excluded_traj.end(), [](bool value) { return value; })) {
+			setBrakingControlSequence();
+			return;
+		}
 		auto beta = xt::amin(traj_costs, xt::evaluation_strategy::immediate);
 		auto eta =
 				xt::sum(xt::exp(-1. / lambda * (traj_costs - beta)), {0}, xt::evaluation_strategy::immediate) + 1e-10;
@@ -460,14 +529,37 @@ namespace mppica {
 				weights[batch] = 0.0;
 			}
 		}
-
+		// Feasible jerk intervals need not include zero. Preserve a true convex
+		// combination after excluding trajectories, rather than shrinking to zero.
+		double valid_weight = xt::sum(weights)();
+		if (!std::isfinite(valid_weight) || valid_weight <= 0.0) {
+			setBrakingControlSequence();
+			return;
+		}
+		weights /= valid_weight;
 
 		control_sequence = xt::sum(xt::view(weights, xt::all(), xt::newaxis(), xt::newaxis()) * sampled_controls, {0},
 								   xt::evaluation_strategy::immediate);
 	}
 
 	auto Controller::getCurrentControl() -> xt::xtensor<double, 1> {
-		return xt::view(control_sequence, 0);
+		xt::xtensor<double, 1> result = xt::view(control_sequence, 0);
+		// Car samples share the measured initial state and convex control bounds,
+		// so their weighted first control is feasible without output filtering.
+		if (!use_car_like_dyn) result[0] = limitSpeed(result[0], last_linear_control);
+		return result;
+	}
+
+	void Controller::setBrakingControlSequence() {
+		control_sequence.fill(0.0);
+		if (!use_car_like_dyn) return;
+		xt::xtensor<double, 1> state = xt::view(generated_trajectories, 0, 0);
+		for (size_t t = 0; t + 1 < time_steps; ++t) {
+			xt::xtensor<double, 1> desired = {car_like_dyn.brakingJerk(state, dt), 0.0};
+			auto u = car_like_dyn.limitControl(state, desired, dt);
+			xt::view(control_sequence, t) = u;
+			state += car_like_dyn.dynamic(state, u, dt);
+		}
 	}
 
 	void Controller::shiftControlSequence() {
@@ -487,10 +579,23 @@ namespace mppica {
 	}
 
 	void Controller::setAlgParams(const MPPIParams &alg_params) {
+		if (!std::isfinite(alg_params.dt) || alg_params.dt <= 0 ||
+			alg_params.time_steps < 2 || alg_params.batch_size == 0)
+			throw std::invalid_argument("MPPI requires positive dt/batch size and at least two states per horizon");
+		if (alg_params.car_like_dyn && (!std::isfinite(alg_params.dist_between_axles) || alg_params.dist_between_axles <= 0))
+			throw std::invalid_argument("Car wheelbase must be finite and positive");
 		if (!std::isfinite(alg_params.anchor_path_weight) || alg_params.anchor_path_weight < 0.0)
 			throw std::invalid_argument("Anchor path weight must be finite and nonnegative");
 		if (!std::isfinite(alg_params.control_smoothness_weight) || alg_params.control_smoothness_weight < 0.0)
 			throw std::invalid_argument("Control smoothness weight must be finite and nonnegative");
+		if (!std::isfinite(alg_params.jerk_cost_weight) || alg_params.jerk_cost_weight < 0.0)
+			throw std::invalid_argument("Jerk cost weight must be finite and nonnegative");
+		if (!std::isfinite(alg_params.steering_rate_cost_weight) || alg_params.steering_rate_cost_weight < 0.0)
+			throw std::invalid_argument("Steering rate cost weight must be finite and nonnegative");
+		if (!std::isfinite(alg_params.jerk_change_cost_weight) || alg_params.jerk_change_cost_weight < 0.0)
+			throw std::invalid_argument("Jerk change cost weight must be finite and nonnegative");
+		if (!std::isfinite(alg_params.steering_rate_change_cost_weight) || alg_params.steering_rate_change_cost_weight < 0.0)
+			throw std::invalid_argument("Steering rate change cost weight must be finite and nonnegative");
 		if (!std::isfinite(alg_params.anchor_heading_weight) || alg_params.anchor_heading_weight < 0.0)
 			throw std::invalid_argument("Anchor heading weight must be finite and nonnegative");
 		time_steps = alg_params.time_steps;
@@ -523,10 +628,29 @@ namespace mppica {
 		anchor_path_weight = alg_params.anchor_path_weight;
 		anchor_heading_weight = alg_params.anchor_heading_weight;
 		control_smoothness_weight = alg_params.control_smoothness_weight;
+		jerk_cost_weight = alg_params.jerk_cost_weight;
+		steering_rate_cost_weight = alg_params.steering_rate_cost_weight;
+		jerk_change_cost_weight = alg_params.jerk_change_cost_weight;
+		steering_rate_change_cost_weight = alg_params.steering_rate_change_cost_weight;
 		reset();
 	}
 
 	void Controller::setAgentParams(const AgentParams &ag_params) {
+		if (!std::isfinite(ag_params.j_min) || !std::isfinite(ag_params.j_max) ||
+			ag_params.j_min >= 0.0 || ag_params.j_max <= 0.0)
+			throw std::invalid_argument("Jerk bounds must be finite and allow both signs");
+		if (!std::isfinite(ag_params.a_min) || !std::isfinite(ag_params.a_max) ||
+			ag_params.a_min > 0.0 || ag_params.a_max < 0.0 || ag_params.a_min >= ag_params.a_max)
+			throw std::invalid_argument("Acceleration bounds must be finite, ordered, and include zero");
+		if (!std::isfinite(ag_params.steering_rate_max) || ag_params.steering_rate_max <= 0.0)
+			throw std::invalid_argument("Steering rate limit must be finite and positive");
+		if (!std::isfinite(ag_params.dd_v_min) || !std::isfinite(ag_params.dd_v_max) || ag_params.dd_v_min > ag_params.dd_v_max ||
+			!std::isfinite(ag_params.dd_w_min) || !std::isfinite(ag_params.dd_w_max) || ag_params.dd_w_min > ag_params.dd_w_max)
+			throw std::invalid_argument("Speed and steering bounds must be finite and ordered");
+		if (!std::isfinite(ag_params.dd_v_accel_max) || ag_params.dd_v_accel_max < 0.0)
+			throw std::invalid_argument("Speed acceleration limit must be finite and nonnegative");
+		if (!std::isfinite(ag_params.dd_v_brake_max) || ag_params.dd_v_brake_max < 0.0)
+			throw std::invalid_argument("Speed braking limit must be finite and nonnegative");
 		if (!std::isfinite(ag_params.dd_w_accel_max) || ag_params.dd_w_accel_max < 0.0)
 			throw std::invalid_argument("Angular acceleration limit must be finite and nonnegative");
         // TODO: Generalize to common dynamics
@@ -534,7 +658,18 @@ namespace mppica {
 		vis_radius = ag_params.vis_radius;
 		control_limits = {{ag_params.dd_v_min, ag_params.dd_v_max},
 						  {ag_params.dd_w_min, ag_params.dd_w_max}};
+		linear_accel_limit = ag_params.dd_v_accel_max;
+		linear_brake_limit = ag_params.dd_v_brake_max;
 		angular_accel_limit = ag_params.dd_w_accel_max;
+		car_like_dyn.v_min = ag_params.dd_v_min;
+		car_like_dyn.v_max = ag_params.dd_v_max;
+		car_like_dyn.a_min = ag_params.a_min;
+		car_like_dyn.a_max = ag_params.a_max;
+		car_like_dyn.j_min = ag_params.j_min;
+		car_like_dyn.j_max = ag_params.j_max;
+		car_like_dyn.steering_min = ag_params.dd_w_min;
+		car_like_dyn.steering_max = ag_params.dd_w_max;
+		car_like_dyn.steering_rate_max = ag_params.steering_rate_max;
 		reset();
 	}
 
@@ -599,6 +734,11 @@ namespace mppica {
 
 
         orca_params.agent_size =  (agent_size + rad_eps);
+        if (use_car_like_dyn && neighbors_states.shape(0) > 0) {
+            // ORCA assumes instantaneous velocity changes. Reserve the arc
+            // length of a physical emergency stop plus one observation step.
+            orca_params.agent_size += car_like_dyn.stoppingDistance(state, dt) + std::abs(state[3]) * dt;
+        }
         orca_params.time_boundary = orca_time_boundary;
         orca_params.time_step = dt;
         orca_params.responsibility_factor = orca_responsibility_factor;
@@ -608,7 +748,12 @@ namespace mppica {
 																				   : neighbors_states.shape(0);
 
 
-		orca_lines = computeORCALines(orca_params, state, neighbors_states, neighbors_sizes);
+		auto orca_state = state;
+		if (use_car_like_dyn) {
+			orca_state[3] = state[3] * std::cos(state[2]);
+			orca_state[4] = state[3] * std::sin(state[2]);
+		}
+		orca_lines = computeORCALines(orca_params, orca_state, neighbors_states, neighbors_sizes);
 
 		linear_constraints = xt::zeros<double>({orca_lines.size(), static_cast<size_t>(3)});
 
@@ -631,6 +776,7 @@ namespace mppica {
 	void Controller::resampleInitialWithConstraints() {
         // TODO: Generalize to common dynamics
 		if (linear_constraints.shape(0) == 0) {
+			orca_complete = true;
 			return;
 		}
 
@@ -664,6 +810,9 @@ namespace mppica {
 		double sigma0 = sample_std[{0, 0}];
 		double v_min = control_limits[{0, 0}];
 		double v_max = control_limits[{0, 1}];
+		if (use_car_like_dyn) {
+			std::tie(v_min, v_max) = car_like_dyn.jerkBounds(state, dt);
+		}
 
 		std::unique_ptr<MPSolver> solver(MPSolver::CreateSolver("SCIP"));
 
@@ -722,7 +871,8 @@ namespace mppica {
 		const MPSolver::ResultStatus result_status = solver->Solve();
 
 		if (result_status != MPSolver::OPTIMAL and result_status != MPSolver::FEASIBLE) {
-			return {false, -control[0], 0.0};
+			double fallback = use_car_like_dyn ? car_like_dyn.brakingJerk(state, dt) : 0.0;
+			return {false, fallback - control[0], 0.0};
 		}
 		double result_std = variables[1]->solution_value();
 		if (result_std < 0) result_std = 0.0;
@@ -744,6 +894,12 @@ namespace mppica {
 			c = linear_constraints[{line_num, static_cast<size_t>(2)}];
 			coefs[line_num] = (a * cos(theta) + b * sin(theta));
 			bounds[line_num] = -c;
+			if (use_car_like_dyn) {
+				// Jerk first affects velocity at the second Euler step:
+				// v[k+2] = v[k] + 2*a[k]*dt + j[k]*dt^2.
+				bounds[line_num] -= coefs[line_num] * (state[3] + 2.0 * state[5] * dt);
+				coefs[line_num] *= dt * dt;
+			}
 		}
 		return {coefs, bounds};
 	}

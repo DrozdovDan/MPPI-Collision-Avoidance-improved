@@ -23,6 +23,8 @@
 #include "orca_lines.hpp"
 
 namespace mppica {
+	// Seed in the same shared library that owns the rollout generator.
+	void seedSampler(unsigned int seed);
 	using std::cout;
 	using std::endl;
 	using namespace xt::placeholders;
@@ -58,6 +60,12 @@ namespace mppica {
 		double velocity_cost_close_to_goal_dist = 0.3;
 		double anchor_path_weight = 1.0;
 		double control_smoothness_weight = 0.0;
+		// Car control effort, summed over rollout steps (independent of lambda).
+		double jerk_cost_weight = 0.0;
+		double steering_rate_cost_weight = 0.0;
+		// Car command changes, including the last executed command at horizon start.
+		double jerk_change_cost_weight = 0.0;
+		double steering_rate_change_cost_weight = 0.0;
 		double anchor_heading_weight = 0.0;
 
 		int max_safe_distr_step = 0; // TODO: Add constraints for several steps
@@ -71,9 +79,17 @@ namespace mppica {
 		double vis_radius = 1.0;
 		double dd_v_max = 1.0;
 		double dd_v_min = -1.0;
+		double dd_v_accel_max = 0.0; // Zero disables the speed-up limit.
+		double dd_v_brake_max = 0.0; // Zero disables the braking limit.
 		double dd_w_max = 2.0;
 		double dd_w_min = -2.0;
 		double dd_w_accel_max = 0.0; // Zero disables the angular acceleration limit.
+		// Physical car controls: signed jerk and steering angular rate.
+		double a_min = -3.0;
+		double a_max = 1.5;
+		double j_min = -2.0;
+		double j_max = 2.0;
+		double steering_rate_max = 2.0;
 	};
 
 
@@ -111,6 +127,7 @@ namespace mppica {
 			bool anchor_progress_initialized = false;
             bool obstacleCollision(const Point2 &a, const Point2 &b) const;
             bool controlSequenceHitsObstacle();
+			void setBrakingControlSequence();
 			PathProjection projectToAnchorPath(const Point2 &point, double min_progress) const;
 			Point2 anchorPointAt(double progress) const;
 			void resetControlSeq();
@@ -123,6 +140,7 @@ namespace mppica {
 
 			void generateSamples();
 
+			double limitSpeed(double desired, double previous) const;
 			void limitControl(size_t batch, size_t time_step);
 
 			void updateControl(size_t batch, size_t time_step);
@@ -187,6 +205,8 @@ namespace mppica {
 			xt::xtensor<double, 1> mean;
 			xt::xtensor<double, 2> sample_std;
 			xt::xtensor<double, 2> control_limits;
+			double linear_accel_limit = 0.0;
+			double linear_brake_limit = 0.0;
 			double angular_accel_limit = 0.0;
 			xt::xtensor<double, 1> initial_values;
 
@@ -199,6 +219,7 @@ namespace mppica {
 			xt::xtensor<double, 3> sampled_controls;
 			xt::xtensor<double, 3> samples;
 			xt::xtensor<double, 2> control_sequence;
+			double last_linear_control = 0.0;
 			double last_angular_control = 0.0;
 			xt::xtensor<double, 3> generated_trajectories;
 			xt::xtensor<double, 1> traj_costs;
@@ -229,6 +250,10 @@ namespace mppica {
 			double velocity_cost_close_to_goal_dist;
 			double anchor_path_weight;
 			double control_smoothness_weight;
+			double jerk_cost_weight;
+			double steering_rate_cost_weight;
+			double jerk_change_cost_weight;
+			double steering_rate_change_cost_weight;
 			double anchor_heading_weight;
 
 			double terminal_lookahead_distance;

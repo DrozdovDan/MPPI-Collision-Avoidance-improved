@@ -133,10 +133,70 @@ search for them.
 
 For steadier polyline tracking, set optional
 anchor_heading_weight and control_smoothness_weight in the MPPI parameters.
-The first penalizes pointing away from the path direction; the second
-penalizes changes in angular velocity. Set w_accel_max in the agent parameters
+The first penalizes movement away from the path direction; the second
+penalizes steering changes. For differential drive, set w_accel_max in the agent parameters
 to limit angular acceleration in every sampled rollout and executed step.
-All three settings default to zero, preserving existing controller behavior.
+Set optional v_accel_max and v_brake_max in the agent parameters to bound
+speed increases and decreases (units/s²) in sampled rollouts and executed
+commands for differential drive. These limits default to zero, which disables them.
+
+With `car_like_dyn=True`, the state is **`[x, y, heading, v, steering_angle, a]`**
+and the returned control is **`[jerk, steering_rate]`**. Every sampled
+rollout integrates `a_next = a + jerk * dt`, `v_next = v + a * dt`, and
+`steering_next = steering_angle + steering_rate * dt`, then propagates the
+bicycle pose using the updated values. Rollouts and the first command of
+every horizon use the measured state, including speed, acceleration, and steering.
+There is no filtering of the returned car control.
+
+Car MPPI accepts optional `jerk_cost_weight` and `steering_rate_cost_weight`.
+They add `jerk_cost_weight * sum(j[k]**2)` and
+`steering_rate_cost_weight * sum(steering_rate[k]**2)` to each rollout's cost,
+using the bounded controls that propagate the vehicle. These nonnegative
+weights are independent of the softmax temperature `mppi_lambda` and default
+to zero for compatibility. `control_cov` contains sampling **variances** in
+`[jerk, steering_rate]` units; choose standard deviations well below the hard
+limits to avoid concentrating samples at the bounds. The warehouse car
+notebooks configure both penalties and reduced sampling variance explicitly.
+
+`jerk_change_cost_weight` and `steering_rate_change_cost_weight` additionally
+penalize `sum((j[k] - j[k-1])**2)` and
+`sum((steering_rate[k] - steering_rate[k-1])**2)` inside car rollouts.
+For the first step, `k-1` is the actual command returned by the previous
+controller call, including emergency braking; before the first call it is
+`init_value`. Later steps use the previous bounded control in that sample.
+These optional weights default to zero and must be finite and nonnegative.
+The changes are in command units per step, without division by `dt`;
+they are soft objective costs and do not add a state or impose a new
+derivative limit. All existing physical constraints take precedence.
+
+Use agent parameters `a_min`/`a_max` (defaults -3.0/1.5 units/s²),
+`j_min`/`j_max` (defaults -2.0/2.0 units/s³, both signs required),
+`steering_rate_max` (default 2.0 rad/s), `v_min`/`v_max`, and
+`w_min`/`w_max` (steering angle limits, strictly inside ±pi/2).
+Legacy `v_brake_max`, `v_accel_max`, and `w_accel_max` map to these car
+limits when positive; the explicit new parameters take precedence.
+Set `v_min` below zero for a slower reverse gear, for example
+`v_min=-0.6`, `v_max=2.0`. Signed velocity passes smoothly through zero
+when changing direction. Signed acceleration and jerk limits apply in reverse too.
+Speed-limit constraints reserve enough velocity headroom to return acceleration
+to zero with bounded jerk, including beyond the sampled horizon. An initial
+velocity/acceleration pair with insufficient headroom raises `ValueError`;
+it cannot be made feasible by clipping speed without violating the model.
+Jerk may switch between its bounds, but acceleration changes by at most
+`max(abs(j_min), abs(j_max)) * dt` per step. If all sampled trajectories
+collide, the fallback brakes within these limits, so it cannot guarantee
+avoidance when the current stopping distance is insufficient.
+
+`CarLikeDyn` in the Python simulator uses the same six-state layout and
+two controls. `launch_mppi` configures its limits from the agent parameters.
+ORCA and neighbor predictions still receive Cartesian `[x, y, vx, vy]`,
+converted from signed speed and heading for cars. ORCA's initial jerk
+distribution targets the reachable velocity at the second Euler step,
+`v[k+2] = v[k] + 2*a[k]*dt + j[k]*dt²`, where jerk first affects velocity.
+Its velocity constraints also reserve each car's jerk-limited stopping arc
+length plus one step of travel as extra clearance. This accounts for the
+finite actuator response that instantaneous-velocity ORCA assumes away;
+collision measurements continue to use the physical robot radius.
 
 For the multi-agent helper, pass one path per agent as
 `utils.launch_mppi(..., anchor_paths=[path_for_agent_0, ...])`. A complete
@@ -166,6 +226,13 @@ stop face-to-face instead of reaching every goal.
 The [larger-agent warehouse notebook](benchmarks/rrt_connect_warehouse2_large_agents.ipynb)
 shows two agents navigating around square shelf gaps that admit a smaller
 robot, with inflated obstacles and an animated ORCA-MPPI run.
+
+The [three-car warehouse notebook](benchmarks/rrt_connect_warehouse2_car_like_multiagent.ipynb)
+restores the original crossing routes, including `testing_warehouse2`. The
+[ten-car traffic-jam notebook](benchmarks/rrt_connect_warehouse2_car_like_traffic_jam.ipynb)
+runs two opposing queues through the same map's central bottleneck. Both use
+bounded acceleration and braking, and animate each car's front and rear. The
+drawn body fits inside the circular radius used for collision checks.
 
 ## Bench-MR Evaluation
 

@@ -1,0 +1,42 @@
+{
+  "Previous": {
+    "rms_control": [
+      0.8911457528481707,
+      0.4143737481728522
+    ],
+    "rms_command_change": [
+      1.029954726729008,
+      0.6111826289377322
+    ],
+    "jerk_saturation_fraction": 0.05384615384615385,
+    "goal_error": 0.5026807851822477,
+    "jerk_cost_weight": 100.0,
+    "steering_rate_cost_weight": 300.0,
+    "jerk_change_cost_weight": 0.0,
+    "steering_rate_change_cost_weight": 0.0,
+    "sampling_variances": [
+      0.5625,
+      0.04
+    ]
+  },
+  "Temporal": {
+    "rms_control": [
+      0.744267759816004,
+      0.31879578755004473
+    ],
+    "rms_command_change": [
+      0.5435632459620463,
+      0.3251950463352587
+    ],
+    "jerk_saturation_fraction": 0.03461538461538462,
+    "goal_error": 1.5664081396398104,
+    "jerk_cost_weight": 100.0,
+    "steering_rate_cost_weight": 300.0,
+    "jerk_change_cost_weight": 500.0,
+    "steering_rate_change_cost_weight": 1000.0,
+    "sampling_variances": [
+      0.25,
+      0.04
+    ]
+  }
+}

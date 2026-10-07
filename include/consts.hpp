@@ -3,6 +3,8 @@
 #include <stddef.h>
 
 constexpr size_t DD_STATE_DIM = 3;
+// Car state: x, y, heading, signed speed, steering angle, acceleration.
+constexpr size_t CAR_STATE_DIM = 6;
 constexpr size_t POSITION_DIM = 2;
 constexpr size_t DD_CONTROL_DIM = 2;
 constexpr size_t NEIGHBORS_STATE_DIM = 4;
