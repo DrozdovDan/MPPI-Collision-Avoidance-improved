@@ -19,5 +19,6 @@ example/mppi_demo.gif
 !benchmarks/rrt_connect_warehouse2_car_like_traffic_jam.gif
 .ipynb_checkpoints/
 benchmarks/__pycache__/
+benchmarks/corridor_graph/__pycache__/
 benchmarks/results/
 tests/__pycache__/
