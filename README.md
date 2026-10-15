@@ -208,6 +208,15 @@ The multi-agent notebook
 contains four handmade paths around a central obstacle and renders both a
 static comparison and an animated GIF with the anchor paths visible.
 
+For reusable corridor references, the [C++ K-route planner](benchmarks/COMPLETE_ROUTES.md)
+loads the existing robot-independent corridor/resource geometry and returns complete,
+collision-checked paths with bottleneck-diverse alternatives. It applies mandatory
+keep-right lanes wherever a separated opposing pair can be certified, with shared
+sections and validated transitions elsewhere. It runs independently of MPPI and
+provides a native library, JSON executable, native verification, and benchmark plots.
+The [radius validation report](benchmarks/RADIUS_VALIDATION.md) includes paired-lane
+proofs, robot-size experiments, CSV/JSON results and the native performance profile.
+
 For generated anchors, [`benchmarks/rrt_connect.py`](benchmarks/rrt_connect.py)
 implements bidirectional RRT-Connect with obstacle inflation and shortcut
 smoothing. The accompanying

@@ -788,3 +788,25 @@ and do not interpret them as MPPI planning failures or silently repair them.
 
 Tests cover SVG translation/Y flipping/convexification, unsupported paths,
 source task coordinates, native RNG reproducibility, and obstacle collision cases.
+
+## C++ complete K-route planner
+
+[`COMPLETE_ROUTES.md`](COMPLETE_ROUTES.md) documents the C++17 planner, native
+build, JSON demo, measured four-map benchmarks, and generated route figures. It
+loads the existing schema-v2 traffic bundle once, attaches arbitrary circular-robot
+queries without changing the graph, and returns complete paths with directed edge
+and resource traversals. Routing, adaptive lane decomposition, swept geometry
+validation and native benchmark verification run in C++. Python only prepares
+demo inputs and plots native output. A validated SPLIT interval always uses the
+robot's right-hand directional lane; narrower or uncertified intervals use a
+shared center reference, with explicit validated transitions and junction links.
+
+[`KEEP_RIGHT_AUDIT.md`](KEEP_RIGHT_AUDIT.md) records the mandatory lane-placement
+audit, opposing-footprint certificates, query diagnostics, separate geometry
+timings, synthetic tests and four equal-scale warehouse2 lane zooms.
+
+[`RADIUS_VALIDATION.md`](RADIUS_VALIDATION.md) contains the subsequent radius
+sweep, independent corridor certificates, exclusive stage profile and measured
+spatial-index optimization. Reproduce it with
+`.venv/bin/python benchmarks/radius_sweep.py` after the native build. Use
+`--analyse-only` to regenerate CSV/JSON tables and plots from saved native output.
