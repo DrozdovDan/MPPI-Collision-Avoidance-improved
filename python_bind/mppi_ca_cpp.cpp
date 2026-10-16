@@ -21,6 +21,8 @@ PYBIND11_MODULE(mppi_ca_cpp, m) {
 				 "plus six-state rollouts. Differential-drive mode takes [x,y,heading,vx,vy] "
 				 "and returns [speed,turn_rate] plus pose rollouts. Neighbors are [x,y,vx,vy].")
 			.def("set_agent_params", &mppica::Controller::setAgentParams)
+			.def("braking_control", &mppica::Controller::brakingControl, py::arg("state"))
+			.def("stopping_distance", &mppica::Controller::stoppingDistance, py::arg("state"))
             .def("set_obstacles", &mppica::Controller::setObstacles, py::arg("polygons"))
 			.def("set_anchor_path", &mppica::Controller::setAnchorPath, py::arg("points"),
 				 "Set an ordered polygonal anchor path, or pass [] to disable path following.")

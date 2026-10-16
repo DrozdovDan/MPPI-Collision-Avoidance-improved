@@ -47,6 +47,11 @@ STEERING_RATE_COST_WEIGHT = "steering_rate_cost_weight"
 JERK_CHANGE_COST_WEIGHT = "jerk_change_cost_weight"
 STEERING_RATE_CHANGE_COST_WEIGHT = "steering_rate_change_cost_weight"
 ANCHOR_HEADING_WEIGHT = "anchor_heading_weight"
+ANCHOR_FORWARD_WEIGHT = "anchor_forward_weight"
+REVERSE_COST_WEIGHT = "reverse_cost_weight"
+CONTROL_NOISE_CORRELATION = "control_noise_correlation"
+ANCHOR_ACQUISITION_SCALE = "anchor_acquisition_scale"
+ANCHOR_GUIDED_FRACTION = "anchor_guided_fraction"
 
 
 

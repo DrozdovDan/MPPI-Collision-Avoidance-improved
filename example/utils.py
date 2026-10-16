@@ -73,6 +73,7 @@ def launch_mppi(
     velocities_std=0.0,
     obstacles=None,
     anchor_paths=None,
+    park_at_goal=False,
 ):
 
     if seed is None:
@@ -114,6 +115,7 @@ def launch_mppi(
         agents_r_vis.append(agents_params[a_id][VISIBILITY_RADIUS])
 
     agents_states = start_states.copy()
+    parked = np.zeros(agents_num, dtype=bool)
     new_states = agents_states.copy()
     agents_sizes = np.array(agents_sizes)
 
@@ -172,12 +174,24 @@ def launch_mppi(
                         neighbours_states[i, 2:], velocities_std, 2
                     )
 
-            step_res, traj = controllers[a_id].next_step(
-                noized_curr_state,
-                noized_neighbours_states,
-                neighbours_sizes,
-                goal_state,
-            )
+            if car_like and park_at_goal:
+                # Stopping arc length bounds displacement even with steering.
+                # Capture only when bounded braking stays inside the goal disk.
+                stopping_distance = controllers[a_id].stopping_distance(curr_state)
+                if np.linalg.norm(curr_state[:2] - goal_state[:2]) + stopping_distance <= goal_xy_offset:
+                    parked[a_id] = True
+            if parked[a_id]:
+                # Continue integrating physical jerk/acceleration/velocity until
+                # rest. Parked cars remain visible to every other agent's ORCA.
+                step_res = controllers[a_id].braking_control(curr_state)
+                traj = np.empty((0, 0, len(curr_state)))
+            else:
+                step_res, traj = controllers[a_id].next_step(
+                    noized_curr_state,
+                    noized_neighbours_states,
+                    neighbours_sizes,
+                    goal_state,
+                )
             u = step_res
             if save_logs and save_traj_lines:
                 step_traj.append(traj)
@@ -210,6 +224,11 @@ def launch_mppi(
 
         done = True
         for a_id in range(agents_num):
+            if car_like and park_at_goal and (
+                not parked[a_id] or abs(agents_states[a_id, 3]) > 1e-8 or abs(agents_states[a_id, 5]) > 1e-8
+            ):
+                done = False
+                break
             if (
                 np.linalg.norm(agents_states[a_id, 0:2] - goal_states[a_id, 0:2])
                 > goal_xy_offset

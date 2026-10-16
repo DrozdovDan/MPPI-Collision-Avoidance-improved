@@ -67,6 +67,15 @@ namespace mppica {
 		double jerk_change_cost_weight = 0.0;
 		double steering_rate_change_cost_weight = 0.0;
 		double anchor_heading_weight = 0.0;
+		// Optional car preferences; zero preserves explicit reverse maneuvers.
+		double anchor_forward_weight = 0.0;
+		double reverse_cost_weight = 0.0;
+		// Stationary AR(1) control noise; zero retains independent samples.
+		double control_noise_correlation = 0.0;
+		// Lateral-cost fraction during a misaligned car's route acquisition.
+		double anchor_acquisition_scale = 1.0;
+		// Fraction of car rollouts seeded by bounded tracking/offset proposals.
+		double anchor_guided_fraction = 0.0;
 
 		int max_safe_distr_step = 0; // TODO: Add constraints for several steps
 		size_t max_neighbors_num = 100; // TODO: Sort neighbors by distance
@@ -105,6 +114,9 @@ namespace mppica {
 			void setAlgParams(const MPPIParams &alg_params);
 
 			void reset();
+			// Goal parking uses the same bounded jerk model as emergency braking.
+			xt::xtensor<double, 1> brakingControl(const xt::xtensor<double, 1> &state) const;
+			double stoppingDistance(const xt::xtensor<double, 1> &state) const;
 
             void setObstacles(const std::vector<Polygon> &polygons);
 
@@ -120,13 +132,15 @@ namespace mppica {
 			};
 
             std::vector<Polygon> obstacles;
+			std::vector<std::array<double, 4>> obstacle_bounds;
 			std::vector<Point2> anchor_path;
+			std::vector<std::array<double, 4>> anchor_segment_bounds;
 			std::vector<double> anchor_path_lengths;
 			double anchor_path_length = 0.0;
 			double anchor_progress = 0.0;
 			bool anchor_progress_initialized = false;
             bool obstacleCollision(const Point2 &a, const Point2 &b) const;
-            bool controlSequenceHitsObstacle();
+            bool controlSequenceCollides(const xt::xtensor<double, 1> &neighbors_sizes);
 			void setBrakingControlSequence();
 			PathProjection projectToAnchorPath(const Point2 &point, double min_progress) const;
 			Point2 anchorPointAt(double progress) const;
@@ -139,6 +153,7 @@ namespace mppica {
 			void resetNeighborsTrajectories();
 
 			void generateSamples();
+			bool anchorNeighborRequiresAvoidance(const Point2 &position, const Point2 &velocity, double radius) const;
 
 			double limitSpeed(double desired, double previous) const;
 			void limitControl(size_t batch, size_t time_step);
@@ -147,7 +162,7 @@ namespace mppica {
 
 			void updateTrajectory(size_t batch, size_t time_step);
 
-			void updateControlSequence();
+			void updateControlSequence(const xt::xtensor<double, 1> &neighbors_sizes);
 
 			auto getCurrentControl() -> xt::xtensor<double, 1>;
 
@@ -255,6 +270,12 @@ namespace mppica {
 			double jerk_change_cost_weight;
 			double steering_rate_change_cost_weight;
 			double anchor_heading_weight;
+			double anchor_forward_weight;
+			double reverse_cost_weight;
+			double control_noise_correlation;
+			double anchor_acquisition_scale;
+			double anchor_tracking_scale = 1.0;
+			double anchor_guided_fraction;
 
 			double terminal_lookahead_distance;
 

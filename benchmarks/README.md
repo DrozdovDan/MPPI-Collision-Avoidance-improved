@@ -128,6 +128,109 @@ make the route lengths impossible solely because of the step limit.
 ORCA additionally reserves each moving car's jerk-limited stopping distance
 plus one step of travel as clearance; the reported gaps use the body envelope.
 
+The matching corridor-planned scenarios are
+[`k_routes_warehouse2_car_like_multiagent.ipynb`](k_routes_warehouse2_car_like_multiagent.ipynb)
+and [`k_routes_warehouse2_car_like_traffic_jam.ipynb`](k_routes_warehouse2_car_like_traffic_jam.ipynb).
+They retain the original starts, goals, geometry, speed/acceleration limits, and
+ORCA profiles. The main tasks now use forward speed only, with jerk tightened
+from ±2 to ±1 map units/s³ and steering rate from ±2 to ±0.6 rad/s. Each requests `K_ROUTES = 5` native radius-aware keep-right paths, then
+independently samples one returned route per car with equal probability and
+keeps it throughout inference. `ROUTE_SEED` controls route choices separately
+from the MPPI `SEED`. If fewer routes are found, selection is uniform over that
+available set; an empty set stops planning with diagnostics.
+
+Build `corridor_plan` as described in [COMPLETE_ROUTES.md](COMPLETE_ROUTES.md)
+and build `mppi_all` before running these notebooks. The first run builds the
+polygon map's graph and caches its schema-v2 bundle under
+`results/k_routes/input/`; both notebooks reuse it. `REBUILD_GRAPH` regenerates
+the cache, and a map mismatch is rejected. The adapter in `k_routes.py` batches
+all queries into one native process and enables native route verification.
+Returned lane geometry is passed directly to MPPI. The notebooks show all
+alternatives and selected anchors, then save route choices, native query/result
+JSON, a run summary, raw trajectories, plots, and an animation to their own
+`results/k_routes_warehouse2_car_like_*/` folders. A final verification cell checks
+that every car finishes stopped within one map unit of its goal, without collisions.
+The three-car notebook also retains the reverse/forward
+maneuver using K-route anchors and the separate raw-control comparison.
+
+The corridor notebooks use a 6-second MPPI prediction horizon (61 states), 256
+samples, jerk/steering-rate sampling variances `[0.25, 0.0225]`, and temporal
+noise correlation `0.92`. The optional `control_noise_correlation` parameter
+creates stationary AR(1) perturbations; the control objective uses their matching
+temporal precision. ORCA still conditions the first jerk distribution, with its
+change propagated into the correlated future samples. Zero correlation retains
+independent sampling for existing callers.
+
+`anchor_guided_fraction=0.25` seeds a quarter of the batch with physically
+bounded tracking and offset candidates at several preview distances and speeds.
+Offsets support route acquisition and passing stationary or crossing traffic.
+Cars already moving along the same route are followed with strong lane tracking,
+avoiding unnecessary parallel overtaking. The selected K-route itself stays fixed. These are MPPI proposals, scored with the same physical effort,
+tracking, ORCA and collision costs as the stochastic rollouts. Gaussian noise
+costs apply to Gaussian proposals. The fraction defaults to zero for other callers.
+
+Lateral weight is `3000`. Optional `anchor_acquisition_scale=0.02` eases lateral
+and heading costs when the measured heading is misaligned, or before entering a
+neighbor's proximity range. This permits entry and avoidance maneuvers; strong
+lane tracking returns in clear space. All candidates share the same measured-state
+scale. Its default of `1.0` preserves fixed weighting. The proximity penalty now
+tends continuously to zero at its cutoff, removing an artificial cost step.
+
+The weighted control sequence is checked against both polygons and predicted
+neighbors. If averaging safe left/right modes would collide, MPPI keeps the
+best feasible candidate. A pre-existing overlap of extra clearance margins
+permits only monotone separation until that margin is recovered. Physical body
+overlap remains forbidden. This prevents simultaneous replanning from making
+every candidate invalid solely because the shared initial state is inside a
+clearance margin. No physical state or limit is bypassed.
+
+Jerk/steering-rate effort weights are `1000/2000` and successive-command weights
+are `4000/10000`, including the previous executed command. A forward-facing
+terminal weight of `80000` helps acquire routes from conflicting initial headings.
+Near the route end, heading guidance faces the endpoint and fades with distance
+to it; proposal offsets also taper to zero. Overshoots can therefore be recovered
+with a forward turn instead of being trapped by the old final tangent.
+Main-scenario speed is nonnegative through jerk-feasible acceleration headroom,
+without resetting or clipping the velocity state. The separate intentional
+reverse maneuver retains signed speed and its previous parameters.
+
+Raw diagnostics verify every bicycle pose increment, `Δv/dt = a_previous`, jerk,
+and steering rate. Summaries include active-car control RMS and command-change
+RMS, excluding parked tails. The model's state equations are identical in
+prediction and execution; no command, trajectory, or plotted trace is filtered.
+
+Prediction and simulation duration are configured separately. The run budget is
+`SIM_TIME_FACTOR * longest_selected_route / MAX_SPEED + SIM_TIME_MARGIN_SECONDS`:
+with defaults `2.0` and `60.0`, this gives 212 and 282 simulated seconds. Execution
+stops earlier once all cars are parked. `launch_mppi(..., park_at_goal=True)`
+captures a car only when its distance to the goal plus its jerk-limited stopping
+arc length fits inside the 1-unit goal disk. It continues physical braking to
+zero speed and acceleration, then holds the resulting pose. Parked cars remain
+neighbors for the other agents' ORCA. No positions or velocities are reset.
+
+The included seed-42 runs are verified by each notebook's final cell. The
+selected route coordinates and uniform choices remain unchanged. Completion is
+checked for these seeded scenarios; edited tasks or seeds are checked by the
+same assertions.
+
+| Seed-42 scenario | Cars stopped at finish | Simulated time | Active RMS route distance, before → after | Active RMS jerk, before → after |
+| --- | --- | --- | --- | --- |
+| Three-car crossing | 3/3 | 113.5 s | 0.706 → 0.410 | 1.343 → 0.365 |
+| Ten-car traffic jam | 10/10 | 151.5 s | 0.439 → 0.371 | 1.303 → 0.300 |
+
+Both runs have zero collisions and zero reverse travel within numerical
+precision, with ORCA enabled. Relative to the previous successful aggressive
+profile on the same selected routes, steering-rate RMS falls by about 84%, and
+successive jerk-command changes fall by 82–87%. The gentler crossing takes
+27.7 s longer; the jam takes 3.0 s longer. Full aggregate measurements are in
+`results/smooth_tracking_comparison/metrics.json`, with a representative car's
+raw tracking, acceleration, and jerk plotted in
+`results/smooth_tracking_comparison/comparison.png`.
+
+To keep the longer predictions practical, the native controller caches obstacle
+and anchor-segment bounding boxes and uses binary search for anchor interpolation.
+The broad phase retains the original swept-polygon checks and their tolerance.
+
 Regenerate plots and the report without rerunning the controller:
 
 ```bash

@@ -74,6 +74,16 @@ mppica::MPPIParams convertAlgParams(const py::dict &params_dict) {
 		params.steering_rate_change_cost_weight = params_dict["steering_rate_change_cost_weight"].cast<double>();
 	if (params_dict.contains("anchor_heading_weight"))
 		params.anchor_heading_weight = params_dict["anchor_heading_weight"].cast<double>();
+	if (params_dict.contains("anchor_forward_weight"))
+		params.anchor_forward_weight = params_dict["anchor_forward_weight"].cast<double>();
+	if (params_dict.contains("reverse_cost_weight"))
+		params.reverse_cost_weight = params_dict["reverse_cost_weight"].cast<double>();
+	if (params_dict.contains("control_noise_correlation"))
+		params.control_noise_correlation = params_dict["control_noise_correlation"].cast<double>();
+	if (params_dict.contains("anchor_acquisition_scale"))
+		params.anchor_acquisition_scale = params_dict["anchor_acquisition_scale"].cast<double>();
+	if (params_dict.contains("anchor_guided_fraction"))
+		params.anchor_guided_fraction = params_dict["anchor_guided_fraction"].cast<double>();
 	params.car_like_dyn = getValue(params_dict, "car_like_dyn", params.car_like_dyn);
 	if (params.car_like_dyn) {
 		params.dist_between_axles = getValue(params_dict, "dist_between_axles", params.dist_between_axles);

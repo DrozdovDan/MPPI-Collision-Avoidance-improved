@@ -10,6 +10,7 @@ namespace mppica {
 	void Controller::setAnchorPath(const std::vector<Point2> &path) {
 		if (path.empty()) {
 			anchor_path.clear();
+			anchor_segment_bounds.clear();
 			anchor_path_lengths.clear();
 			anchor_path_length = 0.0;
 			anchor_progress = 0.0;
@@ -33,6 +34,11 @@ namespace mppica {
 			throw std::invalid_argument("Anchor path must contain a nonzero-length segment");
 
 		anchor_path = path;
+		anchor_segment_bounds.clear();
+		for (size_t i = 0; i + 1 < path.size(); ++i)
+			anchor_segment_bounds.push_back({std::min(path[i][0], path[i+1][0]),
+				std::min(path[i][1], path[i+1][1]), std::max(path[i][0], path[i+1][0]),
+				std::max(path[i][1], path[i+1][1])});
 		anchor_path_lengths = std::move(cumulative);
 		anchor_path_length = anchor_path_lengths.back();
 		anchor_progress = 0.0;
@@ -44,7 +50,13 @@ namespace mppica {
 		PathProjection best{std::numeric_limits<double>::infinity(), min_progress, anchor_path.front()};
 		double best_distance_squared = std::numeric_limits<double>::infinity();
 
-		for (size_t i = 0; i + 1 < anchor_path.size(); ++i) {
+		auto first = std::lower_bound(anchor_path_lengths.begin(), anchor_path_lengths.end(), min_progress - 1e-12);
+		size_t start = first == anchor_path_lengths.begin() ? 0 : size_t(first - anchor_path_lengths.begin() - 1);
+		for (size_t i = start; i + 1 < anchor_path.size(); ++i) {
+			const auto &bounds = anchor_segment_bounds[i];
+			double bx = std::max({bounds[0] - point[0], 0.0, point[0] - bounds[2]});
+			double by = std::max({bounds[1] - point[1], 0.0, point[1] - bounds[3]});
+			if (bx * bx + by * by > best_distance_squared + 1e-12) continue;
 			double dx = anchor_path[i + 1][0] - anchor_path[i][0];
 			double dy = anchor_path[i + 1][1] - anchor_path[i][1];
 			double segment_length = anchor_path_lengths[i + 1] - anchor_path_lengths[i];
@@ -71,7 +83,9 @@ namespace mppica {
 
 	Point2 Controller::anchorPointAt(double progress) const {
 		progress = std::clamp(progress, 0.0, anchor_path_length);
-		for (size_t i = 0; i + 1 < anchor_path.size(); ++i) {
+		auto end = std::lower_bound(anchor_path_lengths.begin(), anchor_path_lengths.end(), progress);
+		size_t start = end == anchor_path_lengths.begin() ? 0 : size_t(end - anchor_path_lengths.begin() - 1);
+		for (size_t i = start; i + 1 < anchor_path.size(); ++i) {
 			double segment_length = anchor_path_lengths[i + 1] - anchor_path_lengths[i];
 			if (segment_length <= 1e-12 || progress > anchor_path_lengths[i + 1])
 				continue;
@@ -96,15 +110,32 @@ namespace mppica {
             if (std::abs(area) < 1e-12) throw std::invalid_argument("Obstacle must have nonzero area");
         }
         obstacles = polygons;
+		obstacle_bounds.clear();
+		for (const auto &polygon : polygons) {
+			std::array<double, 4> bounds{polygon[0][0], polygon[0][1], polygon[0][0], polygon[0][1]};
+			for (const auto &p : polygon) {
+				bounds[0] = std::min(bounds[0], p[0]); bounds[1] = std::min(bounds[1], p[1]);
+				bounds[2] = std::max(bounds[2], p[0]); bounds[3] = std::max(bounds[3], p[1]);
+			}
+			obstacle_bounds.push_back(bounds);
+		}
     }
 
     bool Controller::obstacleCollision(const Point2 &a, const Point2 &b) const {
-        for (const auto &polygon : obstacles)
-            if (polygonCollision(a, b, polygon, agent_size + rad_eps)) return true;
+		// Match polygonCollision's squared-distance tolerance in this broad phase.
+		const double radius = agent_size + rad_eps;
+		const double padding = std::sqrt(radius * radius + 1e-12);
+		const double xmin = std::min(a[0], b[0]) - padding, xmax = std::max(a[0], b[0]) + padding;
+		const double ymin = std::min(a[1], b[1]) - padding, ymax = std::max(a[1], b[1]) + padding;
+        for (size_t i = 0; i < obstacles.size(); ++i) {
+			const auto &bounds = obstacle_bounds[i];
+			if (xmax < bounds[0] || xmin > bounds[2] || ymax < bounds[1] || ymin > bounds[3]) continue;
+            if (polygonCollision(a, b, obstacles[i], radius)) return true;
+		}
         return false;
     }
 
-    bool Controller::controlSequenceHitsObstacle() {
+    bool Controller::controlSequenceCollides(const xt::xtensor<double, 1> &neighbors_sizes) {
         xt::xtensor<double, 1> state = xt::view(generated_trajectories, 0, 0);
         double previous_speed = last_linear_control;
         for (size_t t = 0; t < time_steps-1; ++t) {
@@ -118,6 +149,26 @@ namespace mppica {
             if (use_car_like_dyn) next = state + car_like_dyn.shift(state, dt) + car_like_dyn.dynamic(state, u, dt);
             else next = state + dyn_model.shift(state, dt) + dyn_model.dynamic(state, u, dt);
             if (obstacleCollision({state[0], state[1]}, {next[0], next[1]})) return true;
+			if (ma_cost_en) {
+				for (size_t i = 0; i < neighbors_num; ++i) {
+					double rx = state[0] - neighbors_traj(i, t, 0);
+					double ry = state[1] - neighbors_traj(i, t, 1);
+					double dx = next[0] - neighbors_traj(i, t + 1, 0) - rx;
+					double dy = next[1] - neighbors_traj(i, t + 1, 1) - ry;
+					double squared = dx * dx + dy * dy;
+					double fraction = squared > 0.0 ? std::clamp(-(rx * dx + ry * dy) / squared, 0.0, 1.0) : 0.0;
+					double radius = agent_size + neighbors_sizes[i] + 2 * rad_eps;
+					double initial_distance = std::hypot(
+						generated_trajectories(0, 0, 0) - neighbors_traj(i, 0, 0),
+						generated_trajectories(0, 0, 1) - neighbors_traj(i, 0, 1));
+					if (initial_distance < radius) {
+						// Allow separation out of an existing clearance overlap,
+						// while always preserving the physical body separation.
+						radius = std::max(agent_size + neighbors_sizes[i], std::min(radius, std::hypot(rx, ry)));
+					}
+					if (std::hypot(rx + fraction * dx, ry + fraction * dy) < radius - 1e-9) return true;
+				}
+			}
             state = next;
         }
         return false;
@@ -151,6 +202,43 @@ namespace mppica {
 			double min_progress = anchor_progress_initialized ? anchor_progress : 0.0;
 			anchor_progress = projectToAnchorPath({curr_state[0], curr_state[1]}, min_progress).progress;
 			anchor_progress_initialized = true;
+			anchor_tracking_scale = 1.0;
+			if (use_car_like_dyn && anchor_acquisition_scale < 1.0) {
+				auto start = anchorPointAt(anchor_progress);
+				auto ahead = anchorPointAt(anchor_progress + 1.0);
+				double dx = ahead[0] - start[0], dy = ahead[1] - start[1];
+				if (std::hypot(dx, dy) < 1e-9) {
+					auto behind = anchorPointAt(anchor_progress - 1.0);
+					dx = start[0] - behind[0]; dy = start[1] - behind[1];
+				}
+				if (anchor_path_length - anchor_progress < 1.0) {
+					dx = anchor_path.back()[0] - curr_state[0];
+					dy = anchor_path.back()[1] - curr_state[1];
+				}
+				double alignment = std::max(0.0, std::cos(curr_state[2] - std::atan2(dy, dx)));
+				// Use the measured pose, shared by all candidates: rollouts cannot
+				// lower their lateral cost by deliberately turning away from the path.
+				anchor_tracking_scale = anchor_acquisition_scale +
+					(1.0 - anchor_acquisition_scale) * alignment * alignment;
+				if (ma_cost_en && ma_dist_threshold > 0.0) {
+					const double length = std::hypot(dx, dy);
+					for (size_t i = 0; i < neighbors_states.shape(0); ++i) {
+						double nx = neighbors_states(i, 0) - curr_state[0];
+						double ny = neighbors_states(i, 1) - curr_state[1];
+						if (nx * dx + ny * dy < -agent_size * length) continue;
+						if (!anchorNeighborRequiresAvoidance(
+							{neighbors_states(i, 0), neighbors_states(i, 1)},
+							{neighbors_states(i, 2), neighbors_states(i, 3)}, neighbors_sizes[i])) continue;
+						double gap = std::hypot(nx, ny) - agent_size - neighbors_sizes[i] - 2 * rad_eps;
+						double clearance = std::clamp((gap - ma_dist_threshold) / ma_dist_threshold, 0.0, 1.0);
+						// A local avoidance maneuver needs room to leave the lane.
+						// Keep all ORCA, proximity and collision costs unchanged.
+						double avoidance_scale = anchor_acquisition_scale +
+							(1.0 - anchor_acquisition_scale) * clearance * clearance;
+						anchor_tracking_scale = std::min(anchor_tracking_scale, avoidance_scale);
+					}
+				}
+			}
 		}
 		do {
 			resetTrajectories(curr_state);
@@ -174,7 +262,7 @@ namespace mppica {
 				}
 				computeTerminalCosts(batch, goal_state);
 			}
-			updateControlSequence();
+			updateControlSequence(neighbors_sizes);
 			safe_control_not_found = checkCollisionFree();
 		} while (safe_control_not_found and not computationShouldStop());
 
@@ -203,6 +291,21 @@ namespace mppica {
 		resetNeighborsTrajectories();
 	}
 
+	xt::xtensor<double, 1> Controller::brakingControl(const xt::xtensor<double, 1> &state) const {
+		if (!use_car_like_dyn || state.size() != CAR_STATE_DIM || !xt::all(xt::isfinite(state)))
+			throw std::invalid_argument("Braking requires a finite six-state car state");
+		if (state[3] < car_like_dyn.v_min - 1e-9 || state[3] > car_like_dyn.v_max + 1e-9 ||
+			state[4] < car_like_dyn.steering_min - 1e-9 || state[4] > car_like_dyn.steering_max + 1e-9 ||
+			state[5] < car_like_dyn.a_min - 1e-9 || state[5] > car_like_dyn.a_max + 1e-9)
+			throw std::invalid_argument("Measured car state is outside the physical braking limits");
+		return {car_like_dyn.brakingJerk(state, dt), 0.0};
+	}
+
+	double Controller::stoppingDistance(const xt::xtensor<double, 1> &state) const {
+		brakingControl(state); // Validate the same physical state and jerk headroom.
+		return car_like_dyn.stoppingDistance(state, dt);
+	}
+
 	void Controller::resetTrajectories(const xt::xtensor<double, 1> &initial_state) {
         size_t state_dim = use_car_like_dyn ? CAR_STATE_DIM : DD_STATE_DIM;
         generated_trajectories = xt::zeros<double>({batch_size, time_steps, state_dim});
@@ -223,12 +326,95 @@ namespace mppica {
         sampled_controls = xt::zeros<double>({batch_size, time_steps - 1, DD_CONTROL_DIM});
 	}
 
+	bool Controller::anchorNeighborRequiresAvoidance(const Point2 &position, const Point2 &velocity, double radius) const {
+		auto projection = projectToAnchorPath(position, anchor_progress);
+		if (projection.distance > agent_size + radius + 2 * rad_eps) return false;
+		auto ahead = anchorPointAt(projection.progress + 1.0);
+		double tx = ahead[0] - projection.point[0], ty = ahead[1] - projection.point[1];
+		if (std::hypot(tx, ty) < 1e-9) {
+			auto behind = anchorPointAt(projection.progress - 1.0);
+			tx = projection.point[0] - behind[0]; ty = projection.point[1] - behind[1];
+		}
+		double speed = std::hypot(velocity[0], velocity[1]);
+		// Follow traffic already travelling along the same route instead of
+		// rewarding an unnecessary parallel overtaking lane.
+		return !(speed > 0.2 && velocity[0] * tx + velocity[1] * ty > 0.7 * speed * std::hypot(tx, ty));
+	}
+
 	void Controller::generateSamples() {
 		// TODO: Generalize to common dynamics
 		xt::xtensor<double, 2>::shape_type control_row_shape = {batch_size, time_steps - 1};
         for (size_t i = 0; i < DD_CONTROL_DIM; ++i) {
 			xt::view(samples, xt::all(), xt::all(), i) = xt::random::randn<double>(control_row_shape, mean[i],
 																				   sample_std[{i, i}]);
+			if (control_noise_correlation > 0.0) {
+				const double rho = control_noise_correlation;
+				const double innovation_scale = std::sqrt(1.0 - rho * rho);
+				for (size_t b = 0; b < batch_size; ++b)
+					for (size_t t = 1; t < time_steps - 1; ++t)
+						samples(b, t, i) = mean[i] + rho * (samples(b, t - 1, i) - mean[i]) +
+							innovation_scale * (samples(b, t, i) - mean[i]);
+			}
+		}
+		if (!use_car_like_dyn || anchor_path.empty() || anchor_guided_fraction <= 0.0) return;
+		const size_t guided = static_cast<size_t>(anchor_guided_fraction * batch_size);
+		xt::xtensor<double, 1> initial = xt::view(generated_trajectories, 0, 0);
+		auto start = anchorPointAt(anchor_progress);
+		auto ahead = anchorPointAt(anchor_progress + 1.0);
+		double tx = ahead[0] - start[0], ty = ahead[1] - start[1];
+		double tangent_length = std::hypot(tx, ty);
+		bool maneuver = tx * std::cos(initial[2]) + ty * std::sin(initial[2]) < 0.5 * tangent_length;
+		if (ma_cost_en) {
+			for (size_t i = 0; i < neighbors_num; ++i) {
+				double nx = neighbors_traj(i, 0, 0) - initial[0];
+				double ny = neighbors_traj(i, 0, 1) - initial[1];
+				if (nx * tx + ny * ty >= -agent_size * tangent_length &&
+					std::hypot(nx, ny) < 2 * ma_dist_threshold &&
+					anchorNeighborRequiresAvoidance({neighbors_traj(i, 0, 0), neighbors_traj(i, 0, 1)},
+						{(neighbors_traj(i, 1, 0) - neighbors_traj(i, 0, 0)) / dt,
+						 (neighbors_traj(i, 1, 1) - neighbors_traj(i, 0, 1)) / dt}, agent_size)) maneuver = true;
+			}
+		}
+		for (size_t b = 0; b < guided; ++b) {
+			xt::xtensor<double, 1> state = initial;
+			// Include either side, several preview distances and cruise speeds.
+			// Offsets are candidate controls, never changes to the selected route.
+			const double offsets[] = {0.0, -0.8, 0.8, -1.0, 1.0};
+			double offset = maneuver ? offsets[b % 5] * (2 * agent_size + 2 * rad_eps + 0.5) : 0.0;
+			double preview = 1.5 + static_cast<double>((b / 5) % 4);
+			double cruise = car_like_dyn.v_max * (1.0 - 0.25 * static_cast<double>((b / 20) % 3));
+			for (size_t t = 0; t < time_steps - 1; ++t) {
+				auto projection = projectToAnchorPath({state[0], state[1]}, anchor_progress);
+				auto target = anchorPointAt(projection.progress + preview);
+				auto before = anchorPointAt(std::max(0.0, projection.progress + preview - 0.5));
+				double dx = target[0] - before[0], dy = target[1] - before[1];
+				double length = std::hypot(dx, dy);
+				double endpoint_scale = std::clamp((anchor_path_length - projection.progress) / preview, 0.0, 1.0);
+				if (length > 1e-9) {
+					target[0] -= offset * endpoint_scale * dy / length;
+					target[1] += offset * endpoint_scale * dx / length;
+				}
+				dx = target[0] - state[0]; dy = target[1] - state[1];
+				double lateral = -dx * std::sin(state[2]) + dy * std::cos(state[2]);
+				double longitudinal = dx * std::cos(state[2]) + dy * std::sin(state[2]);
+				double curvature = 2 * lateral / std::max(0.01, dx * dx + dy * dy);
+				double steering = std::atan(car_like_dyn.dist_between_axles * curvature);
+				if (longitudinal < 0.0) {
+					double side = std::abs(lateral) > 1e-3 ? lateral : (b % 2 ? -1.0 : 1.0);
+					steering = side > 0.0 ? car_like_dyn.steering_max : car_like_dyn.steering_min;
+				}
+				curvature = std::tan(steering) / car_like_dyn.dist_between_axles;
+				auto end = anchor_path.back();
+				double remaining = std::hypot(state[0] - end[0], state[1] - end[1]);
+				double speed = std::min({cruise, std::sqrt(1.0 / std::max(0.01, std::abs(curvature))),
+					std::sqrt(2.0 * car_like_dyn.a_max * remaining)});
+				double acceleration = std::clamp((speed - state[3]) / 1.5, car_like_dyn.a_min, car_like_dyn.a_max);
+				auto control = car_like_dyn.limitControl(state,
+					{(acceleration - state[5]) / 0.7, (steering - state[4]) / 0.7}, dt);
+				for (size_t i = 0; i < DD_CONTROL_DIM; ++i)
+					samples(b, t, i) = control[i] - control_sequence(t, i);
+				state += car_like_dyn.dynamic(state, control, dt);
+			}
 		}
 	}
 
@@ -304,8 +490,8 @@ namespace mppica {
             excluded_traj[batch] = true;
             return;
         }
-		commonStateCost(batch, time_step, initial_state, goal_state);
-		if (!anchor_path.empty()) anchorPathCost(batch, time_step);
+		if (anchor_path.empty()) commonStateCost(batch, time_step, initial_state, goal_state);
+		else anchorPathCost(batch, time_step);
 		if (ma_cost_en) multiAgentCost(batch, time_step, goal_state, neighbors_sizes);
 		controlCost(batch, time_step);
 		computeVelocityCost(batch, time_step, goal_state);
@@ -368,14 +554,23 @@ namespace mppica {
 			}
 			traj_costs[batch] += control_smoothness_weight * delta_angular * delta_angular;
 		}
-		traj_costs[batch] += lambda/2 * sampled_controls[{batch, time_step, static_cast<size_t>(0)}] *
-			sampled_controls[{batch, time_step, static_cast<size_t>(0)}] / (sample_std[{0, 0}] * sample_std[{0, 0}]);
-		traj_costs[batch] += lambda/2 * sampled_controls[{batch, time_step, static_cast<size_t>(1)}] *
-			sampled_controls[{batch, time_step, static_cast<size_t>(1)}] / (sample_std[{1, 1}] * sample_std[{1, 1}]);
-		traj_costs[batch] += lambda * sampled_controls[{batch, time_step, static_cast<size_t>(0)}] *
-			samples[{batch, time_step, static_cast<size_t>(0)}] / (sample_std[{0, 0}] * sample_std[{0, 0}]);
-		traj_costs[batch] += lambda * sampled_controls[{batch, time_step, static_cast<size_t>(1)}] *
-			samples[{batch, time_step, static_cast<size_t>(1)}] / (sample_std[{1, 1}] * sample_std[{1, 1}]);
+		// Guided candidates already pay the explicit bounded effort/change
+		// costs; they are not Gaussian draws and have no Gaussian noise cost.
+		if (use_car_like_dyn && !anchor_path.empty() &&
+			batch < static_cast<size_t>(anchor_guided_fraction * batch_size)) return;
+		// Whiten with the same temporal covariance used by generateSamples.
+		// For rho=0 this is exactly the independent-noise objective.
+		for (size_t i = 0; i < DD_CONTROL_DIM; ++i) {
+			double u = sampled_controls(batch, time_step, i);
+			double noise = samples(batch, time_step, i);
+			double variance = sample_std(i, i) * sample_std(i, i);
+			if (time_step > 0 && control_noise_correlation > 0.0) {
+				u -= control_noise_correlation * sampled_controls(batch, time_step - 1, i);
+				noise -= control_noise_correlation * samples(batch, time_step - 1, i);
+				variance *= 1.0 - control_noise_correlation * control_noise_correlation;
+			}
+			traj_costs[batch] += lambda * (0.5 * u * u + u * noise) / variance;
+		}
 	}
 
 
@@ -422,7 +617,15 @@ namespace mppica {
 		Point2 point{generated_trajectories[{batch, time_step + 1, static_cast<size_t>(0)}],
 					 generated_trajectories[{batch, time_step + 1, static_cast<size_t>(1)}]};
 		auto projection = projectToAnchorPath(point, anchor_progress);
-		traj_costs[batch] += anchor_path_weight * projection.distance;
+		traj_costs[batch] += anchor_path_weight * anchor_tracking_scale * projection.distance;
+		// The route may intentionally lead away from the final goal. Reward
+		// remaining arclength instead of pulling through walls toward that goal.
+		traj_costs[batch] += common_run_cost_weight *
+			(anchor_path_length - projection.progress + anchor_tracking_scale * projection.distance);
+		if (use_car_like_dyn) {
+			double reverse_speed = std::max(0.0, -generated_trajectories(batch, time_step + 1, 3));
+			traj_costs[batch] += reverse_cost_weight * reverse_speed * reverse_speed;
+		}
 		if (anchor_heading_weight > 0.0) {
 			// Face one unit ahead along the polyline. At its end, use the
 			// final segment so the direction remains defined.
@@ -434,12 +637,25 @@ namespace mppica {
 				dx = projection.point[0] - behind[0];
 				dy = projection.point[1] - behind[1];
 			}
+			double endpoint_scale = 1.0;
+			if (anchor_path_length - projection.progress < 1.0) {
+				dx = anchor_path.back()[0] - point[0];
+				dy = anchor_path.back()[1] - point[1];
+				endpoint_scale = std::min(1.0, std::hypot(dx, dy));
+			}
 			double heading = generated_trajectories(batch, time_step + 1, 2);
 			double speed = use_car_like_dyn ? generated_trajectories(batch, time_step + 1, 3)
 				: sampled_controls(batch, time_step, 0);
 			if (speed < 0.0)
 				heading += std::acos(-1.0); // Reverse motion points opposite the car's nose.
-			traj_costs[batch] += anchor_heading_weight * (1.0 - std::cos(heading - std::atan2(dy, dx)));
+			// A tiny sign change at rest must not jump the heading cost by 2*w.
+			// Direction becomes meaningful as the car gains actual travel speed.
+			double heading_weight = anchor_heading_weight * anchor_tracking_scale * endpoint_scale;
+			if (use_car_like_dyn) {
+				double speed_scale = std::max(0.1, 0.1 * std::max(std::abs(car_like_dyn.v_min), car_like_dyn.v_max));
+				heading_weight *= std::min(1.0, std::abs(speed) / speed_scale);
+			}
+			traj_costs[batch] += heading_weight * (1.0 - std::cos(heading - std::atan2(dy, dx)));
 		}
 	}
 
@@ -458,6 +674,25 @@ namespace mppica {
 			double dx = last_pos[0] - target[0];
 			double dy = last_pos[1] - target[1];
 			traj_costs[batch] += common_terminal_cost_weight * std::hypot(dx, dy);
+			if (use_car_like_dyn && anchor_forward_weight > 0.0) {
+				auto projection = projectToAnchorPath({last_pos[0], last_pos[1]}, anchor_progress);
+				auto ahead = anchorPointAt(projection.progress + 1.0);
+				double tx = ahead[0] - projection.point[0], ty = ahead[1] - projection.point[1];
+				if (std::hypot(tx, ty) < 1e-9) {
+					auto behind = anchorPointAt(projection.progress - 1.0);
+					tx = projection.point[0] - behind[0]; ty = projection.point[1] - behind[1];
+				}
+				double endpoint_scale = 1.0;
+				if (anchor_path_length - projection.progress < 1.0) {
+					tx = anchor_path.back()[0] - last_pos[0];
+					ty = anchor_path.back()[1] - last_pos[1];
+					endpoint_scale = std::min(1.0, std::hypot(tx, ty));
+				}
+				// Value a forward-facing terminal pose, even if a short recovery
+				// reverse currently makes more positional progress within the horizon.
+				double heading = generated_trajectories(batch, time_steps - 1, 2);
+				traj_costs[batch] += anchor_forward_weight * endpoint_scale * (1.0 - std::cos(heading - std::atan2(ty, tx)));
+			}
 			return;
 		}
 		auto goal_pos = xt::view(goal_state, xt::range(0, 2));
@@ -493,8 +728,8 @@ namespace mppica {
 		// TODO
 	}
 
-	void Controller::updateControlSequence() {
-        if (!obstacles.empty()) {
+	void Controller::updateControlSequence(const xt::xtensor<double, 1> &neighbors_sizes) {
+        if (!obstacles.empty() || (ma_cost_en && neighbors_num > 0)) {
             double best_cost = std::numeric_limits<double>::infinity();
             size_t best = batch_size;
             for (size_t b = 0; b < batch_size; ++b)
@@ -509,8 +744,9 @@ namespace mppica {
             weights /= total;
             control_sequence = xt::sum(xt::view(weights, xt::all(), xt::newaxis(), xt::newaxis()) * sampled_controls, {0},
                                       xt::evaluation_strategy::immediate);
-            // Safe samples can average to a path through an obstacle.
-            if (controlSequenceHitsObstacle()) control_sequence = xt::view(sampled_controls, best);
+            // Left/right passing modes can average into a collision. Keep the
+            // best feasible mode when the mean hits a polygon or a neighbor.
+            if (controlSequenceCollides(neighbors_sizes)) control_sequence = xt::view(sampled_controls, best);
             return;
         }
 
@@ -598,6 +834,21 @@ namespace mppica {
 			throw std::invalid_argument("Steering rate change cost weight must be finite and nonnegative");
 		if (!std::isfinite(alg_params.anchor_heading_weight) || alg_params.anchor_heading_weight < 0.0)
 			throw std::invalid_argument("Anchor heading weight must be finite and nonnegative");
+		if (!std::isfinite(alg_params.anchor_forward_weight) || alg_params.anchor_forward_weight < 0.0 ||
+			!std::isfinite(alg_params.reverse_cost_weight) || alg_params.reverse_cost_weight < 0.0)
+			throw std::invalid_argument("Forward preference and reverse cost must be finite and nonnegative");
+		if (!std::isfinite(alg_params.control_noise_correlation) ||
+			alg_params.control_noise_correlation < 0.0 || alg_params.control_noise_correlation >= 1.0)
+			throw std::invalid_argument("Control noise correlation must be finite and in [0, 1)");
+		control_noise_correlation = alg_params.control_noise_correlation;
+		if (!std::isfinite(alg_params.anchor_acquisition_scale) ||
+			alg_params.anchor_acquisition_scale < 0.0 || alg_params.anchor_acquisition_scale > 1.0)
+			throw std::invalid_argument("Anchor acquisition scale must be finite and in [0, 1]");
+		anchor_acquisition_scale = alg_params.anchor_acquisition_scale;
+		if (!std::isfinite(alg_params.anchor_guided_fraction) ||
+			alg_params.anchor_guided_fraction < 0.0 || alg_params.anchor_guided_fraction > 1.0)
+			throw std::invalid_argument("Anchor guided fraction must be finite and in [0, 1]");
+		anchor_guided_fraction = alg_params.anchor_guided_fraction;
 		time_steps = alg_params.time_steps;
 		batch_size = alg_params.batch_size;
 		mean = alg_params.mean;
@@ -627,6 +878,8 @@ namespace mppica {
 		velocity_cost_close_to_goal_dist = alg_params.velocity_cost_close_to_goal_dist;
 		anchor_path_weight = alg_params.anchor_path_weight;
 		anchor_heading_weight = alg_params.anchor_heading_weight;
+		anchor_forward_weight = alg_params.anchor_forward_weight;
+		reverse_cost_weight = alg_params.reverse_cost_weight;
 		control_smoothness_weight = alg_params.control_smoothness_weight;
 		jerk_cost_weight = alg_params.jerk_cost_weight;
 		steering_rate_cost_weight = alg_params.steering_rate_cost_weight;
@@ -713,7 +966,21 @@ namespace mppica {
 			if (dist < min_dist)
 				min_dist = dist;
 			auto neighbor_size = neighbors_sizes[agent];
-            if (dist < ( (neighbor_size + agent_size) + 2 * rad_eps)) {
+            double body_radius = neighbor_size + agent_size;
+            double clearance_radius = body_radius + 2 * rad_eps;
+            double initial_distance = std::hypot(
+                neighbors_traj(agent, 0, 0) - generated_trajectories(batch, 0, 0),
+                neighbors_traj(agent, 0, 1) - generated_trajectories(batch, 0, 1));
+            double previous_distance = time_step == 0 ? initial_distance : std::hypot(
+                neighbors_traj(agent, time_step - 1, 0) - generated_trajectories(batch, time_step - 1, 0),
+                neighbors_traj(agent, time_step - 1, 1) - generated_trajectories(batch, time_step - 1, 1));
+            // Simultaneous replanning can leave a tiny overlap of clearance
+            // margins. Rejecting the shared initial state freezes every sample,
+            // including controls moving away. Only monotone separation may
+            // recover this margin; overlapping physical bodies remain invalid.
+            bool margin_recovery = initial_distance < clearance_radius &&
+                initial_distance >= body_radius && dist >= previous_distance - 1e-9;
+            if (dist < body_radius || (dist < clearance_radius && !margin_recovery)) {
             	if (ma_exclude_collision_traj)
             		excluded_traj[batch] = true;
 				traj_costs[batch] = ma_collision_value;
@@ -722,7 +989,10 @@ namespace mppica {
 		}
 		if (min_dist > ma_dist_threshold)
 			return;
-        traj_costs[batch] += ma_dist_weight * (1 / min_dist);
+        // Match the zero cost outside the proximity range continuously.
+        // A jump of weight/threshold made crossing that boundary expensive
+        // even when there was ample room to pass a stationary neighbor.
+        traj_costs[batch] += ma_dist_weight * (1 / min_dist - 1 / ma_dist_threshold);
 	}
 
 	void Controller::computeLinearConstraintsForState(const xt::xtensor<double, 1> &state,
@@ -791,7 +1061,21 @@ namespace mppica {
 		orca_complete = feasible;
 
 		xt::xtensor<double, 1>::shape_type control_row_shape = {batch_size};
+		xt::xtensor<double, 1> previous = xt::view(samples, xt::all(), 0, 0);
 		xt::view(samples, xt::all(), 0, 0) = xt::random::randn<double>(control_row_shape, new_mean, new_std);
+		// Preserve the conditional future innovations when ORCA changes the
+		// first jerk distribution. Every candidate still uses bounded controls.
+		if (control_noise_correlation > 0.0) {
+			size_t begin = use_car_like_dyn && !anchor_path.empty() ?
+				static_cast<size_t>(anchor_guided_fraction * batch_size) : 0;
+			for (size_t b = begin; b < batch_size; ++b) {
+				double change = samples(b, 0, 0) - previous[b];
+				for (size_t t = 1; t < time_steps - 1; ++t) {
+					change *= control_noise_correlation;
+					samples(b, t, 0) += change;
+				}
+			}
+		}
 	}
 
 	std::tuple<bool, double, double>
