@@ -1,0 +1,151 @@
+{
+  "planner": "k_routes",
+  "seed": 42,
+  "robots": [
+    {
+      "id": "r00",
+      "available": 1,
+      "selected_index": 0,
+      "selection_probability": 1.0
+    },
+    {
+      "id": "r01",
+      "available": 2,
+      "selected_index": 0,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r02",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r03",
+      "available": 1,
+      "selected_index": 0,
+      "selection_probability": 1.0
+    },
+    {
+      "id": "r04",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r05",
+      "available": 2,
+      "selected_index": 0,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r06",
+      "available": 1,
+      "selected_index": 0,
+      "selection_probability": 1.0
+    },
+    {
+      "id": "r07",
+      "available": 1,
+      "selected_index": 0,
+      "selection_probability": 1.0
+    },
+    {
+      "id": "r08",
+      "available": 2,
+      "selected_index": 0,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r09",
+      "available": 3,
+      "selected_index": 2,
+      "selection_probability": 0.3333333333333333
+    },
+    {
+      "id": "r10",
+      "available": 2,
+      "selected_index": 0,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r11",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r12",
+      "available": 3,
+      "selected_index": 0,
+      "selection_probability": 0.3333333333333333
+    },
+    {
+      "id": "r13",
+      "available": 2,
+      "selected_index": 0,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r14",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r15",
+      "available": 3,
+      "selected_index": 2,
+      "selection_probability": 0.3333333333333333
+    },
+    {
+      "id": "r16",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r17",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r18",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r19",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r20",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r21",
+      "available": 1,
+      "selected_index": 0,
+      "selection_probability": 1.0
+    },
+    {
+      "id": "r22",
+      "available": 2,
+      "selected_index": 0,
+      "selection_probability": 0.5
+    },
+    {
+      "id": "r23",
+      "available": 2,
+      "selected_index": 1,
+      "selection_probability": 0.5
+    }
+  ],
+  "native_map_load_seconds": 0.219691842
+}

@@ -1,0 +1,2412 @@
+{
+  "run_id": "warehouse2_04__rrt__p42__c42__pilot",
+  "scenario_id": "warehouse2_04",
+  "source_map": "warehouse2",
+  "category": "opposing_bottleneck",
+  "intended_difficulty": "challenging",
+  "robot_count": 8,
+  "planner": "rrt",
+  "scenario_sha256": "1f3e38cf4608a2637d7790d780a0a92fd0b92195d8d26739e8ff8d2e14b72615",
+  "generation_seed": 20665018,
+  "planner_selection_seed": 42,
+  "controller_seed": 42,
+  "profile_name": "pilot",
+  "controller_profiles": [
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    }
+  ],
+  "controller_profile_sha256": "0339f69cf5720f22e4d65049e5855c30f3267bc9d768659f64f9f2fb8a9abab5",
+  "dt": 0.1,
+  "max_steps": 300,
+  "wall_time_limit_seconds": 120.0,
+  "provenance": {
+    "git_revision": "a60ed75dbba33ada97a67ff4b145db0bb0156d82",
+    "controller_sha256": "5c522755694a7830628e21ced83566a9bda9d8c69433370b7aaead477877e817",
+    "numpy_version": "1.26.4",
+    "simulator_sha256": "5bccb8bc52795963cacea71799dc343e2b623b15ffb07c34c26ce6910e90fffd"
+  },
+  "completion_fraction": 0.0,
+  "all_robots_success": false,
+  "makespan_seconds": null,
+  "individual_travel_times": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "sum_travel_times": null,
+  "completed_travel_time_sum": 0,
+  "restricted_total_time": 240.0,
+  "censoring": "Unfinished arrival times and failed makespans are null; restricted time charges unfinished robots the observation horizon.",
+  "per_robot_path_lengths": [
+    15.83384485008527,
+    6.419998749285086,
+    28.937155577051186,
+    30.7003711408168,
+    3.1077490341105363,
+    7.220290327370307,
+    0.23903579195114436,
+    19.247951096145393
+  ],
+  "final_goal_errors": [
+    15.712609905440395,
+    2.1178316441640375,
+    0.5705758315965679,
+    5.254144912855913,
+    4.578583949967936,
+    2.8802633411514997,
+    5.071062989765594,
+    13.761769232249522
+  ],
+  "total_stopped_seconds": 65.4,
+  "no_progress_event_count": 8,
+  "deadlock_events": [],
+  "deadlock_count": 0,
+  "event_diagnostics": {
+    "config": {
+      "stationary_speed": 0.03,
+      "slow_speed": 0.15,
+      "progress_distance": 0.1,
+      "congestion_seconds": 2.0,
+      "no_progress_seconds": 4.0,
+      "deadlock_seconds": 8.0,
+      "proximity_margin": 0.35,
+      "persistent_fraction": 0.85,
+      "forward_cone_cosine": 0.25,
+      "minimum_group": 2
+    },
+    "per_robot": [
+      {
+        "id": "r00",
+        "temporary_slowing": [
+          {
+            "start_seconds": 2.8000000000000003,
+            "end_seconds": 2.9000000000000004,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 3.0,
+            "end_seconds": 3.2,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 3.3000000000000003,
+            "end_seconds": 3.4000000000000004,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 18.7,
+            "end_seconds": 18.8,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 18.900000000000002,
+            "end_seconds": 19.200000000000003,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 19.3,
+            "end_seconds": 20.0,
+            "duration_seconds": 0.7000000000000001
+          },
+          {
+            "start_seconds": 20.1,
+            "end_seconds": 20.3,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 20.400000000000002,
+            "end_seconds": 21.6,
+            "duration_seconds": 1.2000000000000002
+          },
+          {
+            "start_seconds": 21.700000000000003,
+            "end_seconds": 22.1,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 22.200000000000003,
+            "end_seconds": 22.3,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 22.5,
+            "end_seconds": 22.6,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 22.700000000000003,
+            "end_seconds": 23.3,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 23.400000000000002,
+            "end_seconds": 24.1,
+            "duration_seconds": 0.7000000000000001
+          },
+          {
+            "start_seconds": 24.200000000000003,
+            "end_seconds": 24.400000000000002,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 24.700000000000003,
+            "end_seconds": 26.6,
+            "duration_seconds": 1.9000000000000001
+          },
+          {
+            "start_seconds": 26.900000000000002,
+            "end_seconds": 27.1,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 27.200000000000003,
+            "end_seconds": 27.900000000000002,
+            "duration_seconds": 0.7000000000000001
+          },
+          {
+            "start_seconds": 28.0,
+            "end_seconds": 28.6,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 28.700000000000003,
+            "end_seconds": 29.200000000000003,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 29.3,
+            "end_seconds": 29.700000000000003,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 29.8,
+            "end_seconds": 30.1,
+            "duration_seconds": 0.30000000000000004
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 25.1,
+            "end_seconds": 26.6,
+            "duration_seconds": 1.5
+          },
+          {
+            "start_seconds": 28.3,
+            "end_seconds": 28.6,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 28.700000000000003,
+            "end_seconds": 29.200000000000003,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 29.3,
+            "end_seconds": 29.700000000000003,
+            "duration_seconds": 0.4
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 23.1,
+            "end_seconds": 30.1,
+            "duration_seconds": 7.0
+          }
+        ],
+        "total_stopped_seconds": 4.800000000000001
+      },
+      {
+        "id": "r01",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 0.9,
+            "duration_seconds": 0.9
+          },
+          {
+            "start_seconds": 1.0,
+            "end_seconds": 1.3,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 1.5,
+            "end_seconds": 1.6,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 8.4,
+            "end_seconds": 9.3,
+            "duration_seconds": 0.9
+          },
+          {
+            "start_seconds": 10.0,
+            "end_seconds": 10.4,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 10.5,
+            "end_seconds": 10.700000000000001,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 10.9,
+            "end_seconds": 11.0,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 11.200000000000001,
+            "end_seconds": 11.4,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 12.0,
+            "end_seconds": 12.100000000000001,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 12.4,
+            "end_seconds": 13.3,
+            "duration_seconds": 0.9
+          },
+          {
+            "start_seconds": 13.4,
+            "end_seconds": 13.700000000000001,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 20.3,
+            "end_seconds": 20.6,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 20.700000000000003,
+            "end_seconds": 20.8,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 20.900000000000002,
+            "end_seconds": 21.5,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 21.700000000000003,
+            "end_seconds": 21.8,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 21.900000000000002,
+            "end_seconds": 22.400000000000002,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 22.5,
+            "end_seconds": 22.6,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 22.700000000000003,
+            "end_seconds": 22.900000000000002,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 23.0,
+            "end_seconds": 23.1,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 23.3,
+            "end_seconds": 23.6,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 23.700000000000003,
+            "end_seconds": 24.5,
+            "duration_seconds": 0.8
+          },
+          {
+            "start_seconds": 24.6,
+            "end_seconds": 24.8,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 25.3,
+            "end_seconds": 25.400000000000002,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 25.5,
+            "end_seconds": 25.700000000000003,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 25.8,
+            "end_seconds": 25.900000000000002,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 26.0,
+            "end_seconds": 26.8,
+            "duration_seconds": 0.8
+          },
+          {
+            "start_seconds": 27.1,
+            "end_seconds": 27.5,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 27.700000000000003,
+            "end_seconds": 28.1,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 28.3,
+            "end_seconds": 28.400000000000002,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 28.5,
+            "end_seconds": 28.8,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 29.0,
+            "end_seconds": 29.3,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 29.400000000000002,
+            "end_seconds": 30.1,
+            "duration_seconds": 0.7000000000000001
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 15.8,
+            "end_seconds": 16.3,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 16.400000000000002,
+            "end_seconds": 20.200000000000003,
+            "duration_seconds": 3.8000000000000003
+          },
+          {
+            "start_seconds": 20.5,
+            "end_seconds": 20.6,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 20.700000000000003,
+            "end_seconds": 20.8,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 20.900000000000002,
+            "end_seconds": 21.5,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 21.900000000000002,
+            "end_seconds": 22.400000000000002,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 22.5,
+            "end_seconds": 22.6,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 22.700000000000003,
+            "end_seconds": 22.900000000000002,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 23.0,
+            "end_seconds": 23.1,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 28.6,
+            "end_seconds": 28.8,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 29.0,
+            "end_seconds": 29.3,
+            "duration_seconds": 0.30000000000000004
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 22.5,
+            "end_seconds": 28.1,
+            "duration_seconds": 5.6000000000000005
+          },
+          {
+            "start_seconds": 29.0,
+            "end_seconds": 30.1,
+            "duration_seconds": 1.1
+          }
+        ],
+        "total_stopped_seconds": 6.300000000000001
+      },
+      {
+        "id": "r02",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 0.6000000000000001,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 0.7000000000000001,
+            "end_seconds": 1.9000000000000001,
+            "duration_seconds": 1.2000000000000002
+          },
+          {
+            "start_seconds": 2.1,
+            "end_seconds": 2.2,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 2.8000000000000003,
+            "end_seconds": 2.9000000000000004,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 3.8000000000000003,
+            "end_seconds": 3.9000000000000004,
+            "duration_seconds": 0.1
+          }
+        ],
+        "congestion": [],
+        "no_progress": [],
+        "total_stopped_seconds": 0.9
+      },
+      {
+        "id": "r03",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 0.30000000000000004,
+            "duration_seconds": 0.30000000000000004
+          }
+        ],
+        "congestion": [],
+        "no_progress": [],
+        "total_stopped_seconds": 0.1
+      },
+      {
+        "id": "r04",
+        "temporary_slowing": [
+          {
+            "start_seconds": 2.7,
+            "end_seconds": 2.8000000000000003,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 6.5,
+            "end_seconds": 6.6000000000000005,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 7.2,
+            "end_seconds": 7.800000000000001,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 7.9,
+            "end_seconds": 8.0,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 8.1,
+            "end_seconds": 8.700000000000001,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 8.8,
+            "end_seconds": 8.9,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 9.0,
+            "end_seconds": 9.9,
+            "duration_seconds": 0.9
+          },
+          {
+            "start_seconds": 10.0,
+            "end_seconds": 10.200000000000001,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 10.3,
+            "end_seconds": 10.600000000000001,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 14.3,
+            "end_seconds": 15.0,
+            "duration_seconds": 0.7000000000000001
+          },
+          {
+            "start_seconds": 22.400000000000002,
+            "end_seconds": 23.3,
+            "duration_seconds": 0.9
+          },
+          {
+            "start_seconds": 26.8,
+            "end_seconds": 27.0,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 27.1,
+            "end_seconds": 28.900000000000002,
+            "duration_seconds": 1.8
+          },
+          {
+            "start_seconds": 29.0,
+            "end_seconds": 30.1,
+            "duration_seconds": 1.1
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 12.5,
+            "end_seconds": 13.4,
+            "duration_seconds": 0.9
+          },
+          {
+            "start_seconds": 16.2,
+            "end_seconds": 22.200000000000003,
+            "duration_seconds": 6.0
+          },
+          {
+            "start_seconds": 23.400000000000002,
+            "end_seconds": 26.700000000000003,
+            "duration_seconds": 3.3000000000000003
+          },
+          {
+            "start_seconds": 26.8,
+            "end_seconds": 27.0,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 27.1,
+            "end_seconds": 28.3,
+            "duration_seconds": 1.2000000000000002
+          },
+          {
+            "start_seconds": 29.3,
+            "end_seconds": 30.1,
+            "duration_seconds": 0.8
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 18.3,
+            "end_seconds": 18.400000000000002,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 18.5,
+            "end_seconds": 30.1,
+            "duration_seconds": 11.600000000000001
+          }
+        ],
+        "total_stopped_seconds": 13.0
+      },
+      {
+        "id": "r05",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 0.5,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 6.5,
+            "end_seconds": 6.7,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 7.1000000000000005,
+            "end_seconds": 7.300000000000001,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 7.4,
+            "end_seconds": 7.5,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 7.6000000000000005,
+            "end_seconds": 8.1,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 8.3,
+            "end_seconds": 8.4,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 8.5,
+            "end_seconds": 8.6,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 12.0,
+            "end_seconds": 13.100000000000001,
+            "duration_seconds": 1.1
+          },
+          {
+            "start_seconds": 13.200000000000001,
+            "end_seconds": 13.3,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 13.5,
+            "end_seconds": 13.600000000000001,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 13.700000000000001,
+            "end_seconds": 14.200000000000001,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 14.3,
+            "end_seconds": 14.8,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 14.9,
+            "end_seconds": 16.7,
+            "duration_seconds": 1.8
+          },
+          {
+            "start_seconds": 16.8,
+            "end_seconds": 17.1,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 17.2,
+            "end_seconds": 18.2,
+            "duration_seconds": 1.0
+          },
+          {
+            "start_seconds": 18.3,
+            "end_seconds": 18.400000000000002,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 18.5,
+            "end_seconds": 20.3,
+            "duration_seconds": 1.8
+          },
+          {
+            "start_seconds": 20.6,
+            "end_seconds": 21.8,
+            "duration_seconds": 1.2000000000000002
+          },
+          {
+            "start_seconds": 22.0,
+            "end_seconds": 22.200000000000003,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 22.3,
+            "end_seconds": 22.700000000000003,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 23.0,
+            "end_seconds": 23.1,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 23.700000000000003,
+            "end_seconds": 23.8,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 23.900000000000002,
+            "end_seconds": 24.5,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 24.6,
+            "end_seconds": 24.8,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 24.900000000000002,
+            "end_seconds": 25.900000000000002,
+            "duration_seconds": 1.0
+          },
+          {
+            "start_seconds": 26.0,
+            "end_seconds": 26.1,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 26.200000000000003,
+            "end_seconds": 26.3,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 26.400000000000002,
+            "end_seconds": 27.6,
+            "duration_seconds": 1.2000000000000002
+          },
+          {
+            "start_seconds": 27.700000000000003,
+            "end_seconds": 27.8,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 27.900000000000002,
+            "end_seconds": 28.400000000000002,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 28.5,
+            "end_seconds": 28.900000000000002,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 29.1,
+            "end_seconds": 29.3,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 29.8,
+            "end_seconds": 30.1,
+            "duration_seconds": 0.30000000000000004
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 13.200000000000001,
+            "end_seconds": 13.3,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 13.5,
+            "end_seconds": 13.600000000000001,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 13.700000000000001,
+            "end_seconds": 14.200000000000001,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 14.3,
+            "end_seconds": 14.8,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 14.9,
+            "end_seconds": 16.7,
+            "duration_seconds": 1.8
+          },
+          {
+            "start_seconds": 16.8,
+            "end_seconds": 17.1,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 17.2,
+            "end_seconds": 18.2,
+            "duration_seconds": 1.0
+          },
+          {
+            "start_seconds": 18.3,
+            "end_seconds": 18.400000000000002,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 18.5,
+            "end_seconds": 20.3,
+            "duration_seconds": 1.8
+          },
+          {
+            "start_seconds": 20.6,
+            "end_seconds": 21.8,
+            "duration_seconds": 1.2000000000000002
+          },
+          {
+            "start_seconds": 22.0,
+            "end_seconds": 22.200000000000003,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 22.3,
+            "end_seconds": 22.700000000000003,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 23.0,
+            "end_seconds": 23.1,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 23.700000000000003,
+            "end_seconds": 23.8,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 23.900000000000002,
+            "end_seconds": 24.1,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 25.5,
+            "end_seconds": 25.900000000000002,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 26.0,
+            "end_seconds": 26.1,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 26.200000000000003,
+            "end_seconds": 26.3,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 26.400000000000002,
+            "end_seconds": 27.6,
+            "duration_seconds": 1.2000000000000002
+          },
+          {
+            "start_seconds": 27.700000000000003,
+            "end_seconds": 27.8,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 27.900000000000002,
+            "end_seconds": 28.3,
+            "duration_seconds": 0.4
+          },
+          {
+            "start_seconds": 28.6,
+            "end_seconds": 28.900000000000002,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 29.1,
+            "end_seconds": 29.3,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 29.8,
+            "end_seconds": 30.1,
+            "duration_seconds": 0.30000000000000004
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 15.200000000000001,
+            "end_seconds": 25.8,
+            "duration_seconds": 10.600000000000001
+          },
+          {
+            "start_seconds": 27.1,
+            "end_seconds": 30.1,
+            "duration_seconds": 3.0
+          }
+        ],
+        "total_stopped_seconds": 7.1000000000000005
+      },
+      {
+        "id": "r06",
+        "temporary_slowing": [],
+        "congestion": [],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 30.1,
+            "duration_seconds": 26.1
+          }
+        ],
+        "total_stopped_seconds": 27.1
+      },
+      {
+        "id": "r07",
+        "temporary_slowing": [
+          {
+            "start_seconds": 21.1,
+            "end_seconds": 21.200000000000003,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 21.3,
+            "end_seconds": 21.6,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 21.700000000000003,
+            "end_seconds": 22.400000000000002,
+            "duration_seconds": 0.7000000000000001
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 25.1,
+            "end_seconds": 26.5,
+            "duration_seconds": 1.4000000000000001
+          },
+          {
+            "start_seconds": 26.6,
+            "end_seconds": 26.700000000000003,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 28.3,
+            "end_seconds": 30.1,
+            "duration_seconds": 1.8
+          }
+        ],
+        "no_progress": [],
+        "total_stopped_seconds": 6.1000000000000005
+      }
+    ],
+    "deadlocks": [],
+    "deadlock_count": 0,
+    "no_progress_event_count": 8
+  },
+  "timeout": true,
+  "bottleneck_occupancy": {
+    "66": {
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_robot_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "region": {
+        "center": [
+          100.19448429051332,
+          -62.051235544479695
+        ],
+        "radius": 0.24527520155343982
+      }
+    },
+    "56": {
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_robot_seconds": [
+        1.3,
+        0.0,
+        1.7000000000000002,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "region": {
+        "center": [
+          96.95224999999994,
+          -65.44741000000003
+        ],
+        "radius": 0.5775499999999026
+      }
+    },
+    "54": {
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "per_robot_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.6,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "region": {
+        "center": [
+          95.94867275295894,
+          -64.0861563685435
+        ],
+        "radius": 0.30213614546684897
+      }
+    }
+  },
+  "simulated_seconds": 30.0,
+  "collisions": 0,
+  "collision_events": [],
+  "minimum_inter_robot_clearance": 0.16944347909331225,
+  "minimum_swept_envelope_clearance": 0.1697188538106652,
+  "unresolved_swept_contacts": [],
+  "collision_definition": "oriented rectangles for cars, disks for differential-drive; synchronized swept-contact refinement",
+  "simulation_executed": true,
+  "total_global_planning_seconds": 1.2950893950001046,
+  "per_robot_global_planning_seconds": [
+    0.033172724999531056,
+    0.019613198000115517,
+    0.03586993699991581,
+    0.041186756999195495,
+    0.0197053350002534,
+    0.022838367000076687,
+    1.0882842309993066,
+    0.03440672299984726
+  ],
+  "planning_timing_scope": "RRT: construction+search+shortcut per robot; K: native query per robot, total additionally includes map load, JSON and verification",
+  "simulation_runtime_seconds": 8.64339017868042,
+  "local_controller_seconds": [
+    1.2219807900128217,
+    1.2547853129999567,
+    1.0453959030055557,
+    0.8083677059958063,
+    1.1902113719961562,
+    1.2606553589994292,
+    0.35021409199453046,
+    0.9167471589998968
+  ],
+  "conservative_envelope_collision_steps": 0.0,
+  "wall_timeout": false,
+  "status": "control_limit_violation",
+  "control_limits_valid": false,
+  "physical_validation": {
+    "passed": false,
+    "model_equations_valid": true,
+    "violations": [
+      {
+        "robot": "r00",
+        "kind": "angular_acceleration",
+        "bound": 2.0,
+        "peak": 7.6462377232310725,
+        "steps": [
+          205
+        ],
+        "cause": "existing controller fallback may reset yaw rate immediately"
+      },
+      {
+        "robot": "r01",
+        "kind": "angular_acceleration",
+        "bound": 2.0,
+        "peak": 18.0,
+        "steps": [
+          219,
+          284
+        ],
+        "cause": "existing controller fallback may reset yaw rate immediately"
+      },
+      {
+        "robot": "r04",
+        "kind": "angular_acceleration",
+        "bound": 2.0,
+        "peak": 16.0,
+        "steps": [
+          119,
+          171,
+          236,
+          294
+        ],
+        "cause": "existing controller fallback may reset yaw rate immediately"
+      },
+      {
+        "robot": "r05",
+        "kind": "angular_acceleration",
+        "bound": 2.0,
+        "peak": 18.0,
+        "steps": [
+          142,
+          188,
+          252
+        ],
+        "cause": "existing controller fallback may reset yaw rate immediately"
+      },
+      {
+        "robot": "r06",
+        "kind": "angular_acceleration",
+        "bound": 2.0,
+        "peak": 4.0,
+        "steps": [
+          49,
+          161,
+          204,
+          278
+        ],
+        "cause": "existing controller fallback may reset yaw rate immediately"
+      }
+    ],
+    "checked_steps": 300,
+    "checked_robots": 8,
+    "state_resets_or_trace_filters": false
+  },
+  "audit": {
+    "trace_modified": false,
+    "metrics_source_sha256": "c8d0a728b19acf3144105aa3919fb546c6fbee98898356faa818ed6acdf52257"
+  }
+}

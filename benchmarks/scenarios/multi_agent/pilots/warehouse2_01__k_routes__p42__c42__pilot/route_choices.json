@@ -1,0 +1,31 @@
+{
+  "planner": "k_routes",
+  "seed": 42,
+  "robots": [
+    {
+      "id": "r00",
+      "available": 5,
+      "selected_index": 0,
+      "selection_probability": 0.2
+    },
+    {
+      "id": "r01",
+      "available": 5,
+      "selected_index": 3,
+      "selection_probability": 0.2
+    },
+    {
+      "id": "r02",
+      "available": 5,
+      "selected_index": 3,
+      "selection_probability": 0.2
+    },
+    {
+      "id": "r03",
+      "available": 5,
+      "selected_index": 2,
+      "selection_probability": 0.2
+    }
+  ],
+  "native_map_load_seconds": 0.218750993
+}

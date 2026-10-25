@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "scenario_count": 50,
+  "scenarios": [
+    {
+      "id": "parking1_01",
+      "source_map": "parking1",
+      "file": "tasks/parking1_01.json",
+      "robot_count": 4,
+      "category": "random_low",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "91efefa3e9b59ce0481ea1c74ea1444ea3af18ee700c79b7f6b5e7dae6607c8f"
+    },
+    {
+      "id": "parking1_02",
+      "source_map": "parking1",
+      "file": "tasks/parking1_02.json",
+      "robot_count": 8,
+      "category": "random_moderate",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "b4c78842abff01cfd18b7afff7575e121e32a940fb414ff6d643b1a2dbc5165c"
+    },
+    {
+      "id": "parking1_03",
+      "source_map": "parking1",
+      "file": "tasks/parking1_03.json",
+      "robot_count": 16,
+      "category": "random_dense",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "8d5ac4fe3c9d9a4acd0c8a8eec1486c93570283cb97c8f51eb64b47c11b374f4"
+    },
+    {
+      "id": "parking1_04",
+      "source_map": "parking1",
+      "file": "tasks/parking1_04.json",
+      "robot_count": 8,
+      "category": "opposing_bottleneck",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "97c9d1187e698f5b441db8a5800827d591b458e63b978311fe6b93f035f7ec73"
+    },
+    {
+      "id": "parking1_05",
+      "source_map": "parking1",
+      "file": "tasks/parking1_05.json",
+      "robot_count": 16,
+      "category": "opposing_dense",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "731eba601c8e15accd1e953aa505ded33c3c7a561d1b91038fd5b7dd3187c393"
+    },
+    {
+      "id": "parking1_06",
+      "source_map": "parking1",
+      "file": "tasks/parking1_06.json",
+      "robot_count": 12,
+      "category": "intersection",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "b9a8f4f772d43242302ef79a793d073e7db7a7df0d3eee6e051024c47d6ba810"
+    },
+    {
+      "id": "parking1_07",
+      "source_map": "parking1",
+      "file": "tasks/parking1_07.json",
+      "robot_count": 12,
+      "category": "symmetric_swap",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "b2dabee5ab68e95903560070cf6734822814582d24acde3b9c7d48dc250572b6"
+    },
+    {
+      "id": "parking1_08",
+      "source_map": "parking1",
+      "file": "tasks/parking1_08.json",
+      "robot_count": 20,
+      "category": "competing_bottlenecks",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "37f96384c22cbeaeccec05f34e73d213c6a6ce71f00c16fbf78139515393dac6"
+    },
+    {
+      "id": "parking1_09",
+      "source_map": "parking1",
+      "file": "tasks/parking1_09.json",
+      "robot_count": 24,
+      "category": "heterogeneous_congestion",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "bb254d8cbfa1f186a5bbcd9848f2a498b00629d336806f7e8664615e7683d237"
+    },
+    {
+      "id": "parking1_10",
+      "source_map": "parking1",
+      "file": "tasks/parking1_10.json",
+      "robot_count": 32,
+      "category": "maximum_stress",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "83c31b0f7fe0b3ba05d349ba7bbd29feedffb112d73d5ed9fe093d64fff7aa36"
+    },
+    {
+      "id": "parking2_01",
+      "source_map": "parking2",
+      "file": "tasks/parking2_01.json",
+      "robot_count": 4,
+      "category": "random_low",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "8aae894b0ff89bd3d99ea6904ee82108f6b06bf5aa4cab1ee90ca5c8f640c8bd"
+    },
+    {
+      "id": "parking2_02",
+      "source_map": "parking2",
+      "file": "tasks/parking2_02.json",
+      "robot_count": 8,
+      "category": "random_moderate",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "fe2901e45713f9ed5635aefc59fb07334f4cfaba4008f1523d5946c731c15983"
+    },
+    {
+      "id": "parking2_03",
+      "source_map": "parking2",
+      "file": "tasks/parking2_03.json",
+      "robot_count": 16,
+      "category": "random_dense",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "6bd872ede27dae3d30181aeb94c4118c777a2547d52114cf89a549b8f938686f"
+    },
+    {
+      "id": "parking2_04",
+      "source_map": "parking2",
+      "file": "tasks/parking2_04.json",
+      "robot_count": 8,
+      "category": "opposing_bottleneck",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "2758d384f479156eebd4e4cc6135197ed95299da3f9b711f29547c749df9b66f"
+    },
+    {
+      "id": "parking2_05",
+      "source_map": "parking2",
+      "file": "tasks/parking2_05.json",
+      "robot_count": 16,
+      "category": "opposing_dense",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "2c39c97e6271965cc0215d309d43f73a3d117885da3803695c57ae8e5209b969"
+    },
+    {
+      "id": "parking2_06",
+      "source_map": "parking2",
+      "file": "tasks/parking2_06.json",
+      "robot_count": 12,
+      "category": "intersection",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "d2a5863e6ace366ad9363fb25aa4771b727c225853e86f163ec8d68ea465b6d3"
+    },
+    {
+      "id": "parking2_07",
+      "source_map": "parking2",
+      "file": "tasks/parking2_07.json",
+      "robot_count": 12,
+      "category": "symmetric_swap",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "5779ab35d66c57c10430bcf16514f9eba8d142a899a257266f24d848186f2570"
+    },
+    {
+      "id": "parking2_08",
+      "source_map": "parking2",
+      "file": "tasks/parking2_08.json",
+      "robot_count": 20,
+      "category": "competing_bottlenecks",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "a2c4ea2b564f7bcae98f05502ed8646305b012f4d83768c64ac421ca0405c38b"
+    },
+    {
+      "id": "parking2_09",
+      "source_map": "parking2",
+      "file": "tasks/parking2_09.json",
+      "robot_count": 24,
+      "category": "heterogeneous_congestion",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "a8b1f1c6ef56765de022914e1bf92fcf7107b0227c516ddb4e643f2f808574fa"
+    },
+    {
+      "id": "parking2_10",
+      "source_map": "parking2",
+      "file": "tasks/parking2_10.json",
+      "robot_count": 32,
+      "category": "maximum_stress",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "7a70fe65f953cf9038a605136ba7f237b8e83b61298de5a2d8cf7511afaf7c30"
+    },
+    {
+      "id": "parking3_01",
+      "source_map": "parking3",
+      "file": "tasks/parking3_01.json",
+      "robot_count": 4,
+      "category": "random_low",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "42f99b81f62d7de2725fe48ab711f242cd323d98fc131bd144b462c7f4c8da00"
+    },
+    {
+      "id": "parking3_02",
+      "source_map": "parking3",
+      "file": "tasks/parking3_02.json",
+      "robot_count": 8,
+      "category": "random_moderate",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "b8fafa0f2108240dfbf6f431c07b34dadb9ba6ebdd964c6e3e4c880c402fea37"
+    },
+    {
+      "id": "parking3_03",
+      "source_map": "parking3",
+      "file": "tasks/parking3_03.json",
+      "robot_count": 16,
+      "category": "random_dense",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "f2ea0f566a64b4e9db3a76701f74d745aba8eb80eefc18d32dfe4963fb71cf22"
+    },
+    {
+      "id": "parking3_04",
+      "source_map": "parking3",
+      "file": "tasks/parking3_04.json",
+      "robot_count": 8,
+      "category": "opposing_bottleneck",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "7ed9a8de484ac3dde57079f8373e86bac13bf2a8d18e7c0dc3823da01644e5f9"
+    },
+    {
+      "id": "parking3_05",
+      "source_map": "parking3",
+      "file": "tasks/parking3_05.json",
+      "robot_count": 16,
+      "category": "opposing_dense",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "d3284e0c27796f5c515765d90499461834a5e58b7be75a82f80b10075861dbd3"
+    },
+    {
+      "id": "parking3_06",
+      "source_map": "parking3",
+      "file": "tasks/parking3_06.json",
+      "robot_count": 12,
+      "category": "intersection",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "baad16122e70f8e7ad8fcf72de371f491fbc924643551b7b69e8db8495ef0476"
+    },
+    {
+      "id": "parking3_07",
+      "source_map": "parking3",
+      "file": "tasks/parking3_07.json",
+      "robot_count": 12,
+      "category": "symmetric_swap",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "2f6ee8959277a9cdb12f00ba0ebc3eac05cf228268ab36b66886679e6feba32a"
+    },
+    {
+      "id": "parking3_08",
+      "source_map": "parking3",
+      "file": "tasks/parking3_08.json",
+      "robot_count": 20,
+      "category": "competing_bottlenecks",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "ec9f0aa14803b753688d2a0af24960d69031c317d0f94e15675890345da65440"
+    },
+    {
+      "id": "parking3_09",
+      "source_map": "parking3",
+      "file": "tasks/parking3_09.json",
+      "robot_count": 24,
+      "category": "heterogeneous_congestion",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "468ca50c65f6d9b090dbbd56ab35d0dc509c02f273ac2f84008736ce72c098e0"
+    },
+    {
+      "id": "parking3_10",
+      "source_map": "parking3",
+      "file": "tasks/parking3_10.json",
+      "robot_count": 32,
+      "category": "maximum_stress",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "cb342211a5b2f84dd618d01e70668da2c6af36c57a088483e6f03a1ef2f7fcb5"
+    },
+    {
+      "id": "warehouse_01",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_01.json",
+      "robot_count": 4,
+      "category": "random_low",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "71671dc72e6de4acb8b95dc500676d2b02e65c08aae5798e102da72c31b69363"
+    },
+    {
+      "id": "warehouse_02",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_02.json",
+      "robot_count": 8,
+      "category": "random_moderate",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "c5fbc2148a81b159b5fd93fd5f8d321a7d097fcbdf5827ca9aff97879b700311"
+    },
+    {
+      "id": "warehouse_03",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_03.json",
+      "robot_count": 16,
+      "category": "random_dense",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "fae65c94d8ddb9bb79dce7313dccf65ffbda66cff3f84dbb590da8004953c8b0"
+    },
+    {
+      "id": "warehouse_04",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_04.json",
+      "robot_count": 8,
+      "category": "opposing_bottleneck",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "2a2d392276266f5e3f8da4a95b3f45dabe3e2a43f74c62129738112d5cf7ac65"
+    },
+    {
+      "id": "warehouse_05",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_05.json",
+      "robot_count": 16,
+      "category": "opposing_dense",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "650499e7674de250077c8164b2be1b164154445b3c1735200efa0e295bf38298"
+    },
+    {
+      "id": "warehouse_06",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_06.json",
+      "robot_count": 12,
+      "category": "intersection",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "e27c7365aba9936cbdaf9bc4939666bd70c08f4bd6d847b16a9820d51881a13f"
+    },
+    {
+      "id": "warehouse_07",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_07.json",
+      "robot_count": 12,
+      "category": "symmetric_swap",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "c88e8596a5f877003595b7e4bb2f0e7c37d9b4c57364aaee5cbacf3b4b7ea1bf"
+    },
+    {
+      "id": "warehouse_08",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_08.json",
+      "robot_count": 20,
+      "category": "competing_bottlenecks",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "10d3a838d7b93c06b58e30cd6a7ac51c78e9f3c3c0064493fb8533a89a689498"
+    },
+    {
+      "id": "warehouse_09",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_09.json",
+      "robot_count": 24,
+      "category": "heterogeneous_congestion",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "43897bf66246a994e2440a7961b6d3d630759260cfc6a4e36882113d418ee7eb"
+    },
+    {
+      "id": "warehouse_10",
+      "source_map": "warehouse",
+      "file": "tasks/warehouse_10.json",
+      "robot_count": 32,
+      "category": "maximum_stress",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "cfa9f421f675298ed457ced6280d6e813656d724ec66772ef15257b18ccfe108"
+    },
+    {
+      "id": "warehouse2_01",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_01.json",
+      "robot_count": 4,
+      "category": "random_low",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "a6909b459075f1eba1d1a6a535b5598700974df6813607d115b0956726eef97d"
+    },
+    {
+      "id": "warehouse2_02",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_02.json",
+      "robot_count": 8,
+      "category": "random_moderate",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "7f3c2ab84b31ab022f2bf5c6974b117de3d5bebf1a408612cd1848a875e1e772"
+    },
+    {
+      "id": "warehouse2_03",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_03.json",
+      "robot_count": 16,
+      "category": "random_dense",
+      "intended_difficulty": "ordinary",
+      "scenario_sha256": "af179f4501c6543b74e6edec4e9afebc322ec2eebb41886d921aed55707b6181"
+    },
+    {
+      "id": "warehouse2_04",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_04.json",
+      "robot_count": 8,
+      "category": "opposing_bottleneck",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "1f3e38cf4608a2637d7790d780a0a92fd0b92195d8d26739e8ff8d2e14b72615"
+    },
+    {
+      "id": "warehouse2_05",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_05.json",
+      "robot_count": 16,
+      "category": "opposing_dense",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "8ee5a911dcca1674dc6a88546bab78d102b65954b039283fa85109ab59a95953"
+    },
+    {
+      "id": "warehouse2_06",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_06.json",
+      "robot_count": 12,
+      "category": "intersection",
+      "intended_difficulty": "challenging",
+      "scenario_sha256": "3fc8badb3a4b604f64c761cbb317d96edd5224e20d6b905a20abf48083f8a22c"
+    },
+    {
+      "id": "warehouse2_07",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_07.json",
+      "robot_count": 12,
+      "category": "symmetric_swap",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "12a82f826207e4b3eef77653fec6fd12015eaeab10afaccfd7c6cdce6cda1d39"
+    },
+    {
+      "id": "warehouse2_08",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_08.json",
+      "robot_count": 20,
+      "category": "competing_bottlenecks",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "4c049fa3fad1de7b998b96519a1e88b02d5b28160273c6b96ee6c5a81f64c154"
+    },
+    {
+      "id": "warehouse2_09",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_09.json",
+      "robot_count": 24,
+      "category": "heterogeneous_congestion",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "3cafa91e1e714d7350a826e7fc2574568dc538c1626e5b78b250cfde49b69c3c"
+    },
+    {
+      "id": "warehouse2_10",
+      "source_map": "warehouse2",
+      "file": "tasks/warehouse2_10.json",
+      "robot_count": 32,
+      "category": "maximum_stress",
+      "intended_difficulty": "deadlock_prone",
+      "scenario_sha256": "e9b60c1dfbc46984bc83f6a9d871d8061d775ad91cee725c6f65efc730b35c19"
+    }
+  ]
+}

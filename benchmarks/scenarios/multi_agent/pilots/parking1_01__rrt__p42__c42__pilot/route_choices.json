@@ -1,0 +1,12 @@
+{
+  "planner": "rrt",
+  "seed": 42,
+  "independent_queries": true,
+  "extra_traffic_waypoints": false,
+  "per_robot_seconds": [
+    0.004554006999569538,
+    0.0016160029999809922,
+    0.0013978809993204777,
+    0.001193600999613409
+  ]
+}

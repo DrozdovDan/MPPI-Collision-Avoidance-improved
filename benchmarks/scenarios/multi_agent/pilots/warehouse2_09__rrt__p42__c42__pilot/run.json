@@ -1,0 +1,1094 @@
+{
+  "run_id": "warehouse2_09__rrt__p42__c42__pilot",
+  "scenario_id": "warehouse2_09",
+  "source_map": "warehouse2",
+  "category": "heterogeneous_congestion",
+  "intended_difficulty": "deadlock_prone",
+  "robot_count": 24,
+  "planner": "rrt",
+  "scenario_sha256": "3cafa91e1e714d7350a826e7fc2574568dc538c1626e5b78b250cfde49b69c3c",
+  "generation_seed": 20670016,
+  "planner_selection_seed": 42,
+  "controller_seed": 42,
+  "profile_name": "pilot",
+  "controller_profiles": [
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 21,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          6.0
+        ]
+      ],
+      "dist_to_goal_weight": 395.0,
+      "terminal_weight": 1600.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 750.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 3.5,
+      "k_alpha": -2.96,
+      "rad_eps": 0.04,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.0,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": false,
+      "anchor_path_weight": 2000.0,
+      "anchor_heading_weight": 0.0,
+      "control_smoothness_weight": 20.0
+    }
+  ],
+  "controller_profile_sha256": "2d8d0c24bee5f1a5097a4aee6ffea37bb525dfce3abd0ae7d77a09082b0498bf",
+  "dt": 0.1,
+  "max_steps": 300,
+  "wall_time_limit_seconds": 120.0,
+  "provenance": {
+    "git_revision": "a60ed75dbba33ada97a67ff4b145db0bb0156d82",
+    "controller_sha256": "5c522755694a7830628e21ced83566a9bda9d8c69433370b7aaead477877e817",
+    "numpy_version": "1.26.4",
+    "simulator_sha256": "5bccb8bc52795963cacea71799dc343e2b623b15ffb07c34c26ce6910e90fffd"
+  },
+  "status": "global_planning_failure",
+  "error": "RRT failed for r00: RRT-Connect failed after 15000 iterations",
+  "completion_fraction": 0.0,
+  "all_robots_success": false,
+  "makespan_seconds": null,
+  "timeout": false,
+  "simulation_executed": false,
+  "sum_travel_times": null,
+  "total_global_planning_seconds": 33.688279603999945,
+  "deadlock_count": 0,
+  "collisions": null,
+  "simulation_runtime_seconds": 0.0
+}

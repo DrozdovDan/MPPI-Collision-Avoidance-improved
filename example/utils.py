@@ -74,7 +74,15 @@ def launch_mppi(
     obstacles=None,
     anchor_paths=None,
     park_at_goal=False,
+    on_step=None,
 ):
+    """Run existing decentralized controllers.
+
+    ``alg_params`` may be one shared dictionary or one dictionary per robot
+    (e.g. heterogeneous wheelbases). Optional ``on_step(step, states, controls,
+    controller_seconds)`` observes completed steps; returning False ends an
+    unfinished run. Defaults retain the existing simulation behavior.
+    """
 
     if seed is None:
         seed = int.from_bytes(os.urandom(4), byteorder="little")
@@ -91,7 +99,12 @@ def launch_mppi(
 
     agents_sizes = []
     agents_r_vis = []
-    car_like = alg_params.get(USE_CAR_LIKE_DYN, False)
+    profiles = [alg_params] * agents_num if isinstance(alg_params, dict) else list(alg_params)
+    if len(profiles) != agents_num:
+        raise ValueError("Provide one algorithm profile per agent")
+    car_like = profiles[0].get(USE_CAR_LIKE_DYN, False)
+    if any(p.get(USE_CAR_LIKE_DYN, False) != car_like for p in profiles):
+        raise ValueError("One simulation must use a consistent state representation")
     controllers = [mppi_ca_cpp.Controller() for a_id in range(agents_num)]
     # Controller construction seeds the shared native sampler. Apply the
     # requested experiment seed afterwards so notebook runs are reproducible.
@@ -102,7 +115,7 @@ def launch_mppi(
         #     agents_params[a_id] = agents_params[a_id].__dict__
 
         agp = mppi_ca_cpp.convert_agent_params(agents_params[a_id])
-        alp = mppi_ca_cpp.convert_alg_params(alg_params)
+        alp = mppi_ca_cpp.convert_alg_params(profiles[a_id])
         controllers[a_id].set_agent_params(agp)
         controllers[a_id].set_alg_params(alp)
         if car_like:
@@ -116,6 +129,7 @@ def launch_mppi(
 
     agents_states = start_states.copy()
     parked = np.zeros(agents_num, dtype=bool)
+    last_controls = np.zeros((agents_num, 2))
     new_states = agents_states.copy()
     agents_sizes = np.array(agents_sizes)
 
@@ -128,6 +142,7 @@ def launch_mppi(
     for iter in range(max_sim_steps):
         previous_states = agents_states.copy()
         step_traj = []
+        step_controls, step_controller_seconds = [], []
         steps += 1
 
         for a_id in range(agents_num):
@@ -174,16 +189,32 @@ def launch_mppi(
                         neighbours_states[i, 2:], velocities_std, 2
                     )
 
-            if car_like and park_at_goal:
+            control_start = time.perf_counter() if on_step is not None else 0.
+            if park_at_goal:
                 # Stopping arc length bounds displacement even with steering.
                 # Capture only when bounded braking stays inside the goal disk.
-                stopping_distance = controllers[a_id].stopping_distance(curr_state)
+                if car_like:
+                    stopping_distance = controllers[a_id].stopping_distance(curr_state)
+                else:
+                    brake = agents_params[a_id].get(SPEED_BRAKE_MAX, 0.)
+                    if brake <= 0:
+                        raise ValueError("Differential-drive parking needs a positive v_brake_max")
+                    speed = abs(last_controls[a_id, 0])
+                    stopping_steps = int(np.ceil(speed / (brake * dt)))
+                    stopping_distance = dt * np.maximum(speed - brake * dt * np.arange(1, stopping_steps+1), 0.).sum()
                 if np.linalg.norm(curr_state[:2] - goal_state[:2]) + stopping_distance <= goal_xy_offset:
                     parked[a_id] = True
             if parked[a_id]:
                 # Continue integrating physical jerk/acceleration/velocity until
                 # rest. Parked cars remain visible to every other agent's ORCA.
-                step_res = controllers[a_id].braking_control(curr_state)
+                if car_like:
+                    step_res = controllers[a_id].braking_control(curr_state)
+                else:
+                    # The supported differential-drive model controls speed
+                    # and yaw rate directly. Honor their configured change
+                    # limits during parking, without editing a pose or velocity.
+                    decrement = np.array([brake, agents_params[a_id].get(DIFF_DRIVE_W_ACCEL_MAX, np.inf)]) * dt
+                    step_res = np.clip(np.zeros(2), last_controls[a_id]-decrement, last_controls[a_id]+decrement)
                 traj = np.empty((0, 0, len(curr_state)))
             else:
                 step_res, traj = controllers[a_id].next_step(
@@ -193,6 +224,10 @@ def launch_mppi(
                     goal_state,
                 )
             u = step_res
+            last_controls[a_id] = u
+            if on_step is not None:
+                step_controls.append(np.asarray(u).copy())
+                step_controller_seconds.append(time.perf_counter()-control_start)
             if save_logs and save_traj_lines:
                 step_traj.append(traj)
 
@@ -229,12 +264,20 @@ def launch_mppi(
             ):
                 done = False
                 break
+            if not car_like and park_at_goal and (not parked[a_id] or np.max(np.abs(last_controls[a_id])) > 1e-8):
+                done = False
+                break
             if (
                 np.linalg.norm(agents_states[a_id, 0:2] - goal_states[a_id, 0:2])
                 > goal_xy_offset
             ):
                 done = False
                 break
+
+        continue_run = True
+        if on_step is not None:
+            continue_run = on_step(steps, agents_states.copy(), np.asarray(step_controls),
+                                   np.asarray(step_controller_seconds)) is not False
 
         if done:
             t_end = time.time()
@@ -254,6 +297,8 @@ def launch_mppi(
                     return True, collisions, steps, t_dur, log_state
             else:
                 return True, collisions, steps, t_dur
+        if not continue_run:
+            break
 
     t_end = time.time()
     t_dur = t_end - t_start

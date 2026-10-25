@@ -1,0 +1,2940 @@
+{
+  "run_id": "parking1_09__k_routes__p42__c42__pilot",
+  "scenario_id": "parking1_09",
+  "source_map": "parking1",
+  "category": "heterogeneous_congestion",
+  "intended_difficulty": "deadlock_prone",
+  "robot_count": 24,
+  "planner": "k_routes",
+  "scenario_sha256": "bb254d8cbfa1f186a5bbcd9848f2a498b00629d336806f7e8664615e7683d237",
+  "generation_seed": 20270018,
+  "planner_selection_seed": 42,
+  "controller_seed": 42,
+  "profile_name": "pilot",
+  "controller_profiles": [
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.4381260333407292
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 1.0355706242599052
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.4381260333407292
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 1.0355706242599052
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.4381260333407292
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 1.0355706242599052
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.4381260333407292
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 1.0355706242599052
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.4381260333407292
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 1.0355706242599052
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.4381260333407292
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 1.0355706242599052
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.4381260333407292
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 1.0355706242599052
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.4381260333407292
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 2.022120153880288,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 1.0355706242599052
+    }
+  ],
+  "controller_profile_sha256": "28f48151b250c77f0dbb78762ffdb4b2395b027289f427beeeee64748dc8aa37",
+  "dt": 0.1,
+  "max_steps": 300,
+  "wall_time_limit_seconds": 120.0,
+  "provenance": {
+    "git_revision": "a60ed75dbba33ada97a67ff4b145db0bb0156d82",
+    "controller_sha256": "5c522755694a7830628e21ced83566a9bda9d8c69433370b7aaead477877e817",
+    "numpy_version": "1.26.4",
+    "simulator_sha256": "5bccb8bc52795963cacea71799dc343e2b623b15ffb07c34c26ce6910e90fffd"
+  },
+  "completion_fraction": 0.0,
+  "all_robots_success": false,
+  "makespan_seconds": null,
+  "individual_travel_times": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "sum_travel_times": null,
+  "completed_travel_time_sum": 0,
+  "restricted_total_time": 720.0,
+  "censoring": "Unfinished arrival times and failed makespans are null; restricted time charges unfinished robots the observation horizon.",
+  "per_robot_path_lengths": [
+    1.1112586311692163,
+    0.6635219328906028,
+    2.32132744881132,
+    0.9032401976930582,
+    3.570220375782973,
+    0.7663111477889928,
+    1.1444414901172206,
+    1.9481116286064721,
+    0.5973004562959371,
+    0.42557966367143946,
+    1.0985238983563799,
+    1.995585316031369,
+    0.8712764474015078,
+    0.1046818282699122,
+    3.0291183140998945,
+    2.7658895397043493,
+    3.162799939448896,
+    4.9364633972658964,
+    3.39758530527721,
+    3.4527932637303187,
+    0.16023254967328654,
+    2.4347593448630045,
+    4.357097855033917,
+    0.9706311740245792
+  ],
+  "final_goal_errors": [
+    5.698649226307671,
+    5.569897477532483,
+    5.357403421411761,
+    5.4429153394932195,
+    5.89884036094002,
+    5.875940937127492,
+    3.892355905942201,
+    6.474657473794891,
+    3.9279564159381346,
+    1.2405500420790636,
+    5.768290370021722,
+    1.0938272222018843,
+    6.576339897996333,
+    4.560116067130316,
+    4.071455941235308,
+    6.029849581431829,
+    7.159710893956122,
+    1.187525994490327,
+    10.914457413882106,
+    6.19460328201312,
+    5.686278955592415,
+    6.639525251639041,
+    4.0411577708820055,
+    7.3954428814706725
+  ],
+  "total_stopped_seconds": 513.3000000000001,
+  "no_progress_event_count": 31,
+  "deadlock_events": [
+    {
+      "start_seconds": 27.400000000000002,
+      "end_seconds": 30.1,
+      "duration_seconds": 2.7,
+      "robots": [
+        "r05",
+        "r14"
+      ],
+      "detected_seconds": 27.400000000000002,
+      "evidence_window_start_seconds": 19.400000000000002,
+      "definition": "operational: stationary, no progress, persistent directed mutual-obstruction cycle"
+    },
+    {
+      "start_seconds": 14.0,
+      "end_seconds": 30.1,
+      "duration_seconds": 16.1,
+      "robots": [
+        "r06",
+        "r09"
+      ],
+      "detected_seconds": 14.0,
+      "evidence_window_start_seconds": 6.0,
+      "definition": "operational: stationary, no progress, persistent directed mutual-obstruction cycle"
+    },
+    {
+      "start_seconds": 18.1,
+      "end_seconds": 30.1,
+      "duration_seconds": 12.0,
+      "robots": [
+        "r20",
+        "r23"
+      ],
+      "detected_seconds": 18.1,
+      "evidence_window_start_seconds": 10.100000000000001,
+      "definition": "operational: stationary, no progress, persistent directed mutual-obstruction cycle"
+    }
+  ],
+  "deadlock_count": 3,
+  "event_diagnostics": {
+    "config": {
+      "stationary_speed": 0.03,
+      "slow_speed": 0.15,
+      "progress_distance": 0.1,
+      "congestion_seconds": 2.0,
+      "no_progress_seconds": 4.0,
+      "deadlock_seconds": 8.0,
+      "proximity_margin": 0.35,
+      "persistent_fraction": 0.85,
+      "forward_cone_cosine": 0.25,
+      "minimum_group": 2
+    },
+    "per_robot": [
+      {
+        "id": "r00",
+        "temporary_slowing": [],
+        "congestion": [
+          {
+            "start_seconds": 2.0,
+            "end_seconds": 2.3000000000000003,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 8.8,
+            "end_seconds": 30.1,
+            "duration_seconds": 21.3
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 10.8,
+            "end_seconds": 30.1,
+            "duration_seconds": 19.3
+          }
+        ],
+        "total_stopped_seconds": 23.3
+      },
+      {
+        "id": "r01",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.8,
+            "duration_seconds": 1.8
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 5.6000000000000005,
+            "end_seconds": 30.1,
+            "duration_seconds": 24.5
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 7.6000000000000005,
+            "end_seconds": 30.1,
+            "duration_seconds": 22.5
+          }
+        ],
+        "total_stopped_seconds": 26.200000000000003
+      },
+      {
+        "id": "r02",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.0,
+            "duration_seconds": 1.0
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 7.6000000000000005,
+            "end_seconds": 9.1,
+            "duration_seconds": 1.5
+          },
+          {
+            "start_seconds": 11.5,
+            "end_seconds": 15.600000000000001,
+            "duration_seconds": 4.1000000000000005
+          },
+          {
+            "start_seconds": 17.7,
+            "end_seconds": 30.1,
+            "duration_seconds": 12.4
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 13.5,
+            "end_seconds": 15.600000000000001,
+            "duration_seconds": 2.1
+          },
+          {
+            "start_seconds": 19.700000000000003,
+            "end_seconds": 30.1,
+            "duration_seconds": 10.4
+          }
+        ],
+        "total_stopped_seconds": 18.5
+      },
+      {
+        "id": "r03",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 6.0,
+            "end_seconds": 30.1,
+            "duration_seconds": 24.1
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 8.200000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 21.900000000000002
+          }
+        ],
+        "total_stopped_seconds": 25.1
+      },
+      {
+        "id": "r04",
+        "temporary_slowing": [
+          {
+            "start_seconds": 29.5,
+            "end_seconds": 30.1,
+            "duration_seconds": 0.6000000000000001
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 2.0,
+            "end_seconds": 21.400000000000002,
+            "duration_seconds": 19.400000000000002
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 22.3,
+            "duration_seconds": 18.3
+          }
+        ],
+        "total_stopped_seconds": 20.400000000000002
+      },
+      {
+        "id": "r05",
+        "temporary_slowing": [],
+        "congestion": [
+          {
+            "start_seconds": 2.0,
+            "end_seconds": 5.7,
+            "duration_seconds": 3.7
+          },
+          {
+            "start_seconds": 13.100000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 17.0
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 5.7,
+            "duration_seconds": 1.7000000000000002
+          },
+          {
+            "start_seconds": 15.600000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 14.5
+          }
+        ],
+        "total_stopped_seconds": 21.6
+      },
+      {
+        "id": "r06",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.7000000000000002,
+            "duration_seconds": 1.7000000000000002
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 8.0,
+            "end_seconds": 30.1,
+            "duration_seconds": 22.1
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 10.0,
+            "end_seconds": 30.1,
+            "duration_seconds": 20.1
+          }
+        ],
+        "total_stopped_seconds": 24.200000000000003
+      },
+      {
+        "id": "r07",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 7.4,
+            "end_seconds": 8.5,
+            "duration_seconds": 1.1
+          },
+          {
+            "start_seconds": 8.8,
+            "end_seconds": 14.100000000000001,
+            "duration_seconds": 5.300000000000001
+          },
+          {
+            "start_seconds": 15.700000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 14.4
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 9.5,
+            "end_seconds": 14.100000000000001,
+            "duration_seconds": 4.6000000000000005
+          },
+          {
+            "start_seconds": 17.7,
+            "end_seconds": 30.1,
+            "duration_seconds": 12.4
+          }
+        ],
+        "total_stopped_seconds": 23.0
+      },
+      {
+        "id": "r08",
+        "temporary_slowing": [
+          {
+            "start_seconds": 26.6,
+            "end_seconds": 26.700000000000003,
+            "duration_seconds": 0.1
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 2.0,
+            "end_seconds": 26.3,
+            "duration_seconds": 24.3
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 26.400000000000002,
+            "duration_seconds": 22.400000000000002
+          }
+        ],
+        "total_stopped_seconds": 24.8
+      },
+      {
+        "id": "r09",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.3,
+            "duration_seconds": 1.3
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 5.6000000000000005,
+            "end_seconds": 30.1,
+            "duration_seconds": 24.5
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 6.7,
+            "end_seconds": 30.1,
+            "duration_seconds": 23.400000000000002
+          }
+        ],
+        "total_stopped_seconds": 27.0
+      },
+      {
+        "id": "r10",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 4.3,
+            "end_seconds": 4.5,
+            "duration_seconds": 0.2
+          },
+          {
+            "start_seconds": 8.4,
+            "end_seconds": 30.1,
+            "duration_seconds": 21.700000000000003
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 4.5,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 10.5,
+            "end_seconds": 30.1,
+            "duration_seconds": 19.6
+          }
+        ],
+        "total_stopped_seconds": 23.400000000000002
+      },
+      {
+        "id": "r11",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.0,
+            "duration_seconds": 1.0
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 12.3,
+            "end_seconds": 30.1,
+            "duration_seconds": 17.8
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 14.3,
+            "end_seconds": 30.1,
+            "duration_seconds": 15.8
+          }
+        ],
+        "total_stopped_seconds": 19.400000000000002
+      },
+      {
+        "id": "r12",
+        "temporary_slowing": [],
+        "congestion": [
+          {
+            "start_seconds": 2.0,
+            "end_seconds": 3.3000000000000003,
+            "duration_seconds": 1.3
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 4.6000000000000005,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 12.9,
+            "end_seconds": 30.1,
+            "duration_seconds": 17.2
+          }
+        ],
+        "total_stopped_seconds": 23.5
+      },
+      {
+        "id": "r13",
+        "temporary_slowing": [],
+        "congestion": [
+          {
+            "start_seconds": 2.0,
+            "end_seconds": 2.6,
+            "duration_seconds": 0.6000000000000001
+          },
+          {
+            "start_seconds": 3.8000000000000003,
+            "end_seconds": 30.1,
+            "duration_seconds": 26.3
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 30.1,
+            "duration_seconds": 26.1
+          }
+        ],
+        "total_stopped_seconds": 28.900000000000002
+      },
+      {
+        "id": "r14",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          },
+          {
+            "start_seconds": 3.8000000000000003,
+            "end_seconds": 4.800000000000001,
+            "duration_seconds": 1.0
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 11.600000000000001,
+            "end_seconds": 12.100000000000001,
+            "duration_seconds": 0.5
+          },
+          {
+            "start_seconds": 17.900000000000002,
+            "end_seconds": 19.3,
+            "duration_seconds": 1.4000000000000001
+          },
+          {
+            "start_seconds": 21.400000000000002,
+            "end_seconds": 30.1,
+            "duration_seconds": 8.700000000000001
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 23.400000000000002,
+            "end_seconds": 30.1,
+            "duration_seconds": 6.7
+          }
+        ],
+        "total_stopped_seconds": 12.4
+      },
+      {
+        "id": "r15",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 0.8,
+            "duration_seconds": 0.8
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 8.8,
+            "end_seconds": 13.0,
+            "duration_seconds": 4.2
+          },
+          {
+            "start_seconds": 17.0,
+            "end_seconds": 30.1,
+            "duration_seconds": 13.100000000000001
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 4.1000000000000005,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 10.5,
+            "end_seconds": 12.8,
+            "duration_seconds": 2.3000000000000003
+          },
+          {
+            "start_seconds": 19.0,
+            "end_seconds": 30.1,
+            "duration_seconds": 11.100000000000001
+          }
+        ],
+        "total_stopped_seconds": 19.3
+      },
+      {
+        "id": "r16",
+        "temporary_slowing": [],
+        "congestion": [
+          {
+            "start_seconds": 2.0,
+            "end_seconds": 22.400000000000002,
+            "duration_seconds": 20.400000000000002
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 22.8,
+            "duration_seconds": 18.8
+          }
+        ],
+        "total_stopped_seconds": 19.8
+      },
+      {
+        "id": "r17",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 0.9,
+            "duration_seconds": 0.9
+          },
+          {
+            "start_seconds": 9.700000000000001,
+            "end_seconds": 11.3,
+            "duration_seconds": 1.6
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 13.4,
+            "end_seconds": 14.600000000000001,
+            "duration_seconds": 1.2000000000000002
+          },
+          {
+            "start_seconds": 16.7,
+            "end_seconds": 30.1,
+            "duration_seconds": 13.4
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 18.900000000000002,
+            "end_seconds": 30.1,
+            "duration_seconds": 11.200000000000001
+          }
+        ],
+        "total_stopped_seconds": 15.0
+      },
+      {
+        "id": "r18",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 9.8,
+            "end_seconds": 11.100000000000001,
+            "duration_seconds": 1.3
+          },
+          {
+            "start_seconds": 13.9,
+            "end_seconds": 30.1,
+            "duration_seconds": 16.2
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 15.9,
+            "end_seconds": 30.1,
+            "duration_seconds": 14.200000000000001
+          }
+        ],
+        "total_stopped_seconds": 18.6
+      },
+      {
+        "id": "r19",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          },
+          {
+            "start_seconds": 7.5,
+            "end_seconds": 9.200000000000001,
+            "duration_seconds": 1.7000000000000002
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 14.200000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 15.9
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 16.2,
+            "end_seconds": 30.1,
+            "duration_seconds": 13.9
+          }
+        ],
+        "total_stopped_seconds": 17.6
+      },
+      {
+        "id": "r20",
+        "temporary_slowing": [],
+        "congestion": [
+          {
+            "start_seconds": 5.800000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 24.3
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 5.300000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 24.8
+          }
+        ],
+        "total_stopped_seconds": 28.0
+      },
+      {
+        "id": "r21",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.0,
+            "duration_seconds": 1.0
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 11.100000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 19.0
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 13.100000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 17.0
+          }
+        ],
+        "total_stopped_seconds": 20.5
+      },
+      {
+        "id": "r22",
+        "temporary_slowing": [
+          {
+            "start_seconds": 28.400000000000002,
+            "end_seconds": 30.1,
+            "duration_seconds": 1.7000000000000002
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 2.0,
+            "end_seconds": 15.700000000000001,
+            "duration_seconds": 13.700000000000001
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 15.0,
+            "duration_seconds": 11.0
+          }
+        ],
+        "total_stopped_seconds": 12.9
+      },
+      {
+        "id": "r23",
+        "temporary_slowing": [],
+        "congestion": [
+          {
+            "start_seconds": 9.0,
+            "end_seconds": 9.1,
+            "duration_seconds": 0.1
+          },
+          {
+            "start_seconds": 11.600000000000001,
+            "end_seconds": 30.1,
+            "duration_seconds": 18.5
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 13.9,
+            "end_seconds": 30.1,
+            "duration_seconds": 16.2
+          }
+        ],
+        "total_stopped_seconds": 19.900000000000002
+      }
+    ],
+    "deadlocks": [
+      {
+        "start_seconds": 27.400000000000002,
+        "end_seconds": 30.1,
+        "duration_seconds": 2.7,
+        "robots": [
+          "r05",
+          "r14"
+        ],
+        "detected_seconds": 27.400000000000002,
+        "evidence_window_start_seconds": 19.400000000000002,
+        "definition": "operational: stationary, no progress, persistent directed mutual-obstruction cycle"
+      },
+      {
+        "start_seconds": 14.0,
+        "end_seconds": 30.1,
+        "duration_seconds": 16.1,
+        "robots": [
+          "r06",
+          "r09"
+        ],
+        "detected_seconds": 14.0,
+        "evidence_window_start_seconds": 6.0,
+        "definition": "operational: stationary, no progress, persistent directed mutual-obstruction cycle"
+      },
+      {
+        "start_seconds": 18.1,
+        "end_seconds": 30.1,
+        "duration_seconds": 12.0,
+        "robots": [
+          "r20",
+          "r23"
+        ],
+        "detected_seconds": 18.1,
+        "evidence_window_start_seconds": 10.100000000000001,
+        "definition": "operational: stationary, no progress, persistent directed mutual-obstruction cycle"
+      }
+    ],
+    "deadlock_count": 3,
+    "no_progress_event_count": 31
+  },
+  "timeout": true,
+  "bottleneck_occupancy": {
+    "7": {
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "per_robot_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        26.900000000000002,
+        0.0,
+        0.0,
+        27.700000000000003,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "region": {
+        "center": [
+          5.596775401930163,
+          -11.345740146118299
+        ],
+        "radius": 0.5384764910957058
+      }
+    },
+    "5": {
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "per_robot_seconds": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        27.400000000000002,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "region": {
+        "center": [
+          4.032094999999979,
+          -4.052887000000003
+        ],
+        "radius": 1.481912059445117
+      }
+    }
+  },
+  "simulated_seconds": 30.0,
+  "physical_validation": {
+    "passed": true,
+    "model_equations_valid": true,
+    "violations": [],
+    "checked_steps": 300,
+    "checked_robots": 24,
+    "state_resets_or_trace_filters": false
+  },
+  "collisions": 0,
+  "collision_events": [],
+  "minimum_inter_robot_clearance": 0.11839864372284345,
+  "minimum_swept_envelope_clearance": 0.04010252031093353,
+  "unresolved_swept_contacts": [],
+  "collision_definition": "oriented rectangles for cars, disks for differential-drive; synchronized swept-contact refinement",
+  "simulation_executed": true,
+  "total_global_planning_seconds": 0.15503050000006624,
+  "per_robot_global_planning_seconds": [
+    0.002704774,
+    0.005996525,
+    0.003714601,
+    0.002292207,
+    0.002434296,
+    0.002828586,
+    0.002031149,
+    0.002420707,
+    0.001975408,
+    0.000890777,
+    0.003176603,
+    0.00082933,
+    0.003576913,
+    0.004284216,
+    0.001769911,
+    0.002570257,
+    0.008058271,
+    0.001573755,
+    0.007506097,
+    0.003373462,
+    0.002868565,
+    0.00293502,
+    0.002763605,
+    0.003795633
+  ],
+  "planning_timing_scope": "RRT: construction+search+shortcut per robot; K: native query per robot, total additionally includes map load, JSON and verification",
+  "simulation_runtime_seconds": 50.3741774559021,
+  "local_controller_seconds": [
+    2.2650991220034484,
+    1.8885922779873,
+    1.9384775290100151,
+    1.971803720994103,
+    1.8919715060046656,
+    1.897525025993673,
+    2.191665161999481,
+    2.022739298007764,
+    1.882543880987214,
+    2.224996964994716,
+    2.0013377539871726,
+    1.9690294550018734,
+    2.324665230997198,
+    1.914101699994717,
+    1.9783981209884587,
+    2.0085286049979914,
+    2.081897588010179,
+    1.8048450230080562,
+    2.2299217819963815,
+    2.036429697004678,
+    1.9888289640048242,
+    2.134128659002272,
+    2.0273249340070834,
+    1.9052482629977021
+  ],
+  "conservative_envelope_collision_steps": 0.0,
+  "wall_timeout": false,
+  "status": "timeout",
+  "control_limits_valid": true,
+  "audit": {
+    "trace_modified": false,
+    "metrics_source_sha256": "c8d0a728b19acf3144105aa3919fb546c6fbee98898356faa818ed6acdf52257"
+  }
+}

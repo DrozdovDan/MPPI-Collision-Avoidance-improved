@@ -1,0 +1,1973 @@
+{
+  "config": {
+    "seed": 20261016,
+    "dt": 0.1,
+    "candidate_count": 3,
+    "max_pair_attempts": 320,
+    "max_task_attempts": 8,
+    "car_witness_max_steps": 1100,
+    "parking_graph_spacing": 0.25,
+    "warehouse_graph_spacing": 0.7,
+    "selection": "maximum geometric score among valid candidates; ordinary uses first",
+    "pilot_selection": false,
+    "k_route_selection": false
+  },
+  "config_sha256": "cca75ab73e3803275e8cbeba41a2d3c715c7fed717a1a3265d67adfbee2f6536",
+  "source_revision": "c10ef1c81afe80ad1f4f3a2cc4369dd6ef7bf844",
+  "source_sha256": "0747c14a41a5780d01e61aa918311eadcac76b7f8a53562ded395eaddaccbbe5",
+  "maps": {
+    "parking1": {
+      "profiles": [
+        {
+          "size_class": "small",
+          "model": "car_like",
+          "radius": 0.2692382455478529,
+          "length": 0.4902109463952214,
+          "width": 0.22282315745237335,
+          "wheelbase": 0.3186371151568939,
+          "footprint": "rectangle",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 0.65,
+            "w_min": -0.6,
+            "w_max": 0.6,
+            "v_accel_max": 0.6,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.02,
+          "size_reference_width": 0.6730956138696322
+        },
+        {
+          "size_class": "medium",
+          "model": "car_like",
+          "radius": 0.3702025876282978,
+          "length": 0.6740400512934295,
+          "width": 0.30638184149701336,
+          "wheelbase": 0.4381260333407292,
+          "footprint": "rectangle",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 0.65,
+            "w_min": -0.6,
+            "w_max": 0.6,
+            "v_accel_max": 0.6,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.02,
+          "size_reference_width": 0.6730956138696322
+        },
+        {
+          "size_class": "large",
+          "model": "car_like",
+          "radius": 0.875024298030522,
+          "length": 1.5931855757844695,
+          "width": 0.7241752617202134,
+          "wheelbase": 1.0355706242599052,
+          "footprint": "rectangle",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 0.65,
+            "w_min": -0.6,
+            "w_max": 0.6,
+            "v_accel_max": 0.6,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.02,
+          "size_reference_width": 0.6730956138696322
+        }
+      ],
+      "graph_sha256": "917bf81d0c19d8b171cd26c98d88a7ed327f56df83ded06d12f3b397d24bdabf",
+      "rebuilt_stale_cache": false,
+      "graph_cache": "benchmarks/results/multi_agent_cache/parking1.resources.json",
+      "graph_nodes": [
+        1791,
+        1733,
+        1649
+      ],
+      "smallest_configuration_space_holes": 0,
+      "alternative_resource_ids": [],
+      "seconds": 21.319413019999956,
+      "rejection_counts": {
+        "bounded_feasibility_not_established": 60,
+        "endpoint_packing": 12344,
+        "short_or_disconnected": 13,
+        "does_not_cross_selected_resource": 3359
+      },
+      "bundled_geometry": "geometry_cache/parking1.resources.json.gz"
+    },
+    "parking2": {
+      "profiles": [
+        {
+          "size_class": "small",
+          "model": "car_like",
+          "radius": 0.2398213330566284,
+          "length": 0.4366506043902979,
+          "width": 0.1984775474501354,
+          "wheelbase": 0.28382289285369366,
+          "footprint": "rectangle",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 0.65,
+            "w_min": -0.6,
+            "w_max": 0.6,
+            "v_accel_max": 0.6,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.02,
+          "size_reference_width": 0.599553332641571
+        },
+        {
+          "size_class": "medium",
+          "model": "car_like",
+          "radius": 0.32975433295286405,
+          "length": 0.6003945810366595,
+          "width": 0.27290662774393615,
+          "wheelbase": 0.3902564776738287,
+          "footprint": "rectangle",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 0.65,
+            "w_min": -0.6,
+            "w_max": 0.6,
+            "v_accel_max": 0.6,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.02,
+          "size_reference_width": 0.599553332641571
+        },
+        {
+          "size_class": "large",
+          "model": "car_like",
+          "radius": 0.7794193324340423,
+          "length": 1.419114464268468,
+          "width": 0.64505202921294,
+          "wheelbase": 0.9224244017745042,
+          "footprint": "rectangle",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 0.65,
+            "w_min": -0.6,
+            "w_max": 0.6,
+            "v_accel_max": 0.6,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.02,
+          "size_reference_width": 0.599553332641571
+        }
+      ],
+      "graph_sha256": "106a5debdf37bcbf1b7b3c7f42bb7a54aa2d0cc8fdae741033835506929255bf",
+      "rebuilt_stale_cache": false,
+      "graph_cache": "benchmarks/results/multi_agent_cache/parking2.resources.json",
+      "graph_nodes": [
+        1938,
+        1813,
+        1648
+      ],
+      "smallest_configuration_space_holes": 0,
+      "alternative_resource_ids": [],
+      "seconds": 22.566575564999766,
+      "rejection_counts": {
+        "endpoint_packing": 13764,
+        "bounded_feasibility_not_established": 138,
+        "short_or_disconnected": 33,
+        "does_not_cross_selected_resource": 6399
+      },
+      "bundled_geometry": "geometry_cache/parking2.resources.json.gz"
+    },
+    "parking3": {
+      "profiles": [
+        {
+          "size_class": "small",
+          "model": "car_like",
+          "radius": 0.20365100318040136,
+          "length": 0.37079409279413544,
+          "width": 0.16854276945187974,
+          "wheelbase": 0.24101616031618806,
+          "footprint": "rectangle",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 0.65,
+            "w_min": -0.6,
+            "w_max": 0.6,
+            "v_accel_max": 0.6,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.02,
+          "size_reference_width": 0.5091275079510034
+        },
+        {
+          "size_class": "medium",
+          "model": "car_like",
+          "radius": 0.2800201293730519,
+          "length": 0.5098418775919362,
+          "width": 0.23174630799633464,
+          "wheelbase": 0.33139722043475855,
+          "footprint": "rectangle",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 0.65,
+            "w_min": -0.6,
+            "w_max": 0.6,
+            "v_accel_max": 0.6,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.02,
+          "size_reference_width": 0.5091275079510034
+        },
+        {
+          "size_class": "large",
+          "model": "car_like",
+          "radius": 0.6618657603363044,
+          "length": 1.2050808015809402,
+          "width": 0.5477640007186092,
+          "wheelbase": 0.7833025210276112,
+          "footprint": "rectangle",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 0.65,
+            "w_min": -0.6,
+            "w_max": 0.6,
+            "v_accel_max": 0.6,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.02,
+          "size_reference_width": 0.5091275079510034
+        }
+      ],
+      "graph_sha256": "5f28141ee347425b3ddd8736cef25427cecea453a4016e12243e653e89c39639",
+      "rebuilt_stale_cache": false,
+      "graph_cache": "benchmarks/results/multi_agent_cache/parking3.resources.json",
+      "graph_nodes": [
+        2140,
+        1911,
+        1824
+      ],
+      "smallest_configuration_space_holes": 0,
+      "alternative_resource_ids": [],
+      "seconds": 21.090443057999437,
+      "rejection_counts": {
+        "short_or_disconnected": 19,
+        "endpoint_packing": 1487,
+        "bounded_feasibility_not_established": 33,
+        "does_not_cross_selected_resource": 857,
+        "does_not_cross_selected_junction": 1
+      },
+      "bundled_geometry": "geometry_cache/parking3.resources.json.gz"
+    },
+    "warehouse": {
+      "profiles": [
+        {
+          "size_class": "small",
+          "model": "diff_drive",
+          "radius": 0.15075539999997842,
+          "length": 0.30151079999995684,
+          "width": 0.30151079999995684,
+          "wheelbase": null,
+          "footprint": "disk",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 1.2,
+            "w_min": -1.8,
+            "w_max": 1.8,
+            "v_accel_max": 0.8,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.04,
+          "size_reference_width": 0.8375299999998801
+        },
+        {
+          "size_class": "medium",
+          "model": "diff_drive",
+          "radius": 0.26800959999996166,
+          "length": 0.5360191999999233,
+          "width": 0.5360191999999233,
+          "wheelbase": null,
+          "footprint": "disk",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 1.2,
+            "w_min": -1.8,
+            "w_max": 1.8,
+            "v_accel_max": 0.8,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.04,
+          "size_reference_width": 0.8375299999998801
+        },
+        {
+          "size_class": "large",
+          "model": "diff_drive",
+          "radius": 0.4606414999999341,
+          "length": 0.9212829999998682,
+          "width": 0.9212829999998682,
+          "wheelbase": null,
+          "footprint": "disk",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 1.2,
+            "w_min": -1.8,
+            "w_max": 1.8,
+            "v_accel_max": 0.8,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.04,
+          "size_reference_width": 0.8375299999998801
+        }
+      ],
+      "graph_sha256": "dad4ae60861ce9a9f479109bbff84c904c4655a0ed21d0fd223784bf00281d3d",
+      "rebuilt_stale_cache": false,
+      "graph_cache": "benchmarks/results/multi_agent_cache/warehouse.resources.json",
+      "graph_nodes": [
+        11950,
+        10847,
+        9108
+      ],
+      "smallest_configuration_space_holes": 38,
+      "alternative_resource_ids": [
+        113,
+        20,
+        84,
+        48,
+        162,
+        128
+      ],
+      "seconds": 128.4491071729999,
+      "rejection_counts": {
+        "short_or_disconnected": 1171,
+        "endpoint_packing": 4374,
+        "does_not_cross_selected_resource": 1807,
+        "does_not_cross_selected_junction": 18
+      },
+      "bundled_geometry": "geometry_cache/warehouse.resources.json.gz"
+    },
+    "warehouse2": {
+      "profiles": [
+        {
+          "size_class": "small",
+          "model": "diff_drive",
+          "radius": 0.12263760077671991,
+          "length": 0.24527520155343982,
+          "width": 0.24527520155343982,
+          "wheelbase": null,
+          "footprint": "disk",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 1.2,
+            "w_min": -1.8,
+            "w_max": 1.8,
+            "v_accel_max": 0.8,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.04,
+          "size_reference_width": 0.6813200043151106
+        },
+        {
+          "size_class": "medium",
+          "model": "diff_drive",
+          "radius": 0.2180224013808354,
+          "length": 0.4360448027616708,
+          "width": 0.4360448027616708,
+          "wheelbase": null,
+          "footprint": "disk",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 1.2,
+            "w_min": -1.8,
+            "w_max": 1.8,
+            "v_accel_max": 0.8,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.04,
+          "size_reference_width": 0.6813200043151106
+        },
+        {
+          "size_class": "large",
+          "model": "diff_drive",
+          "radius": 0.3747260023733109,
+          "length": 0.7494520047466218,
+          "width": 0.7494520047466218,
+          "wheelbase": null,
+          "footprint": "disk",
+          "motion_limits": {
+            "v_min": 0.0,
+            "v_max": 1.2,
+            "w_min": -1.8,
+            "w_max": 1.8,
+            "v_accel_max": 0.8,
+            "v_brake_max": 1.2,
+            "w_accel_max": 2.0,
+            "a_min": -1.2,
+            "a_max": 0.6,
+            "j_min": -1.0,
+            "j_max": 1.0,
+            "steering_rate_max": 0.6
+          },
+          "safety_margin": 0.04,
+          "size_reference_width": 0.6813200043151106
+        }
+      ],
+      "graph_sha256": "23b47c5832805558bb5cf73a7347464f4baa2cabfc11c4a5c983d8f099d03079",
+      "rebuilt_stale_cache": false,
+      "graph_cache": "benchmarks/results/multi_agent_cache/warehouse2.resources.json",
+      "graph_nodes": [
+        15620,
+        14131,
+        12987
+      ],
+      "smallest_configuration_space_holes": 68,
+      "alternative_resource_ids": [
+        73,
+        91,
+        66,
+        67,
+        97,
+        96
+      ],
+      "seconds": 115.24917239499973,
+      "rejection_counts": {
+        "short_or_disconnected": 479,
+        "does_not_cross_selected_resource": 268,
+        "endpoint_packing": 1342,
+        "does_not_cross_selected_junction": 8
+      },
+      "bundled_geometry": "geometry_cache/warehouse2.resources.json.gz"
+    }
+  },
+  "selection_audit": [
+    {
+      "map": "parking1",
+      "task": 1,
+      "candidate_index": 0,
+      "seed": 20262016,
+      "count": 4,
+      "valid": true,
+      "geometric_score": 0.11223668392911332
+    },
+    {
+      "map": "parking1",
+      "task": 2,
+      "candidate_index": 0,
+      "seed": 20263016,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.23916476079734775
+    },
+    {
+      "map": "parking1",
+      "task": 3,
+      "candidate_index": 0,
+      "seed": 20264016,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.31209358077331006
+    },
+    {
+      "map": "parking1",
+      "task": 4,
+      "candidate_index": 0,
+      "seed": 20265016,
+      "count": 8,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 4,
+      "candidate_index": 1,
+      "seed": 20265017,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.5943352921983085
+    },
+    {
+      "map": "parking1",
+      "task": 4,
+      "candidate_index": 2,
+      "seed": 20265018,
+      "count": 8,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 4,
+      "candidate_index": 3,
+      "seed": 20265019,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.5931594636529947
+    },
+    {
+      "map": "parking1",
+      "task": 4,
+      "candidate_index": 4,
+      "seed": 20265020,
+      "count": 8,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 4,
+      "candidate_index": 5,
+      "seed": 20265021,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.5938240043732319
+    },
+    {
+      "map": "parking1",
+      "task": 5,
+      "candidate_index": 0,
+      "seed": 20266016,
+      "count": 16,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 5,
+      "candidate_index": 1,
+      "seed": 20266017,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.6307864719333431
+    },
+    {
+      "map": "parking1",
+      "task": 5,
+      "candidate_index": 2,
+      "seed": 20266018,
+      "count": 16,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 5,
+      "candidate_index": 3,
+      "seed": 20266019,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.6294043538623485
+    },
+    {
+      "map": "parking1",
+      "task": 5,
+      "candidate_index": 4,
+      "seed": 20266020,
+      "count": 16,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 5,
+      "candidate_index": 5,
+      "seed": 20266021,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.630281772238511
+    },
+    {
+      "map": "parking1",
+      "task": 6,
+      "candidate_index": 0,
+      "seed": 20267016,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.11475809906165817
+    },
+    {
+      "map": "parking1",
+      "task": 6,
+      "candidate_index": 1,
+      "seed": 20267017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.11371402304068001
+    },
+    {
+      "map": "parking1",
+      "task": 6,
+      "candidate_index": 2,
+      "seed": 20267018,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.22183474792097307
+    },
+    {
+      "map": "parking1",
+      "task": 7,
+      "candidate_index": 0,
+      "seed": 20268016,
+      "count": 12,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 7,
+      "candidate_index": 1,
+      "seed": 20268017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.22435927092616673
+    },
+    {
+      "map": "parking1",
+      "task": 7,
+      "candidate_index": 2,
+      "seed": 20268018,
+      "count": 12,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 7,
+      "candidate_index": 3,
+      "seed": 20268019,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.27925408957262443
+    },
+    {
+      "map": "parking1",
+      "task": 7,
+      "candidate_index": 4,
+      "seed": 20268020,
+      "count": 12,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 7,
+      "candidate_index": 5,
+      "seed": 20268021,
+      "count": 12,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 7,
+      "candidate_index": 6,
+      "seed": 20268022,
+      "count": 12,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 7,
+      "candidate_index": 7,
+      "seed": 20268023,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.1951900687892758
+    },
+    {
+      "map": "parking1",
+      "task": 8,
+      "candidate_index": 0,
+      "seed": 20269016,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.5279434217755232
+    },
+    {
+      "map": "parking1",
+      "task": 8,
+      "candidate_index": 1,
+      "seed": 20269017,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.5597860989508457
+    },
+    {
+      "map": "parking1",
+      "task": 8,
+      "candidate_index": 2,
+      "seed": 20269018,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.48279742431821326
+    },
+    {
+      "map": "parking1",
+      "task": 9,
+      "candidate_index": 0,
+      "seed": 20270016,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.47875880875314547
+    },
+    {
+      "map": "parking1",
+      "task": 9,
+      "candidate_index": 1,
+      "seed": 20270017,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.4865942634425915
+    },
+    {
+      "map": "parking1",
+      "task": 9,
+      "candidate_index": 2,
+      "seed": 20270018,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.48773636320811725
+    },
+    {
+      "map": "parking1",
+      "task": 10,
+      "candidate_index": 0,
+      "seed": 20271016,
+      "count": 32,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 10,
+      "candidate_index": 1,
+      "seed": 20271017,
+      "count": 32,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking1",
+      "task": 10,
+      "candidate_index": 2,
+      "seed": 20271018,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.5388055437864956
+    },
+    {
+      "map": "parking1",
+      "task": 10,
+      "candidate_index": 3,
+      "seed": 20271019,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.5561928568301573
+    },
+    {
+      "map": "parking1",
+      "task": 10,
+      "candidate_index": 4,
+      "seed": 20271020,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.5659981474472938
+    },
+    {
+      "map": "parking2",
+      "task": 1,
+      "candidate_index": 0,
+      "seed": 20362016,
+      "count": 4,
+      "valid": true,
+      "geometric_score": 0.23793662109750557
+    },
+    {
+      "map": "parking2",
+      "task": 2,
+      "candidate_index": 0,
+      "seed": 20363016,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.11667506260037433
+    },
+    {
+      "map": "parking2",
+      "task": 3,
+      "candidate_index": 0,
+      "seed": 20364016,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.18851132011291272
+    },
+    {
+      "map": "parking2",
+      "task": 4,
+      "candidate_index": 0,
+      "seed": 20365016,
+      "count": 8,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 4,
+      "candidate_index": 1,
+      "seed": 20365017,
+      "count": 8,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 4,
+      "candidate_index": 2,
+      "seed": 20365018,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.6986450075136986
+    },
+    {
+      "map": "parking2",
+      "task": 4,
+      "candidate_index": 3,
+      "seed": 20365019,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.6851430257576461
+    },
+    {
+      "map": "parking2",
+      "task": 4,
+      "candidate_index": 4,
+      "seed": 20365020,
+      "count": 8,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 4,
+      "candidate_index": 5,
+      "seed": 20365021,
+      "count": 8,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 4,
+      "candidate_index": 6,
+      "seed": 20365022,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.7000260388403245
+    },
+    {
+      "map": "parking2",
+      "task": 5,
+      "candidate_index": 0,
+      "seed": 20366016,
+      "count": 16,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 5,
+      "candidate_index": 1,
+      "seed": 20366017,
+      "count": 16,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 5,
+      "candidate_index": 2,
+      "seed": 20366018,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.4722259968754689
+    },
+    {
+      "map": "parking2",
+      "task": 5,
+      "candidate_index": 3,
+      "seed": 20366019,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.5470597580881623
+    },
+    {
+      "map": "parking2",
+      "task": 5,
+      "candidate_index": 4,
+      "seed": 20366020,
+      "count": 16,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 5,
+      "candidate_index": 5,
+      "seed": 20366021,
+      "count": 16,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 5,
+      "candidate_index": 6,
+      "seed": 20366022,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.5028309866085724
+    },
+    {
+      "map": "parking2",
+      "task": 6,
+      "candidate_index": 0,
+      "seed": 20367016,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.10953684009194486
+    },
+    {
+      "map": "parking2",
+      "task": 6,
+      "candidate_index": 1,
+      "seed": 20367017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.11115416252150767
+    },
+    {
+      "map": "parking2",
+      "task": 6,
+      "candidate_index": 2,
+      "seed": 20367018,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.11469589774128541
+    },
+    {
+      "map": "parking2",
+      "task": 7,
+      "candidate_index": 0,
+      "seed": 20368016,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.10866392667729524
+    },
+    {
+      "map": "parking2",
+      "task": 7,
+      "candidate_index": 1,
+      "seed": 20368017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.21708263518797846
+    },
+    {
+      "map": "parking2",
+      "task": 7,
+      "candidate_index": 2,
+      "seed": 20368018,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.10637851372281065
+    },
+    {
+      "map": "parking2",
+      "task": 8,
+      "candidate_index": 0,
+      "seed": 20369016,
+      "count": 20,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 8,
+      "candidate_index": 1,
+      "seed": 20369017,
+      "count": 20,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 8,
+      "candidate_index": 2,
+      "seed": 20369018,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.6085555614210364
+    },
+    {
+      "map": "parking2",
+      "task": 8,
+      "candidate_index": 3,
+      "seed": 20369019,
+      "count": 20,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 8,
+      "candidate_index": 4,
+      "seed": 20369020,
+      "count": 20,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 8,
+      "candidate_index": 5,
+      "seed": 20369021,
+      "count": 20,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 8,
+      "candidate_index": 6,
+      "seed": 20369022,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.5562095537093935
+    },
+    {
+      "map": "parking2",
+      "task": 8,
+      "candidate_index": 7,
+      "seed": 20369023,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.46447422558898793
+    },
+    {
+      "map": "parking2",
+      "task": 9,
+      "candidate_index": 0,
+      "seed": 20370016,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.4106136156761971
+    },
+    {
+      "map": "parking2",
+      "task": 9,
+      "candidate_index": 1,
+      "seed": 20370017,
+      "count": 24,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 9,
+      "candidate_index": 2,
+      "seed": 20370018,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.4357382980588303
+    },
+    {
+      "map": "parking2",
+      "task": 9,
+      "candidate_index": 3,
+      "seed": 20370019,
+      "count": 24,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 9,
+      "candidate_index": 4,
+      "seed": 20370020,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.40278962577755417
+    },
+    {
+      "map": "parking2",
+      "task": 10,
+      "candidate_index": 0,
+      "seed": 20371016,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.44001278288394424
+    },
+    {
+      "map": "parking2",
+      "task": 10,
+      "candidate_index": 1,
+      "seed": 20371017,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.4481749698113262
+    },
+    {
+      "map": "parking2",
+      "task": 10,
+      "candidate_index": 2,
+      "seed": 20371018,
+      "count": 32,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "parking2",
+      "task": 10,
+      "candidate_index": 3,
+      "seed": 20371019,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.4589758290627171
+    },
+    {
+      "map": "parking3",
+      "task": 1,
+      "candidate_index": 0,
+      "seed": 20462016,
+      "count": 4,
+      "valid": true,
+      "geometric_score": 0.1052715291021999
+    },
+    {
+      "map": "parking3",
+      "task": 2,
+      "candidate_index": 0,
+      "seed": 20463016,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.10755178007946828
+    },
+    {
+      "map": "parking3",
+      "task": 3,
+      "candidate_index": 0,
+      "seed": 20464016,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.13647691703397857
+    },
+    {
+      "map": "parking3",
+      "task": 4,
+      "candidate_index": 0,
+      "seed": 20465016,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.7270209467693981
+    },
+    {
+      "map": "parking3",
+      "task": 4,
+      "candidate_index": 1,
+      "seed": 20465017,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.6596182132766247
+    },
+    {
+      "map": "parking3",
+      "task": 4,
+      "candidate_index": 2,
+      "seed": 20465018,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.6676285733983944
+    },
+    {
+      "map": "parking3",
+      "task": 5,
+      "candidate_index": 0,
+      "seed": 20466016,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.7569149529784897
+    },
+    {
+      "map": "parking3",
+      "task": 5,
+      "candidate_index": 1,
+      "seed": 20466017,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.7325504427203298
+    },
+    {
+      "map": "parking3",
+      "task": 5,
+      "candidate_index": 2,
+      "seed": 20466018,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.7158474308570641
+    },
+    {
+      "map": "parking3",
+      "task": 6,
+      "candidate_index": 0,
+      "seed": 20467016,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.3400694050405884
+    },
+    {
+      "map": "parking3",
+      "task": 6,
+      "candidate_index": 1,
+      "seed": 20467017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.10688405096392799
+    },
+    {
+      "map": "parking3",
+      "task": 6,
+      "candidate_index": 2,
+      "seed": 20467018,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.10604012017204321
+    },
+    {
+      "map": "parking3",
+      "task": 7,
+      "candidate_index": 0,
+      "seed": 20468016,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.10436098319188075
+    },
+    {
+      "map": "parking3",
+      "task": 7,
+      "candidate_index": 1,
+      "seed": 20468017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.5661735110367813
+    },
+    {
+      "map": "parking3",
+      "task": 7,
+      "candidate_index": 2,
+      "seed": 20468018,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.25823648969153257
+    },
+    {
+      "map": "parking3",
+      "task": 8,
+      "candidate_index": 0,
+      "seed": 20469016,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.6562002677671197
+    },
+    {
+      "map": "parking3",
+      "task": 8,
+      "candidate_index": 1,
+      "seed": 20469017,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.7539964937103265
+    },
+    {
+      "map": "parking3",
+      "task": 8,
+      "candidate_index": 2,
+      "seed": 20469018,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.6544619963936738
+    },
+    {
+      "map": "parking3",
+      "task": 9,
+      "candidate_index": 0,
+      "seed": 20470016,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.46668105235450397
+    },
+    {
+      "map": "parking3",
+      "task": 9,
+      "candidate_index": 1,
+      "seed": 20470017,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.4745083110424893
+    },
+    {
+      "map": "parking3",
+      "task": 9,
+      "candidate_index": 2,
+      "seed": 20470018,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.4694871222729485
+    },
+    {
+      "map": "parking3",
+      "task": 10,
+      "candidate_index": 0,
+      "seed": 20471016,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.43654350093728744
+    },
+    {
+      "map": "parking3",
+      "task": 10,
+      "candidate_index": 1,
+      "seed": 20471017,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.4905138288644344
+    },
+    {
+      "map": "parking3",
+      "task": 10,
+      "candidate_index": 2,
+      "seed": 20471018,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.46776652019690934
+    },
+    {
+      "map": "warehouse",
+      "task": 1,
+      "candidate_index": 0,
+      "seed": 20562016,
+      "count": 4,
+      "valid": true,
+      "geometric_score": 0.1658843308518967
+    },
+    {
+      "map": "warehouse",
+      "task": 2,
+      "candidate_index": 0,
+      "seed": 20563016,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.3286770657564006
+    },
+    {
+      "map": "warehouse",
+      "task": 3,
+      "candidate_index": 0,
+      "seed": 20564016,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.46780203620626243
+    },
+    {
+      "map": "warehouse",
+      "task": 4,
+      "candidate_index": 0,
+      "seed": 20565016,
+      "count": 8,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "warehouse",
+      "task": 4,
+      "candidate_index": 1,
+      "seed": 20565017,
+      "count": 8,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "warehouse",
+      "task": 4,
+      "candidate_index": 2,
+      "seed": 20565018,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.6963505606040357
+    },
+    {
+      "map": "warehouse",
+      "task": 4,
+      "candidate_index": 3,
+      "seed": 20565019,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.6962361753240797
+    },
+    {
+      "map": "warehouse",
+      "task": 4,
+      "candidate_index": 4,
+      "seed": 20565020,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.696138737818418
+    },
+    {
+      "map": "warehouse",
+      "task": 5,
+      "candidate_index": 0,
+      "seed": 20566016,
+      "count": 16,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "warehouse",
+      "task": 5,
+      "candidate_index": 1,
+      "seed": 20566017,
+      "count": 16,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "warehouse",
+      "task": 5,
+      "candidate_index": 2,
+      "seed": 20566018,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.7270785362631531
+    },
+    {
+      "map": "warehouse",
+      "task": 5,
+      "candidate_index": 3,
+      "seed": 20566019,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.7536428603521775
+    },
+    {
+      "map": "warehouse",
+      "task": 5,
+      "candidate_index": 4,
+      "seed": 20566020,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.7015310449018506
+    },
+    {
+      "map": "warehouse",
+      "task": 6,
+      "candidate_index": 0,
+      "seed": 20567016,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.16091049455800366
+    },
+    {
+      "map": "warehouse",
+      "task": 6,
+      "candidate_index": 1,
+      "seed": 20567017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.42596123062264507
+    },
+    {
+      "map": "warehouse",
+      "task": 6,
+      "candidate_index": 2,
+      "seed": 20567018,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.2534008939796245
+    },
+    {
+      "map": "warehouse",
+      "task": 7,
+      "candidate_index": 0,
+      "seed": 20568016,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.3955626108025143
+    },
+    {
+      "map": "warehouse",
+      "task": 7,
+      "candidate_index": 1,
+      "seed": 20568017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.4192845859565647
+    },
+    {
+      "map": "warehouse",
+      "task": 7,
+      "candidate_index": 2,
+      "seed": 20568018,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.4088078805300689
+    },
+    {
+      "map": "warehouse",
+      "task": 8,
+      "candidate_index": 0,
+      "seed": 20569016,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.7314916091987558
+    },
+    {
+      "map": "warehouse",
+      "task": 8,
+      "candidate_index": 1,
+      "seed": 20569017,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.7308915700825155
+    },
+    {
+      "map": "warehouse",
+      "task": 8,
+      "candidate_index": 2,
+      "seed": 20569018,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.7299662413230948
+    },
+    {
+      "map": "warehouse",
+      "task": 9,
+      "candidate_index": 0,
+      "seed": 20570016,
+      "count": 24,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "warehouse",
+      "task": 9,
+      "candidate_index": 1,
+      "seed": 20570017,
+      "count": 24,
+      "valid": false,
+      "geometric_score": null
+    },
+    {
+      "map": "warehouse",
+      "task": 9,
+      "candidate_index": 2,
+      "seed": 20570018,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.6386598976359539
+    },
+    {
+      "map": "warehouse",
+      "task": 9,
+      "candidate_index": 3,
+      "seed": 20570019,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.6383266583067642
+    },
+    {
+      "map": "warehouse",
+      "task": 9,
+      "candidate_index": 4,
+      "seed": 20570020,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.6567689641526738
+    },
+    {
+      "map": "warehouse",
+      "task": 10,
+      "candidate_index": 0,
+      "seed": 20571016,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.3726035787121946
+    },
+    {
+      "map": "warehouse",
+      "task": 10,
+      "candidate_index": 1,
+      "seed": 20571017,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.6099486816375715
+    },
+    {
+      "map": "warehouse",
+      "task": 10,
+      "candidate_index": 2,
+      "seed": 20571018,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.6551886684010642
+    },
+    {
+      "map": "warehouse2",
+      "task": 1,
+      "candidate_index": 0,
+      "seed": 20662016,
+      "count": 4,
+      "valid": true,
+      "geometric_score": 0.16897232391460124
+    },
+    {
+      "map": "warehouse2",
+      "task": 2,
+      "candidate_index": 0,
+      "seed": 20663016,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.1892431949100693
+    },
+    {
+      "map": "warehouse2",
+      "task": 3,
+      "candidate_index": 0,
+      "seed": 20664016,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.13792615935802768
+    },
+    {
+      "map": "warehouse2",
+      "task": 4,
+      "candidate_index": 0,
+      "seed": 20665016,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.7019718687352798
+    },
+    {
+      "map": "warehouse2",
+      "task": 4,
+      "candidate_index": 1,
+      "seed": 20665017,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.7018616620749143
+    },
+    {
+      "map": "warehouse2",
+      "task": 4,
+      "candidate_index": 2,
+      "seed": 20665018,
+      "count": 8,
+      "valid": true,
+      "geometric_score": 0.7020248694613119
+    },
+    {
+      "map": "warehouse2",
+      "task": 5,
+      "candidate_index": 0,
+      "seed": 20666016,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.7520452448988696
+    },
+    {
+      "map": "warehouse2",
+      "task": 5,
+      "candidate_index": 1,
+      "seed": 20666017,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.7519614714842119
+    },
+    {
+      "map": "warehouse2",
+      "task": 5,
+      "candidate_index": 2,
+      "seed": 20666018,
+      "count": 16,
+      "valid": true,
+      "geometric_score": 0.752017352005362
+    },
+    {
+      "map": "warehouse2",
+      "task": 6,
+      "candidate_index": 0,
+      "seed": 20667016,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.31081929044796
+    },
+    {
+      "map": "warehouse2",
+      "task": 6,
+      "candidate_index": 1,
+      "seed": 20667017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.22977469917394341
+    },
+    {
+      "map": "warehouse2",
+      "task": 6,
+      "candidate_index": 2,
+      "seed": 20667018,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.1966045998570626
+    },
+    {
+      "map": "warehouse2",
+      "task": 7,
+      "candidate_index": 0,
+      "seed": 20668016,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.49200567978049603
+    },
+    {
+      "map": "warehouse2",
+      "task": 7,
+      "candidate_index": 1,
+      "seed": 20668017,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.42115681308197517
+    },
+    {
+      "map": "warehouse2",
+      "task": 7,
+      "candidate_index": 2,
+      "seed": 20668018,
+      "count": 12,
+      "valid": true,
+      "geometric_score": 0.42113973349104483
+    },
+    {
+      "map": "warehouse2",
+      "task": 8,
+      "candidate_index": 0,
+      "seed": 20669016,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.734568353332716
+    },
+    {
+      "map": "warehouse2",
+      "task": 8,
+      "candidate_index": 1,
+      "seed": 20669017,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.7344995095269208
+    },
+    {
+      "map": "warehouse2",
+      "task": 8,
+      "candidate_index": 2,
+      "seed": 20669018,
+      "count": 20,
+      "valid": true,
+      "geometric_score": 0.7720219550785095
+    },
+    {
+      "map": "warehouse2",
+      "task": 9,
+      "candidate_index": 0,
+      "seed": 20670016,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.6544009841371965
+    },
+    {
+      "map": "warehouse2",
+      "task": 9,
+      "candidate_index": 1,
+      "seed": 20670017,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.6226056022820533
+    },
+    {
+      "map": "warehouse2",
+      "task": 9,
+      "candidate_index": 2,
+      "seed": 20670018,
+      "count": 24,
+      "valid": true,
+      "geometric_score": 0.6293490493926606
+    },
+    {
+      "map": "warehouse2",
+      "task": 10,
+      "candidate_index": 0,
+      "seed": 20671016,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.5987375866114077
+    },
+    {
+      "map": "warehouse2",
+      "task": 10,
+      "candidate_index": 1,
+      "seed": 20671017,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.6113634433290874
+    },
+    {
+      "map": "warehouse2",
+      "task": 10,
+      "candidate_index": 2,
+      "seed": 20671018,
+      "count": 32,
+      "valid": true,
+      "geometric_score": 0.6295121169645445
+    }
+  ],
+  "no_pilot_or_k_route_selection": true,
+  "generation_seconds": 308.68214913200063,
+  "total_robots": 760,
+  "analysis_parameters": {
+    "endpoint_sampling_seed": 1731,
+    "endpoint_uniform_draws": 7000,
+    "maximum_attached_endpoints": {
+      "parking": 1200,
+      "warehouse": 2200
+    },
+    "attachment_neighbors": 1,
+    "candidate_selection": "ordinary first valid; others maximum score among up to 3 valid candidates in 8 attempts",
+    "dense_traffic_expansion": "After eight focused robots, allow unfocused traffic after half the pair-attempt budget; retain per-robot focused_assignment flags",
+    "physical_parking_size_factors": [
+      0.4,
+      0.55,
+      1.3
+    ],
+    "warehouse_size_factors": [
+      0.18,
+      0.32,
+      0.55
+    ],
+    "reference_width_filter": [
+      0.45,
+      2.0
+    ],
+    "car_preview_factors": [
+      1.6,
+      2.5,
+      1.0
+    ],
+    "car_witness_cruise_cap": 0.45,
+    "car_witness_goal_capture": 0.18,
+    "score_comparison": "within each map/category only; footprint-load index uses the fixed native map scale"
+  },
+  "implementation_sha256": {
+    "analysis.py": "ae588b1e2f852ad80eb53bb8a875aee71d43bacf5cbdcab0f05e59f340cec04a",
+    "generation.py": "0c0de90147d3ea9820cf7f74d38b081a422e9b48c871af04f3aa889c7f8c2ed0",
+    "geometry.py": "cf27ce50d2011d590df0fcbe8eb412927651129cde07a1da3fbb03318ba7d8d2"
+  },
+  "reused_source_sha256": {
+    "example/dyn_models.py": "edf9f19dfe30f547c2a8eb3e0ba7848bea3ac2966b27d2c63c196deec179f48f",
+    "benchmarks/rrt_connect.py": "11b2e24234fc070e1ae52d74afc68eef649af440099da0dfb8f62c7d1061ee4c",
+    "benchmarks/k_routes.py": "70d2e62f6bf7863060d6dff7ec74e1c4b9e8fe73ccb05e4a4819313c31bc0542",
+    "benchmarks/corridor_graph/geometry.py": "5498613032625d4d2d27dd8136bc080f1680668f4840f990176e08ed97f0824b"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "shapely": "2.1.2",
+    "pyvoronoi": "1.2.8",
+    "Pillow": "12.3.0",
+    "matplotlib": "3.11.1"
+  }
+}

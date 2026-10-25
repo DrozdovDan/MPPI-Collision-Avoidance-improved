@@ -1,0 +1,95 @@
+{
+  "examples": [
+    {
+      "category": "random_low",
+      "scenario": "warehouse2_01",
+      "planner": "rrt",
+      "run_id": "warehouse2_01__rrt__p42__c42__pilot",
+      "file": "01_random_low.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": true
+    },
+    {
+      "category": "random_moderate",
+      "scenario": "warehouse2_02",
+      "planner": "rrt",
+      "run_id": "warehouse2_02__rrt__p42__c42__pilot",
+      "file": "02_random_moderate.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": true
+    },
+    {
+      "category": "random_dense",
+      "scenario": "warehouse2_03",
+      "planner": "rrt",
+      "run_id": "warehouse2_03__rrt__p42__c42__pilot",
+      "file": "03_random_dense.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": false
+    },
+    {
+      "category": "opposing_bottleneck",
+      "scenario": "warehouse2_04",
+      "planner": "rrt",
+      "run_id": "warehouse2_04__rrt__p42__c42__pilot",
+      "file": "04_opposing_bottleneck.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": false
+    },
+    {
+      "category": "opposing_dense",
+      "scenario": "warehouse2_05",
+      "planner": "rrt",
+      "run_id": "warehouse2_05__rrt__p42__c42__pilot",
+      "file": "05_opposing_dense.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": false
+    },
+    {
+      "category": "intersection",
+      "scenario": "warehouse2_06",
+      "planner": "rrt",
+      "run_id": "warehouse2_06__rrt__p42__c42__pilot",
+      "file": "06_intersection.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": false
+    },
+    {
+      "category": "symmetric_swap",
+      "scenario": "warehouse2_07",
+      "planner": "rrt",
+      "run_id": "warehouse2_07__rrt__p42__c42__pilot",
+      "file": "07_symmetric_swap.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": false
+    },
+    {
+      "category": "competing_bottlenecks",
+      "scenario": "warehouse2_08",
+      "planner": "rrt",
+      "run_id": "warehouse2_08__rrt__p42__c42__pilot",
+      "file": "08_competing_bottlenecks.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": false
+    },
+    {
+      "category": "heterogeneous_congestion",
+      "scenario": "parking1_09",
+      "planner": "rrt",
+      "run_id": "parking1_09__rrt__p42__c42__pilot",
+      "file": "09_heterogeneous_congestion.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": true
+    },
+    {
+      "category": "maximum_stress",
+      "scenario": "warehouse2_10",
+      "planner": "rrt",
+      "run_id": "warehouse2_10__rrt__p42__c42__pilot",
+      "file": "10_maximum_stress.gif",
+      "observation_seconds": 30.0,
+      "control_limits_valid": false
+    }
+  ],
+  "trace_source": "recorded existing-simulator states; no animation-only motion"
+}

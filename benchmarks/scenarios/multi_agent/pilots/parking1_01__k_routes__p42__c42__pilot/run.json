@@ -1,0 +1,422 @@
+{
+  "run_id": "parking1_01__k_routes__p42__c42__pilot",
+  "scenario_id": "parking1_01",
+  "source_map": "parking1",
+  "category": "random_low",
+  "intended_difficulty": "ordinary",
+  "robot_count": 4,
+  "planner": "k_routes",
+  "scenario_sha256": "91efefa3e9b59ce0481ea1c74ea1444ea3af18ee700c79b7f6b5e7dae6607c8f",
+  "generation_seed": 20262016,
+  "planner_selection_seed": 42,
+  "controller_seed": 42,
+  "profile_name": "pilot",
+  "controller_profiles": [
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 1.4706328391856642,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 1.4706328391856642,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 1.4706328391856642,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    },
+    {
+      "batch_size": 96,
+      "time_steps": 31,
+      "dt": 0.1,
+      "init_value": [
+        0.0,
+        0.0
+      ],
+      "control_mean": [
+        0.0,
+        0.0
+      ],
+      "control_cov": [
+        [
+          0.25,
+          0.0
+        ],
+        [
+          0.0,
+          0.0225
+        ]
+      ],
+      "dist_to_goal_weight": 300.0,
+      "terminal_weight": 2000.0,
+      "mppi_lambda": 0.25,
+      "ma_cost_en": true,
+      "ma_dist_weight": 1200.0,
+      "ma_collision_weight": 10000000.0,
+      "ma_dist_threashhold": 4.0,
+      "k_alpha": -2.96,
+      "rad_eps": 0.02,
+      "velocity_cost_weight": 0.5,
+      "terminal_lookahead_distance": 1.4706328391856642,
+      "ma_en_close_to_goal_dist": 1.0,
+      "ma_en_close_to_goal_ts": 3,
+      "orca_time_boundary": 1.0,
+      "orca_responsibility_factor": 0.5,
+      "ma_exclude_collision_traj": true,
+      "velocity_cost_close_to_goal_dist": 0.4,
+      "car_like_dyn": true,
+      "anchor_path_weight": 3000.0,
+      "anchor_heading_weight": 1000.0,
+      "control_smoothness_weight": 20.0,
+      "control_noise_correlation": 0.92,
+      "anchor_acquisition_scale": 0.02,
+      "anchor_guided_fraction": 0.25,
+      "jerk_cost_weight": 1000.0,
+      "steering_rate_cost_weight": 2000.0,
+      "jerk_change_cost_weight": 4000.0,
+      "steering_rate_change_cost_weight": 10000.0,
+      "anchor_forward_weight": 80000.0,
+      "reverse_cost_weight": 1000.0,
+      "dist_between_axles": 0.3186371151568939
+    }
+  ],
+  "controller_profile_sha256": "441d2cac915864e830ab2661f8a9f7692d968b42fbf7e442871bcf0ef3c830e4",
+  "dt": 0.1,
+  "max_steps": 300,
+  "wall_time_limit_seconds": 120.0,
+  "provenance": {
+    "git_revision": "a60ed75dbba33ada97a67ff4b145db0bb0156d82",
+    "controller_sha256": "5c522755694a7830628e21ced83566a9bda9d8c69433370b7aaead477877e817",
+    "numpy_version": "1.26.4",
+    "simulator_sha256": "5bccb8bc52795963cacea71799dc343e2b623b15ffb07c34c26ce6910e90fffd"
+  },
+  "completion_fraction": 0.25,
+  "all_robots_success": false,
+  "makespan_seconds": null,
+  "individual_travel_times": [
+    6.300000000000001,
+    null,
+    null,
+    null
+  ],
+  "sum_travel_times": null,
+  "completed_travel_time_sum": 6.300000000000001,
+  "restricted_total_time": 96.3,
+  "censoring": "Unfinished arrival times and failed makespans are null; restricted time charges unfinished robots the observation horizon.",
+  "per_robot_path_lengths": [
+    0.9743290270913584,
+    9.760071899468489,
+    0.9440840850101747,
+    8.671828124909105
+  ],
+  "final_goal_errors": [
+    0.27307997661120653,
+    0.3460304022570042,
+    5.844026115035109,
+    0.36650980287133933
+  ],
+  "total_stopped_seconds": 46.300000000000004,
+  "no_progress_event_count": 4,
+  "deadlock_events": [],
+  "deadlock_count": 0,
+  "event_diagnostics": {
+    "config": {
+      "stationary_speed": 0.03,
+      "slow_speed": 0.15,
+      "progress_distance": 0.1,
+      "congestion_seconds": 2.0,
+      "no_progress_seconds": 4.0,
+      "deadlock_seconds": 8.0,
+      "proximity_margin": 0.35,
+      "persistent_fraction": 0.85,
+      "forward_cone_cosine": 0.25,
+      "minimum_group": 2
+    },
+    "per_robot": [
+      {
+        "id": "r00",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          },
+          {
+            "start_seconds": 3.7,
+            "end_seconds": 4.0,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 5.300000000000001,
+            "end_seconds": 6.300000000000001,
+            "duration_seconds": 1.0
+          }
+        ],
+        "congestion": [],
+        "no_progress": [],
+        "total_stopped_seconds": 0.7000000000000001
+      },
+      {
+        "id": "r01",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          }
+        ],
+        "congestion": [],
+        "no_progress": [
+          {
+            "start_seconds": 26.3,
+            "end_seconds": 30.1,
+            "duration_seconds": 3.8000000000000003
+          }
+        ],
+        "total_stopped_seconds": 8.4
+      },
+      {
+        "id": "r02",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          }
+        ],
+        "congestion": [
+          {
+            "start_seconds": 6.5,
+            "end_seconds": 30.1,
+            "duration_seconds": 23.6
+          }
+        ],
+        "no_progress": [
+          {
+            "start_seconds": 8.6,
+            "end_seconds": 30.1,
+            "duration_seconds": 21.5
+          }
+        ],
+        "total_stopped_seconds": 24.5
+      },
+      {
+        "id": "r03",
+        "temporary_slowing": [
+          {
+            "start_seconds": 0.0,
+            "end_seconds": 1.1,
+            "duration_seconds": 1.1
+          }
+        ],
+        "congestion": [],
+        "no_progress": [
+          {
+            "start_seconds": 4.0,
+            "end_seconds": 4.3,
+            "duration_seconds": 0.30000000000000004
+          },
+          {
+            "start_seconds": 20.8,
+            "end_seconds": 30.1,
+            "duration_seconds": 9.3
+          }
+        ],
+        "total_stopped_seconds": 12.700000000000001
+      }
+    ],
+    "deadlocks": [],
+    "deadlock_count": 0,
+    "no_progress_event_count": 4
+  },
+  "timeout": true,
+  "bottleneck_occupancy": {},
+  "simulated_seconds": 30.0,
+  "physical_validation": {
+    "passed": true,
+    "model_equations_valid": true,
+    "violations": [],
+    "checked_steps": 300,
+    "checked_robots": 4,
+    "state_resets_or_trace_filters": false
+  },
+  "collisions": 0,
+  "collision_events": [],
+  "minimum_inter_robot_clearance": 0.3867428698308184,
+  "minimum_swept_envelope_clearance": 0.22332149449463712,
+  "unresolved_swept_contacts": [],
+  "collision_definition": "oriented rectangles for cars, disks for differential-drive; synchronized swept-contact refinement",
+  "simulation_executed": true,
+  "total_global_planning_seconds": 0.08186850400034018,
+  "per_robot_global_planning_seconds": [
+    0.000608071,
+    0.00515059,
+    0.004871422,
+    0.004667691
+  ],
+  "planning_timing_scope": "RRT: construction+search+shortcut per robot; K: native query per robot, total additionally includes map load, JSON and verification",
+  "simulation_runtime_seconds": 4.071003675460815,
+  "local_controller_seconds": [
+    0.27997891399900254,
+    1.162876160000451,
+    1.589378759002102,
+    0.8206549400019867
+  ],
+  "conservative_envelope_collision_steps": 0.0,
+  "wall_timeout": false,
+  "status": "timeout",
+  "control_limits_valid": true,
+  "audit": {
+    "trace_modified": false,
+    "metrics_source_sha256": "c8d0a728b19acf3144105aa3919fb546c6fbee98898356faa818ed6acdf52257"
+  }
+}

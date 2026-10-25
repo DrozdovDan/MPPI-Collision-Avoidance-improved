@@ -1,5 +1,11 @@
 # Bench-MR polygon evaluation
 
+The [50-task multi-agent benchmark](MULTI_AGENT_BENCHMARK.md) adds reproducible
+scenario generation, car-like parking and differential-drive warehouse fleets,
+individual motion-feasibility witnesses, a shared-controller RRT/K-route runner,
+operational deadlock metrics, and saved overviews, contact sheets and animations.
+See the [complete scenario report](scenarios/multi_agent/SCENARIOS.md).
+
 This adapter runs the existing differential-drive MPPI controller on polygon
 scenes and start/goal pairs from [Bench-MR](https://github.com/robot-motion/bench-mr).
 It does not build Bench-MR's other planners or add obstacle constraints to ORCA.
