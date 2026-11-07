@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-10-29T13:32:40.018074+00:00",
+  "passed": true,
+  "python_tests": {
+    "count": 176,
+    "passed": true,
+    "log": "/tmp/warehouse_width_tests.log"
+  },
+  "native_tests": {
+    "count": 3,
+    "passed": true
+  },
+  "pilot_runs": 2,
+  "pilot_audit_passed": true,
+  "width_and_lane_preflight_tasks": 250,
+  "width_and_lane_preflight_candidate_paths": 25381,
+  "bottleneck_selection_source_sha256": "2a670be63d6e66fc6657e22d00188596bc54a336ec77fc7a35a0d2fb9cadd61d"
+}

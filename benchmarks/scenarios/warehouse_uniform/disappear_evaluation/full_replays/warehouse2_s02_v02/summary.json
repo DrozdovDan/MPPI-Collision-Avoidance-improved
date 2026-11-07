@@ -1,0 +1,75 @@
+{
+  "task_id": "warehouse2_s02_v02",
+  "scenario_sha256": "13851f7bdc8e636c86d27bb9767aeca8542a9505dcd7a194dfb97260f90a83f3",
+  "selected_example_rule": "Selected from completed disappearance runs: RRT succeeds, all four K-route variants deadlock. Choose the shortest maximum recorded duration among such tasks.",
+  "robot_count": 32,
+  "diameter_meters": 0.6,
+  "dt": 0.1,
+  "rendered_recording_steps": 1041,
+  "skipped_recording_steps": 0,
+  "interpolated_poses": false,
+  "source_states_unchanged": true,
+  "playback_speed": 1.0,
+  "initial_hold_seconds": 2.0,
+  "final_hold_seconds": 5.0,
+  "gif": "warehouse2_s02_v02__disappear_all_five__full.gif",
+  "gif_sha256": "52b54813bde48f74aae32f5009187dd6d525316f88e4bb4425b186ec3866f9d5",
+  "renderer_sha256": "b7bbb4e23a3eca210da9f5d2bd59a8cf53c94aaf9db8a8808fe66bc2e8f94c1a",
+  "methods": [
+    {
+      "method": "rrt",
+      "status": "success",
+      "finished_agents": 32,
+      "recorded_states": 540,
+      "recorded_until_seconds": 53.900000000000006,
+      "makespan_seconds": 53.900000000000006,
+      "source_directory": "benchmarks/results/warehouse_disappear/warehouse2_s02_v02__rrt__p42__c42",
+      "run_sha256": "9f305c979bc0fc41428a354569b30e6df11248b5d561baf315034ef52e020d56",
+      "trajectory_sha256": "8bdc1972cce8e0fc7af8bf757dcdd606518c7c710863682f9888ba05a65a58fa"
+    },
+    {
+      "method": "k_routes",
+      "status": "deadlock",
+      "finished_agents": 5,
+      "recorded_states": 1041,
+      "recorded_until_seconds": 104.0,
+      "makespan_seconds": null,
+      "source_directory": "benchmarks/results/warehouse_disappear/warehouse2_s02_v02__k_routes__p42__c42",
+      "run_sha256": "ff8ad8b1640c551f707db2248646cc3d731a29937f6ca917d00b129d604cfa8f",
+      "trajectory_sha256": "18fe477750f7f5207ac54f7b1cb2d6146e08291da84f685d6cfd2615cbe8606d"
+    },
+    {
+      "method": "k_routes_width",
+      "status": "deadlock",
+      "finished_agents": 17,
+      "recorded_states": 1041,
+      "recorded_until_seconds": 104.0,
+      "makespan_seconds": null,
+      "source_directory": "benchmarks/results/warehouse_disappear/warehouse2_s02_v02__k_routes_width__p42__c42",
+      "run_sha256": "0cbef4ff421aca4050d404c7e2c82b4c858253d8467d7e9d9c864f093740eee6",
+      "trajectory_sha256": "bbfc877ac8f97aa754a5e5274659037c615cf4ea89de8e668a6058fe657d0a19"
+    },
+    {
+      "method": "k_routes_edge_cost",
+      "status": "deadlock",
+      "finished_agents": 8,
+      "recorded_states": 911,
+      "recorded_until_seconds": 91.0,
+      "makespan_seconds": null,
+      "source_directory": "benchmarks/results/warehouse_disappear/warehouse2_s02_v02__k_routes_edge_cost__p42__c42",
+      "run_sha256": "b884d55bf4bb6e3cbee1563d207c9bab990b2ff819a62b8ba74a1da64410fb0e",
+      "trajectory_sha256": "a8090c50089a10980058bb9aab2169cc824b7e1342b6fec824de108ca0efb62e"
+    },
+    {
+      "method": "k_routes_edge_cost_l2_t10",
+      "status": "deadlock",
+      "finished_agents": 10,
+      "recorded_states": 861,
+      "recorded_until_seconds": 86.0,
+      "makespan_seconds": null,
+      "source_directory": "benchmarks/results/warehouse_disappear/warehouse2_s02_v02__k_routes_edge_cost_l2_t10__p42__c42",
+      "run_sha256": "e59f6343c61bed5a4467f6f4ee2c42ea109a6932c1fe9009849563744389c010",
+      "trajectory_sha256": "d1e53d9c4dc2f40d1130da0178f755353f1c4f1690d5ca51360f2eb8794bfeac"
+    }
+  ]
+}

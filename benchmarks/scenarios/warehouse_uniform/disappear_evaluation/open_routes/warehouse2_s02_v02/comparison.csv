@@ -1,0 +1,6 @@
+planner,old_finished_agents,old_status,old_makespan_seconds,finished_agents,completion_fraction,status,raw_status,changed_anchor_count,identical_anchor_motion_reproduced,makespan_seconds,simulated_seconds,collisions,control_limits_valid
+rrt,32,success,53.900000000000006,32,1.0,success,success,0,True,53.900000000000006,53.900000000000006,0,True
+k_routes,5,deadlock,,10,0.3125,deadlock,deadlock,14,False,,167.0,0,True
+k_routes_width,17,deadlock,,16,0.5,deadlock,deadlock,16,False,,165.0,0,True
+k_routes_edge_cost,8,deadlock,,8,0.25,deadlock,deadlock,0,True,,91.0,0,True
+k_routes_edge_cost_l2_t10,10,deadlock,,10,0.3125,deadlock,deadlock,0,True,,86.0,0,True

@@ -1,0 +1,2009 @@
+{
+  "passed": true,
+  "tasks": 250,
+  "checked_robots": 8000,
+  "manifest_sha256": "56f8aaf500b2b88f53eb89c7d7827e717f8c5bd33e5dc24075ea9d7d538bffda",
+  "minimum_inter_robot_clearance_meters": 0.044219772905029986,
+  "certificates": [
+    {
+      "passed": true,
+      "task_id": "warehouse2_s01_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3948.9,
+      "minimum_inter_robot_clearance_meters": 0.04648522665716226
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s01_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3771.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.0557730981695993
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s01_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3812.8,
+      "minimum_inter_robot_clearance_meters": 0.047551549903040335
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s01_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3699.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.06311144642520583
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s01_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3740.3,
+      "minimum_inter_robot_clearance_meters": 0.0465744303708
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s02_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2887.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04476130819930679
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s02_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2888.9,
+      "minimum_inter_robot_clearance_meters": 0.045657537266450055
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s02_v03",
+      "checked_moves": 35,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2836.9,
+      "minimum_inter_robot_clearance_meters": 0.045272670980797014
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s02_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3131.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04528457219105109
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s02_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3158.9,
+      "minimum_inter_robot_clearance_meters": 0.04515295790837337
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s03_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2597.9,
+      "minimum_inter_robot_clearance_meters": 0.05261899847782647
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s03_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3005.0,
+      "minimum_inter_robot_clearance_meters": 0.04489429879615647
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s03_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2985.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04794987270988904
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s03_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2681.0,
+      "minimum_inter_robot_clearance_meters": 0.04489448164145282
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s03_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2633.0,
+      "minimum_inter_robot_clearance_meters": 0.04484630960098268
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s04_v01",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3750.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04702832181807337
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s04_v02",
+      "checked_moves": 49,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3740.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.05036786434329643
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s04_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4451.6,
+      "minimum_inter_robot_clearance_meters": 0.04452149847085607
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s04_v04",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4325.3,
+      "minimum_inter_robot_clearance_meters": 0.04562574327819391
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s04_v05",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4315.7,
+      "minimum_inter_robot_clearance_meters": 0.047890677475947
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s05_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3127.4,
+      "minimum_inter_robot_clearance_meters": 0.04528343747533936
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s05_v02",
+      "checked_moves": 50,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3122.5,
+      "minimum_inter_robot_clearance_meters": 0.045022350696967584
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s05_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3133.4,
+      "minimum_inter_robot_clearance_meters": 0.046533964410648276
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s05_v04",
+      "checked_moves": 43,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3269.4,
+      "minimum_inter_robot_clearance_meters": 0.0458692504161482
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s05_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3063.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04489323878014129
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s06_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4376.8,
+      "minimum_inter_robot_clearance_meters": 0.04691494883710523
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s06_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4355.900000000001,
+      "minimum_inter_robot_clearance_meters": 0.04519391564207642
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s06_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3455.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.048653504615159604
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s06_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3654.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.0824678870074913
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s06_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3833.5,
+      "minimum_inter_robot_clearance_meters": 0.04445057614019876
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s07_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2890.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.044581058290897424
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s07_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2988.0,
+      "minimum_inter_robot_clearance_meters": 0.0497862910851008
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s07_v03",
+      "checked_moves": 39,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4136.7,
+      "minimum_inter_robot_clearance_meters": 0.045648100427153504
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s07_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4080.8,
+      "minimum_inter_robot_clearance_meters": 0.04518210272644285
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s07_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3036.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.046493247069927635
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s08_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2569.8,
+      "minimum_inter_robot_clearance_meters": 0.04465760366321192
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s08_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1849.2,
+      "minimum_inter_robot_clearance_meters": 0.04471758057843789
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s08_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2290.3,
+      "minimum_inter_robot_clearance_meters": 0.045128954768962615
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s08_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2328.1,
+      "minimum_inter_robot_clearance_meters": 0.04614157322139856
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s08_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1870.4,
+      "minimum_inter_robot_clearance_meters": 0.04719710763275853
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s09_v01",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4028.8,
+      "minimum_inter_robot_clearance_meters": 0.050895924450731655
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s09_v02",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3497.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04490877997457732
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s09_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4520.400000000001,
+      "minimum_inter_robot_clearance_meters": 0.04595716130960914
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s09_v04",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3383.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.045270299441047546
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s09_v05",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3230.9,
+      "minimum_inter_robot_clearance_meters": 0.05790712047206892
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s10_v01",
+      "checked_moves": 36,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4222.900000000001,
+      "minimum_inter_robot_clearance_meters": 0.05706215564791561
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s10_v02",
+      "checked_moves": 35,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3593.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04556141856213869
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s10_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3050.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04468557704225984
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s10_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3460.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.0449891051666691
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s10_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3180.4,
+      "minimum_inter_robot_clearance_meters": 0.044615719029412304
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s11_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3526.8,
+      "minimum_inter_robot_clearance_meters": 0.04728809569306369
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s11_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4062.9,
+      "minimum_inter_robot_clearance_meters": 0.0466295989485046
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s11_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4566.5,
+      "minimum_inter_robot_clearance_meters": 0.04548987052174602
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s11_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3833.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04437625960632441
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s11_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3805.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04978134041040716
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s12_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2527.8,
+      "minimum_inter_robot_clearance_meters": 0.04595676035951246
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s12_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2807.4,
+      "minimum_inter_robot_clearance_meters": 0.049742789858668424
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s12_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2618.3,
+      "minimum_inter_robot_clearance_meters": 0.045541862406751066
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s12_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2868.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.044390008260664415
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s12_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2854.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04506756634636133
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s13_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2495.9,
+      "minimum_inter_robot_clearance_meters": 0.0460060726589564
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s13_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2452.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04680675382616506
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s13_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2398.3,
+      "minimum_inter_robot_clearance_meters": 0.047469989464948625
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s13_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2295.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04550440638618125
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s13_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2603.8,
+      "minimum_inter_robot_clearance_meters": 0.06256323490736704
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s14_v01",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4220.7,
+      "minimum_inter_robot_clearance_meters": 0.047529878126090996
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s14_v02",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4519.5,
+      "minimum_inter_robot_clearance_meters": 0.04574353961341937
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s14_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4330.0,
+      "minimum_inter_robot_clearance_meters": 0.04438805681494795
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s14_v04",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4380.7,
+      "minimum_inter_robot_clearance_meters": 0.0560734148766161
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s14_v05",
+      "checked_moves": 49,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4140.3,
+      "minimum_inter_robot_clearance_meters": 0.04515093497161626
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s15_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3326.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04536715702729188
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s15_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3262.3,
+      "minimum_inter_robot_clearance_meters": 0.04701460894915299
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s15_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3387.3,
+      "minimum_inter_robot_clearance_meters": 0.04836756257032182
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s15_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3152.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04604549074372333
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s15_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2633.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04910187346218342
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s16_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3792.3,
+      "minimum_inter_robot_clearance_meters": 0.047004004026551804
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s16_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3957.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.0527188863890799
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s16_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3598.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.0463730338485846
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s16_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4477.3,
+      "minimum_inter_robot_clearance_meters": 0.054961555538180995
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s16_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4053.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.05234988559950521
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s17_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2773.3,
+      "minimum_inter_robot_clearance_meters": 0.04688604446237765
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s17_v02",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2998.0,
+      "minimum_inter_robot_clearance_meters": 0.04635135193662088
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s17_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2735.9,
+      "minimum_inter_robot_clearance_meters": 0.04826062715392743
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s17_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2705.3,
+      "minimum_inter_robot_clearance_meters": 0.04484772347933341
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s17_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2790.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.044219772905029986
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s18_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2727.8,
+      "minimum_inter_robot_clearance_meters": 0.045268732741429285
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s18_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2757.5,
+      "minimum_inter_robot_clearance_meters": 0.045171112121167756
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s18_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2848.9,
+      "minimum_inter_robot_clearance_meters": 0.04565813266251695
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s18_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2874.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.046883691668548444
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s18_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2916.9,
+      "minimum_inter_robot_clearance_meters": 0.048290003090744715
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s19_v01",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4299.0,
+      "minimum_inter_robot_clearance_meters": 0.046046169424233896
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s19_v02",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3974.0,
+      "minimum_inter_robot_clearance_meters": 0.045615866214925305
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s19_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3746.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04575800046293366
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s19_v04",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3869.0,
+      "minimum_inter_robot_clearance_meters": 0.04454240444260804
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s19_v05",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3702.4,
+      "minimum_inter_robot_clearance_meters": 0.05085071184653128
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s20_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3114.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.046586463890728735
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s20_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3469.8,
+      "minimum_inter_robot_clearance_meters": 0.045282787080748954
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s20_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3683.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04626079972110142
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s20_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3261.0,
+      "minimum_inter_robot_clearance_meters": 0.04604882834017088
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s20_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3473.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04440446571069889
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s21_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3735.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.044737660227224696
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s21_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3763.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04807749411803619
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s21_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3322.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04855916660818038
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s21_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4688.1,
+      "minimum_inter_robot_clearance_meters": 0.055092334705054036
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s21_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4101.5,
+      "minimum_inter_robot_clearance_meters": 0.05046500391593001
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s22_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4387.7,
+      "minimum_inter_robot_clearance_meters": 0.04538122071908224
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s22_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4179.5,
+      "minimum_inter_robot_clearance_meters": 0.06130281192492082
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s22_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3853.4,
+      "minimum_inter_robot_clearance_meters": 0.04718808979973632
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s22_v04",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4094.3,
+      "minimum_inter_robot_clearance_meters": 0.046394471013704086
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s22_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3710.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04607856992636039
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s23_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3076.0,
+      "minimum_inter_robot_clearance_meters": 0.04800482565563624
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s23_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3193.9,
+      "minimum_inter_robot_clearance_meters": 0.04640903703100441
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s23_v03",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3512.8,
+      "minimum_inter_robot_clearance_meters": 0.045542544111223826
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s23_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3279.5,
+      "minimum_inter_robot_clearance_meters": 0.045303015702556904
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s23_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3470.5,
+      "minimum_inter_robot_clearance_meters": 0.04671233717523959
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s24_v01",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3517.4,
+      "minimum_inter_robot_clearance_meters": 0.04797510279755257
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s24_v02",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3663.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04498396546850292
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s24_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3590.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.047404136923770324
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s24_v04",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4998.700000000001,
+      "minimum_inter_robot_clearance_meters": 0.04525665000680479
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s24_v05",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3609.0,
+      "minimum_inter_robot_clearance_meters": 0.04656175876249846
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s25_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3007.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.049761279424333615
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s25_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3398.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04663613658323995
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s25_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2975.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.047172148066562114
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s25_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3226.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.048869932043297926
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse2_s25_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3360.3,
+      "minimum_inter_robot_clearance_meters": 0.04665046314817878
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s01_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2936.9,
+      "minimum_inter_robot_clearance_meters": 0.085674428844848
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s01_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3757.8,
+      "minimum_inter_robot_clearance_meters": 0.07579566585029285
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s01_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3865.8,
+      "minimum_inter_robot_clearance_meters": 0.045359213566506185
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s01_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3704.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04711176872495537
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s01_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3029.8,
+      "minimum_inter_robot_clearance_meters": 0.04521420622944805
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s02_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2025.3000000000002,
+      "minimum_inter_robot_clearance_meters": 0.04605777272343592
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s02_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2035.1000000000001,
+      "minimum_inter_robot_clearance_meters": 0.04506529864041331
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s02_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2036.1000000000001,
+      "minimum_inter_robot_clearance_meters": 0.04584377582207266
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s02_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2160.6,
+      "minimum_inter_robot_clearance_meters": 0.04433178558572426
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s02_v05",
+      "checked_moves": 34,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2272.5,
+      "minimum_inter_robot_clearance_meters": 0.04440069009618497
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s03_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2152.6,
+      "minimum_inter_robot_clearance_meters": 0.046410379130321755
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s03_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2042.6000000000001,
+      "minimum_inter_robot_clearance_meters": 0.04489442797560428
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s03_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1947.2,
+      "minimum_inter_robot_clearance_meters": 0.045448607788615036
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s03_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2065.9,
+      "minimum_inter_robot_clearance_meters": 0.04538456071660424
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s03_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1847.7,
+      "minimum_inter_robot_clearance_meters": 0.044700346578035566
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s04_v01",
+      "checked_moves": 51,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3613.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.08500781933374113
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s04_v02",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3455.5,
+      "minimum_inter_robot_clearance_meters": 0.045704654237338826
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s04_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3306.8,
+      "minimum_inter_robot_clearance_meters": 0.04615864978388384
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s04_v04",
+      "checked_moves": 49,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2982.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04499930359180704
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s04_v05",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3786.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.06037904722592513
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s05_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2263.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04614895180093048
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s05_v02",
+      "checked_moves": 35,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1976.8000000000002,
+      "minimum_inter_robot_clearance_meters": 0.04552148903884767
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s05_v03",
+      "checked_moves": 35,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2061.1,
+      "minimum_inter_robot_clearance_meters": 0.046781576507267886
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s05_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1795.3000000000002,
+      "minimum_inter_robot_clearance_meters": 0.048098205534410576
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s05_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2374.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04592969649444889
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s06_v01",
+      "checked_moves": 43,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3599.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.053776122548725325
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s06_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3774.3,
+      "minimum_inter_robot_clearance_meters": 0.04457908260244958
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s06_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3306.9,
+      "minimum_inter_robot_clearance_meters": 0.046237384414415494
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s06_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3218.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04512145920461608
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s06_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3313.4,
+      "minimum_inter_robot_clearance_meters": 0.04596810057061884
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s07_v01",
+      "checked_moves": 36,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2210.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04557982748745959
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s07_v02",
+      "checked_moves": 79,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2170.1,
+      "minimum_inter_robot_clearance_meters": 0.04485888011631245
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s07_v03",
+      "checked_moves": 36,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2107.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04520687722699934
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s07_v04",
+      "checked_moves": 41,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2163.0,
+      "minimum_inter_robot_clearance_meters": 0.04519699097294538
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s07_v05",
+      "checked_moves": 39,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1951.5,
+      "minimum_inter_robot_clearance_meters": 0.04473345852061994
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s08_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2978.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04532210384745794
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s08_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3742.5,
+      "minimum_inter_robot_clearance_meters": 0.04601307407951416
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s08_v03",
+      "checked_moves": 35,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3408.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.046109050300869425
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s08_v04",
+      "checked_moves": 40,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3065.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04678392464665815
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s08_v05",
+      "checked_moves": 37,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2504.8,
+      "minimum_inter_robot_clearance_meters": 0.04706403092637257
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s09_v01",
+      "checked_moves": 49,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3438.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04587072485325494
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s09_v02",
+      "checked_moves": 53,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3938.8,
+      "minimum_inter_robot_clearance_meters": 0.04682672121019282
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s09_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3438.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04898279286297902
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s09_v04",
+      "checked_moves": 51,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3607.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04658224187048665
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s09_v05",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4122.3,
+      "minimum_inter_robot_clearance_meters": 0.0451234967858708
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s10_v01",
+      "checked_moves": 58,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2211.9,
+      "minimum_inter_robot_clearance_meters": 0.04573007600435064
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s10_v02",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2159.5,
+      "minimum_inter_robot_clearance_meters": 0.04713393719300174
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s10_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1960.7,
+      "minimum_inter_robot_clearance_meters": 0.04547886310151261
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s10_v04",
+      "checked_moves": 42,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1884.6000000000001,
+      "minimum_inter_robot_clearance_meters": 0.044231939717519486
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s10_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1789.6000000000001,
+      "minimum_inter_robot_clearance_meters": 0.046419247205642944
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s11_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2449.1,
+      "minimum_inter_robot_clearance_meters": 0.05344940261163045
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s11_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3064.0,
+      "minimum_inter_robot_clearance_meters": 0.06142225784642963
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s11_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2899.4,
+      "minimum_inter_robot_clearance_meters": 0.045070624170019724
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s11_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3786.4,
+      "minimum_inter_robot_clearance_meters": 0.046575268047289065
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s11_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3299.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.046133626305444486
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s12_v01",
+      "checked_moves": 46,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4994.8,
+      "minimum_inter_robot_clearance_meters": 0.045372647158798074
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s12_v02",
+      "checked_moves": 43,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4777.2,
+      "minimum_inter_robot_clearance_meters": 0.0460403370603264
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s12_v03",
+      "checked_moves": 37,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4929.0,
+      "minimum_inter_robot_clearance_meters": 0.046531930096844865
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s12_v04",
+      "checked_moves": 39,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 5041.400000000001,
+      "minimum_inter_robot_clearance_meters": 0.0458706196199572
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s12_v05",
+      "checked_moves": 39,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4851.1,
+      "minimum_inter_robot_clearance_meters": 0.04550554951298291
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s13_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1361.8000000000002,
+      "minimum_inter_robot_clearance_meters": 0.04427473321262798
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s13_v02",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1374.4,
+      "minimum_inter_robot_clearance_meters": 0.04825141705758018
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s13_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1479.0,
+      "minimum_inter_robot_clearance_meters": 0.045742476298107126
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s13_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1817.8000000000002,
+      "minimum_inter_robot_clearance_meters": 0.044982852746234814
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s13_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1641.4,
+      "minimum_inter_robot_clearance_meters": 0.04495816022258392
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s14_v01",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4390.7,
+      "minimum_inter_robot_clearance_meters": 0.047513575316654455
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s14_v02",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3531.3,
+      "minimum_inter_robot_clearance_meters": 0.04734619851464816
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s14_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3131.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.0449729388020671
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s14_v04",
+      "checked_moves": 49,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 4017.3,
+      "minimum_inter_robot_clearance_meters": 0.04521539328194335
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s14_v05",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3198.8,
+      "minimum_inter_robot_clearance_meters": 0.04559721107534476
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s15_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2464.4,
+      "minimum_inter_robot_clearance_meters": 0.04479476377114722
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s15_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2797.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04704871253934395
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s15_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2896.3,
+      "minimum_inter_robot_clearance_meters": 0.04620027213378075
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s15_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2884.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04610127762523564
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s15_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3010.3,
+      "minimum_inter_robot_clearance_meters": 0.04499230472560323
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s16_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3405.9,
+      "minimum_inter_robot_clearance_meters": 0.052383619039924445
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s16_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3363.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04556120653856477
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s16_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3024.3,
+      "minimum_inter_robot_clearance_meters": 0.04524011439062625
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s16_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2442.9,
+      "minimum_inter_robot_clearance_meters": 0.05261837188823043
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s16_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2978.9,
+      "minimum_inter_robot_clearance_meters": 0.04896448309167922
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s17_v01",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2746.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.0448773839289307
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s17_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2767.9,
+      "minimum_inter_robot_clearance_meters": 0.04512170411146976
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s17_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2711.6000000000004,
+      "minimum_inter_robot_clearance_meters": 0.045243189775079795
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s17_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2829.3,
+      "minimum_inter_robot_clearance_meters": 0.04619286729240446
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s17_v05",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2587.9,
+      "minimum_inter_robot_clearance_meters": 0.04561322157062331
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s18_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1444.4,
+      "minimum_inter_robot_clearance_meters": 0.04557760509295039
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s18_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1433.6000000000001,
+      "minimum_inter_robot_clearance_meters": 0.046649877187522004
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s18_v03",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1300.4,
+      "minimum_inter_robot_clearance_meters": 0.044537335108355114
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s18_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1561.8000000000002,
+      "minimum_inter_robot_clearance_meters": 0.044425986567091624
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s18_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1528.4,
+      "minimum_inter_robot_clearance_meters": 0.04528236514855266
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s19_v01",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3329.0,
+      "minimum_inter_robot_clearance_meters": 0.04845744768695004
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s19_v02",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3827.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.045240432334902936
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s19_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2519.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04508566671344616
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s19_v04",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3757.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.0452177514914619
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s19_v05",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3344.9,
+      "minimum_inter_robot_clearance_meters": 0.04966729817774518
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s20_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2942.3,
+      "minimum_inter_robot_clearance_meters": 0.045503654161748175
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s20_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3078.5,
+      "minimum_inter_robot_clearance_meters": 0.04515949321464885
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s20_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2829.4,
+      "minimum_inter_robot_clearance_meters": 0.047391884359389125
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s20_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2901.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04574242584072963
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s20_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2607.8,
+      "minimum_inter_robot_clearance_meters": 0.04607358317223864
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s21_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2493.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04585229606698582
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s21_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3208.8,
+      "minimum_inter_robot_clearance_meters": 0.04950307515705532
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s21_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3171.3,
+      "minimum_inter_robot_clearance_meters": 0.05193122969343311
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s21_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3292.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04494269190024003
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s21_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2696.9,
+      "minimum_inter_robot_clearance_meters": 0.045879232931816505
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s22_v01",
+      "checked_moves": 34,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2938.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.04475761338813844
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s22_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2817.8,
+      "minimum_inter_robot_clearance_meters": 0.04462454448912667
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s22_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2884.9,
+      "minimum_inter_robot_clearance_meters": 0.0461855532842701
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s22_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2879.9,
+      "minimum_inter_robot_clearance_meters": 0.0462532809099363
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s22_v05",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2944.4,
+      "minimum_inter_robot_clearance_meters": 0.0454542810371974
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s23_v01",
+      "checked_moves": 35,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1575.5,
+      "minimum_inter_robot_clearance_meters": 0.04615935616564948
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s23_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1593.3000000000002,
+      "minimum_inter_robot_clearance_meters": 0.04592415026340335
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s23_v03",
+      "checked_moves": 33,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1582.1000000000001,
+      "minimum_inter_robot_clearance_meters": 0.045409108310908275
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s23_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1457.3000000000002,
+      "minimum_inter_robot_clearance_meters": 0.04509843691310267
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s23_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 1643.9,
+      "minimum_inter_robot_clearance_meters": 0.04523906143842016
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s24_v01",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3190.5,
+      "minimum_inter_robot_clearance_meters": 0.04574752641686919
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s24_v02",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3370.2000000000003,
+      "minimum_inter_robot_clearance_meters": 0.0457601705489008
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s24_v03",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3123.3,
+      "minimum_inter_robot_clearance_meters": 0.048105147801339676
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s24_v04",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3270.8,
+      "minimum_inter_robot_clearance_meters": 0.04554970434933847
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s24_v05",
+      "checked_moves": 48,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 3362.4,
+      "minimum_inter_robot_clearance_meters": 0.046446996643616734
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s25_v01",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2623.1000000000004,
+      "minimum_inter_robot_clearance_meters": 0.04567664687064421
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s25_v02",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2506.8,
+      "minimum_inter_robot_clearance_meters": 0.04591662553685327
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s25_v03",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2744.7000000000003,
+      "minimum_inter_robot_clearance_meters": 0.045652047645997174
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s25_v04",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2661.3,
+      "minimum_inter_robot_clearance_meters": 0.061202195951699956
+    },
+    {
+      "passed": true,
+      "task_id": "warehouse_s25_v05",
+      "checked_moves": 32,
+      "checked_robots": 32,
+      "joint_makespan_seconds": 2737.3,
+      "minimum_inter_robot_clearance_meters": 0.04600029997078514
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+[
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "competing_bottlenecks",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.34625,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "competing_bottlenecks",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.49875,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "competing_bottlenecks",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.3525,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "distributed",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.77,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "distributed",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 2,
+    "fleet_success_rate": 0.08,
+    "mean_agent_completion_fraction": 0.885,
+    "successful_makespan_mean_seconds": 138.85,
+    "successful_makespan_std_seconds": 1.7677669529663689,
+    "successful_makespan_sample_count": 2,
+    "outcomes": {
+      "deadlock": 23,
+      "success": 2
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "distributed",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 2,
+    "fleet_success_rate": 0.08,
+    "mean_agent_completion_fraction": 0.8575,
+    "successful_makespan_mean_seconds": 121.4,
+    "successful_makespan_std_seconds": 14.566399692442886,
+    "successful_makespan_sample_count": 2,
+    "outcomes": {
+      "deadlock": 23,
+      "success": 2
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "intersection",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.6875,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "intersection",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.81375,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "intersection",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 5,
+    "fleet_success_rate": 0.2,
+    "mean_agent_completion_fraction": 0.72,
+    "successful_makespan_mean_seconds": 69.76,
+    "successful_makespan_std_seconds": 25.56908289321305,
+    "successful_makespan_sample_count": 5,
+    "outcomes": {
+      "success": 5,
+      "deadlock": 20
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "opposing_bottleneck",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.33,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "opposing_bottleneck",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.445,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "opposing_bottleneck",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.2975,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "symmetric_swap",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.7775,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "symmetric_swap",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 4,
+    "fleet_success_rate": 0.16,
+    "mean_agent_completion_fraction": 0.87,
+    "successful_makespan_mean_seconds": 121.675,
+    "successful_makespan_std_seconds": 9.867919402454264,
+    "successful_makespan_sample_count": 4,
+    "outcomes": {
+      "deadlock": 21,
+      "success": 4
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "symmetric_swap",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 2,
+    "fleet_success_rate": 0.08,
+    "mean_agent_completion_fraction": 0.84125,
+    "successful_makespan_mean_seconds": 87.70000000000002,
+    "successful_makespan_std_seconds": 0.14142135623731153,
+    "successful_makespan_sample_count": 2,
+    "outcomes": {
+      "deadlock": 23,
+      "success": 2
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "competing_bottlenecks",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.63375,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "competing_bottlenecks",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.77125,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "competing_bottlenecks",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.6925,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "distributed",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 3,
+    "fleet_success_rate": 0.12,
+    "mean_agent_completion_fraction": 0.86625,
+    "successful_makespan_mean_seconds": 159.20000000000002,
+    "successful_makespan_std_seconds": 25.873345357722876,
+    "successful_makespan_sample_count": 3,
+    "outcomes": {
+      "deadlock": 22,
+      "success": 3
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "distributed",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 8,
+    "fleet_success_rate": 0.32,
+    "mean_agent_completion_fraction": 0.95625,
+    "successful_makespan_mean_seconds": 163.91250000000002,
+    "successful_makespan_std_seconds": 22.111176068740832,
+    "successful_makespan_sample_count": 8,
+    "outcomes": {
+      "deadlock": 17,
+      "success": 8
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "distributed",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 15,
+    "fleet_success_rate": 0.6,
+    "mean_agent_completion_fraction": 0.98125,
+    "successful_makespan_mean_seconds": 105.28666666666666,
+    "successful_makespan_std_seconds": 12.66377661265541,
+    "successful_makespan_sample_count": 15,
+    "outcomes": {
+      "deadlock": 10,
+      "success": 15
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "intersection",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 1,
+    "fleet_success_rate": 0.04,
+    "mean_agent_completion_fraction": 0.78375,
+    "successful_makespan_mean_seconds": 103.30000000000001,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 1,
+    "outcomes": {
+      "deadlock": 24,
+      "success": 1
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "intersection",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 12,
+    "fleet_success_rate": 0.48,
+    "mean_agent_completion_fraction": 0.95625,
+    "successful_makespan_mean_seconds": 96.06666666666666,
+    "successful_makespan_std_seconds": 16.716694613106945,
+    "successful_makespan_sample_count": 12,
+    "outcomes": {
+      "deadlock": 13,
+      "success": 12
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "intersection",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 6,
+    "fleet_success_rate": 0.24,
+    "mean_agent_completion_fraction": 0.86125,
+    "successful_makespan_mean_seconds": 67.15000000000002,
+    "successful_makespan_std_seconds": 9.407603307963194,
+    "successful_makespan_sample_count": 6,
+    "outcomes": {
+      "deadlock": 19,
+      "success": 6
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "opposing_bottleneck",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.47625,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "opposing_bottleneck",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.66,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "opposing_bottleneck",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.61625,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "symmetric_swap",
+    "planner": "k_routes",
+    "runs": 25,
+    "successes": 6,
+    "fleet_success_rate": 0.24,
+    "mean_agent_completion_fraction": 0.85125,
+    "successful_makespan_mean_seconds": 163.95000000000002,
+    "successful_makespan_std_seconds": 20.3209005705948,
+    "successful_makespan_sample_count": 6,
+    "outcomes": {
+      "deadlock": 19,
+      "success": 6
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "symmetric_swap",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 9,
+    "fleet_success_rate": 0.36,
+    "mean_agent_completion_fraction": 0.95,
+    "successful_makespan_mean_seconds": 163.2111111111111,
+    "successful_makespan_std_seconds": 19.422438341029974,
+    "successful_makespan_sample_count": 9,
+    "outcomes": {
+      "deadlock": 16,
+      "success": 9
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "symmetric_swap",
+    "planner": "rrt",
+    "runs": 25,
+    "successes": 13,
+    "fleet_success_rate": 0.52,
+    "mean_agent_completion_fraction": 0.97125,
+    "successful_makespan_mean_seconds": 101.41538461538462,
+    "successful_makespan_std_seconds": 12.750087983607939,
+    "successful_makespan_sample_count": 13,
+    "outcomes": {
+      "deadlock": 12,
+      "success": 13
+    }
+  }
+]

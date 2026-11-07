@@ -22,5 +22,6 @@ benchmarks/__pycache__/
 benchmarks/corridor_graph/__pycache__/
 benchmarks/multi_agent/__pycache__/
 !benchmarks/scenarios/multi_agent/animations/*.gif
+!benchmarks/scenarios/warehouse_uniform/evaluation/animations/*.gif
 benchmarks/results/
 tests/__pycache__/

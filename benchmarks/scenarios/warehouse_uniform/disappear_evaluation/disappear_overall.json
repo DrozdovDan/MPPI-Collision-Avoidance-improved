@@ -1,0 +1,72 @@
+[
+  {
+    "planner": "k_routes",
+    "runs": 250,
+    "successes": 39,
+    "fleet_success_rate": 0.156,
+    "mean_agent_completion_fraction": 0.693,
+    "successful_makespan_mean_seconds": 134.3230769230769,
+    "successful_makespan_std_seconds": 42.61343661049981,
+    "successful_makespan_sample_count": 39,
+    "outcomes": {
+      "deadlock": 211,
+      "success": 39
+    }
+  },
+  {
+    "planner": "k_routes_edge_cost",
+    "runs": 250,
+    "successes": 100,
+    "fleet_success_rate": 0.4,
+    "mean_agent_completion_fraction": 0.7055,
+    "successful_makespan_mean_seconds": 91.79599999999999,
+    "successful_makespan_std_seconds": 27.221593181765382,
+    "successful_makespan_sample_count": 100,
+    "outcomes": {
+      "deadlock": 150,
+      "success": 100
+    }
+  },
+  {
+    "planner": "k_routes_edge_cost_l2_t10",
+    "runs": 250,
+    "successes": 102,
+    "fleet_success_rate": 0.408,
+    "mean_agent_completion_fraction": 0.732,
+    "successful_makespan_mean_seconds": 93.42941176470589,
+    "successful_makespan_std_seconds": 26.657373502031117,
+    "successful_makespan_sample_count": 102,
+    "outcomes": {
+      "deadlock": 148,
+      "success": 102
+    }
+  },
+  {
+    "planner": "k_routes_width",
+    "runs": 250,
+    "successes": 92,
+    "fleet_success_rate": 0.368,
+    "mean_agent_completion_fraction": 0.818125,
+    "successful_makespan_mean_seconds": 128.81304347826088,
+    "successful_makespan_std_seconds": 41.216982036751176,
+    "successful_makespan_sample_count": 92,
+    "outcomes": {
+      "deadlock": 158,
+      "success": 92
+    }
+  },
+  {
+    "planner": "rrt",
+    "runs": 250,
+    "successes": 84,
+    "fleet_success_rate": 0.336,
+    "mean_agent_completion_fraction": 0.749125,
+    "successful_makespan_mean_seconds": 90.71190476190475,
+    "successful_makespan_std_seconds": 23.39038729937828,
+    "successful_makespan_sample_count": 84,
+    "outcomes": {
+      "deadlock": 166,
+      "success": 84
+    }
+  }
+]

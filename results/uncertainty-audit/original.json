@@ -1,0 +1,105 @@
+{
+  "method": "uncertainty-mppi",
+  "seed": 16913219925946095900,
+  "status": "timeout",
+  "steps": 1000,
+  "makespan_s": null,
+  "elapsed_s": 18.445173534999412,
+  "min_separation_m": 1.345686424051959,
+  "max_goal_error_m": 6.492739084180689,
+  "infeasible_decisions": 3,
+  "decisions": 5000,
+  "mean_effective_samples": 1.0055230979971874,
+  "mean_decision_ms": 3.600750331018935,
+  "config": {
+    "dt": 0.1,
+    "radius": 0.3,
+    "lower": [
+      -1.0,
+      -2.0
+    ],
+    "upper": [
+      1.0,
+      2.0
+    ],
+    "execution_std": [
+      0.1,
+      0.2
+    ],
+    "position_std": 0.1,
+    "observed_velocity_std": 0.1,
+    "observation_confidence": 0.9975,
+    "execution_confidence": 0.999,
+    "sampling_confidence": 0.999,
+    "max_steps": 1000,
+    "goal_tolerance": 0.4,
+    "circle_radius": 6.0,
+    "random_side": 20.0,
+    "samples": 700,
+    "horizon": 20,
+    "sampling_std": [
+      1.0,
+      2.449489742783178
+    ],
+    "time_horizon": 1.0,
+    "temperature": 0.25,
+    "goal_weight": 395.0,
+    "terminal_weight": 1600.0,
+    "distance_weight": 750.0,
+    "collision_weight": 10000000.0,
+    "velocity_weight": 0.5,
+    "distance_threshold": 3.5,
+    "goal_projection_radius": 2.0,
+    "near_goal_distance": 0.4,
+    "extra_buffer": 0.0,
+    "prediction_acceleration_std": 0.5,
+    "reject_first_step_tails": true,
+    "variance_objective": true,
+    "post_step_running_cost": false
+  },
+  "diagnostic_variant": "original",
+  "individual_arrivals": [
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "checkpoints": {
+    "0": [
+      12.0,
+      11.999999999999998,
+      11.999999999999998,
+      12.000000000000002,
+      12.0
+    ],
+    "100": [
+      7.459261866314277,
+      7.135962862001846,
+      7.482455160209259,
+      7.526239007522613,
+      7.1913334347691995
+    ],
+    "200": [
+      7.632397209574069,
+      6.933727458143932,
+      7.022338002681404,
+      7.9544627718307,
+      6.853846350711446
+    ],
+    "500": [
+      8.074082141600428,
+      6.919691675856998,
+      6.770366180416944,
+      7.772138067827256,
+      7.1354920073380335
+    ],
+    "1000": [
+      5.564606647960689,
+      5.277302425404459,
+      5.346275661923777,
+      6.197466371525814,
+      6.492739084180689
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "method": "legacy-mppi-orca",
+  "probe_environment_seed": 2025,
+  "probe_steps": 40,
+  "native_controller_calls": 200,
+  "configured_position_std_m": 0.1,
+  "configured_velocity_std_mps": 0.1,
+  "configured_execution_std": [
+    0.1,
+    0.2
+  ],
+  "measured_observation_std_per_coordinate": [
+    0.10000823076617099,
+    0.09699773414416626,
+    0.09660960433274302,
+    0.09799661434263013
+  ],
+  "measured_execution_draw_std": [
+    0.10174620900079463,
+    0.1989854589133071
+  ],
+  "noisy_values_reach_actual_native_controller": true,
+  "ego_state_is_exact": true,
+  "executed_control_equals_clipped_command_plus_noise": true,
+  "observations_and_execution_share_simulator_with_uncertainty_method": true,
+  "probe_config": {
+    "dt": 0.1,
+    "radius": 0.3,
+    "lower": [
+      -1.0,
+      -2.0
+    ],
+    "upper": [
+      1.0,
+      2.0
+    ],
+    "execution_std": [
+      0.1,
+      0.2
+    ],
+    "position_std": 0.1,
+    "observed_velocity_std": 0.1,
+    "observation_confidence": 0.9975,
+    "execution_confidence": 0.999,
+    "sampling_confidence": 0.999,
+    "max_steps": 40,
+    "goal_tolerance": 0.4,
+    "circle_radius": 6.0,
+    "random_side": 20.0,
+    "samples": 700,
+    "horizon": 20,
+    "sampling_std": [
+      1.0,
+      2.449489742783178
+    ],
+    "time_horizon": 1.0,
+    "temperature": 0.25,
+    "goal_weight": 395.0,
+    "terminal_weight": 1600.0,
+    "distance_weight": 750.0,
+    "collision_weight": 10000000.0,
+    "velocity_weight": 0.5,
+    "distance_threshold": 3.5,
+    "goal_projection_radius": 2.0,
+    "near_goal_distance": 0.4,
+    "extra_buffer": 0.0,
+    "prediction_acceleration_std": 0.5,
+    "reject_first_step_tails": false,
+    "truncate_rollouts": false,
+    "variance_objective": true,
+    "post_step_running_cost": false
+  },
+  "legacy_native_sha256": "0b119ace5052a9fb321e7fe736f0d1754fc442555799acb2ff1ee50102fa7140",
+  "legacy_controller_sha256": "f72dd6f181241bc736b7854fd51638f30fb03d3aafe1037ebc3eac3e6434ff59",
+  "simulator_sha256": "1ead42f0776fadd568707f119a79dbf28ba65325c09bd9bf8bb7328bb5e38768",
+  "adapter_sha256": "f9eda8891834b47f846c54873dcf391d43969b32849adc58bcd4f024fb87f8cf",
+  "audit_script_sha256": "7265833c7420e4bb446386528c3713e9a73a57c683e7f1e0236e050a820394b7",
+  "data_sha256": "e63cf599a4f9119b95efc35671aa3ad4651f41d2e22ff92a0cc1c36998bf09fa",
+  "note": "Independent 40-step input/noise probe; excluded from benchmark outcome counts."
+}

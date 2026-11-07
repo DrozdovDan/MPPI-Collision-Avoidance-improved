@@ -1,0 +1,622 @@
+[
+  {
+    "query": {
+      "task_id": "warehouse_s13_v02",
+      "source_map": "warehouse",
+      "scenario_id": "warehouse_s13",
+      "variant_index": 2,
+      "diameter_meters": 0.8,
+      "traffic_pattern": "intersection",
+      "agent_index": 1,
+      "agent_id": "r01",
+      "k": 2,
+      "w_max": 9.732232493887928,
+      "bottleneck_probabilities": [
+        0.44506555703402906,
+        0.5549344429659709
+      ],
+      "cost_probabilities": [
+        1.0302514149623516e-14,
+        0.9999999999999898
+      ],
+      "total_variation": 0.4450655570340188,
+      "modal_route_changed": false,
+      "bottleneck_top_probability": 0.5549344429659709,
+      "cost_top_probability": 0.9999999999999898,
+      "bottleneck_entropy": 0.6870993927326792,
+      "cost_entropy": 3.420208244097379e-13,
+      "bottleneck_expected_graph_length": 36.77867852121785,
+      "cost_expected_graph_length": 28.219090118394558,
+      "bottleneck_expected_physical_length": 27.669876418420248,
+      "cost_expected_physical_length": 32.69857441333144,
+      "bottleneck_expected_bottleneck": 1.3495486999900277,
+      "cost_expected_bottleneck": 1.47995729299052,
+      "zero_edge_routes": 0
+    },
+    "routes": [
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 1,
+        "agent_id": "r01",
+        "route_index": 0,
+        "route_id": 0,
+        "edge_count": 2,
+        "edge_ids": [
+          132,
+          133
+        ],
+        "edge_lengths": [
+          39.722483286708204,
+          7.728803678967776
+        ],
+        "edge_widths": [
+          6.742086388826832,
+          8.443769999999773
+        ],
+        "q": [
+          0.694721309187866,
+          0.6072961674107025
+        ],
+        "w_max": 9.732232493887928,
+        "graph_length": 47.45128696567598,
+        "physical_length": 21.39979400798372,
+        "width_exposure": 32.28972844604192,
+        "cost": 79.74101541171791,
+        "bottleneck_width": 1.1869474409823062,
+        "bottleneck_probability": 0.44506555703402906,
+        "cost_probability": 1.0302514149623516e-14,
+        "probability_change": -0.44506555703401873
+      },
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 1,
+        "agent_id": "r01",
+        "route_index": 1,
+        "route_id": 1,
+        "edge_count": 6,
+        "edge_ids": [
+          164,
+          191,
+          187,
+          179,
+          174,
+          168
+        ],
+        "edge_lengths": [
+          8.410185007532872,
+          7.637492555606349,
+          3.4467765037405727,
+          4.279634900332483,
+          1.7517213613426084,
+          2.693279789839473
+        ],
+        "edge_widths": [
+          1.479905991574578,
+          8.866269999999815,
+          9.732232493887928,
+          9.318149999999662,
+          9.368585511529954,
+          9.609679999999797
+        ],
+        "q": [
+          0.9650693716985504,
+          0.5855899453149304,
+          0.5411005388795643,
+          0.5623743059288163,
+          0.5597831475506144,
+          0.5473967558043602
+        ],
+        "w_max": 9.732232493887928,
+        "graph_length": 28.219090118394355,
+        "physical_length": 32.698574413331556,
+        "width_exposure": 19.31553685605928,
+        "cost": 47.53462697445363,
+        "bottleneck_width": 1.479957292990523,
+        "bottleneck_probability": 0.5549344429659709,
+        "cost_probability": 0.9999999999999898,
+        "probability_change": 0.44506555703401884
+      }
+    ]
+  },
+  {
+    "query": {
+      "task_id": "warehouse_s13_v02",
+      "source_map": "warehouse",
+      "scenario_id": "warehouse_s13",
+      "variant_index": 2,
+      "diameter_meters": 0.8,
+      "traffic_pattern": "intersection",
+      "agent_index": 2,
+      "agent_id": "r02",
+      "k": 3,
+      "w_max": 9.732232493887928,
+      "bottleneck_probabilities": [
+        0.3195745656207374,
+        0.31946438940694605,
+        0.36096104497231657
+      ],
+      "cost_probabilities": [
+        1.0,
+        2.457399352368841e-47,
+        2.593767136101479e-19
+      ],
+      "total_variation": 0.6804254343792626,
+      "modal_route_changed": true,
+      "bottleneck_top_probability": 0.36096104497231657,
+      "cost_top_probability": 1.0,
+      "bottleneck_entropy": 1.0969171824822337,
+      "cost_entropy": 1.1100287250617467e-17,
+      "bottleneck_expected_graph_length": 36.422444677898824,
+      "cost_expected_graph_length": 7.728803678967776,
+      "bottleneck_expected_physical_length": 36.275825232523914,
+      "cost_expected_physical_length": 23.927261181382285,
+      "bottleneck_expected_bottleneck": 1.2427304758612403,
+      "cost_expected_bottleneck": 1.187356792945633,
+      "zero_edge_routes": 0
+    },
+    "routes": [
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 2,
+        "agent_id": "r02",
+        "route_index": 0,
+        "route_id": 0,
+        "edge_count": 1,
+        "edge_ids": [
+          133
+        ],
+        "edge_lengths": [
+          7.728803678967776
+        ],
+        "edge_widths": [
+          8.443769999999773
+        ],
+        "q": [
+          0.6072961674107025
+        ],
+        "w_max": 9.732232493887928,
+        "graph_length": 7.728803678967776,
+        "physical_length": 23.927261181382285,
+        "width_exposure": 4.693672852906868,
+        "cost": 12.422476531874644,
+        "bottleneck_width": 1.187356792945633,
+        "bottleneck_probability": 0.3195745656207374,
+        "cost_probability": 1.0,
+        "probability_change": 0.6804254343792626
+      },
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 2,
+        "agent_id": "r02",
+        "route_index": 1,
+        "route_id": 1,
+        "edge_count": 5,
+        "edge_ids": [
+          93,
+          88,
+          87,
+          110,
+          132
+        ],
+        "edge_lengths": [
+          3.8495936898692054,
+          8.508026980458748,
+          8.37016333927978,
+          8.317588329635797,
+          39.722483286708204
+        ],
+        "edge_widths": [
+          9.483591893739968,
+          8.49771313575011,
+          1.4784700472038306,
+          1.4799059951482443,
+          6.742086388826832
+        ],
+        "q": [
+          0.5538746171963386,
+          0.604524802475462,
+          0.9651431443078489,
+          0.9650693715149509,
+          0.694721309187866
+        ],
+        "w_max": 9.732232493887928,
+        "graph_length": 68.76785562595174,
+        "physical_length": 41.97090540901175,
+        "width_exposure": 50.977016659735,
+        "cost": 119.74487228568674,
+        "bottleneck_width": 1.1869474409823062,
+        "bottleneck_probability": 0.31946438940694605,
+        "cost_probability": 2.457399352368841e-47,
+        "probability_change": -0.31946438940694605
+      },
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 2,
+        "agent_id": "r02",
+        "route_index": 2,
+        "route_id": 2,
+        "edge_count": 7,
+        "edge_ids": [
+          149,
+          168,
+          174,
+          179,
+          187,
+          191,
+          164
+        ],
+        "edge_lengths": [
+          4.9801560550372335,
+          2.693279789839473,
+          1.7517213613426084,
+          4.279634900332483,
+          3.4467765037405727,
+          7.637492555606349,
+          8.410185007532872
+        ],
+        "edge_widths": [
+          9.697315461492227,
+          9.609679999999797,
+          9.368585511529954,
+          9.318149999999662,
+          9.732232493887928,
+          8.866269999999815,
+          1.479905991574578
+        ],
+        "q": [
+          0.5428944249389874,
+          0.5473967558043602,
+          0.5597831475506144,
+          0.5623743059288163,
+          0.5411005388795643,
+          0.5855899453149304,
+          0.9650693716985504
+        ],
+        "w_max": 9.732232493887928,
+        "graph_length": 33.1992461734316,
+        "physical_length": 42.16818317835508,
+        "width_exposure": 22.019235813665137,
+        "cost": 55.21848198709674,
+        "bottleneck_width": 1.3411253423880827,
+        "bottleneck_probability": 0.36096104497231657,
+        "cost_probability": 2.593767136101479e-19,
+        "probability_change": -0.36096104497231657
+      }
+    ]
+  },
+  {
+    "query": {
+      "task_id": "warehouse_s13_v02",
+      "source_map": "warehouse",
+      "scenario_id": "warehouse_s13",
+      "variant_index": 2,
+      "diameter_meters": 0.8,
+      "traffic_pattern": "intersection",
+      "agent_index": 11,
+      "agent_id": "r11",
+      "k": 2,
+      "w_max": 9.732232493887928,
+      "bottleneck_probabilities": [
+        0.8611108658625424,
+        0.1388891341374576
+      ],
+      "cost_probabilities": [
+        0.9999999999999873,
+        1.263947290566516e-14
+      ],
+      "total_variation": 0.13888913413744497,
+      "modal_route_changed": false,
+      "bottleneck_top_probability": 0.8611108658625424,
+      "cost_top_probability": 0.9999999999999873,
+      "bottleneck_entropy": 0.4029418053347933,
+      "cost_entropy": 4.1714434401686956e-13,
+      "bottleneck_expected_graph_length": 11.650612412888652,
+      "cost_expected_graph_length": 9.478132765415861,
+      "bottleneck_expected_physical_length": 31.77417755309616,
+      "cost_expected_physical_length": 31.238349312622514,
+      "bottleneck_expected_bottleneck": 6.501779358768488,
+      "cost_expected_bottleneck": 7.359013262076118,
+      "zero_edge_routes": 0
+    },
+    "routes": [
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 11,
+        "agent_id": "r11",
+        "route_index": 0,
+        "route_id": 0,
+        "edge_count": 3,
+        "edge_ids": [
+          174,
+          179,
+          187
+        ],
+        "edge_lengths": [
+          1.7517213613426084,
+          4.279634900332483,
+          3.4467765037405727
+        ],
+        "edge_widths": [
+          9.368585511529954,
+          9.318149999999662,
+          9.732232493887928
+        ],
+        "q": [
+          0.5597831475506144,
+          0.5623743059288163,
+          0.5411005388795643
+        ],
+        "w_max": 9.732232493887928,
+        "graph_length": 9.478132765415664,
+        "physical_length": 31.238349312622464,
+        "width_exposure": 5.252393427558676,
+        "cost": 14.73052619297434,
+        "bottleneck_width": 7.359013262076196,
+        "bottleneck_probability": 0.8611108658625424,
+        "cost_probability": 0.9999999999999873,
+        "probability_change": 0.13888913413744497
+      },
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 11,
+        "agent_id": "r11",
+        "route_index": 1,
+        "route_id": 1,
+        "edge_count": 3,
+        "edge_ids": [
+          133,
+          134,
+          164
+        ],
+        "edge_lengths": [
+          7.728803678967776,
+          8.980969920545647,
+          8.410185007532872
+        ],
+        "edge_widths": [
+          8.443769999999773,
+          1.1869400378959225,
+          1.479905991574578
+        ],
+        "q": [
+          0.6072961674107025,
+          0.9801206949104982,
+          0.9650693716985504
+        ],
+        "w_max": 9.732232493887928,
+        "graph_length": 25.119958607046293,
+        "physical_length": 35.09630583169322,
+        "width_exposure": 21.612519293490667,
+        "cost": 46.73247790053696,
+        "bottleneck_width": 1.1869400568439514,
+        "bottleneck_probability": 0.1388891341374576,
+        "cost_probability": 1.263947290566516e-14,
+        "probability_change": -0.13888913413744497
+      }
+    ]
+  },
+  {
+    "query": {
+      "task_id": "warehouse_s13_v02",
+      "source_map": "warehouse",
+      "scenario_id": "warehouse_s13",
+      "variant_index": 2,
+      "diameter_meters": 0.8,
+      "traffic_pattern": "intersection",
+      "agent_index": 20,
+      "agent_id": "r20",
+      "k": 3,
+      "w_max": 9.697315461492227,
+      "bottleneck_probabilities": [
+        0.7956048060246668,
+        0.10219759698766659,
+        0.10219759698766659
+      ],
+      "cost_probabilities": [
+        0.9998697977480169,
+        1.14608099874303e-20,
+        0.00013020225198316757
+      ],
+      "total_variation": 0.20426499172335008,
+      "modal_route_changed": false,
+      "bottleneck_top_probability": 0.7956048060246668,
+      "cost_top_probability": 0.9998697977480169,
+      "bottleneck_entropy": 0.6481113684428876,
+      "cost_entropy": 0.0012950380059593327,
+      "bottleneck_expected_graph_length": 24.803450029351882,
+      "cost_expected_graph_length": 22.43747295563121,
+      "bottleneck_expected_physical_length": 37.332485468444446,
+      "cost_expected_physical_length": 36.3283054547169,
+      "bottleneck_expected_bottleneck": 7.594222265230362,
+      "cost_expected_bottleneck": 9.239239285432529,
+      "zero_edge_routes": 0
+    },
+    "routes": [
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 20,
+        "agent_id": "r20",
+        "route_index": 0,
+        "route_id": 0,
+        "edge_count": 6,
+        "edge_ids": [
+          179,
+          174,
+          168,
+          149,
+          136,
+          119
+        ],
+        "edge_lengths": [
+          4.279634900332483,
+          1.7517213613426084,
+          2.693279789839473,
+          4.9801560550372335,
+          3.8516041012315947,
+          4.880685492490269
+        ],
+        "edge_widths": [
+          9.318149999999662,
+          9.368585511529954,
+          9.609679999999797,
+          9.697315461492227,
+          9.589814720015683,
+          9.318149999999662
+        ],
+        "q": [
+          0.5607985512163133,
+          0.5581980628785579,
+          0.5457670715682709,
+          0.5412485292025807,
+          0.5467913385451987,
+          0.5607985512163133
+        ],
+        "w_max": 9.697315461492227,
+        "graph_length": 22.43708170027366,
+        "physical_length": 36.32812177499709,
+        "width_exposure": 12.38633120143821,
+        "cost": 34.82341290171187,
+        "bottleneck_width": 9.240287849451128,
+        "bottleneck_probability": 0.7956048060246668,
+        "cost_probability": 0.9998697977480169,
+        "probability_change": 0.2042649917233501
+      },
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 20,
+        "agent_id": "r20",
+        "route_index": 1,
+        "route_id": 1,
+        "edge_count": 5,
+        "edge_ids": [
+          164,
+          134,
+          110,
+          87,
+          88
+        ],
+        "edge_lengths": [
+          8.410185007532872,
+          8.980969920545647,
+          8.317588329635797,
+          8.37016333927978,
+          8.508026980458748
+        ],
+        "edge_widths": [
+          1.479905991574578,
+          1.1869400378959225,
+          1.4799059951482443,
+          1.4784700472038306,
+          8.49771313575011
+        ],
+        "q": [
+          0.9649435973144079,
+          0.9800491156840029,
+          0.9649435971301473,
+          0.9650176355560455,
+          0.6031008186586525
+        ],
+        "w_max": 9.697315461492227,
+        "graph_length": 42.58693357745284,
+        "physical_length": 44.745060115252585,
+        "width_exposure": 38.1517026780846,
+        "cost": 80.73863625553744,
+        "bottleneck_width": 1.1869400568439514,
+        "bottleneck_probability": 0.10219759698766659,
+        "cost_probability": 1.14608099874303e-20,
+        "probability_change": -0.10219759698766659
+      },
+      {
+        "task_id": "warehouse_s13_v02",
+        "source_map": "warehouse",
+        "scenario_id": "warehouse_s13",
+        "variant_index": 2,
+        "diameter_meters": 0.8,
+        "traffic_pattern": "intersection",
+        "agent_index": 20,
+        "agent_id": "r20",
+        "route_index": 2,
+        "route_id": 2,
+        "edge_count": 4,
+        "edge_ids": [
+          134,
+          133,
+          136,
+          119
+        ],
+        "edge_lengths": [
+          8.980969920545647,
+          7.728803678967776,
+          3.8516041012315947,
+          4.880685492490269
+        ],
+        "edge_widths": [
+          1.1869400378959225,
+          8.443769999999773,
+          9.589814720015683,
+          9.318149999999662
+        ],
+        "q": [
+          0.9800491156840029,
+          0.6058821624214983,
+          0.5467913385451987,
+          0.5607985512163133
+        ],
+        "w_max": 9.697315461492227,
+        "graph_length": 25.442063193235285,
+        "physical_length": 37.73884791073286,
+        "width_exposure": 18.32764102974924,
+        "cost": 43.76970422298453,
+        "bottleneck_width": 1.1869400568439514,
+        "bottleneck_probability": 0.10219759698766659,
+        "cost_probability": 0.00013020225198316757,
+        "probability_change": -0.10206739473568342
+      }
+    ]
+  }
+]

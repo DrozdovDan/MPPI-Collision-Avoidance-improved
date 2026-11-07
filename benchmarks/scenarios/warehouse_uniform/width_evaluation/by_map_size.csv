@@ -1,0 +1,11 @@
+source_map,diameter_meters,planner,runs,successes,fleet_success_rate,mean_agent_completion_fraction,successful_makespan_mean_seconds,successful_makespan_std_seconds,successful_makespan_sample_count,outcomes
+warehouse,0.6,k_routes_width,25,2,0.08,0.595,113.4,3.8183766184073606,2,"{""deadlock"": 23, ""success"": 2}"
+warehouse,0.7,k_routes_width,25,1,0.04,0.50125,128.6,,1,"{""deadlock"": 24, ""success"": 1}"
+warehouse,0.8,k_routes_width,25,0,0.0,0.79375,,,0,"{""deadlock"": 25}"
+warehouse,0.9,k_routes_width,25,1,0.04,0.8225,140.1,,1,"{""deadlock"": 24, ""success"": 1}"
+warehouse,1.0,k_routes_width,25,2,0.08,0.8,134.45,4.454772721475237,2,"{""deadlock"": 23, ""success"": 2}"
+warehouse2,0.6,k_routes_width,25,5,0.2,0.7775,125.68000000000002,41.90557242181522,5,"{""deadlock"": 20, ""success"": 5}"
+warehouse2,0.7,k_routes_width,25,4,0.16,0.865,109.45,44.4970036444403,4,"{""deadlock"": 20, ""stalled"": 1, ""success"": 4}"
+warehouse2,0.8,k_routes_width,25,6,0.24,0.88375,127.0166666666667,36.32890951661868,6,"{""deadlock"": 19, ""success"": 6}"
+warehouse2,0.9,k_routes_width,25,8,0.32,0.8875,139.72500000000002,37.43175695277245,8,"{""deadlock"": 17, ""success"": 8}"
+warehouse2,1.0,k_routes_width,25,6,0.24,0.88,164.48333333333335,25.925772248221783,6,"{""deadlock"": 19, ""success"": 6}"

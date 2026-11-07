@@ -1,0 +1,29 @@
+{
+  "completed_runs": 1280,
+  "unique_noise_seeds": 640,
+  "saved_geometries": 64,
+  "source_and_binaries_verified": true,
+  "baseline_native_noise_audit_verified": true,
+  "corrected_diagnostic_cases_replayed_exactly": 14,
+  "resume_scheduled_runs": 0,
+  "raw_sha256": "d1faddfeba24b304425920692ad6a50a14c2cc22718f8dab1a4d87083151e8b9",
+  "outcomes": {
+    "circle/legacy-mppi-orca": {
+      "success": 138,
+      "collision": 2
+    },
+    "circle/uncertainty-mppi": {
+      "success": 83,
+      "timeout": 57
+    },
+    "random/legacy-mppi-orca": {
+      "success": 490,
+      "collision": 10
+    },
+    "random/uncertainty-mppi": {
+      "success": 240,
+      "collision": 31,
+      "timeout": 229
+    }
+  }
+}

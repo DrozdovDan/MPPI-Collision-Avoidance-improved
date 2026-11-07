@@ -1,0 +1,4 @@
+{
+  "truncate_rollouts": true,
+  "reject_first_step_tails": true
+}

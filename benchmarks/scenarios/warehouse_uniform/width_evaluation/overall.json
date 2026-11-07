@@ -1,0 +1,17 @@
+[
+  {
+    "planner": "k_routes_width",
+    "runs": 250,
+    "successes": 35,
+    "fleet_success_rate": 0.14,
+    "mean_agent_completion_fraction": 0.780625,
+    "successful_makespan_mean_seconds": 134.21142857142863,
+    "successful_makespan_std_seconds": 35.38335244507085,
+    "successful_makespan_sample_count": 35,
+    "outcomes": {
+      "deadlock": 214,
+      "success": 35,
+      "stalled": 1
+    }
+  }
+]

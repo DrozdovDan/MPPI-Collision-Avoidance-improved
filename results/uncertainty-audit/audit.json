@@ -1,0 +1,79 @@
+{
+  "summary": [
+    {
+      "variant": "old-truncation",
+      "runs": 14,
+      "successes": 9,
+      "timeouts": 4,
+      "collisions": 1,
+      "circle_successes": 2,
+      "circle_runs": 6,
+      "random_successes": 7,
+      "random_runs": 8
+    },
+    {
+      "variant": "gaussian-future",
+      "runs": 14,
+      "successes": 12,
+      "timeouts": 1,
+      "collisions": 1,
+      "circle_successes": 5,
+      "circle_runs": 6,
+      "random_successes": 7,
+      "random_runs": 8
+    },
+    {
+      "variant": "gaussian-all",
+      "runs": 14,
+      "successes": 12,
+      "timeouts": 1,
+      "collisions": 1,
+      "circle_successes": 5,
+      "circle_runs": 6,
+      "random_successes": 7,
+      "random_runs": 8
+    },
+    {
+      "variant": "gaussian-one-step",
+      "runs": 14,
+      "successes": 13,
+      "timeouts": 0,
+      "collisions": 1,
+      "circle_successes": 6,
+      "circle_runs": 6,
+      "random_successes": 7,
+      "random_runs": 8
+    }
+  ],
+  "audit_source_sha256": "4a2851b957a437280a0e0eb57d753438f9d4e1b5b9b9dabd8596e3adc469f31d",
+  "audit_native_sha256": "b9121471c20fd8a873277e8a799d6e04cba95eabd25d4fcb04e57dea1ad66cc6",
+  "historical_raw_sha256": "a2d2976d573635d3c35da180fab4439212f05ee4dc5d821e837a3ccb6ab861b0",
+  "exact_legacy_replay": true,
+  "paired_tasks_and_geometries": true,
+  "example_case": {
+    "old-truncation": {
+      "status": "timeout",
+      "steps": 1000
+    },
+    "gaussian-future": {
+      "status": "success",
+      "steps": 683
+    },
+    "gaussian-all": {
+      "status": "success",
+      "steps": 298
+    },
+    "gaussian-one-step": {
+      "status": "success",
+      "steps": 186
+    }
+  },
+  "proposal_example": {
+    "mean": 1.0,
+    "std": 1.0,
+    "lower": -1.0,
+    "upper": 1.0,
+    "rejected_mean": 0.2772102477547692,
+    "clipped_mean": 0.609548422215397
+  }
+}

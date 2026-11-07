@@ -1,0 +1,1007 @@
+{
+  "task_id": "warehouse2_s02_v02",
+  "scenario_sha256": "13851f7bdc8e636c86d27bb9767aeca8542a9505dcd7a194dfb97260f90a83f3",
+  "traffic_pattern": "opposing_bottleneck",
+  "diameter_meters": 0.6,
+  "gate_definition": "Static free cross-section at y=-19 m through x=96.86537 m. Count selected anchors crossing this segment; crossing count does not mean simultaneous occupancy.",
+  "gate_segment": [
+    [
+      96.44659999999999,
+      -19.0
+    ],
+    [
+      97.28413999999987,
+      -19.0
+    ]
+  ],
+  "gate_width_meters": 0.8375399999998763,
+  "minimum_width_resource_63_meters": 0.8375399997611366,
+  "minimum_two_disk_passing_width_meters": 1.2,
+  "methods": [
+    {
+      "method": "rrt",
+      "finished_agents": 32,
+      "status": "success",
+      "makespan_seconds": 53.900000000000006,
+      "recorded_until_seconds": 53.900000000000006,
+      "planned_crossing_agents": 4,
+      "north": 1,
+      "south": 3,
+      "crossing_anchor_x_range": [
+        96.80131995694545,
+        96.86148228731737
+      ],
+      "planned_crossings": [
+        {
+          "robot_index": 3,
+          "segment": 1,
+          "fraction": 0.4329136927672947,
+          "x": 96.80131995694545,
+          "direction": "north"
+        },
+        {
+          "robot_index": 10,
+          "segment": 1,
+          "fraction": 0.6574973448577207,
+          "x": 96.8444598888426,
+          "direction": "south"
+        },
+        {
+          "robot_index": 14,
+          "segment": 3,
+          "fraction": 0.5736415790667495,
+          "x": 96.86148228731737,
+          "direction": "south"
+        },
+        {
+          "robot_index": 16,
+          "segment": 1,
+          "fraction": 0.06808506178402463,
+          "x": 96.83574801499351,
+          "direction": "south"
+        }
+      ],
+      "executed_crossings": [
+        {
+          "robot_index": 16,
+          "time_seconds": 2.4391975281619076,
+          "segment": 24,
+          "fraction": 0.39197528161907436,
+          "x": 96.83475201831673,
+          "direction": "south"
+        },
+        {
+          "robot_index": 10,
+          "time_seconds": 5.931835360263076,
+          "segment": 59,
+          "fraction": 0.3183536026307533,
+          "x": 96.84966767915954,
+          "direction": "south"
+        },
+        {
+          "robot_index": 3,
+          "time_seconds": 10.723732482967335,
+          "segment": 107,
+          "fraction": 0.23732482967335183,
+          "x": 96.78984396209573,
+          "direction": "north"
+        },
+        {
+          "robot_index": 14,
+          "time_seconds": 22.726210779424818,
+          "segment": 227,
+          "fraction": 0.26210779424816877,
+          "x": 96.86177948787794,
+          "direction": "south"
+        }
+      ],
+      "mutual_obstruction_groups": [],
+      "parked_goal_blocker_robot_ids": [],
+      "joint_safety_filter": {
+        "steps": 539,
+        "intervened_steps": 10,
+        "rejected_joint_proposals": 10,
+        "certificate": "synchronous swept disks plus bounded braking to rest"
+      },
+      "collisions": 0
+    },
+    {
+      "method": "k_routes",
+      "finished_agents": 5,
+      "status": "deadlock",
+      "makespan_seconds": null,
+      "recorded_until_seconds": 104.0,
+      "planned_crossing_agents": 16,
+      "north": 8,
+      "south": 8,
+      "crossing_anchor_x_range": [
+        96.8653671228271,
+        96.86536999999996
+      ],
+      "planned_crossings": [
+        {
+          "robot_index": 0,
+          "segment": 46,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 1,
+          "segment": 50,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 3,
+          "segment": 106,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 6,
+          "segment": 163,
+          "fraction": 0.9213825933853796,
+          "x": 96.8653671228271,
+          "direction": "south"
+        },
+        {
+          "robot_index": 7,
+          "segment": 483,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 9,
+          "segment": 482,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 12,
+          "segment": 34,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 13,
+          "segment": 113,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 14,
+          "segment": 213,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 17,
+          "segment": 108,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 18,
+          "segment": 224,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 19,
+          "segment": 103,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 22,
+          "segment": 57,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 23,
+          "segment": 46,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 24,
+          "segment": 231,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 30,
+          "segment": 161,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        }
+      ],
+      "executed_crossings": [],
+      "mutual_obstruction_groups": [
+        [
+          8,
+          10,
+          16,
+          22
+        ],
+        [
+          0,
+          1,
+          7,
+          12,
+          23
+        ],
+        [
+          2,
+          6,
+          14,
+          18,
+          30
+        ]
+      ],
+      "parked_goal_blocker_robot_ids": [],
+      "joint_safety_filter": {
+        "steps": 1040,
+        "intervened_steps": 5,
+        "rejected_joint_proposals": 5,
+        "certificate": "synchronous swept disks plus bounded braking to rest"
+      },
+      "collisions": 0
+    },
+    {
+      "method": "k_routes_width",
+      "finished_agents": 17,
+      "status": "deadlock",
+      "makespan_seconds": null,
+      "recorded_until_seconds": 104.0,
+      "planned_crossing_agents": 9,
+      "north": 6,
+      "south": 3,
+      "crossing_anchor_x_range": [
+        96.8653671228271,
+        96.86536999999996
+      ],
+      "planned_crossings": [
+        {
+          "robot_index": 1,
+          "segment": 50,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 3,
+          "segment": 106,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 6,
+          "segment": 163,
+          "fraction": 0.9213825933853796,
+          "x": 96.8653671228271,
+          "direction": "south"
+        },
+        {
+          "robot_index": 7,
+          "segment": 483,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 9,
+          "segment": 482,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 13,
+          "segment": 113,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 22,
+          "segment": 57,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 23,
+          "segment": 46,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 24,
+          "segment": 105,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        }
+      ],
+      "executed_crossings": [
+        {
+          "robot_index": 1,
+          "time_seconds": 6.8717077649479466,
+          "segment": 68,
+          "fraction": 0.7170776494794613,
+          "x": 96.86343225558379,
+          "direction": "north"
+        },
+        {
+          "robot_index": 23,
+          "time_seconds": 8.238361479965219,
+          "segment": 82,
+          "fraction": 0.3836147996521761,
+          "x": 96.86367176344197,
+          "direction": "north"
+        },
+        {
+          "robot_index": 3,
+          "time_seconds": 13.617075329591387,
+          "segment": 136,
+          "fraction": 0.17075329591388147,
+          "x": 96.8613303187757,
+          "direction": "north"
+        },
+        {
+          "robot_index": 13,
+          "time_seconds": 15.49451538536957,
+          "segment": 154,
+          "fraction": 0.9451538536956947,
+          "x": 96.86189109756054,
+          "direction": "north"
+        },
+        {
+          "robot_index": 9,
+          "time_seconds": 50.922583786461516,
+          "segment": 509,
+          "fraction": 0.22583786461514752,
+          "x": 96.86338852861144,
+          "direction": "north"
+        },
+        {
+          "robot_index": 7,
+          "time_seconds": 54.49439565089672,
+          "segment": 544,
+          "fraction": 0.9439565089672138,
+          "x": 96.86393379233279,
+          "direction": "north"
+        }
+      ],
+      "mutual_obstruction_groups": [
+        [
+          1,
+          12,
+          16,
+          24,
+          28,
+          29
+        ],
+        [
+          3,
+          6,
+          8,
+          10,
+          11,
+          22
+        ]
+      ],
+      "parked_goal_blocker_robot_ids": [],
+      "joint_safety_filter": {
+        "steps": 1040,
+        "intervened_steps": 1,
+        "rejected_joint_proposals": 1,
+        "certificate": "synchronous swept disks plus bounded braking to rest"
+      },
+      "collisions": 0
+    },
+    {
+      "method": "k_routes_edge_cost",
+      "finished_agents": 8,
+      "status": "deadlock",
+      "makespan_seconds": null,
+      "recorded_until_seconds": 91.0,
+      "planned_crossing_agents": 26,
+      "north": 14,
+      "south": 12,
+      "crossing_anchor_x_range": [
+        96.86535915285795,
+        96.86536999999996
+      ],
+      "planned_crossings": [
+        {
+          "robot_index": 0,
+          "segment": 46,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 1,
+          "segment": 50,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 2,
+          "segment": 114,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 3,
+          "segment": 106,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 5,
+          "segment": 487,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 6,
+          "segment": 163,
+          "fraction": 0.9213825933853796,
+          "x": 96.8653671228271,
+          "direction": "south"
+        },
+        {
+          "robot_index": 7,
+          "segment": 404,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 8,
+          "segment": 50,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 9,
+          "segment": 482,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 10,
+          "segment": 39,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 11,
+          "segment": 132,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 12,
+          "segment": 33,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 13,
+          "segment": 113,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 14,
+          "segment": 195,
+          "fraction": 0.8619843977569857,
+          "x": 96.86536708710315,
+          "direction": "south"
+        },
+        {
+          "robot_index": 16,
+          "segment": 12,
+          "fraction": 0.453183165999843,
+          "x": 96.86535915285795,
+          "direction": "south"
+        },
+        {
+          "robot_index": 18,
+          "segment": 197,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 19,
+          "segment": 103,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 20,
+          "segment": 86,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 21,
+          "segment": 110,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 22,
+          "segment": 57,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 23,
+          "segment": 46,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 25,
+          "segment": 291,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 26,
+          "segment": 192,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 27,
+          "segment": 501,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 29,
+          "segment": 120,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 31,
+          "segment": 405,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        }
+      ],
+      "executed_crossings": [
+        {
+          "robot_index": 16,
+          "time_seconds": 2.438539815262386,
+          "segment": 24,
+          "fraction": 0.38539815262386196,
+          "x": 96.86524883065174,
+          "direction": "south"
+        },
+        {
+          "robot_index": 12,
+          "time_seconds": 6.377545053062132,
+          "segment": 63,
+          "fraction": 0.7754505306213216,
+          "x": 96.86501513629315,
+          "direction": "south"
+        },
+        {
+          "robot_index": 10,
+          "time_seconds": 12.202947972682763,
+          "segment": 122,
+          "fraction": 0.02947972682761909,
+          "x": 96.86558293099334,
+          "direction": "south"
+        }
+      ],
+      "mutual_obstruction_groups": [
+        [
+          0,
+          8,
+          10,
+          13,
+          21,
+          23,
+          29
+        ]
+      ],
+      "parked_goal_blocker_robot_ids": [],
+      "joint_safety_filter": {
+        "steps": 910,
+        "intervened_steps": 4,
+        "rejected_joint_proposals": 4,
+        "certificate": "synchronous swept disks plus bounded braking to rest"
+      },
+      "collisions": 0
+    },
+    {
+      "method": "k_routes_edge_cost_l2_t10",
+      "finished_agents": 10,
+      "status": "deadlock",
+      "makespan_seconds": null,
+      "recorded_until_seconds": 86.0,
+      "planned_crossing_agents": 23,
+      "north": 13,
+      "south": 10,
+      "crossing_anchor_x_range": [
+        96.86535915285795,
+        96.86536999999996
+      ],
+      "planned_crossings": [
+        {
+          "robot_index": 0,
+          "segment": 46,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 1,
+          "segment": 50,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 2,
+          "segment": 114,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 3,
+          "segment": 106,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 5,
+          "segment": 487,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 6,
+          "segment": 163,
+          "fraction": 0.9213825933853796,
+          "x": 96.8653671228271,
+          "direction": "south"
+        },
+        {
+          "robot_index": 7,
+          "segment": 404,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 8,
+          "segment": 50,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 9,
+          "segment": 482,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 10,
+          "segment": 39,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 12,
+          "segment": 33,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 13,
+          "segment": 113,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 14,
+          "segment": 195,
+          "fraction": 0.8619843977569857,
+          "x": 96.86536708710315,
+          "direction": "south"
+        },
+        {
+          "robot_index": 16,
+          "segment": 12,
+          "fraction": 0.453183165999843,
+          "x": 96.86535915285795,
+          "direction": "south"
+        },
+        {
+          "robot_index": 17,
+          "segment": 108,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 19,
+          "segment": 103,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 21,
+          "segment": 110,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 22,
+          "segment": 57,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 23,
+          "segment": 46,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 26,
+          "segment": 192,
+          "fraction": 0.42748351125295475,
+          "x": 96.86536999999996,
+          "direction": "south"
+        },
+        {
+          "robot_index": 27,
+          "segment": 501,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 29,
+          "segment": 120,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        },
+        {
+          "robot_index": 31,
+          "segment": 405,
+          "fraction": 0.5725164887470453,
+          "x": 96.86536999999996,
+          "direction": "north"
+        }
+      ],
+      "executed_crossings": [
+        {
+          "robot_index": 16,
+          "time_seconds": 2.438539815262386,
+          "segment": 24,
+          "fraction": 0.38539815262386196,
+          "x": 96.86524883065296,
+          "direction": "south"
+        },
+        {
+          "robot_index": 12,
+          "time_seconds": 5.382521000544748,
+          "segment": 53,
+          "fraction": 0.8252100054474719,
+          "x": 96.86499815702491,
+          "direction": "south"
+        },
+        {
+          "robot_index": 10,
+          "time_seconds": 12.18544679692816,
+          "segment": 121,
+          "fraction": 0.8544679692815814,
+          "x": 96.94299596335094,
+          "direction": "south"
+        }
+      ],
+      "mutual_obstruction_groups": [
+        [
+          0,
+          2,
+          3,
+          8,
+          10,
+          17,
+          23,
+          31
+        ]
+      ],
+      "parked_goal_blocker_robot_ids": [],
+      "joint_safety_filter": {
+        "steps": 860,
+        "intervened_steps": 9,
+        "rejected_joint_proposals": 9,
+        "certificate": "synchronous swept disks plus bounded braking to rest"
+      },
+      "collisions": 0
+    }
+  ],
+  "cycle_candidate_diagnostics": [
+    {
+      "robot_index": 0,
+      "returned_candidates": 5,
+      "candidate_crosses_gate": [
+        true,
+        false,
+        false,
+        false,
+        true
+      ],
+      "lambda1_tau1_selected_index": 0,
+      "lambda1_tau1_probabilities": [
+        0.9988671242714344,
+        7.373170208582825e-17,
+        0.000879054452382712,
+        0.0002538212761804959,
+        2.1659126980341886e-15
+      ]
+    },
+    {
+      "robot_index": 8,
+      "returned_candidates": 5,
+      "candidate_crosses_gate": [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "lambda1_tau1_selected_index": 0,
+      "lambda1_tau1_probabilities": [
+        0.9999999971706421,
+        3.2446265628426974e-33,
+        2.829357961701798e-09,
+        1.9624693265465588e-19,
+        8.835214589580742e-33
+      ]
+    },
+    {
+      "robot_index": 10,
+      "returned_candidates": 2,
+      "candidate_crosses_gate": [
+        true,
+        false
+      ],
+      "lambda1_tau1_selected_index": 0,
+      "lambda1_tau1_probabilities": [
+        0.9999570117500445,
+        4.298824995552533e-05
+      ]
+    },
+    {
+      "robot_index": 13,
+      "returned_candidates": 3,
+      "candidate_crosses_gate": [
+        false,
+        false,
+        true
+      ],
+      "lambda1_tau1_selected_index": 2,
+      "lambda1_tau1_probabilities": [
+        0.018560648903742885,
+        4.042060213857141e-15,
+        0.9814393510962531
+      ]
+    },
+    {
+      "robot_index": 21,
+      "returned_candidates": 3,
+      "candidate_crosses_gate": [
+        true,
+        false,
+        false
+      ],
+      "lambda1_tau1_selected_index": 0,
+      "lambda1_tau1_probabilities": [
+        0.9999999999999771,
+        2.2896933401352495e-14,
+        1.4419985307323577e-18
+      ]
+    },
+    {
+      "robot_index": 23,
+      "returned_candidates": 1,
+      "candidate_crosses_gate": [
+        true
+      ],
+      "lambda1_tau1_selected_index": 0,
+      "lambda1_tau1_probabilities": [
+        1.0
+      ],
+      "search_physical_candidate_attempts": 24,
+      "rejected_lane_routes": 0,
+      "anchor_length_meters": {
+        "rrt": 36.4893136711818,
+        "k_routes": 23.850918186036576
+      }
+    },
+    {
+      "robot_index": 29,
+      "returned_candidates": 4,
+      "candidate_crosses_gate": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "lambda1_tau1_selected_index": 0,
+      "lambda1_tau1_probabilities": [
+        0.9999977787280714,
+        4.07922317252765e-17,
+        2.221271928611844e-06,
+        2.2917885742468108e-23
+      ]
+    }
+  ],
+  "selection_snapshot_completed_runs": 166
+}

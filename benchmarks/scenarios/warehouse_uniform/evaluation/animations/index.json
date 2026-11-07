@@ -1,0 +1,145 @@
+[
+  {
+    "run_id": "warehouse_s03_v01__rrt__p42__c42",
+    "source_map": "warehouse",
+    "planner": "rrt",
+    "traffic_pattern": "intersection",
+    "status": "success",
+    "makespan_seconds": 80.9,
+    "observed_simulated_seconds": 80.9,
+    "file": "warehouse_s03_v01__rrt__p42__c42__success.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse_s01_v01__k_routes__p42__c42",
+    "source_map": "warehouse",
+    "planner": "k_routes",
+    "traffic_pattern": "distributed",
+    "status": "deadlock",
+    "makespan_seconds": null,
+    "observed_simulated_seconds": 118.0,
+    "file": "warehouse_s01_v01__k_routes__p42__c42__deadlock.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse_s06_v03__rrt__p42__c42",
+    "source_map": "warehouse",
+    "planner": "rrt",
+    "traffic_pattern": "distributed",
+    "status": "success",
+    "makespan_seconds": 111.10000000000001,
+    "observed_simulated_seconds": 111.10000000000001,
+    "file": "warehouse_s06_v03__rrt__p42__c42__success.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse_s02_v01__k_routes__p42__c42",
+    "source_map": "warehouse",
+    "planner": "k_routes",
+    "traffic_pattern": "opposing_bottleneck",
+    "status": "deadlock",
+    "makespan_seconds": null,
+    "observed_simulated_seconds": 74.0,
+    "file": "warehouse_s02_v01__k_routes__p42__c42__deadlock.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse_s04_v02__rrt__p42__c42",
+    "source_map": "warehouse",
+    "planner": "rrt",
+    "traffic_pattern": "symmetric_swap",
+    "status": "success",
+    "makespan_seconds": 87.60000000000001,
+    "observed_simulated_seconds": 87.60000000000001,
+    "file": "warehouse_s04_v02__rrt__p42__c42__success.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse_s05_v01__k_routes__p42__c42",
+    "source_map": "warehouse",
+    "planner": "k_routes",
+    "traffic_pattern": "competing_bottlenecks",
+    "status": "deadlock",
+    "makespan_seconds": null,
+    "observed_simulated_seconds": 95.0,
+    "file": "warehouse_s05_v01__k_routes__p42__c42__deadlock.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse2_s01_v03__rrt__p42__c42",
+    "source_map": "warehouse2",
+    "planner": "rrt",
+    "traffic_pattern": "distributed",
+    "status": "success",
+    "makespan_seconds": 93.80000000000001,
+    "observed_simulated_seconds": 93.80000000000001,
+    "file": "warehouse2_s01_v03__rrt__p42__c42__success.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse2_s04_v05__k_routes__p42__c42",
+    "source_map": "warehouse2",
+    "planner": "k_routes",
+    "traffic_pattern": "symmetric_swap",
+    "status": "success",
+    "makespan_seconds": 186.3,
+    "observed_simulated_seconds": 186.3,
+    "file": "warehouse2_s04_v05__k_routes__p42__c42__success.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse2_s02_v01__k_routes__p42__c42",
+    "source_map": "warehouse2",
+    "planner": "k_routes",
+    "traffic_pattern": "opposing_bottleneck",
+    "status": "deadlock",
+    "makespan_seconds": null,
+    "observed_simulated_seconds": 112.0,
+    "file": "warehouse2_s02_v01__k_routes__p42__c42__deadlock.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse2_s03_v02__rrt__p42__c42",
+    "source_map": "warehouse2",
+    "planner": "rrt",
+    "traffic_pattern": "intersection",
+    "status": "success",
+    "makespan_seconds": 65.5,
+    "observed_simulated_seconds": 65.5,
+    "file": "warehouse2_s03_v02__rrt__p42__c42__success.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse2_s04_v03__rrt__p42__c42",
+    "source_map": "warehouse2",
+    "planner": "rrt",
+    "traffic_pattern": "symmetric_swap",
+    "status": "success",
+    "makespan_seconds": 104.5,
+    "observed_simulated_seconds": 104.5,
+    "file": "warehouse2_s04_v03__rrt__p42__c42__success.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse2_s05_v01__k_routes__p42__c42",
+    "source_map": "warehouse2",
+    "planner": "k_routes",
+    "traffic_pattern": "competing_bottlenecks",
+    "status": "deadlock",
+    "makespan_seconds": null,
+    "observed_simulated_seconds": 121.0,
+    "file": "warehouse2_s05_v01__k_routes__p42__c42__deadlock.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  },
+  {
+    "run_id": "warehouse2_s01_v01__k_routes__p42__c42",
+    "source_map": "warehouse2",
+    "planner": "k_routes",
+    "traffic_pattern": "distributed",
+    "status": "deadlock",
+    "makespan_seconds": null,
+    "observed_simulated_seconds": 184.0,
+    "file": "warehouse2_s01_v01__k_routes__p42__c42__deadlock.gif",
+    "selection": "first saved success per map/method and map/traffic-pattern when available, otherwise first simulated run; additional first deadlock and collision examples"
+  }
+]

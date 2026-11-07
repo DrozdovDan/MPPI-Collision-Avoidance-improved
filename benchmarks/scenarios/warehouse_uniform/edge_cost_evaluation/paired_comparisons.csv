@@ -1,0 +1,10 @@
+source_map,reference,tasks,both_successful_tasks,agent_completion_difference,edge_cost_minus_reference_makespan_seconds
+both,rrt,250,24,-0.0445,5.970833333333334
+both,k_routes,250,9,0.022375,-53.06666666666666
+both,k_routes_width,250,23,-0.106,-43.23478260869565
+warehouse,rrt,125,3,0.05,1.7666666666666657
+warehouse,k_routes,125,0,0.0815,
+warehouse,k_routes_width,125,4,-0.03875,-34.75
+warehouse2,rrt,125,21,-0.139,6.571428571428571
+warehouse2,k_routes,125,9,-0.03675,-53.06666666666666
+warehouse2,k_routes_width,125,19,-0.17325,-45.021052631578954

@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "runs": 5,
+  "agent_executions": 160,
+  "auditor_sha256": "83f23df8737836ccc8b1699112d214833b732119aaec76fab0c7be4fda54db17",
+  "source_and_binary_hashes": {
+    "benchmarks/multi_agent/warehouse_disappear_evaluation.py": "8d638cf531f11f10682a1a0eb35e6e0bc857798045a6d018c68038ede1cd097f",
+    "src/controller.cpp": "829b8ad124c1e0a0940e6b3ff20c8324879e9ebc385ff1d0f9b9775969b76351",
+    "example/utils.py": "b139c65b6f62f66ddceac2c53a3d615507785e88737ac1e17b9a51f6b4e945c6",
+    "example/dyn_models.py": "edf9f19dfe30f547c2a8eb3e0ba7848bea3ac2966b27d2c63c196deec179f48f",
+    "benchmarks/multi_agent/runner.py": "85ecd1f9b469b58ecc8d288c8a7a6831189f0ba8a44495f69e78d799b28c6570",
+    "benchmarks/multi_agent/metrics.py": "c8d0a728b19acf3144105aa3919fb546c6fbee98898356faa818ed6acdf52257",
+    "example/mppi_safety.py": "6462eaa3ed75bd10d6a0c1fe489549da8a082a4c598cd0317eaa1cbb46abfd7d",
+    "benchmarks/rrt_connect.py": "7bd1b10b11c0d30d5692a595a343d23af6fea348b86237db695b0653cb29e514",
+    "benchmarks/multi_agent/warehouse_preflight.py": "1b6790b31eb8d8f7cfca41a06b37ba6cc160b76c50210735f91788b9a5ca8e01",
+    "benchmarks/multi_agent/geometry.py": "9ac65af820245093e950a12ea7d58ab9090ef677a32ef37c47b842d2c7b9d0cf",
+    "build/release/libcontroller_library.so": "89c8f63eb674d780cf500434c0eaa59a1e4b7a7d6c83ed73f7fa08a859bb3c39",
+    "build/release/mppi_ca_cpp.so": "bdbfbf7e9d5f1fd0f03251140a4329a23f164a9c1a70219b40c13c8dff79b4a4",
+    "build/routes/corridor_plan": "80eae29e61af7ea0c2fcea5318c8fe3abf8cb1e587bbb7470520a887e826dc23",
+    "benchmarks/multi_agent/warehouse_open_routes_case.py": "1e7d8c920e76df3e881621d5639bc20def34abd742f7b858216ad07b64452ccf",
+    "benchmarks/multi_agent/bottleneck_selection.py": "2a670be63d6e66fc6657e22d00188596bc54a336ec77fc7a35a0d2fb9cadd61d",
+    "benchmarks/multi_agent/edge_cost_selection.py": "ee87be25475eefe5fbeb16b08463508a4d0caef6f634fdaedd244e1cab150eda",
+    "benchmarks/multi_agent/warehouse_disappear_runtime.py": "fcdca83f5dd813793649d9ec77abfd96053477b0c89122837695868b6f0f636e",
+    "benchmarks/multi_agent/warehouse_evaluation.py": "afc8f343ab761ab4da5f8539ffaa5dc44bd8c6a0a5f6bd02702364317ed2bd3e"
+  },
+  "artifacts": {
+    "experiment.json": "0b292c12f91a92c48b060b5c14a7c42ef971e37ff3f0d9c7fc06211367f55dec",
+    "comparison.csv": "2dc0a9616a785a920c72bebf898eb24ab1fb42b07b25b335e859260f50755d12",
+    "audit.json": "9a5c1400298dbaf9381b5f2713c3c32a52d242f252df03209700d3bfdead6ee5",
+    "REPORT.md": "08bd84e523b5e3f1c29a3a541320fbc0d31b517e3273e390494d56dcc344e59f",
+    "comparison.json": "e6f8e555a4bb8a51688d76208ccee42573879ac7c0e45d4849ce2ca37113d0bd",
+    "selection_diagnostics.json": "58b611ca04c8df10c1bf384d1a36bc28366a582f9f78eb163b42ae74684be7f5"
+  }
+}

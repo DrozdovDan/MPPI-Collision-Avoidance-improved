@@ -1,5 +1,10 @@
 # Multi-agent Bench-MR suite
 
+The revised warehouse-only work is documented in
+[WAREHOUSE_UNIFORM_BENCHMARK.md](WAREHOUSE_UNIFORM_BENCHMARK.md): 250 saved tasks,
+32 equal-size agents per task, and five endpoint variants per scenario design.
+The original suite described below remains available separately.
+
 The saved suite contains **50 tasks: ten per original map**, with 760 robot
 assignments. [SCENARIOS.md](scenarios/multi_agent/SCENARIOS.md) is the complete
 50-row report, including dimensions, validity, limitations and actual pilots.

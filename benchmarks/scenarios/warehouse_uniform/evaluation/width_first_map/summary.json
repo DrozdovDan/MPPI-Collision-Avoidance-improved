@@ -1,0 +1,86 @@
+{
+  "source_map": "warehouse",
+  "weighted_runs": 125,
+  "weighted_agent_runs": 4000,
+  "trace_audit": "passed",
+  "baseline_contract": {
+    "baseline_audit_sha256": "9b1d8c9846da5b3e6ebc6bf2abd10f0b9815098911d8474c190d8ab99d8f97e0",
+    "baseline_experiment_sha256": "50446316dde798d0684bbf42a69a23139ac12d30a5d9be32db25e9f0ce6a47f4",
+    "frozen_manifest_sha256": "56f8aaf500b2b88f53eb89c7d7827e717f8c5bd33e5dc24075ea9d7d538bffda",
+    "historical_harness_sources": [
+      {
+        "source": "benchmarks/multi_agent/warehouse_evaluation.py",
+        "executed_sha256": "cce1aef585e2aa7e21c8a346e0059cff262ef05acd24a180e96df5af312767f2",
+        "snapshot": "benchmarks/results/warehouse_uniform_corrected/source_snapshots/warehouse_evaluation.cce1aef585e2aa7e21c8a346e0059cff262ef05acd24a180e96df5af312767f2.py"
+      }
+    ],
+    "controller_library_sha256": "89c8f63eb674d780cf500434c0eaa59a1e4b7a7d6c83ed73f7fa08a859bb3c39",
+    "normal_mppi_module_sha256": "bdbfbf7e9d5f1fd0f03251140a4329a23f164a9c1a70219b40c13c8dff79b4a4"
+  },
+  "weighted_source_and_binary_hashes": {
+    "benchmarks/multi_agent/warehouse_evaluation.py": "afc8f343ab761ab4da5f8539ffaa5dc44bd8c6a0a5f6bd02702364317ed2bd3e",
+    "src/controller.cpp": "829b8ad124c1e0a0940e6b3ff20c8324879e9ebc385ff1d0f9b9775969b76351",
+    "example/utils.py": "b139c65b6f62f66ddceac2c53a3d615507785e88737ac1e17b9a51f6b4e945c6",
+    "example/dyn_models.py": "edf9f19dfe30f547c2a8eb3e0ba7848bea3ac2966b27d2c63c196deec179f48f",
+    "benchmarks/multi_agent/runner.py": "85ecd1f9b469b58ecc8d288c8a7a6831189f0ba8a44495f69e78d799b28c6570",
+    "benchmarks/multi_agent/metrics.py": "c8d0a728b19acf3144105aa3919fb546c6fbee98898356faa818ed6acdf52257",
+    "example/mppi_safety.py": "6462eaa3ed75bd10d6a0c1fe489549da8a082a4c598cd0317eaa1cbb46abfd7d",
+    "benchmarks/rrt_connect.py": "7bd1b10b11c0d30d5692a595a343d23af6fea348b86237db695b0653cb29e514",
+    "benchmarks/multi_agent/warehouse_preflight.py": "1b6790b31eb8d8f7cfca41a06b37ba6cc160b76c50210735f91788b9a5ca8e01",
+    "benchmarks/multi_agent/geometry.py": "9ac65af820245093e950a12ea7d58ab9090ef677a32ef37c47b842d2c7b9d0cf",
+    "build/release/libcontroller_library.so": "89c8f63eb674d780cf500434c0eaa59a1e4b7a7d6c83ed73f7fa08a859bb3c39",
+    "build/release/mppi_ca_cpp.so": "bdbfbf7e9d5f1fd0f03251140a4329a23f164a9c1a70219b40c13c8dff79b4a4",
+    "build/routes/corridor_plan": "80eae29e61af7ea0c2fcea5318c8fe3abf8cb1e587bbb7470520a887e826dc23",
+    "benchmarks/multi_agent/warehouse_width_benchmark.py": "fec1bd5b61abcb122af6456484af48147cdf0b19482f0a19f231a7ba3c51c3ca",
+    "benchmarks/multi_agent/bottleneck_selection.py": "2a670be63d6e66fc6657e22d00188596bc54a336ec77fc7a35a0d2fb9cadd61d"
+  },
+  "methods": [
+    {
+      "source_map": "warehouse",
+      "planner": "k_routes",
+      "runs": 125,
+      "successes": 0,
+      "fleet_success_rate": 0.0,
+      "mean_agent_completion_fraction": 0.58225,
+      "successful_makespan_mean_seconds": null,
+      "successful_makespan_std_seconds": null,
+      "successful_makespan_sample_count": 0,
+      "outcomes": {
+        "deadlock": 125
+      }
+    },
+    {
+      "source_map": "warehouse",
+      "planner": "k_routes_width",
+      "runs": 125,
+      "successes": 6,
+      "fleet_success_rate": 0.048,
+      "mean_agent_completion_fraction": 0.7025,
+      "successful_makespan_mean_seconds": 127.40000000000002,
+      "successful_makespan_std_seconds": 11.735075628218162,
+      "successful_makespan_sample_count": 6,
+      "outcomes": {
+        "deadlock": 119,
+        "success": 6
+      }
+    },
+    {
+      "source_map": "warehouse",
+      "planner": "rrt",
+      "runs": 125,
+      "successes": 9,
+      "fleet_success_rate": 0.072,
+      "mean_agent_completion_fraction": 0.61375,
+      "successful_makespan_mean_seconds": 85.22222222222223,
+      "successful_makespan_std_seconds": 28.837162558831004,
+      "successful_makespan_sample_count": 9,
+      "outcomes": {
+        "deadlock": 116,
+        "success": 9
+      }
+    }
+  ],
+  "weighted_finished_agents": 2810,
+  "weighted_collisions": 0,
+  "trace_audit_sha256": "7913f2fe2fc03356f1d2d475acbec359cb558f79bd423a7c3e62b3e9a0dc3f24"
+}

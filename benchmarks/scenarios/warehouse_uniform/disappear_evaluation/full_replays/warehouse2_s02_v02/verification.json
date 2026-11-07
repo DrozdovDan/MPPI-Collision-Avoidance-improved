@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "frames": 1041,
+  "dimensions": [
+    2720,
+    1190
+  ],
+  "total_duration_seconds": 110.9,
+  "every_recorded_step_rendered": true,
+  "source_recordings_unchanged": true,
+  "removal_masks_used": true,
+  "recovered_frames_byte_identical": 995,
+  "recovery_regression_tests_passed": 2,
+  "first_and_final_frames_match_snapshots": true,
+  "artifact_sha256": {
+    "bottleneck_closeup.png": "c01c46334986f2da3cc7bd1d8a1b08f77e5b206c1e0e9911d9d58f75243be91c",
+    "warehouse2_s02_v02__disappear_all_five__full.gif": "52b54813bde48f74aae32f5009187dd6d525316f88e4bb4425b186ec3866f9d5",
+    "audit.json": "6806a8afb94f081ea5dab4e674576b614d3d2e61ead10286680b98f3e15ad246",
+    "resume.json": "f9380189fbe48038f553ca769516aab6037cf9204e9b348f0780483722443a0b",
+    "README.md": "641406a094256b9493337e2cc9c3db58c1c64958b1798e4ac2f0c75ed187a592",
+    "rrt_finish.png": "02dbad79c1bb70a3d69b039e4fb0b1f057cbcbde3ba605a50b9cc8de8e2c762a",
+    "summary.json": "660b6c1348067b43cab39824682f89b5e26c1023491d8037635ced9c9be78370",
+    "start.png": "eecef0b41d6e4ee6c1d7c1fde41baddeeddca1654230515e19be375848217d12",
+    "final.png": "e5abe6d86583329cd3c9835b72af87bf7767f3b3e9f8fb23fa683bccb6780879",
+    "replay_renderer.initial.py": "42a46495eea499d62784495eca1c505dac386c5b9bd4b6f4f0b5ec93cb5d5c97",
+    "diagnostics.json": "57feed907b2e63bcc29a58542d97ae1c66badc16b588c9af5c1b9b577807d8f2",
+    "DIAGNOSIS.md": "e92dc3088b9447a29423eeb4a9cc28340ac68583fbd477643e1fe5cb98de09bf",
+    "CANDIDATE_FILTER.md": "c69d33bcee832e7e79844e60053fbc5193154325a81323e0a1cd8fd82b03d3e6",
+    "candidate_filter_evidence.json": "b8c4e4950c699e36dfe4146c82a59de00883037a6e2cff9ae2ac3cddbee0d18e"
+  },
+  "planning_only_followup_verified": true
+}

@@ -1,0 +1,16 @@
+scenario,method,agents,runs,successes,success_pct,ci_low_pct,ci_high_pct,collision_pct,timeout_pct,mean_makespan_s,infeasible_decisions
+circle,deterministic-mppi,2,2,2,100.0,34.2380227506653,100.0,0.0,0.0,18.25,0
+circle,deterministic-mppi,5,2,2,100.0,34.2380227506653,100.0,0.0,0.0,28.950000000000003,1
+circle,deterministic-mppi,10,2,2,100.0,34.2380227506653,100.0,0.0,0.0,39.650000000000006,26
+circle,legacy-mppi-orca,2,2,2,100.0,34.2380227506653,100.0,0.0,0.0,13.3,0
+circle,legacy-mppi-orca,5,2,2,100.0,34.2380227506653,100.0,0.0,0.0,18.450000000000003,0
+circle,legacy-mppi-orca,10,2,2,100.0,34.2380227506653,100.0,0.0,0.0,25.150000000000002,0
+circle,uncertainty-mppi,2,2,2,100.0,34.2380227506653,100.0,0.0,0.0,20.3,0
+circle,uncertainty-mppi,5,2,0,0.0,0.0,65.76197724933469,0.0,100.0,,3
+circle,uncertainty-mppi,10,2,0,0.0,0.0,65.76197724933469,0.0,100.0,,190
+random,deterministic-mppi,5,4,4,100.0,51.01091635454027,100.0,0.0,0.0,23.35,0
+random,deterministic-mppi,10,4,4,100.0,51.01091635454027,100.0,0.0,0.0,37.675000000000004,1
+random,legacy-mppi-orca,5,4,4,100.0,51.01091635454027,100.0,0.0,0.0,17.825,0
+random,legacy-mppi-orca,10,4,4,100.0,51.01091635454027,100.0,0.0,0.0,25.925,0
+random,uncertainty-mppi,5,4,4,100.0,51.01091635454027,100.0,0.0,0.0,24.55,0
+random,uncertainty-mppi,10,4,3,75.0,30.064184258240186,95.44127391902994,25.0,0.0,40.06666666666667,83

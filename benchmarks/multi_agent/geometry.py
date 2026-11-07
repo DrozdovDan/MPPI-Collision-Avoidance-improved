@@ -137,6 +137,18 @@ class WorldGeometry:
                 ~np.asarray(shapely.intersects(self.obstacles, bodies)))
 
     def witness_clearance(self, states, robot):
+        if robot["footprint"] == "disk":
+            # Exact Minkowski distance for the model's straight Euler segments;
+            # a polygonal approximation adds an unintended radius-dependent
+            # margin and can reject a correctly certified circular footprint.
+            xy = np.asarray(states)[:, :2]
+            lines = shapely.linestrings(np.stack([xy[:-1], xy[1:]], axis=1))
+            if not np.all(shapely.covers(self.workspace, lines)): return -1.
+            distance = shapely.distance(lines, self.workspace.boundary)
+            if not self.obstacles.is_empty:
+                if np.any(shapely.intersects(lines, self.obstacles)): return -1.
+                distance = np.minimum(distance, shapely.distance(lines, self.obstacles))
+            return float(np.min(distance)-robot["radius"])
         swept = swept_footprints(states, robot)
         inside = np.asarray(shapely.covers(self.workspace, swept))
         gaps = shapely.distance(swept, self.workspace.boundary)
@@ -205,12 +217,12 @@ def car_witness(path, robot, geometry, *, dt=.1, max_steps=1000):
     return None
 
 
-def diff_drive_witness(path, robot, dt=.1):
+def diff_drive_witness(path, robot, dt=.1, *, initial_heading=None):
     """Existing unicycle equations: turn in place, then traverse each segment."""
     from dyn_models import DiffDriveDyn
     model = DiffDriveDyn()
     path = np.asarray(path)
-    heading = math.atan2(*(path[1] - path[0])[::-1])
+    heading = math.atan2(*(path[1] - path[0])[::-1]) if initial_heading is None else initial_heading
     state = np.r_[path[0], heading, 0., 0.]
     trace, controls = [state.copy()], []
     def bounded_pulse(distance, maximum, acceleration):

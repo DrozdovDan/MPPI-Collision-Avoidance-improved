@@ -1,0 +1,5 @@
+{
+  "truncate_rollouts": false,
+  "reject_first_step_tails": false,
+  "time_horizon": 0.1
+}

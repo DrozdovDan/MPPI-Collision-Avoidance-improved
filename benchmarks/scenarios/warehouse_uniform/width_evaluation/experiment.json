@@ -1,0 +1,41 @@
+{
+  "expected_runs": 250,
+  "workers": 20,
+  "config": {
+    "speed_mps": 1.2,
+    "batch_size": 128,
+    "horizon_states": 31,
+    "anchor_yield_after_seconds": 15.0,
+    "selection_seed": 42,
+    "controller_seed": 42,
+    "k": 5,
+    "deadlock_window_seconds": 30.0,
+    "stall_window_seconds": 45.0,
+    "progress_threshold_meters": 0.15,
+    "stationary_speed_mps": 0.03,
+    "obstruction_clearance_meters": 0.04,
+    "persistence_fraction": 0.85,
+    "minimum_duration_seconds": 600.0,
+    "reference_time_multiplier": 6.0,
+    "reference_time_allowance_seconds": 180.0,
+    "wall_limit_seconds": 7200.0
+  },
+  "method": "k_routes_width",
+  "baseline_directory": "benchmarks/results/warehouse_uniform_corrected",
+  "normal_mppi": true,
+  "baseline_contract": {
+    "baseline_audit_sha256": "9b1d8c9846da5b3e6ebc6bf2abd10f0b9815098911d8474c190d8ab99d8f97e0",
+    "baseline_experiment_sha256": "50446316dde798d0684bbf42a69a23139ac12d30a5d9be32db25e9f0ce6a47f4",
+    "frozen_manifest_sha256": "56f8aaf500b2b88f53eb89c7d7827e717f8c5bd33e5dc24075ea9d7d538bffda",
+    "historical_harness_sources": [
+      {
+        "source": "benchmarks/multi_agent/warehouse_evaluation.py",
+        "executed_sha256": "cce1aef585e2aa7e21c8a346e0059cff262ef05acd24a180e96df5af312767f2",
+        "snapshot": "benchmarks/results/warehouse_uniform_corrected/source_snapshots/warehouse_evaluation.cce1aef585e2aa7e21c8a346e0059cff262ef05acd24a180e96df5af312767f2.py"
+      }
+    ],
+    "controller_library_sha256": "89c8f63eb674d780cf500434c0eaa59a1e4b7a7d6c83ed73f7fa08a859bb3c39",
+    "normal_mppi_module_sha256": "bdbfbf7e9d5f1fd0f03251140a4329a23f164a9c1a70219b40c13c8dff79b4a4"
+  },
+  "selection_preflight_sha256": "54e367bbf3eee2df672359937631eee05c45bb183d6e494571b733472e7015e0"
+}

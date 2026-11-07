@@ -1,0 +1,16 @@
+source_map,planner,tasks,both_successful_tasks,gained_fleet_successes,lost_fleet_successes,fleet_success_rate_difference,agent_completion_difference,disappear_minus_park_makespan_seconds
+both,rrt,250,37,47,6,0.164,0.03,-1.0513513513513524
+both,k_routes,250,10,29,0,0.116,0.04075,-0.4999999999999957
+both,k_routes_width,250,34,58,1,0.228,0.0375,-0.6235294117647084
+both,k_routes_edge_cost,250,43,57,0,0.228,0.030875,-0.19069767441860438
+both,k_routes_edge_cost_l2_t10,250,49,53,1,0.208,0.028875,-0.6775510204081631
+warehouse,rrt,125,7,19,2,0.136,0.02925,-0.1857142857142853
+warehouse,k_routes,125,0,14,0,0.112,0.047,
+warehouse,k_routes_width,125,5,23,1,0.176,0.04275,-0.9399999999999977
+warehouse,k_routes_edge_cost,125,12,31,0,0.248,0.03825,0.05833333333333476
+warehouse,k_routes_edge_cost_l2_t10,125,14,30,1,0.232,0.03425,-1.057142857142858
+warehouse2,rrt,125,30,28,4,0.192,0.03075,-1.2533333333333345
+warehouse2,k_routes,125,10,15,0,0.12,0.0345,-0.4999999999999957
+warehouse2,k_routes_width,125,29,35,0,0.28,0.03225,-0.5689655172413828
+warehouse2,k_routes_edge_cost,125,31,26,0,0.208,0.0235,-0.28709677419354857
+warehouse2,k_routes_edge_cost_l2_t10,125,35,23,0,0.184,0.0235,-0.525714285714285

@@ -1,0 +1,205 @@
+{
+  "schema": 1,
+  "paper": "https://arxiv.org/html/2507.20293v2",
+  "source_sha256": "4a2851b957a437280a0e0eb57d753438f9d4e1b5b9b9dabd8596e3adc469f31d",
+  "config": {
+    "dt": 0.1,
+    "radius": 0.3,
+    "lower": [
+      -1.0,
+      -2.0
+    ],
+    "upper": [
+      1.0,
+      2.0
+    ],
+    "execution_std": [
+      0.1,
+      0.2
+    ],
+    "position_std": 0.1,
+    "observed_velocity_std": 0.1,
+    "observation_confidence": 0.9975,
+    "execution_confidence": 0.999,
+    "sampling_confidence": 0.999,
+    "max_steps": 1000,
+    "goal_tolerance": 0.4,
+    "circle_radius": 6.0,
+    "random_side": 20.0,
+    "samples": 700,
+    "horizon": 20,
+    "sampling_std": [
+      1.0,
+      2.449489742783178
+    ],
+    "time_horizon": 1.0,
+    "temperature": 0.25,
+    "goal_weight": 395.0,
+    "terminal_weight": 1600.0,
+    "distance_weight": 750.0,
+    "collision_weight": 10000000.0,
+    "velocity_weight": 0.5,
+    "distance_threshold": 3.5,
+    "goal_projection_radius": 2.0,
+    "near_goal_distance": 0.4,
+    "extra_buffer": 0.0,
+    "prediction_acceleration_std": 0.5,
+    "reject_first_step_tails": true,
+    "truncate_rollouts": false,
+    "variance_objective": true,
+    "post_step_running_cost": false
+  },
+  "tasks": [
+    {
+      "run_id": "circle-02-00-00-uncertainty-mppi",
+      "scenario": "circle",
+      "agents": 2,
+      "instance": 0,
+      "repeat": 0,
+      "instance_seed": 7081120455598863854,
+      "seed": 3766200717095014617,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "circle-02-00-01-uncertainty-mppi",
+      "scenario": "circle",
+      "agents": 2,
+      "instance": 0,
+      "repeat": 1,
+      "instance_seed": 7081120455598863854,
+      "seed": 18320288270600609769,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "circle-05-00-00-uncertainty-mppi",
+      "scenario": "circle",
+      "agents": 5,
+      "instance": 0,
+      "repeat": 0,
+      "instance_seed": 10973042331679454307,
+      "seed": 16913219925946095900,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "circle-05-00-01-uncertainty-mppi",
+      "scenario": "circle",
+      "agents": 5,
+      "instance": 0,
+      "repeat": 1,
+      "instance_seed": 10973042331679454307,
+      "seed": 853424450369922931,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "circle-10-00-00-uncertainty-mppi",
+      "scenario": "circle",
+      "agents": 10,
+      "instance": 0,
+      "repeat": 0,
+      "instance_seed": 9938399854035377434,
+      "seed": 7314765771861153004,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "circle-10-00-01-uncertainty-mppi",
+      "scenario": "circle",
+      "agents": 10,
+      "instance": 0,
+      "repeat": 1,
+      "instance_seed": 9938399854035377434,
+      "seed": 11017553130647543842,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "random-05-00-00-uncertainty-mppi",
+      "scenario": "random",
+      "agents": 5,
+      "instance": 0,
+      "repeat": 0,
+      "instance_seed": 13414821669320630218,
+      "seed": 16947007454037509302,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "random-05-00-01-uncertainty-mppi",
+      "scenario": "random",
+      "agents": 5,
+      "instance": 0,
+      "repeat": 1,
+      "instance_seed": 13414821669320630218,
+      "seed": 36101773228120263,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "random-05-01-00-uncertainty-mppi",
+      "scenario": "random",
+      "agents": 5,
+      "instance": 1,
+      "repeat": 0,
+      "instance_seed": 3579958231751477414,
+      "seed": 13815083688848335118,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "random-05-01-01-uncertainty-mppi",
+      "scenario": "random",
+      "agents": 5,
+      "instance": 1,
+      "repeat": 1,
+      "instance_seed": 3579958231751477414,
+      "seed": 10079975038503473444,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "random-10-00-00-uncertainty-mppi",
+      "scenario": "random",
+      "agents": 10,
+      "instance": 0,
+      "repeat": 0,
+      "instance_seed": 593410485274553257,
+      "seed": 14297126725904646120,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "random-10-00-01-uncertainty-mppi",
+      "scenario": "random",
+      "agents": 10,
+      "instance": 0,
+      "repeat": 1,
+      "instance_seed": 593410485274553257,
+      "seed": 12601651296541637408,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "random-10-01-00-uncertainty-mppi",
+      "scenario": "random",
+      "agents": 10,
+      "instance": 1,
+      "repeat": 0,
+      "instance_seed": 400904797273696319,
+      "seed": 5896727412443815533,
+      "method": "uncertainty-mppi"
+    },
+    {
+      "run_id": "random-10-01-01-uncertainty-mppi",
+      "scenario": "random",
+      "agents": 10,
+      "instance": 1,
+      "repeat": 1,
+      "instance_seed": 400904797273696319,
+      "seed": 2139685636218960068,
+      "method": "uncertainty-mppi"
+    }
+  ],
+  "suite": "smoke",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "numpy": "1.26.4",
+  "scipy": "1.17.1",
+  "native_sha256": "b9121471c20fd8a873277e8a799d6e04cba95eabd25d4fcb04e57dea1ad66cc6",
+  "legacy_native_sha256": null,
+  "legacy_controller_sha256": null,
+  "git_commit": "51d276d583ecee1ad77f3373a8b5f758f0d07f85",
+  "rng_note": "C++ mt19937_64/normal_distribution is reproducible within a compiler/stdlib build.",
+  "legacy_rng_reproducible": null
+}

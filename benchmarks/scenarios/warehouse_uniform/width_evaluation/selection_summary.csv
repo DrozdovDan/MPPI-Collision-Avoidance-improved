@@ -1,0 +1,3 @@
+source_map,agents,changed_selected_routes,uniform_sampled_bottleneck_mean_meters,weighted_sampled_bottleneck_mean_meters,expected_uniform_bottleneck_mean_meters,expected_weighted_bottleneck_mean_meters,returned_route_counts
+warehouse,4000,967,3.293885749677738,4.390548556758435,3.34585907195205,4.381135436066001,"{""1"": 593, ""2"": 1346, ""3"": 887, ""4"": 352, ""5"": 822}"
+warehouse2,4000,1069,3.73694546152364,4.656754754371841,3.797567320463275,4.654907259418624,"{""1"": 538, ""2"": 603, ""3"": 677, ""4"": 768, ""5"": 1414}"

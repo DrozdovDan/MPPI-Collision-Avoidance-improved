@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_gaussian_proposal_is_clipped_after_likelihood_evaluation (reproduction.test_reproduction.ControllerTests.test_gaussian_proposal_is_clipped_after_likelihood_evaluation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/drozdov_dan/projects/MPPI-Collision-Avoidance/reproduction/test_reproduction.py", line 76, in test_gaussian_proposal_is_clipped_after_likelihood_evaluation
+    self.assertTrue(np.any((proposed[1] < config.lower) | (proposed[1] > config.upper)))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (failures=1)

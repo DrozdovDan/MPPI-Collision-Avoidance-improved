@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-10-29T18:55:48.781489+00:00",
+  "passed": true,
+  "python_tests": {
+    "count": 181,
+    "passed": true,
+    "log": "TESTS.txt"
+  },
+  "native_tests": {
+    "count": 3,
+    "passed": true
+  },
+  "weighted_runs": 250,
+  "weighted_agent_runs": 8000,
+  "baseline_runs_rechecked": 500,
+  "candidate_paths_checked": 25381,
+  "audit_sha256": "2f44758986b4ac26303b33c2a34d4063c6d53b80cf25b600e24ea8f2f0a50e42",
+  "comparison_run_rows": 750,
+  "scenario_averages": 150,
+  "variants_per_scenario_average": 5,
+  "weighted_route_choices": 8000,
+  "recorded_gifs": 10,
+  "broken_report_links": 0,
+  "raw_terminal_outcomes": {
+    "deadlock": 214,
+    "success": 35,
+    "stalled": 1
+  },
+  "verified_terminal_outcomes": {
+    "deadlock": 215,
+    "success": 35
+  },
+  "bottleneck_selection_source_sha256": "2a670be63d6e66fc6657e22d00188596bc54a336ec77fc7a35a0d2fb9cadd61d"
+}

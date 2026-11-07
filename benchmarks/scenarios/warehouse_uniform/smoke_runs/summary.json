@@ -1,0 +1,22 @@
+[
+  {
+    "run": "warehouse_s20_v01__k_routes__p42__c42__pilot",
+    "scenario_id": "warehouse_s20_v01",
+    "status": "global_planning_failure",
+    "simulation_executed": false,
+    "simulated_seconds": null,
+    "collisions": null,
+    "control_limits_valid": null,
+    "scenario_sha256": "890ca9b43d715a4b864e0597429ccce488c2e7e65fab997ea99cfb928bdbb6d8"
+  },
+  {
+    "run": "warehouse_s20_v01__rrt__p42__c42__pilot",
+    "scenario_id": "warehouse_s20_v01",
+    "status": "timeout",
+    "simulation_executed": true,
+    "simulated_seconds": 1.0,
+    "collisions": 0,
+    "control_limits_valid": true,
+    "scenario_sha256": "890ca9b43d715a4b864e0597429ccce488c2e7e65fab997ea99cfb928bdbb6d8"
+  }
+]

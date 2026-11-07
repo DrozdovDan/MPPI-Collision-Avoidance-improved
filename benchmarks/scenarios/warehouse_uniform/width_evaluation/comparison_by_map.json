@@ -1,0 +1,91 @@
+[
+  {
+    "source_map": "warehouse",
+    "planner": "k_routes",
+    "runs": 125,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.58225,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 125
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "planner": "k_routes_width",
+    "runs": 125,
+    "successes": 6,
+    "fleet_success_rate": 0.048,
+    "mean_agent_completion_fraction": 0.7025,
+    "successful_makespan_mean_seconds": 127.40000000000002,
+    "successful_makespan_std_seconds": 11.735075628218164,
+    "successful_makespan_sample_count": 6,
+    "outcomes": {
+      "deadlock": 119,
+      "success": 6
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "planner": "rrt",
+    "runs": 125,
+    "successes": 9,
+    "fleet_success_rate": 0.072,
+    "mean_agent_completion_fraction": 0.61375,
+    "successful_makespan_mean_seconds": 85.22222222222223,
+    "successful_makespan_std_seconds": 28.837162558831004,
+    "successful_makespan_sample_count": 9,
+    "outcomes": {
+      "deadlock": 116,
+      "success": 9
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "planner": "k_routes",
+    "runs": 125,
+    "successes": 10,
+    "fleet_success_rate": 0.08,
+    "mean_agent_completion_fraction": 0.72225,
+    "successful_makespan_mean_seconds": 156.46,
+    "successful_makespan_std_seconds": 27.056861935150163,
+    "successful_makespan_sample_count": 10,
+    "outcomes": {
+      "deadlock": 115,
+      "success": 10
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "planner": "k_routes_width",
+    "runs": 125,
+    "successes": 29,
+    "fleet_success_rate": 0.232,
+    "mean_agent_completion_fraction": 0.85875,
+    "successful_makespan_mean_seconds": 135.6206896551724,
+    "successful_makespan_std_seconds": 38.51847774872234,
+    "successful_makespan_sample_count": 29,
+    "outcomes": {
+      "deadlock": 96,
+      "success": 29
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "planner": "rrt",
+    "runs": 125,
+    "successes": 34,
+    "fleet_success_rate": 0.272,
+    "mean_agent_completion_fraction": 0.8245,
+    "successful_makespan_mean_seconds": 97.0764705882353,
+    "successful_makespan_std_seconds": 18.47840769119837,
+    "successful_makespan_sample_count": 34,
+    "outcomes": {
+      "deadlock": 91,
+      "success": 34
+    }
+  }
+]

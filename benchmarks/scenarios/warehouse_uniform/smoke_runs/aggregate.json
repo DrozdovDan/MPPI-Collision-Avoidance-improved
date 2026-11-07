@@ -1,0 +1,36 @@
+[
+  {
+    "planner": "k_routes",
+    "profile": "pilot",
+    "runs": 1,
+    "mean_completion_fraction": 0.0,
+    "all_robots_success_rate": 0.0,
+    "successful_makespan_mean": null,
+    "successful_makespan_sample_count": 0,
+    "valid_control_run_count": 0,
+    "mean_completion_fraction_valid_controls": null,
+    "runs_with_operational_deadlock": 0,
+    "valid_control_runs_with_operational_deadlock": 0,
+    "timeouts": 0,
+    "runs_with_collisions": 0,
+    "global_planning_failures": 1,
+    "control_limit_violation_runs": 0
+  },
+  {
+    "planner": "rrt",
+    "profile": "pilot",
+    "runs": 1,
+    "mean_completion_fraction": 0.0,
+    "all_robots_success_rate": 0.0,
+    "successful_makespan_mean": null,
+    "successful_makespan_sample_count": 0,
+    "valid_control_run_count": 1,
+    "mean_completion_fraction_valid_controls": 0.0,
+    "runs_with_operational_deadlock": 0,
+    "valid_control_runs_with_operational_deadlock": 0,
+    "timeouts": 1,
+    "runs_with_collisions": 0,
+    "global_planning_failures": 0,
+    "control_limit_violation_runs": 0
+  }
+]

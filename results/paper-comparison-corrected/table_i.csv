@@ -1,0 +1,3 @@
+algorithm,method,circle_success_pct,circle_collision_pct,random_success_pct,random_collision_pct
+MPPI-ORCA,legacy-mppi-orca,98.57142857142857,1.4285714285714286,98.0,2.0
+UA-MPPI (reconstruction),uncertainty-mppi,59.285714285714285,0.0,48.0,6.2

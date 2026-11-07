@@ -1,0 +1,158 @@
+[
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "competing_bottlenecks",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.49875,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "distributed",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 2,
+    "fleet_success_rate": 0.08,
+    "mean_agent_completion_fraction": 0.885,
+    "successful_makespan_mean_seconds": 138.85,
+    "successful_makespan_std_seconds": 1.7677669529663689,
+    "successful_makespan_sample_count": 2,
+    "outcomes": {
+      "deadlock": 23,
+      "success": 2
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "intersection",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.81375,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "opposing_bottleneck",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.445,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "symmetric_swap",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 4,
+    "fleet_success_rate": 0.16,
+    "mean_agent_completion_fraction": 0.87,
+    "successful_makespan_mean_seconds": 121.675,
+    "successful_makespan_std_seconds": 9.867919402454264,
+    "successful_makespan_sample_count": 4,
+    "outcomes": {
+      "deadlock": 21,
+      "success": 4
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "competing_bottlenecks",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.77125,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 25
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "distributed",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 8,
+    "fleet_success_rate": 0.32,
+    "mean_agent_completion_fraction": 0.95625,
+    "successful_makespan_mean_seconds": 163.91250000000002,
+    "successful_makespan_std_seconds": 22.111176068740832,
+    "successful_makespan_sample_count": 8,
+    "outcomes": {
+      "deadlock": 17,
+      "success": 8
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "intersection",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 12,
+    "fleet_success_rate": 0.48,
+    "mean_agent_completion_fraction": 0.95625,
+    "successful_makespan_mean_seconds": 96.06666666666666,
+    "successful_makespan_std_seconds": 16.716694613106945,
+    "successful_makespan_sample_count": 12,
+    "outcomes": {
+      "deadlock": 13,
+      "success": 12
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "opposing_bottleneck",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 0,
+    "fleet_success_rate": 0.0,
+    "mean_agent_completion_fraction": 0.66,
+    "successful_makespan_mean_seconds": null,
+    "successful_makespan_std_seconds": null,
+    "successful_makespan_sample_count": 0,
+    "outcomes": {
+      "deadlock": 24,
+      "stalled": 1
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "symmetric_swap",
+    "planner": "k_routes_width",
+    "runs": 25,
+    "successes": 9,
+    "fleet_success_rate": 0.36,
+    "mean_agent_completion_fraction": 0.95,
+    "successful_makespan_mean_seconds": 163.2111111111111,
+    "successful_makespan_std_seconds": 19.422438341029974,
+    "successful_makespan_sample_count": 9,
+    "outcomes": {
+      "deadlock": 16,
+      "success": 9
+    }
+  }
+]

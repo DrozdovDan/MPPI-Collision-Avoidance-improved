@@ -1,0 +1,149 @@
+{
+  "simulations_run": 0,
+  "planners_run": 0,
+  "lambda_weight": 1.0,
+  "tau": 1.0,
+  "tasks": 250,
+  "robot_queries": 8000,
+  "candidate_routes": 25381,
+  "edge_definition": "Stored route.edge_ids, preserving order and multiplicity.",
+  "length_definition": "Full stored routing_geometry edge.length, including partial-edge entries at full edge length. Connectors excluded.",
+  "width_definition": "Stored routing_geometry edge.min_width, no radius or safety margin subtracted from w_e.",
+  "normalization": "W_max is the maximum stored edge width in this robot candidate set only.",
+  "zero_edge_definition": "Empty edge sums give length=exposure=cost=0. For all-empty sets W_max=null and p is uniform; q is never evaluated.",
+  "bottleneck_definition": "Unchanged audited full-path transverse bottleneck widths, p=w/sum(w).",
+  "overall": {
+    "all_queries": {
+      "queries": 8000,
+      "mean_total_variation": 0.5205517170506524,
+      "mean_bottleneck_top_probability": 0.5504700099324432,
+      "mean_cost_top_probability": 0.976469138300911,
+      "mean_bottleneck_entropy": 0.899025689463908,
+      "mean_cost_entropy": 0.05300774493845492,
+      "mean_bottleneck_expected_graph_length": 51.50218643909793,
+      "mean_cost_expected_graph_length": 39.32647243577429,
+      "mean_bottleneck_expected_physical_length": 59.98819999132605,
+      "mean_cost_expected_physical_length": 50.33295443036644,
+      "mean_bottleneck_expected_bottleneck": 4.518021347742312,
+      "mean_cost_expected_bottleneck": 4.067901206191022,
+      "modal_route_changed": 3694,
+      "cost_top_over_99_percent": 6869,
+      "queries_with_zero_edge_candidate": 650,
+      "all_candidates_zero_edges": 178
+    },
+    "multiple_candidates": {
+      "queries": 6869,
+      "mean_total_variation": 0.6062620085027252,
+      "mean_bottleneck_top_probability": 0.4764536438287299,
+      "mean_cost_top_probability": 0.9725947163207582,
+      "mean_bottleneck_entropy": 1.0470527756167223,
+      "mean_cost_entropy": 0.06173561792220692,
+      "mean_bottleneck_expected_graph_length": 57.04497239483299,
+      "mean_cost_expected_graph_length": 42.86449313633989,
+      "mean_bottleneck_expected_physical_length": 65.29410193732984,
+      "mean_cost_expected_physical_length": 54.049093277018756,
+      "mean_bottleneck_expected_bottleneck": 4.569569067489102,
+      "mean_cost_expected_bottleneck": 4.045335389747025,
+      "modal_route_changed": 3694,
+      "cost_top_over_99_percent": 5738,
+      "queries_with_zero_edge_candidate": 472,
+      "all_candidates_zero_edges": 0
+    },
+    "candidate_routes": 25381,
+    "zero_edge_candidate_routes": 680
+  },
+  "by_map": {
+    "warehouse": {
+      "all_queries": {
+        "queries": 4000,
+        "mean_total_variation": 0.4579228161983061,
+        "mean_bottleneck_top_probability": 0.6144737000463948,
+        "mean_cost_top_probability": 0.9714750726863067,
+        "mean_bottleneck_entropy": 0.7940948522533737,
+        "mean_cost_entropy": 0.06031133538359049,
+        "mean_bottleneck_expected_graph_length": 44.42343292082525,
+        "mean_cost_expected_graph_length": 35.1980114155807,
+        "mean_bottleneck_expected_physical_length": 52.59384171965832,
+        "mean_cost_expected_physical_length": 45.794552373916765,
+        "mean_bottleneck_expected_bottleneck": 4.381135436066001,
+        "mean_cost_expected_bottleneck": 4.120599277248111,
+        "modal_route_changed": 1588,
+        "cost_top_over_99_percent": 3432,
+        "queries_with_zero_edge_candidate": 434,
+        "all_candidates_zero_edges": 99
+      },
+      "multiple_candidates": {
+        "queries": 3407,
+        "mean_total_variation": 0.5376258481929042,
+        "mean_bottleneck_top_probability": 0.5473715292590488,
+        "mean_cost_top_probability": 0.9665102115483495,
+        "mean_bottleneck_entropy": 0.932309776640298,
+        "mean_cost_entropy": 0.0708087295375292,
+        "mean_bottleneck_expected_graph_length": 48.929712243288535,
+        "mean_cost_expected_graph_length": 38.09857457936773,
+        "mean_bottleneck_expected_physical_length": 57.02511042308773,
+        "mean_cost_expected_physical_length": 49.042381517021916,
+        "mean_bottleneck_expected_bottleneck": 4.539481537296056,
+        "mean_cost_expected_bottleneck": 4.233598169150604,
+        "modal_route_changed": 1588,
+        "cost_top_over_99_percent": 2839,
+        "queries_with_zero_edge_candidate": 335,
+        "all_candidates_zero_edges": 0
+      },
+      "candidate_routes": 11464,
+      "zero_edge_candidate_routes": 461
+    },
+    "warehouse2": {
+      "all_queries": {
+        "queries": 4000,
+        "mean_total_variation": 0.5831806179029987,
+        "mean_bottleneck_top_probability": 0.4864663198184916,
+        "mean_cost_top_probability": 0.9814632039155153,
+        "mean_bottleneck_entropy": 1.0039565266744426,
+        "mean_cost_entropy": 0.04570415449331935,
+        "mean_bottleneck_expected_graph_length": 58.580939957370624,
+        "mean_cost_expected_graph_length": 43.454933455967875,
+        "mean_bottleneck_expected_physical_length": 67.38255826299377,
+        "mean_cost_expected_physical_length": 54.87135648681612,
+        "mean_bottleneck_expected_bottleneck": 4.654907259418624,
+        "mean_cost_expected_bottleneck": 4.015203135133931,
+        "modal_route_changed": 2106,
+        "cost_top_over_99_percent": 3437,
+        "queries_with_zero_edge_candidate": 216,
+        "all_candidates_zero_edges": 79
+      },
+      "multiple_candidates": {
+        "queries": 3462,
+        "mean_total_variation": 0.6738077618752153,
+        "mean_bottleneck_top_probability": 0.4066624145794241,
+        "mean_cost_top_probability": 0.9785825579613118,
+        "mean_bottleneck_entropy": 1.1599728788843935,
+        "mean_cost_entropy": 0.05280664875022455,
+        "mean_bottleneck_expected_graph_length": 65.03130726956205,
+        "mean_cost_expected_graph_length": 47.55469663824749,
+        "mean_bottleneck_expected_physical_length": 73.43172587985521,
+        "mean_cost_expected_physical_length": 58.97626455555984,
+        "mean_bottleneck_expected_bottleneck": 4.599178603990461,
+        "mean_cost_expected_bottleneck": 3.8600634979422894,
+        "modal_route_changed": 2106,
+        "cost_top_over_99_percent": 2899,
+        "queries_with_zero_edge_candidate": 137,
+        "all_candidates_zero_edges": 0
+      },
+      "candidate_routes": 13917,
+      "zero_edge_candidate_routes": 219
+    }
+  },
+  "inputs": {
+    "manifest_sha256": "56f8aaf500b2b88f53eb89c7d7827e717f8c5bd33e5dc24075ea9d7d538bffda",
+    "bottleneck_preflight_sha256": "54e367bbf3eee2df672359937631eee05c45bb183d6e494571b733472e7015e0",
+    "graph_bundle_sha256": {
+      "warehouse": "41c673c4cefbcd3b9da589577b439c0f28c1cb500a77bbd7f71cc5fcc37795e4",
+      "warehouse2": "c0fe4f450ca5a0486848ab31060468a781db0e34af880e3f2ce3cc52eccd2736"
+    }
+  },
+  "implementation_sha256": {
+    "benchmarks/multi_agent/warehouse_cost_probabilities.py": "592a5afe22989cddaa9e9bd9e2a15154d712475eee44941a53cbb91b9858a564",
+    "benchmarks/multi_agent/edge_cost_selection.py": "ee87be25475eefe5fbeb16b08463508a4d0caef6f634fdaedd244e1cab150eda"
+  }
+}

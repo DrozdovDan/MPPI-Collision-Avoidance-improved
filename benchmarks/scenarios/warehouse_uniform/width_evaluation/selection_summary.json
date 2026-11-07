@@ -1,0 +1,34 @@
+[
+  {
+    "source_map": "warehouse",
+    "agents": 4000,
+    "changed_selected_routes": 967,
+    "uniform_sampled_bottleneck_mean_meters": 3.293885749677738,
+    "weighted_sampled_bottleneck_mean_meters": 4.390548556758435,
+    "expected_uniform_bottleneck_mean_meters": 3.34585907195205,
+    "expected_weighted_bottleneck_mean_meters": 4.381135436066001,
+    "returned_route_counts": {
+      "3": 887,
+      "2": 1346,
+      "5": 822,
+      "4": 352,
+      "1": 593
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "agents": 4000,
+    "changed_selected_routes": 1069,
+    "uniform_sampled_bottleneck_mean_meters": 3.73694546152364,
+    "weighted_sampled_bottleneck_mean_meters": 4.656754754371841,
+    "expected_uniform_bottleneck_mean_meters": 3.797567320463275,
+    "expected_weighted_bottleneck_mean_meters": 4.654907259418624,
+    "returned_route_counts": {
+      "2": 603,
+      "5": 1414,
+      "1": 538,
+      "4": 768,
+      "3": 677
+    }
+  }
+]

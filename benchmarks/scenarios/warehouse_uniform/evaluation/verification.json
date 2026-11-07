@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "recorded_at": "2026-10-26T23:01:57.936382+00:00",
+  "python_tests": {
+    "count": 168,
+    "passed": true,
+    "log": "/tmp/warehouse_final_full_tests.log"
+  },
+  "native_tests": {
+    "count": 3,
+    "passed": true
+  },
+  "reacquisition_component_checks": {
+    "count": 600,
+    "passed": true,
+    "report": "acquisition_validation.json"
+  },
+  "binary_sha256": {
+    "build/release/mppi_ca_cpp.so": "bdbfbf7e9d5f1fd0f03251140a4329a23f164a9c1a70219b40c13c8dff79b4a4",
+    "build/release/libcontroller_library.so": "89c8f63eb674d780cf500434c0eaa59a1e4b7a7d6c83ed73f7fa08a859bb3c39"
+  },
+  "aggregate_validation": {
+    "passed": true,
+    "scenario_groups": 100,
+    "variants_per_scenario": 5,
+    "runs": 500
+  },
+  "comparison_review": {
+    "uniform_draws_replayed": 8000,
+    "full_solo_paths_completed": 128,
+    "opposing_lane_checks_completed": 6,
+    "report_tests_passed": 17,
+    "unchanged_benchmark_traces": 500,
+    "report": "REVIEW.md"
+  }
+}

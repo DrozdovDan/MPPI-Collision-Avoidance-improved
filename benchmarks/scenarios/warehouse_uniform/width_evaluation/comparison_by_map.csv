@@ -1,0 +1,7 @@
+source_map,planner,runs,successes,fleet_success_rate,mean_agent_completion_fraction,successful_makespan_mean_seconds,successful_makespan_std_seconds,successful_makespan_sample_count,outcomes
+warehouse,k_routes,125,0,0.0,0.58225,,,0,"{""deadlock"": 125}"
+warehouse,k_routes_width,125,6,0.048,0.7025,127.40000000000002,11.735075628218164,6,"{""deadlock"": 119, ""success"": 6}"
+warehouse,rrt,125,9,0.072,0.61375,85.22222222222223,28.837162558831004,9,"{""deadlock"": 116, ""success"": 9}"
+warehouse2,k_routes,125,10,0.08,0.72225,156.46,27.056861935150163,10,"{""deadlock"": 115, ""success"": 10}"
+warehouse2,k_routes_width,125,29,0.232,0.85875,135.6206896551724,38.51847774872234,29,"{""deadlock"": 96, ""success"": 29}"
+warehouse2,rrt,125,34,0.272,0.8245,97.0764705882353,18.47840769119837,34,"{""deadlock"": 91, ""success"": 34}"

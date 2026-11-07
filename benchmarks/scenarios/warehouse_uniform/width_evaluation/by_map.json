@@ -1,0 +1,33 @@
+[
+  {
+    "source_map": "warehouse",
+    "planner": "k_routes_width",
+    "runs": 125,
+    "successes": 6,
+    "fleet_success_rate": 0.048,
+    "mean_agent_completion_fraction": 0.7025,
+    "successful_makespan_mean_seconds": 127.40000000000002,
+    "successful_makespan_std_seconds": 11.735075628218164,
+    "successful_makespan_sample_count": 6,
+    "outcomes": {
+      "deadlock": 119,
+      "success": 6
+    }
+  },
+  {
+    "source_map": "warehouse2",
+    "planner": "k_routes_width",
+    "runs": 125,
+    "successes": 29,
+    "fleet_success_rate": 0.232,
+    "mean_agent_completion_fraction": 0.85875,
+    "successful_makespan_mean_seconds": 135.6206896551724,
+    "successful_makespan_std_seconds": 38.51847774872234,
+    "successful_makespan_sample_count": 29,
+    "outcomes": {
+      "deadlock": 95,
+      "success": 29,
+      "stalled": 1
+    }
+  }
+]

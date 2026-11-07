@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "runs": 5,
+  "task_id": "warehouse2_s02_v02",
+  "auditor_sha256": "9b4dcf784a5987864ddb62bea3c1e7b23fe1b674dd7b18a08e4ef2ae3a9504d8",
+  "traces": [
+    {
+      "run_id": "warehouse2_s02_v02__rrt__p42__c42",
+      "passed": true,
+      "run_sha256": "9f305c979bc0fc41428a354569b30e6df11248b5d561baf315034ef52e020d56",
+      "trajectory_sha256": "8bdc1972cce8e0fc7af8bf757dcdd606518c7c710863682f9888ba05a65a58fa",
+      "raw_status": "success",
+      "status": "success",
+      "checked_agent_runs": 32,
+      "checked_steps": 539,
+      "historical_prefix_steps_reproduced": 200,
+      "collisions": 0,
+      "removed_agents": 32,
+      "deadlock_geometry": null,
+      "terminal_adjudication": null,
+      "unresolved_stall_reason": null
+    },
+    {
+      "run_id": "warehouse2_s02_v02__k_routes__p42__c42",
+      "passed": true,
+      "run_sha256": "ff8ad8b1640c551f707db2248646cc3d731a29937f6ca917d00b129d604cfa8f",
+      "trajectory_sha256": "18fe477750f7f5207ac54f7b1cb2d6146e08291da84f685d6cfd2615cbe8606d",
+      "raw_status": "deadlock",
+      "status": "deadlock",
+      "checked_agent_runs": 32,
+      "checked_steps": 1040,
+      "historical_prefix_steps_reproduced": 359,
+      "collisions": 0,
+      "removed_agents": 5,
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 27,
+        "visible_projection_corroborations": []
+      },
+      "terminal_adjudication": null,
+      "unresolved_stall_reason": null
+    },
+    {
+      "run_id": "warehouse2_s02_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "run_sha256": "0cbef4ff421aca4050d404c7e2c82b4c858253d8467d7e9d9c864f093740eee6",
+      "trajectory_sha256": "bbfc877ac8f97aa754a5e5274659037c615cf4ea89de8e668a6058fe657d0a19",
+      "raw_status": "deadlock",
+      "status": "deadlock",
+      "checked_agent_runs": 32,
+      "checked_steps": 1040,
+      "historical_prefix_steps_reproduced": 212,
+      "collisions": 0,
+      "removed_agents": 17,
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 15,
+        "visible_projection_corroborations": []
+      },
+      "terminal_adjudication": null,
+      "unresolved_stall_reason": null
+    },
+    {
+      "run_id": "warehouse2_s02_v02__k_routes_edge_cost__p42__c42",
+      "passed": true,
+      "run_sha256": "b884d55bf4bb6e3cbee1563d207c9bab990b2ff819a62b8ba74a1da64410fb0e",
+      "trajectory_sha256": "a8090c50089a10980058bb9aab2169cc824b7e1342b6fec824de108ca0efb62e",
+      "raw_status": "deadlock",
+      "status": "deadlock",
+      "checked_agent_runs": 32,
+      "checked_steps": 910,
+      "historical_prefix_steps_reproduced": 228,
+      "collisions": 0,
+      "removed_agents": 8,
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 24,
+        "visible_projection_corroborations": []
+      },
+      "terminal_adjudication": null,
+      "unresolved_stall_reason": null
+    },
+    {
+      "run_id": "warehouse2_s02_v02__k_routes_edge_cost_l2_t10__p42__c42",
+      "passed": true,
+      "run_sha256": "e59f6343c61bed5a4467f6f4ee2c42ea109a6932c1fe9009849563744389c010",
+      "trajectory_sha256": "d1e53d9c4dc2f40d1130da0178f755353f1c4f1690d5ca51360f2eb8794bfeac",
+      "raw_status": "deadlock",
+      "status": "deadlock",
+      "checked_agent_runs": 32,
+      "checked_steps": 860,
+      "historical_prefix_steps_reproduced": 235,
+      "collisions": 0,
+      "removed_agents": 10,
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 22,
+        "visible_projection_corroborations": []
+      },
+      "terminal_adjudication": null,
+      "unresolved_stall_reason": null
+    }
+  ]
+}

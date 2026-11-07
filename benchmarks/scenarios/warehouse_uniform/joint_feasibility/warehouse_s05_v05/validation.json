@@ -1,0 +1,276 @@
+{
+  "passed": true,
+  "task_id": "warehouse_s05_v05",
+  "task_sha256": "72d8bc3e6f955459261303bd24db1293bc5aa9487962584e70e4970652a572ed",
+  "method": "sequential swept-disk mesh routes with temporary holding, bounded unicycle controls",
+  "joint_witness_sha256": "5b69788c7485b2ca59da7457708fe8404d67fa931b955bd0547378b55fa6d27c",
+  "checked_robots": 32,
+  "move_sequence": [
+    {
+      "robot_id": "r17",
+      "robot_index": 17,
+      "arrays": "move_000",
+      "start_step": 0,
+      "steps": 262,
+      "temporary": false
+    },
+    {
+      "robot_id": "r31",
+      "robot_index": 31,
+      "arrays": "move_001",
+      "start_step": 262,
+      "steps": 418,
+      "temporary": false
+    },
+    {
+      "robot_id": "r14",
+      "robot_index": 14,
+      "arrays": "move_002",
+      "start_step": 680,
+      "steps": 701,
+      "temporary": false
+    },
+    {
+      "robot_id": "r15",
+      "robot_index": 15,
+      "arrays": "move_003",
+      "start_step": 1381,
+      "steps": 661,
+      "temporary": false
+    },
+    {
+      "robot_id": "r10",
+      "robot_index": 10,
+      "arrays": "move_004",
+      "start_step": 2042,
+      "steps": 741,
+      "temporary": false
+    },
+    {
+      "robot_id": "r26",
+      "robot_index": 26,
+      "arrays": "move_005",
+      "start_step": 2783,
+      "steps": 581,
+      "temporary": false
+    },
+    {
+      "robot_id": "r27",
+      "robot_index": 27,
+      "arrays": "move_006",
+      "start_step": 3364,
+      "steps": 619,
+      "temporary": false
+    },
+    {
+      "robot_id": "r13",
+      "robot_index": 13,
+      "arrays": "move_007",
+      "start_step": 3983,
+      "steps": 499,
+      "temporary": false
+    },
+    {
+      "robot_id": "r11",
+      "robot_index": 11,
+      "arrays": "move_008",
+      "start_step": 4482,
+      "steps": 406,
+      "temporary": false
+    },
+    {
+      "robot_id": "r23",
+      "robot_index": 23,
+      "arrays": "move_009",
+      "start_step": 4888,
+      "steps": 1205,
+      "temporary": false
+    },
+    {
+      "robot_id": "r19",
+      "robot_index": 19,
+      "arrays": "move_010",
+      "start_step": 6093,
+      "steps": 614,
+      "temporary": false
+    },
+    {
+      "robot_id": "r02",
+      "robot_index": 2,
+      "arrays": "move_011",
+      "start_step": 6707,
+      "steps": 178,
+      "temporary": false
+    },
+    {
+      "robot_id": "r08",
+      "robot_index": 8,
+      "arrays": "move_012",
+      "start_step": 6885,
+      "steps": 608,
+      "temporary": false
+    },
+    {
+      "robot_id": "r30",
+      "robot_index": 30,
+      "arrays": "move_013",
+      "start_step": 7493,
+      "steps": 1332,
+      "temporary": false
+    },
+    {
+      "robot_id": "r07",
+      "robot_index": 7,
+      "arrays": "move_014",
+      "start_step": 8825,
+      "steps": 404,
+      "temporary": false
+    },
+    {
+      "robot_id": "r22",
+      "robot_index": 22,
+      "arrays": "move_015",
+      "start_step": 9229,
+      "steps": 1626,
+      "temporary": false
+    },
+    {
+      "robot_id": "r03",
+      "robot_index": 3,
+      "arrays": "move_016",
+      "start_step": 10855,
+      "steps": 915,
+      "temporary": false
+    },
+    {
+      "robot_id": "r24",
+      "robot_index": 24,
+      "arrays": "move_017",
+      "start_step": 11770,
+      "steps": 431,
+      "temporary": false
+    },
+    {
+      "robot_id": "r12",
+      "robot_index": 12,
+      "arrays": "move_018",
+      "start_step": 12201,
+      "steps": 778,
+      "temporary": false
+    },
+    {
+      "robot_id": "r00",
+      "robot_index": 0,
+      "arrays": "move_019",
+      "start_step": 12979,
+      "steps": 1082,
+      "temporary": false
+    },
+    {
+      "robot_id": "r28",
+      "robot_index": 28,
+      "arrays": "move_020",
+      "start_step": 14061,
+      "steps": 1153,
+      "temporary": false
+    },
+    {
+      "robot_id": "r18",
+      "robot_index": 18,
+      "arrays": "move_021",
+      "start_step": 15214,
+      "steps": 657,
+      "temporary": false
+    },
+    {
+      "robot_id": "r20",
+      "robot_index": 20,
+      "arrays": "move_022",
+      "start_step": 15871,
+      "steps": 658,
+      "temporary": false
+    },
+    {
+      "robot_id": "r06",
+      "robot_index": 6,
+      "arrays": "move_023",
+      "start_step": 16529,
+      "steps": 1477,
+      "temporary": false
+    },
+    {
+      "robot_id": "r04",
+      "robot_index": 4,
+      "arrays": "move_024",
+      "start_step": 18006,
+      "steps": 841,
+      "temporary": false
+    },
+    {
+      "robot_id": "r01",
+      "robot_index": 1,
+      "arrays": "move_025",
+      "start_step": 18847,
+      "steps": 762,
+      "temporary": false
+    },
+    {
+      "robot_id": "r16",
+      "robot_index": 16,
+      "arrays": "move_026",
+      "start_step": 19609,
+      "steps": 811,
+      "temporary": false
+    },
+    {
+      "robot_id": "r21",
+      "robot_index": 21,
+      "arrays": "move_027",
+      "start_step": 20420,
+      "steps": 914,
+      "temporary": false
+    },
+    {
+      "robot_id": "r05",
+      "robot_index": 5,
+      "arrays": "move_028",
+      "start_step": 21334,
+      "steps": 933,
+      "temporary": false
+    },
+    {
+      "robot_id": "r09",
+      "robot_index": 9,
+      "arrays": "move_029",
+      "start_step": 22267,
+      "steps": 679,
+      "temporary": false
+    },
+    {
+      "robot_id": "r29",
+      "robot_index": 29,
+      "arrays": "move_030",
+      "start_step": 22946,
+      "steps": 536,
+      "temporary": false
+    },
+    {
+      "robot_id": "r25",
+      "robot_index": 25,
+      "arrays": "move_031",
+      "start_step": 23482,
+      "steps": 265,
+      "temporary": false
+    }
+  ],
+  "joint_makespan_seconds": 2374.7000000000003,
+  "minimum_inter_robot_clearance_meters": 0.04592969649444889,
+  "attempts": [
+    {
+      "attempt": 0,
+      "finished": 32,
+      "moves": 32
+    }
+  ],
+  "validation_seconds": 45.975703234999855
+}

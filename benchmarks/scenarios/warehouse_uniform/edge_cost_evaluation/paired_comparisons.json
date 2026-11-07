@@ -1,0 +1,74 @@
+[
+  {
+    "source_map": "both",
+    "reference": "rrt",
+    "tasks": 250,
+    "both_successful_tasks": 24,
+    "agent_completion_difference": -0.0445,
+    "edge_cost_minus_reference_makespan_seconds": 5.970833333333334
+  },
+  {
+    "source_map": "both",
+    "reference": "k_routes",
+    "tasks": 250,
+    "both_successful_tasks": 9,
+    "agent_completion_difference": 0.022375,
+    "edge_cost_minus_reference_makespan_seconds": -53.06666666666666
+  },
+  {
+    "source_map": "both",
+    "reference": "k_routes_width",
+    "tasks": 250,
+    "both_successful_tasks": 23,
+    "agent_completion_difference": -0.106,
+    "edge_cost_minus_reference_makespan_seconds": -43.23478260869565
+  },
+  {
+    "source_map": "warehouse",
+    "reference": "rrt",
+    "tasks": 125,
+    "both_successful_tasks": 3,
+    "agent_completion_difference": 0.05,
+    "edge_cost_minus_reference_makespan_seconds": 1.7666666666666657
+  },
+  {
+    "source_map": "warehouse",
+    "reference": "k_routes",
+    "tasks": 125,
+    "both_successful_tasks": 0,
+    "agent_completion_difference": 0.0815,
+    "edge_cost_minus_reference_makespan_seconds": null
+  },
+  {
+    "source_map": "warehouse",
+    "reference": "k_routes_width",
+    "tasks": 125,
+    "both_successful_tasks": 4,
+    "agent_completion_difference": -0.03875,
+    "edge_cost_minus_reference_makespan_seconds": -34.75
+  },
+  {
+    "source_map": "warehouse2",
+    "reference": "rrt",
+    "tasks": 125,
+    "both_successful_tasks": 21,
+    "agent_completion_difference": -0.139,
+    "edge_cost_minus_reference_makespan_seconds": 6.571428571428571
+  },
+  {
+    "source_map": "warehouse2",
+    "reference": "k_routes",
+    "tasks": 125,
+    "both_successful_tasks": 9,
+    "agent_completion_difference": -0.03675,
+    "edge_cost_minus_reference_makespan_seconds": -53.06666666666666
+  },
+  {
+    "source_map": "warehouse2",
+    "reference": "k_routes_width",
+    "tasks": 125,
+    "both_successful_tasks": 19,
+    "agent_completion_difference": -0.17325,
+    "edge_cost_minus_reference_makespan_seconds": -45.021052631578954
+  }
+]

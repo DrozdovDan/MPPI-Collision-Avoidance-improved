@@ -39,6 +39,10 @@ def controller_profile(task, *, pilot=False):
             anchor_forward_weight=80000., reverse_cost_weight=1000.,
             ma_dist_weight=1200., ma_dist_threashhold=4.,
             terminal_lookahead_distance=max(1., 3 * np.median([r["length"] for r in task["robots"]])))
+    else:
+        profile.update(anchor_guided_fraction=.5, control_cov=np.diag([.25, 1.]),
+                       control_noise_correlation=.6,anchor_acquisition_scale=.1,
+                       anchor_heading_weight=250.,velocity_cost_weight=0.)
     if pilot:
         profile.update(batch_size=96, time_steps=31 if car else 21)
     profile["dt"] = task["dt"]
@@ -64,14 +68,16 @@ def global_routes(task, world, planner, selection_seed, folder, k=5, *, suite_fo
             c = robot["radius"] + robot["safety_margin"]
             bounds = np.asarray(world["bounds"]) + np.array([1, 1, -1, -1]) * c
             query = RRTConnectPlanner(world["obstacles"], bounds, robot["radius"], robot["safety_margin"],
-                step_size=.5 if task["source_map"].startswith("parking") else 1.5, max_iterations=15_000,
-                smoothing_iterations=800, seed=int(selection_seed+i))
+                step_size=.5 if task["source_map"].startswith("parking") else 1.5,
+                max_iterations=100_000 if task["source_map"].startswith("warehouse") else 15_000,
+                smoothing_iterations=800, seed=int(selection_seed+i), guided_sampling=True)
             try:
                 paths.append(query.plan(robot["start"][:2], robot["goal"]["pose"][:2]).path)
             except RuntimeError as error:
                 raise RuntimeError(f"RRT failed for {robot['id']}: {error}") from error
             timings.append(time.perf_counter()-start)
         choices = dict(planner="rrt", seed=selection_seed, independent_queries=True,
+                       sampling="configuration-space triangle corridor bias; uniform exploration retained",
                        extra_traffic_waypoints=False, per_robot_seconds=timings)
     elif planner == "k_routes":
         cache = ROOT / f"benchmarks/results/multi_agent_cache/{task['source_map']}-{task['map_sha256'][:12]}.resources.json"

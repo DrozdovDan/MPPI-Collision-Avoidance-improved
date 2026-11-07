@@ -1,0 +1,5 @@
+source_map,planner,runs,successes,fleet_success_rate,mean_agent_completion_fraction,successful_makespan_mean_seconds,successful_makespan_std_seconds,successful_makespan_sample_count,outcomes,global_planning_successes,global_planning_success_rate,fleet_success_rate_given_global_plan,mean_agent_completion_given_global_plan,runs_with_observed_mutual_obstruction
+warehouse,k_routes,125,0,0.0,0.58225,,,0,"{""deadlock"": 125}",125,1.0,0.0,0.58225,116
+warehouse,rrt,125,9,0.072,0.61375,85.22222222222223,28.837162558831004,9,"{""deadlock"": 116, ""success"": 9}",125,1.0,0.072,0.61375,105
+warehouse2,k_routes,125,10,0.08,0.72225,156.46,27.056861935150163,10,"{""deadlock"": 115, ""success"": 10}",125,1.0,0.08,0.72225,104
+warehouse2,rrt,125,34,0.272,0.8245,97.0764705882353,18.47840769119837,34,"{""deadlock"": 91, ""success"": 34}",125,1.0,0.272,0.8245,68

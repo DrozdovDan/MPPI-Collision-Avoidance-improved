@@ -1,0 +1,24 @@
+[
+  {
+    "source_map": "warehouse",
+    "requested_k": 5,
+    "agent_queries": 4000,
+    "mean_returned_k": 2.866,
+    "returned_1": 593,
+    "returned_2": 1346,
+    "returned_3": 887,
+    "returned_4": 352,
+    "returned_5": 822
+  },
+  {
+    "source_map": "warehouse2",
+    "requested_k": 5,
+    "agent_queries": 4000,
+    "mean_returned_k": 3.47925,
+    "returned_1": 538,
+    "returned_2": 603,
+    "returned_3": 677,
+    "returned_4": 768,
+    "returned_5": 1414
+  }
+]

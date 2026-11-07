@@ -1,0 +1,11 @@
+source_map,traffic_pattern,paired_tasks,rrt_success_rate,rrt_successful_makespan_mean_seconds,rrt_successful_makespan_sample_count,rrt_mean_agent_completion,k_routes_success_rate,k_routes_successful_makespan_mean_seconds,k_routes_successful_makespan_sample_count,k_routes_mean_agent_completion,success_rate_difference_k_minus_rrt,both_methods_successful_tasks,paired_makespan_difference_k_minus_rrt_seconds
+warehouse,competing_bottlenecks,25,0.0,,0,0.3525,0.0,,0,0.34625,0.0,0,
+warehouse,distributed,25,0.08,121.4,2,0.8575,0.0,,0,0.77,-0.08,0,
+warehouse,intersection,25,0.2,69.76,5,0.72,0.0,,0,0.6875,-0.2,0,
+warehouse,opposing_bottleneck,25,0.0,,0,0.2975,0.0,,0,0.33,0.0,0,
+warehouse,symmetric_swap,25,0.08,87.70000000000002,2,0.84125,0.0,,0,0.7775,-0.08,0,
+warehouse2,competing_bottlenecks,25,0.0,,0,0.6925,0.0,,0,0.63375,0.0,0,
+warehouse2,distributed,25,0.6,105.28666666666666,15,0.98125,0.12,159.20000000000002,3,0.86625,-0.48,2,52.4
+warehouse2,intersection,25,0.24,67.15000000000002,6,0.86125,0.04,103.30000000000001,1,0.78375,-0.19999999999999998,0,
+warehouse2,opposing_bottleneck,25,0.0,,0,0.61625,0.0,,0,0.47625,0.0,0,
+warehouse2,symmetric_swap,25,0.52,101.41538461538462,13,0.97125,0.24,163.95000000000002,6,0.85125,-0.28,4,65.0

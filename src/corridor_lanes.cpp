@@ -1063,6 +1063,50 @@ bool applyLanePlacement(const CorridorMap &map, const RobotProfile &robot, const
         parts.push_back({source, begin, station, physicalOffset});
         physicalOffset += physicalLength;
     }
+    // Adjacent graph edges can retrace a short junction spur before turning
+    // into the next aisle. Dijkstra is simple in graph nodes, but that does
+    // not make its concatenated centerline geometrically simple. Remove only
+    // local reversals with a continuously footprint-checked chord. Retain a
+    // monotone map of the original stations for edge/resource ownership.
+    if (reference.size() > 2) {
+        std::vector<double> original(reference.size(), 0.0);
+        for (size_t i = 1; i < reference.size(); ++i)
+            original[i] = original[i - 1] + length(reference[i - 1], reference[i]);
+        std::vector<size_t> keep;
+        const double local = std::max(cfg.lanes.sample_spacing, 2 * (robot.radius + robot.safety_margin));
+        for (size_t i = 0; i < reference.size(); ++i) {
+            while (keep.size() >= 2) {
+                size_t a = keep[keep.size() - 2], b = keep.back();
+                auto u = unit(reference[a], reference[b]), v = unit(reference[b], reference[i]);
+                bool duplicate = length(reference[a], reference[i]) <= eps;
+                bool reversal = u[0] * v[0] + u[1] * v[1] < 0;
+                if ((!duplicate && !reversal) || original[i] - original[a] > 2 * local ||
+                    !map.validatePath({reference[a], reference[i]}, robot))
+                    break;
+                keep.pop_back();
+            }
+            if (!keep.empty() && length(reference[keep.back()], reference[i]) <= eps) {
+                // Keep both global endpoints; an interior duplicate owns no arc.
+                if (i + 1 == reference.size()) keep.back() = i;
+            } else keep.push_back(i);
+        }
+        std::vector<Vec2> clean;
+        std::vector<double> before, after;
+        double distance = 0;
+        for (size_t i : keep) {
+            if (!clean.empty()) distance += length(clean.back(), reference[i]);
+            clean.push_back(reference[i]); before.push_back(original[i]); after.push_back(distance);
+        }
+        auto remap = [&](double s) {
+            auto it = std::upper_bound(before.begin(), before.end(), s);
+            if (it == before.begin()) return 0.0;
+            if (it == before.end()) return distance;
+            size_t j = it - before.begin();
+            return after[j-1] + (after[j]-after[j-1]) * (s-before[j-1]) / (before[j]-before[j-1]);
+        };
+        for (auto &part : parts) { part.first = remap(part.first); part.last = remap(part.last); }
+        reference = std::move(clean);
+    }
     try {
         if (reference.size() >= 2) {
             auto sectionConfig = cfg.lanes;

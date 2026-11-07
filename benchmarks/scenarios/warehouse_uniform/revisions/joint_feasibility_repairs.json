@@ -1,0 +1,104 @@
+{
+  "reason": "Require a constructive joint completion schedule, independent of both evaluated planners and MPPI",
+  "repairs": [
+    {
+      "task_id": "warehouse_s12_v01",
+      "passed": true,
+      "reason": "joint completion not certified for the original endpoint assignment",
+      "original_task_sha256": "1f0d8828fed1f54bb388e61dcf139e238eb48398ae0a13059a50ae47fa855d23",
+      "focused_core_robot_count": 8,
+      "selection": "first individual and joint certified candidate; no evaluated planner or controller outcomes",
+      "repair_attempt": 0,
+      "generation_attempts": [
+        {
+          "attempt": 0,
+          "seed": 21462026,
+          "valid": false,
+          "reason": "repeated per-agent endpoint across variants"
+        },
+        {
+          "attempt": 1,
+          "seed": 21462027,
+          "valid": false,
+          "reason": "repeated per-agent endpoint across variants"
+        },
+        {
+          "attempt": 2,
+          "seed": 21462028,
+          "valid": true
+        }
+      ],
+      "new_task_sha256": "65f73c9fcbefc95ca34b967e1c2098a6cdaa0e3be25c25bf7f453bf98d2c5a56"
+    },
+    {
+      "task_id": "warehouse_s12_v02",
+      "passed": true,
+      "original_task_sha256": "9127c5c55e8de2e3b25d098176e16cbdb195ac3f3c9bd020c767fbb5cf12078d",
+      "new_task_sha256": "9c0e3d97b363b28aca7bbe1b78b5f1ca30c44664b40fe85a27213f064a1312a9",
+      "attempts": [
+        {
+          "attempt": 0,
+          "passed": true,
+          "assignment_sha256": "72ca73baccc5aa2e1911211f366073292ee019eb85c0dfad8dd82586852b854b"
+        }
+      ]
+    },
+    {
+      "task_id": "warehouse_s12_v03",
+      "passed": true,
+      "original_task_sha256": "a7562bce9d47751f372f63560096dcec4504f6a422f48fe33133b97c563de22f",
+      "new_task_sha256": "6b5292b9ba831d069cede0d8fbc467c426f36274208ab3f11340e13bdad5f018",
+      "attempts": [
+        {
+          "attempt": 0,
+          "passed": true,
+          "assignment_sha256": "190b2f92d6bfba43ca29f0d9c4894d530cebb3a6d06efbb68c25864476a44f20"
+        }
+      ]
+    },
+    {
+      "task_id": "warehouse_s12_v04",
+      "passed": true,
+      "original_task_sha256": "43d14222fc4675a99170e23bd114aebdc1243c6777278a3edfce2c81a36deb2a",
+      "new_task_sha256": "a4d66e732afafd81ada7caf4693ebf7ee96e41223906918923fd76530abdf21c",
+      "attempts": [
+        {
+          "attempt": 0,
+          "passed": true,
+          "assignment_sha256": "5b0093c2747a6094b2f492c1f33431d8affb8069d77cc2e564851951dd3fbe7e"
+        }
+      ]
+    },
+    {
+      "task_id": "warehouse_s12_v05",
+      "passed": true,
+      "original_task_sha256": "58c704b5a47d4591aa1904b914aef1f9f81b59fa198e6d8b11420fc02e93df86",
+      "new_task_sha256": "7ad60e2bb7c3189212a7f98284ff48f8f3dd33d5ea3802a9907973a7b9e8286d",
+      "attempts": [
+        {
+          "attempt": 0,
+          "passed": true,
+          "assignment_sha256": "2eb5d1f8812b869fb42699475480a1201ffe4d3de90c40af48f9e4a81b529361"
+        }
+      ]
+    },
+    {
+      "task_id": "warehouse_s14_v04",
+      "passed": true,
+      "original_task_sha256": "93736b94f17ac1b62a50ce063a3755e23180e87628451755af6f262a7deb80c5",
+      "new_task_sha256": "16d6b7270112f0f8cf25d95c24ef57c6f99235d0d3f92e45fed5c0ea62797e56",
+      "attempts": [
+        {
+          "attempt": 0,
+          "passed": false,
+          "assignment_sha256": "6341ac8ee69cfbfe734225365bd9ae0e4436df9995a363fa338a4b66e12aeabf"
+        },
+        {
+          "attempt": 1,
+          "passed": true,
+          "assignment_sha256": "e01ee13af554a65adf33b8d62503291f6505c9db3b879004b30a964a62ddbdef"
+        }
+      ]
+    }
+  ]
+}

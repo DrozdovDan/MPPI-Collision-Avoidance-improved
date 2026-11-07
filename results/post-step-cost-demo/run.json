@@ -1,0 +1,62 @@
+{
+  "method": "uncertainty-mppi",
+  "seed": 2025,
+  "status": "success",
+  "steps": 597,
+  "makespan_s": 59.7,
+  "elapsed_s": 11.64257184500002,
+  "min_separation_m": 1.497274329429711,
+  "max_goal_error_m": 0.3613826213826,
+  "infeasible_decisions": 3,
+  "decisions": 2985,
+  "mean_effective_samples": 1.005226739443085,
+  "mean_decision_ms": 3.8175740757057373,
+  "config": {
+    "dt": 0.1,
+    "radius": 0.3,
+    "lower": [
+      -1.0,
+      -2.0
+    ],
+    "upper": [
+      1.0,
+      2.0
+    ],
+    "execution_std": [
+      0.1,
+      0.2
+    ],
+    "position_std": 0.1,
+    "observed_velocity_std": 0.1,
+    "observation_confidence": 0.9975,
+    "execution_confidence": 0.999,
+    "sampling_confidence": 0.999,
+    "max_steps": 1000,
+    "goal_tolerance": 0.4,
+    "circle_radius": 6.0,
+    "random_side": 20.0,
+    "samples": 700,
+    "horizon": 20,
+    "sampling_std": [
+      1.0,
+      2.449489742783178
+    ],
+    "time_horizon": 1.0,
+    "temperature": 0.25,
+    "goal_weight": 395.0,
+    "terminal_weight": 1600.0,
+    "distance_weight": 750.0,
+    "collision_weight": 10000000.0,
+    "velocity_weight": 0.5,
+    "distance_threshold": 3.5,
+    "goal_projection_radius": 2.0,
+    "near_goal_distance": 0.4,
+    "extra_buffer": 0.0,
+    "prediction_acceleration_std": 0.5,
+    "reject_first_step_tails": true,
+    "variance_objective": true
+  },
+  "scenario": "circle",
+  "agents": 5,
+  "source_sha256": "e39854632bef895ae0a379975aa63f394f4a2aecd84df58c1581be97e6132e2f"
+}

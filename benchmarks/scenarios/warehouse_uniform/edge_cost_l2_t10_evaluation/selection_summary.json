@@ -1,0 +1,8 @@
+{
+  "robot_queries": 8000,
+  "changed_selected_routes_vs_l1_t1": 1023,
+  "multiple_candidate_queries": 6869,
+  "mean_largest_probability_l1_t1": 0.9725947163207619,
+  "mean_largest_probability_l2_t10": 0.8410286822392459,
+  "selected_zero_graph_edge_routes": 624
+}

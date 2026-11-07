@@ -1,0 +1,167 @@
+[
+  {
+    "source_map": "both",
+    "planner": "rrt",
+    "tasks": 250,
+    "both_successful_tasks": 37,
+    "gained_fleet_successes": 47,
+    "lost_fleet_successes": 6,
+    "fleet_success_rate_difference": 0.164,
+    "agent_completion_difference": 0.03,
+    "disappear_minus_park_makespan_seconds": -1.0513513513513524
+  },
+  {
+    "source_map": "both",
+    "planner": "k_routes",
+    "tasks": 250,
+    "both_successful_tasks": 10,
+    "gained_fleet_successes": 29,
+    "lost_fleet_successes": 0,
+    "fleet_success_rate_difference": 0.116,
+    "agent_completion_difference": 0.04075,
+    "disappear_minus_park_makespan_seconds": -0.4999999999999957
+  },
+  {
+    "source_map": "both",
+    "planner": "k_routes_width",
+    "tasks": 250,
+    "both_successful_tasks": 34,
+    "gained_fleet_successes": 58,
+    "lost_fleet_successes": 1,
+    "fleet_success_rate_difference": 0.228,
+    "agent_completion_difference": 0.0375,
+    "disappear_minus_park_makespan_seconds": -0.6235294117647084
+  },
+  {
+    "source_map": "both",
+    "planner": "k_routes_edge_cost",
+    "tasks": 250,
+    "both_successful_tasks": 43,
+    "gained_fleet_successes": 57,
+    "lost_fleet_successes": 0,
+    "fleet_success_rate_difference": 0.228,
+    "agent_completion_difference": 0.030875,
+    "disappear_minus_park_makespan_seconds": -0.19069767441860438
+  },
+  {
+    "source_map": "both",
+    "planner": "k_routes_edge_cost_l2_t10",
+    "tasks": 250,
+    "both_successful_tasks": 49,
+    "gained_fleet_successes": 53,
+    "lost_fleet_successes": 1,
+    "fleet_success_rate_difference": 0.208,
+    "agent_completion_difference": 0.028875,
+    "disappear_minus_park_makespan_seconds": -0.6775510204081631
+  },
+  {
+    "source_map": "warehouse",
+    "planner": "rrt",
+    "tasks": 125,
+    "both_successful_tasks": 7,
+    "gained_fleet_successes": 19,
+    "lost_fleet_successes": 2,
+    "fleet_success_rate_difference": 0.136,
+    "agent_completion_difference": 0.02925,
+    "disappear_minus_park_makespan_seconds": -0.1857142857142853
+  },
+  {
+    "source_map": "warehouse",
+    "planner": "k_routes",
+    "tasks": 125,
+    "both_successful_tasks": 0,
+    "gained_fleet_successes": 14,
+    "lost_fleet_successes": 0,
+    "fleet_success_rate_difference": 0.112,
+    "agent_completion_difference": 0.047,
+    "disappear_minus_park_makespan_seconds": null
+  },
+  {
+    "source_map": "warehouse",
+    "planner": "k_routes_width",
+    "tasks": 125,
+    "both_successful_tasks": 5,
+    "gained_fleet_successes": 23,
+    "lost_fleet_successes": 1,
+    "fleet_success_rate_difference": 0.176,
+    "agent_completion_difference": 0.04275,
+    "disappear_minus_park_makespan_seconds": -0.9399999999999977
+  },
+  {
+    "source_map": "warehouse",
+    "planner": "k_routes_edge_cost",
+    "tasks": 125,
+    "both_successful_tasks": 12,
+    "gained_fleet_successes": 31,
+    "lost_fleet_successes": 0,
+    "fleet_success_rate_difference": 0.248,
+    "agent_completion_difference": 0.03825,
+    "disappear_minus_park_makespan_seconds": 0.05833333333333476
+  },
+  {
+    "source_map": "warehouse",
+    "planner": "k_routes_edge_cost_l2_t10",
+    "tasks": 125,
+    "both_successful_tasks": 14,
+    "gained_fleet_successes": 30,
+    "lost_fleet_successes": 1,
+    "fleet_success_rate_difference": 0.232,
+    "agent_completion_difference": 0.03425,
+    "disappear_minus_park_makespan_seconds": -1.057142857142858
+  },
+  {
+    "source_map": "warehouse2",
+    "planner": "rrt",
+    "tasks": 125,
+    "both_successful_tasks": 30,
+    "gained_fleet_successes": 28,
+    "lost_fleet_successes": 4,
+    "fleet_success_rate_difference": 0.192,
+    "agent_completion_difference": 0.03075,
+    "disappear_minus_park_makespan_seconds": -1.2533333333333345
+  },
+  {
+    "source_map": "warehouse2",
+    "planner": "k_routes",
+    "tasks": 125,
+    "both_successful_tasks": 10,
+    "gained_fleet_successes": 15,
+    "lost_fleet_successes": 0,
+    "fleet_success_rate_difference": 0.12,
+    "agent_completion_difference": 0.0345,
+    "disappear_minus_park_makespan_seconds": -0.4999999999999957
+  },
+  {
+    "source_map": "warehouse2",
+    "planner": "k_routes_width",
+    "tasks": 125,
+    "both_successful_tasks": 29,
+    "gained_fleet_successes": 35,
+    "lost_fleet_successes": 0,
+    "fleet_success_rate_difference": 0.28,
+    "agent_completion_difference": 0.03225,
+    "disappear_minus_park_makespan_seconds": -0.5689655172413828
+  },
+  {
+    "source_map": "warehouse2",
+    "planner": "k_routes_edge_cost",
+    "tasks": 125,
+    "both_successful_tasks": 31,
+    "gained_fleet_successes": 26,
+    "lost_fleet_successes": 0,
+    "fleet_success_rate_difference": 0.208,
+    "agent_completion_difference": 0.0235,
+    "disappear_minus_park_makespan_seconds": -0.28709677419354857
+  },
+  {
+    "source_map": "warehouse2",
+    "planner": "k_routes_edge_cost_l2_t10",
+    "tasks": 125,
+    "both_successful_tasks": 35,
+    "gained_fleet_successes": 23,
+    "lost_fleet_successes": 0,
+    "fleet_success_rate_difference": 0.184,
+    "agent_completion_difference": 0.0235,
+    "disappear_minus_park_makespan_seconds": -0.525714285714285
+  }
+]

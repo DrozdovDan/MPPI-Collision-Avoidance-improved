@@ -75,6 +75,7 @@ def launch_mppi(
     anchor_paths=None,
     park_at_goal=False,
     on_step=None,
+    safety_filter=None,
 ):
     """Run existing decentralized controllers.
 
@@ -82,6 +83,8 @@ def launch_mppi(
     (e.g. heterogeneous wheelbases). Optional ``on_step(step, states, controls,
     controller_seconds)`` observes completed steps; returning False ends an
     unfinished run. Defaults retain the existing simulation behavior.
+    Optional ``safety_filter(states, nominal, previous_controls)`` certifies
+    the synchronous fleet commands before the original dynamics integrates.
     """
 
     if seed is None:
@@ -103,6 +106,8 @@ def launch_mppi(
     if len(profiles) != agents_num:
         raise ValueError("Provide one algorithm profile per agent")
     car_like = profiles[0].get(USE_CAR_LIKE_DYN, False)
+    if safety_filter is not None and (car_like or positions_std or direction_std or velocities_std):
+        raise ValueError("Joint disk certification supports noiseless differential-drive simulations")
     if any(p.get(USE_CAR_LIKE_DYN, False) != car_like for p in profiles):
         raise ValueError("One simulation must use a consistent state representation")
     controllers = [mppi_ca_cpp.Controller() for a_id in range(agents_num)]
@@ -141,6 +146,7 @@ def launch_mppi(
     t_start = time.time()
     for iter in range(max_sim_steps):
         previous_states = agents_states.copy()
+        previous_controls = last_controls.copy()
         step_traj = []
         step_controls, step_controller_seconds = [], []
         steps += 1
@@ -225,7 +231,7 @@ def launch_mppi(
                 )
             u = step_res
             last_controls[a_id] = u
-            if on_step is not None:
+            if on_step is not None or safety_filter is not None:
                 step_controls.append(np.asarray(u).copy())
                 step_controller_seconds.append(time.perf_counter()-control_start)
             if save_logs and save_traj_lines:
@@ -240,6 +246,15 @@ def launch_mppi(
                 ) + dyn_models[a_id].dynamic_model(curr_state[0:3], u, dt)
                 new_states[a_id, 3:5] = (new_states[a_id, 0:2] - curr_state[0:2]) / dt
 
+        if safety_filter is not None:
+            applied = safety_filter(previous_states, np.asarray(step_controls), previous_controls)
+            for a_id, u in enumerate(applied):
+                controllers[a_id].set_applied_control(u)
+                pose = previous_states[a_id, :3]
+                new_states[a_id, :3] = dyn_models[a_id].state_shift(pose, dt) + dyn_models[a_id].dynamic_model(pose, u, dt)
+                new_states[a_id, 3:5] = (new_states[a_id, :2]-pose[:2])/dt
+            last_controls = applied.copy()
+            step_controls = list(applied)
         agents_states = new_states.copy()
 
         if save_logs:

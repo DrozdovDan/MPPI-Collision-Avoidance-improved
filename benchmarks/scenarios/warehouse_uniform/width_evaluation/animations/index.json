@@ -1,0 +1,72 @@
+[
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "distributed",
+    "run_id": "warehouse_s16_v03__k_routes_width__p42__c42",
+    "status": "success",
+    "file": "warehouse_s16_v03__k_routes_width__p42__c42__success.gif"
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "opposing_bottleneck",
+    "run_id": "warehouse_s02_v01__k_routes_width__p42__c42",
+    "status": "deadlock",
+    "file": "warehouse_s02_v01__k_routes_width__p42__c42__deadlock.gif"
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "intersection",
+    "run_id": "warehouse_s03_v01__k_routes_width__p42__c42",
+    "status": "deadlock",
+    "file": "warehouse_s03_v01__k_routes_width__p42__c42__deadlock.gif"
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "symmetric_swap",
+    "run_id": "warehouse_s04_v02__k_routes_width__p42__c42",
+    "status": "success",
+    "file": "warehouse_s04_v02__k_routes_width__p42__c42__success.gif"
+  },
+  {
+    "source_map": "warehouse",
+    "traffic_pattern": "competing_bottlenecks",
+    "run_id": "warehouse_s05_v01__k_routes_width__p42__c42",
+    "status": "deadlock",
+    "file": "warehouse_s05_v01__k_routes_width__p42__c42__deadlock.gif"
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "distributed",
+    "run_id": "warehouse2_s01_v03__k_routes_width__p42__c42",
+    "status": "success",
+    "file": "warehouse2_s01_v03__k_routes_width__p42__c42__success.gif"
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "opposing_bottleneck",
+    "run_id": "warehouse2_s02_v01__k_routes_width__p42__c42",
+    "status": "deadlock",
+    "file": "warehouse2_s02_v01__k_routes_width__p42__c42__deadlock.gif"
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "intersection",
+    "run_id": "warehouse2_s03_v03__k_routes_width__p42__c42",
+    "status": "success",
+    "file": "warehouse2_s03_v03__k_routes_width__p42__c42__success.gif"
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "symmetric_swap",
+    "run_id": "warehouse2_s04_v05__k_routes_width__p42__c42",
+    "status": "success",
+    "file": "warehouse2_s04_v05__k_routes_width__p42__c42__success.gif"
+  },
+  {
+    "source_map": "warehouse2",
+    "traffic_pattern": "competing_bottlenecks",
+    "run_id": "warehouse2_s05_v01__k_routes_width__p42__c42",
+    "status": "deadlock",
+    "file": "warehouse2_s05_v01__k_routes_width__p42__c42__deadlock.gif"
+  }
+]

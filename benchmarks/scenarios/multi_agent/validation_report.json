@@ -341,7 +341,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 18.155725141591446,
       "minimum_goal_envelope_gap": 14.356781971506628,
-      "minimum_witness_footprint_clearance": 0.09882154926893408,
+      "minimum_witness_footprint_clearance": 0.09900335974922458,
       "jointly_solvable_claim": false
     },
     {
@@ -352,7 +352,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 2.257811493527477,
       "minimum_goal_envelope_gap": 8.953187958083918,
-      "minimum_witness_footprint_clearance": 0.05242440704920828,
+      "minimum_witness_footprint_clearance": 0.052747625680841737,
       "jointly_solvable_claim": false
     },
     {
@@ -363,7 +363,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.1465762241660331,
       "minimum_goal_envelope_gap": 2.933955022104043,
-      "minimum_witness_footprint_clearance": 0.040870619077248156,
+      "minimum_witness_footprint_clearance": 0.04139299997431156,
       "jointly_solvable_claim": false
     },
     {
@@ -374,7 +374,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.2963817220696849,
       "minimum_goal_envelope_gap": 0.13969920000004127,
-      "minimum_witness_footprint_clearance": 0.051387012791374774,
+      "minimum_witness_footprint_clearance": 0.05156882327166604,
       "jointly_solvable_claim": false
     },
     {
@@ -385,7 +385,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.127405269468427,
       "minimum_goal_envelope_gap": 0.09068980062675103,
-      "minimum_witness_footprint_clearance": 0.060842789283555,
+      "minimum_witness_footprint_clearance": 0.06102459976385083,
       "jointly_solvable_claim": false
     },
     {
@@ -396,7 +396,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.293239228568645,
       "minimum_goal_envelope_gap": 1.2381442883183096,
-      "minimum_witness_footprint_clearance": 0.09661150187735285,
+      "minimum_witness_footprint_clearance": 0.09679331235764835,
       "jointly_solvable_claim": false
     },
     {
@@ -407,7 +407,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 6.039169232169858,
       "minimum_goal_envelope_gap": 6.039169232169858,
-      "minimum_witness_footprint_clearance": 0.06132778951966244,
+      "minimum_witness_footprint_clearance": 0.06150959999995445,
       "jointly_solvable_claim": false
     },
     {
@@ -418,7 +418,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.13969920000004127,
       "minimum_goal_envelope_gap": 0.13479712431497504,
-      "minimum_witness_footprint_clearance": 0.060842789283555,
+      "minimum_witness_footprint_clearance": 0.06102459976385083,
       "jointly_solvable_claim": false
     },
     {
@@ -429,7 +429,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.19933080000007353,
       "minimum_goal_envelope_gap": 0.2197987472767189,
-      "minimum_witness_footprint_clearance": 0.04237545770335915,
+      "minimum_witness_footprint_clearance": 0.04293082541551607,
       "jointly_solvable_claim": false
     },
     {
@@ -440,7 +440,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.1325681843516059,
       "minimum_goal_envelope_gap": 0.1307579351927295,
-      "minimum_witness_footprint_clearance": 0.05138701279137899,
+      "minimum_witness_footprint_clearance": 0.05156882327167028,
       "jointly_solvable_claim": false
     },
     {
@@ -451,7 +451,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 11.78307407458719,
       "minimum_goal_envelope_gap": 2.8988482652436875,
-      "minimum_witness_footprint_clearance": 0.04068222846602677,
+      "minimum_witness_footprint_clearance": 0.040830128979694666,
       "jointly_solvable_claim": false
     },
     {
@@ -462,7 +462,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 2.3970363371616057,
       "minimum_goal_envelope_gap": 3.992681715308081,
-      "minimum_witness_footprint_clearance": 0.06650727023417609,
+      "minimum_witness_footprint_clearance": 0.06677020448071169,
       "jointly_solvable_claim": false
     },
     {
@@ -473,7 +473,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 5.159714008858137,
       "minimum_goal_envelope_gap": 6.345099212765486,
-      "minimum_witness_footprint_clearance": 0.043592079271026325,
+      "minimum_witness_footprint_clearance": 0.04404399750725374,
       "jointly_solvable_claim": false
     },
     {
@@ -484,7 +484,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 1.1835040919956676,
       "minimum_goal_envelope_gap": 0.9407711015470588,
-      "minimum_witness_footprint_clearance": 0.040682228465842414,
+      "minimum_witness_footprint_clearance": 0.040830128979517724,
       "jointly_solvable_claim": false
     },
     {
@@ -495,7 +495,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.14452813284520497,
       "minimum_goal_envelope_gap": 0.09113015889169498,
-      "minimum_witness_footprint_clearance": 0.04068222846581044,
+      "minimum_witness_footprint_clearance": 0.040830128979478617,
       "jointly_solvable_claim": false
     },
     {
@@ -506,7 +506,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 2.8463804609987027,
       "minimum_goal_envelope_gap": 2.154681645091968,
-      "minimum_witness_footprint_clearance": 0.040889498709546494,
+      "minimum_witness_footprint_clearance": 0.04103739922322104,
       "jointly_solvable_claim": false
     },
     {
@@ -517,7 +517,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 2.3952941843154023,
       "minimum_goal_envelope_gap": 2.3952941843154023,
-      "minimum_witness_footprint_clearance": 0.040682228465810086,
+      "minimum_witness_footprint_clearance": 0.04083012897947828,
       "jointly_solvable_claim": false
     },
     {
@@ -528,7 +528,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.3575714401996266,
       "minimum_goal_envelope_gap": 0.17012134958525735,
-      "minimum_witness_footprint_clearance": 0.040682228465842414,
+      "minimum_witness_footprint_clearance": 0.040830128979517724,
       "jointly_solvable_claim": false
     },
     {
@@ -539,7 +539,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.1503265962458583,
       "minimum_goal_envelope_gap": 0.135613063911321,
-      "minimum_witness_footprint_clearance": 0.04068222846581044,
+      "minimum_witness_footprint_clearance": 0.040830128979478617,
       "jointly_solvable_claim": false
     },
     {
@@ -550,7 +550,7 @@
       "car_feasibility": "unicycle controls with swept disks",
       "minimum_start_envelope_gap": 0.09275338041575087,
       "minimum_goal_envelope_gap": 0.08938451835570588,
-      "minimum_witness_footprint_clearance": 0.040682228465842414,
+      "minimum_witness_footprint_clearance": 0.040830128979517724,
       "jointly_solvable_claim": false
     }
   ]

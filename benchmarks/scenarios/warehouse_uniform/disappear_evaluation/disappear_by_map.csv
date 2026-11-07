@@ -1,0 +1,11 @@
+source_map,planner,runs,successes,fleet_success_rate,mean_agent_completion_fraction,successful_makespan_mean_seconds,successful_makespan_std_seconds,successful_makespan_sample_count,outcomes
+warehouse,k_routes,125,14,0.112,0.62925,114.57857142857145,49.83641206018917,14,"{""deadlock"": 111, ""success"": 14}"
+warehouse,k_routes_edge_cost,125,43,0.344,0.702,82.51162790697677,29.169253294573934,43,"{""deadlock"": 82, ""success"": 43}"
+warehouse,k_routes_edge_cost_l2_t10,125,44,0.352,0.71025,84.35227272727273,28.26320221358066,44,"{""deadlock"": 81, ""success"": 44}"
+warehouse,k_routes_width,125,28,0.224,0.74525,110.86785714285712,49.326614058714334,28,"{""deadlock"": 97, ""success"": 28}"
+warehouse,rrt,125,26,0.208,0.643,88.41153846153846,27.819796216695437,26,"{""deadlock"": 99, ""success"": 26}"
+warehouse2,k_routes,125,25,0.2,0.75675,145.38000000000002,34.27978024044689,25,"{""deadlock"": 100, ""success"": 25}"
+warehouse2,k_routes_edge_cost,125,57,0.456,0.709,98.80000000000001,23.574433791109993,57,"{""deadlock"": 68, ""success"": 57}"
+warehouse2,k_routes_edge_cost_l2_t10,125,58,0.464,0.75375,100.31551724137931,23.338762288655417,58,"{""deadlock"": 67, ""success"": 58}"
+warehouse2,k_routes_width,125,64,0.512,0.891,136.6640625,34.71850687662221,64,"{""deadlock"": 61, ""success"": 64}"
+warehouse2,rrt,125,58,0.464,0.85525,91.74310344827585,21.300836916833376,58,"{""deadlock"": 67, ""success"": 58}"

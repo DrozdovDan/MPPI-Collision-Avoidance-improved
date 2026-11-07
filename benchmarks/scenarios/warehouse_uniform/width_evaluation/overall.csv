@@ -1,0 +1,2 @@
+planner,runs,successes,fleet_success_rate,mean_agent_completion_fraction,successful_makespan_mean_seconds,successful_makespan_std_seconds,successful_makespan_sample_count,outcomes
+k_routes_width,250,35,0.14,0.780625,134.21142857142863,35.38335244507085,35,"{""deadlock"": 214, ""stalled"": 1, ""success"": 35}"

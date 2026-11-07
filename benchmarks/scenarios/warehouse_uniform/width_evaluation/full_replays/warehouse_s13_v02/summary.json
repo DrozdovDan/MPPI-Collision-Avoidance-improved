@@ -1,0 +1,53 @@
+{
+  "task_id": "warehouse_s13_v02",
+  "scenario_sha256": "c357bf89223b673e4eb7de260a8563af009255528836003415dfa24f76679dfa",
+  "selected_example_rule": "Shortest full recording among tasks where RRT succeeds and both K policies fail.",
+  "robot_count": 32,
+  "diameter_meters": 0.8,
+  "dt": 0.1,
+  "rendered_recording_steps": 691,
+  "skipped_recording_steps": 0,
+  "interpolated_poses": false,
+  "source_states_unchanged": true,
+  "playback_speed": 1.0,
+  "initial_hold_seconds": 2.0,
+  "final_hold_seconds": 5.0,
+  "gif": "warehouse_s13_v02__rrt_vs_both_k_routes__full.gif",
+  "gif_sha256": "f282c2fe8e4c5229b6934a008879e5365a502056c92a0027d4a6cbd5060e8142",
+  "renderer_sha256": "2bbbe5cb631bc48e5c25d3d1cbf18c9d13cce790c871bf419d4da1ddb2172a26",
+  "methods": [
+    {
+      "method": "rrt",
+      "status": "success",
+      "finished_agents": 32,
+      "recorded_states": 393,
+      "recorded_until_seconds": 39.2,
+      "makespan_seconds": 39.2,
+      "source_directory": "benchmarks/results/warehouse_uniform_corrected/warehouse_s13_v02__rrt__p42__c42",
+      "run_sha256": "ee1ae1e4c8d589c340c7e733916c402f67efafaf6e202e2764e6cd0fe11f54dd",
+      "trajectory_sha256": "73b3f8eee766f1cb105c1b4729a67f6c6ea65175d7799a3f84c7169285efc936"
+    },
+    {
+      "method": "k_routes",
+      "status": "deadlock",
+      "finished_agents": 25,
+      "recorded_states": 611,
+      "recorded_until_seconds": 61.0,
+      "makespan_seconds": null,
+      "source_directory": "benchmarks/results/warehouse_uniform_corrected/warehouse_s13_v02__k_routes__p42__c42",
+      "run_sha256": "a219004d87edf5be059acf600957d7b09160e5bc1c1762ca0fd97bf90ee480f9",
+      "trajectory_sha256": "28ee6b860aeacd83c174b8d3d3b14d24686e952f2e40a39722400bdee9840aab"
+    },
+    {
+      "method": "k_routes_width",
+      "status": "deadlock",
+      "finished_agents": 28,
+      "recorded_states": 691,
+      "recorded_until_seconds": 69.0,
+      "makespan_seconds": null,
+      "source_directory": "benchmarks/results/warehouse_bottleneck_width/warehouse_s13_v02__k_routes_width__p42__c42",
+      "run_sha256": "e9b939bf9101e0802078fb518f866d3114fe9b44f735ce38df2d528b99009a9b",
+      "trajectory_sha256": "7a18bb2c9ba43292c29eaef0a02bafea3f916e8f9cd4b99a76e35391a5e3aabf"
+    }
+  ]
+}

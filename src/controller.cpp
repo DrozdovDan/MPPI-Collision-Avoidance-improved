@@ -8,9 +8,12 @@ namespace mppica {
 	void seedSampler(unsigned int seed) { xt::random::seed(seed); }
 
 	void Controller::setAnchorPath(const std::vector<Point2> &path) {
+		anchor_yield_initialized = false;
+		anchor_yielding = false;
 		if (path.empty()) {
 			anchor_path.clear();
 			anchor_segment_bounds.clear();
+            anchor_tree.clear();
 			anchor_path_lengths.clear();
 			anchor_path_length = 0.0;
 			anchor_progress = 0.0;
@@ -39,6 +42,25 @@ namespace mppica {
 			anchor_segment_bounds.push_back({std::min(path[i][0], path[i+1][0]),
 				std::min(path[i][1], path[i+1][1]), std::max(path[i][0], path[i+1][0]),
 				std::max(path[i][1], path[i+1][1])});
+        anchor_tree.clear();
+        auto build = [&](auto &&self, size_t first, size_t last) -> size_t {
+            size_t index = anchor_tree.size();
+            auto bounds = anchor_segment_bounds[first];
+            for (size_t i=first+1; i<last; ++i) {
+                bounds[0]=std::min(bounds[0],anchor_segment_bounds[i][0]);
+                bounds[1]=std::min(bounds[1],anchor_segment_bounds[i][1]);
+                bounds[2]=std::max(bounds[2],anchor_segment_bounds[i][2]);
+                bounds[3]=std::max(bounds[3],anchor_segment_bounds[i][3]);
+            }
+            anchor_tree.push_back({bounds,first,last,0,0});
+            if (last-first>8) {
+                size_t middle=first+(last-first)/2;
+                size_t left=self(self,first,middle), right=self(self,middle,last);
+                anchor_tree[index].left=left;anchor_tree[index].right=right;
+            }
+            return index;
+        };
+        build(build,0,anchor_segment_bounds.size());
 		anchor_path_lengths = std::move(cumulative);
 		anchor_path_length = anchor_path_lengths.back();
 		anchor_progress = 0.0;
@@ -49,10 +71,36 @@ namespace mppica {
 		min_progress = std::clamp(min_progress, 0.0, anchor_path_length);
 		PathProjection best{std::numeric_limits<double>::infinity(), min_progress, anchor_path.front()};
 		double best_distance_squared = std::numeric_limits<double>::infinity();
+		auto fallback = [&]() {
+			auto target = anchorPointAt(min_progress);
+			return PathProjection{std::hypot(point[0]-target[0], point[1]-target[1]) + anchor_path_length,
+				min_progress,target};
+		};
+		// Guided proposals can already be inside a wall. They are excluded by
+		// rollout collision checks; avoid searching every distant route segment.
+		if (!use_car_like_dyn && obstacleCollision(point,point)) return fallback();
 
 		auto first = std::lower_bound(anchor_path_lengths.begin(), anchor_path_lengths.end(), min_progress - 1e-12);
 		size_t start = first == anchor_path_lengths.begin() ? 0 : size_t(first - anchor_path_lengths.begin() - 1);
-		for (size_t i = start; i + 1 < anchor_path.size(); ++i) {
+        auto visit = [&](auto &&self, size_t node_id) -> void {
+            const auto &node=anchor_tree[node_id];
+            if (node.last<=start) return;
+            double bx=std::max({node.bounds[0]-point[0],0.0,point[0]-node.bounds[2]});
+            double by=std::max({node.bounds[1]-point[1],0.0,point[1]-node.bounds[3]});
+            if (bx*bx+by*by>best_distance_squared+1e-12) return;
+            if (node.left) {
+                auto bound_distance = [&](size_t index) {
+                    const auto &b=anchor_tree[index].bounds;
+                    double x=std::max({b[0]-point[0],0.0,point[0]-b[2]});
+                    double y=std::max({b[1]-point[1],0.0,point[1]-b[3]});
+                    return x*x+y*y;
+                };
+                if (bound_distance(node.left)<=bound_distance(node.right)) {
+                    self(self,node.left);self(self,node.right);
+                } else { self(self,node.right);self(self,node.left); }
+                return;
+            }
+		for (size_t i = std::max(start,node.first); i < node.last; ++i) {
 			const auto &bounds = anchor_segment_bounds[i];
 			double bx = std::max({bounds[0] - point[0], 0.0, point[0] - bounds[2]});
 			double by = std::max({bounds[1] - point[1], 0.0, point[1] - bounds[3]});
@@ -73,12 +121,63 @@ namespace mppica {
 			double ey = point[1] - projected[1];
 			double distance_squared = ex * ex + ey * ey;
 			double progress = anchor_path_lengths[i] + t * segment_length;
-			if (distance_squared < best_distance_squared - 1e-12) {
+			if (distance_squared < best_distance_squared - 1e-12 ||
+				(std::abs(distance_squared-best_distance_squared)<=1e-12 && progress<best.progress)) {
+				// A nearby later aisle can lie behind shelving. Its Euclidean
+				// projection is not reachable from this pose: crediting its arc
+				// length rewards abandoning the assigned route. Differential-drive
+				// anchors must be joined by a clear swept disk before progress or
+				// path costs may use that projection. Car tracking is unchanged.
+				if (!use_car_like_dyn && obstacleCollision(point, projected)) continue;
 				best_distance_squared = distance_squared;
 				best = {std::sqrt(distance_squared), progress, projected};
 			}
 		}
+        };
+        visit(visit,0);
+		if (!std::isfinite(best.distance)) return fallback();
 		return best;
+	}
+
+	void Controller::updateAnchorYield(const xt::xtensor<double,1> &state,
+		const xt::xtensor<double,2> &neighbors, const xt::xtensor<double,1> &sizes,
+		const xt::xtensor<double,1> &goal) {
+		if (use_car_like_dyn || anchor_path.empty() || anchor_yield_after <= 0.0) {
+			anchor_yielding = false; return;
+		}
+		double distance = std::hypot(goal[0]-state[0],goal[1]-state[1]);
+		if (!anchor_yield_initialized || anchor_progress-anchor_progress_reference > .15 ||
+			anchor_goal_reference-distance > .15) {
+			anchor_yield_initialized = true; anchor_yielding = false;
+			anchor_progress_reference = anchor_progress; anchor_goal_reference = distance;
+			anchor_stagnant_seconds = anchor_blocked_seconds = anchor_clear_seconds = 0.0;
+		} else anchor_stagnant_seconds += dt;
+		bool blocked = false;
+		const double end = std::min(anchor_path_length,anchor_progress+control_limits(0,1)*(time_steps-1)*dt);
+		const auto join = anchorPointAt(anchor_progress);
+		for (size_t n=0; n<neighbors.shape(0) && !blocked; ++n) {
+			if (std::hypot(neighbors(n,2),neighbors(n,3)) > .03) continue;
+			Point2 other{neighbors(n,0),neighbors(n,1)}, previous{state[0],state[1]};
+			double clearance = agent_size+sizes[n]+rad_eps;
+			auto obstructs = [&](const Point2 &a,const Point2 &b) {
+				return pointSegmentDistanceSquared(other,a,b) < clearance*clearance;
+			};
+			blocked = obstructs(previous,join); previous = join;
+			auto first=std::upper_bound(anchor_path_lengths.begin(),anchor_path_lengths.end(),anchor_progress);
+			for (size_t j=first-anchor_path_lengths.begin(); j<anchor_path.size() && !blocked; ++j) {
+				auto next = anchor_path_lengths[j] >= end ? anchorPointAt(end) : anchor_path[j];
+				blocked = obstructs(previous,next); previous=next;
+				if (anchor_path_lengths[j] >= end) break;
+			}
+		}
+		anchor_blocked_seconds = blocked ? anchor_blocked_seconds+dt : 0.0;
+		anchor_clear_seconds = blocked ? 0.0 : anchor_clear_seconds+dt;
+		if (anchor_stagnant_seconds >= anchor_yield_after && anchor_blocked_seconds >= 3.0)
+			anchor_yielding = true;
+		if (anchor_yielding && anchor_clear_seconds >= 2.0) {
+			anchor_yielding = false; anchor_stagnant_seconds = 0.0;
+			anchor_progress_reference = anchor_progress; anchor_goal_reference = distance;
+		}
 	}
 
 	Point2 Controller::anchorPointAt(double progress) const {
@@ -203,7 +302,7 @@ namespace mppica {
 			anchor_progress = projectToAnchorPath({curr_state[0], curr_state[1]}, min_progress).progress;
 			anchor_progress_initialized = true;
 			anchor_tracking_scale = 1.0;
-			if (use_car_like_dyn && anchor_acquisition_scale < 1.0) {
+			if (anchor_acquisition_scale < 1.0) {
 				auto start = anchorPointAt(anchor_progress);
 				auto ahead = anchorPointAt(anchor_progress + 1.0);
 				double dx = ahead[0] - start[0], dy = ahead[1] - start[1];
@@ -240,6 +339,7 @@ namespace mppica {
 				}
 			}
 		}
+		updateAnchorYield(curr_state,neighbors_states,neighbors_sizes,goal_state);
 		do {
 			resetTrajectories(curr_state);
 			if(ma_cost_en) {
@@ -252,6 +352,7 @@ namespace mppica {
 				computeLinearConstraintsForState(curr_state, neighbors_states, neighbors_sizes);
 				resampleInitialWithConstraints();
 			}
+            if (!use_car_like_dyn) generateDDGuidedSamples();
 
 			for (size_t batch = 0; batch < batch_size; ++batch) {
 				for (size_t t_step = 0; t_step < time_steps - 1; ++t_step) {
@@ -281,6 +382,8 @@ namespace mppica {
 	}
 
 	void Controller::reset() {
+		anchor_yield_initialized = false;
+		anchor_yielding = false;
 		last_linear_control = initial_values[0];
 		last_angular_control = initial_values[1];
 		anchor_progress = 0.0;
@@ -418,6 +521,71 @@ namespace mppica {
 		}
 	}
 
+    void Controller::generateDDGuidedSamples() {
+        if (anchor_path.empty() || anchor_guided_fraction <= 0.0) return;
+        const size_t count = static_cast<size_t>(anchor_guided_fraction * batch_size);
+        xt::xtensor<double, 1> initial = xt::view(generated_trajectories, 0, 0);
+        double lower = limitSpeed(control_limits(0, 0), last_linear_control);
+        double upper = limitSpeed(control_limits(0, 1), last_linear_control);
+        if (max_safe_distr_step >= 0 && orca_complete) {
+            auto [coefficients, bounds] = translateConstraintsToControlBounds(initial);
+            for (size_t i = 0; i < coefficients.size(); ++i) {
+                if (coefficients[i] > 1e-12) upper = std::min(upper, bounds[i]/coefficients[i]);
+                if (coefficients[i] < -1e-12) lower = std::max(lower, bounds[i]/coefficients[i]);
+            }
+        }
+        if (lower > upper) return;
+        for (size_t b = 0; b < count; ++b) {
+            auto state = initial;
+            double speed = last_linear_control, angular = last_angular_control;
+            const double previews[] = {0.3, 0.5, 0.8, 1.2};
+            double preview = previews[b % 4];
+            double offset = 0;
+            bool avoidance = false;
+            if (ma_cost_en)
+                for (size_t i = 0; i < neighbors_num; ++i)
+                    if (std::hypot(neighbors_traj(i,0,0)-initial[0], neighbors_traj(i,0,1)-initial[1]) < ma_dist_threshold &&
+                        anchorNeighborRequiresAvoidance({neighbors_traj(i,0,0),neighbors_traj(i,0,1)},
+                            {(neighbors_traj(i,1,0)-neighbors_traj(i,0,0))/dt,
+                             (neighbors_traj(i,1,1)-neighbors_traj(i,0,1))/dt},agent_size)) avoidance = true;
+            if (avoidance && b % 3) {
+                offset = (b % 3 == 1 ? -1 : 1) * (2*agent_size+2*rad_eps+.25) * (1 + .5*((b/12)%3));
+                preview = 1.0 + .3*(b % 4);
+            }
+            const double cruise = control_limits(0, 1) * (1.0 - .3 * ((b / 4) % 3));
+            const bool turn_first = b % 4 == 1;
+            for (size_t t = 0; t + 1 < time_steps; ++t) {
+                auto projection = projectToAnchorPath({state[0], state[1]}, anchor_progress);
+                auto target = anchorPointAt(projection.progress + preview);
+                auto behind = anchorPointAt(std::max(0.0, projection.progress + preview - .3));
+                double tx = target[0]-behind[0], ty = target[1]-behind[1], norm = std::hypot(tx,ty);
+                double taper = std::clamp((anchor_path_length-projection.progress)/preview,0.0,1.0);
+                if (norm > 1e-9) { target[0] -= offset*taper*ty/norm; target[1] += offset*taper*tx/norm; }
+                // The closest visible join is clear; a preview beyond a tight
+                // corner need not be. Include exact acquisition proposals that
+                // rotate in place before driving to that join.
+                if (turn_first && projection.distance > .05) target = projection.point;
+                double dx = target[0]-state[0], dy = target[1]-state[1];
+                double error = std::atan2(std::sin(std::atan2(dy, dx)-state[2]),
+                                          std::cos(std::atan2(dy, dx)-state[2]));
+                double remaining = std::hypot(anchor_path.back()[0]-state[0], anchor_path.back()[1]-state[1]);
+                double desired = std::min(cruise, std::sqrt(2 * linear_brake_limit * remaining));
+                desired *= std::pow(std::max(0.0, std::cos(error)), 2);
+                if (turn_first && (std::abs(error) > .03 || std::abs(angular) > .1)) desired = 0;
+                double yaw = std::clamp((2.0 + (b / 12) % 3) * error, control_limits(1, 0), control_limits(1, 1));
+                if (b == 0) { desired = 0; yaw = 0; }
+                speed = limitSpeed(desired, speed);
+                if (t == 0 && orca_complete) speed = std::clamp(speed, lower, upper);
+                if (angular_accel_limit > 0)
+                    yaw = std::clamp(yaw, angular-angular_accel_limit*dt, angular+angular_accel_limit*dt);
+                angular = yaw;
+                samples(b, t, 0) = speed-control_sequence(t, 0);
+                samples(b, t, 1) = yaw-control_sequence(t, 1);
+                state = state + dyn_model.shift(state, dt) + dyn_model.dynamic(state, {speed, yaw}, dt);
+            }
+        }
+    }
+
 	void Controller::updateControl(size_t batch, size_t time_step) {
 		xt::view(sampled_controls, batch, time_step, xt::all()) = xt::view(control_sequence, time_step, xt::all()) +
 																  xt::view(samples, batch, time_step, xt::all());
@@ -525,6 +693,14 @@ namespace mppica {
 
 
 	void Controller::controlCost(size_t batch, size_t time_step) {
+        if (!use_car_like_dyn && !anchor_path.empty()) {
+            // Penalize needless spinning and speed changes. A reciprocal
+            // movement cost rewards circles when waiting is the safe action.
+            double speed = sampled_controls(batch,time_step,0);
+            double previous = time_step ? sampled_controls(batch,time_step-1,0) : last_linear_control;
+            double yaw = sampled_controls(batch,time_step,1);
+            traj_costs[batch] += control_smoothness_weight * ((speed-previous)*(speed-previous)+.5*yaw*yaw);
+        }
 		if (use_car_like_dyn) {
 			// Use the physically constrained controls actually integrated by the rollout.
 			const double jerk = sampled_controls(batch, time_step, 0);
@@ -556,7 +732,7 @@ namespace mppica {
 		}
 		// Guided candidates already pay the explicit bounded effort/change
 		// costs; they are not Gaussian draws and have no Gaussian noise cost.
-		if (use_car_like_dyn && !anchor_path.empty() &&
+		if (!anchor_path.empty() &&
 			batch < static_cast<size_t>(anchor_guided_fraction * batch_size)) return;
 		// Whiten with the same temporal covariance used by generateSamples.
 		// For rho=0 this is exactly the independent-noise objective.
@@ -642,6 +818,16 @@ namespace mppica {
 				dx = anchor_path.back()[0] - point[0];
 				dy = anchor_path.back()[1] - point[1];
 				endpoint_scale = std::min(1.0, std::hypot(dx, dy));
+			}
+			if (!use_car_like_dyn && projection.distance > 1e-9) {
+				// Facing along the lane while stranded beside it is a local
+				// minimum. Reward facing the feasible acquisition line first,
+				// smoothly returning to the path tangent as cross-track error falls.
+				double blend = std::clamp(projection.distance/std::max(.05,.5*agent_size),0.0,1.0);
+				double tangent = std::hypot(dx,dy);
+				if (tangent > 1e-9) { dx /= tangent; dy /= tangent; }
+				dx = (1-blend)*dx + blend*(projection.point[0]-point[0])/projection.distance;
+				dy = (1-blend)*dy + blend*(projection.point[1]-point[1])/projection.distance;
 			}
 			double heading = generated_trajectories(batch, time_step + 1, 2);
 			double speed = use_car_like_dyn ? generated_trajectories(batch, time_step + 1, 3)
@@ -729,6 +915,9 @@ namespace mppica {
 	}
 
 	void Controller::updateControlSequence(const xt::xtensor<double, 1> &neighbors_sizes) {
+        // Waiting is a native command choice after MPPI/ORCA evaluation. It
+        // changes neither the measured pose nor any motion/clearance limit.
+        if (anchor_yielding) { setBrakingControlSequence(); return; }
         if (!obstacles.empty() || (ma_cost_en && neighbors_num > 0)) {
             double best_cost = std::numeric_limits<double>::infinity();
             size_t best = batch_size;
@@ -782,13 +971,35 @@ namespace mppica {
 		xt::xtensor<double, 1> result = xt::view(control_sequence, 0);
 		// Car samples share the measured initial state and convex control bounds,
 		// so their weighted first control is feasible without output filtering.
-		if (!use_car_like_dyn) result[0] = limitSpeed(result[0], last_linear_control);
+		if (!use_car_like_dyn) {
+			result[0] = limitSpeed(result[0], last_linear_control);
+			if (angular_accel_limit > 0.0)
+				result[1] = std::clamp(result[1], last_angular_control - angular_accel_limit * dt,
+					last_angular_control + angular_accel_limit * dt);
+		}
 		return result;
 	}
 
+    void Controller::setAppliedControl(const xt::xtensor<double, 1> &control) {
+        if (control.size() != 2 || !xt::all(xt::isfinite(control)))
+            throw std::invalid_argument("Applied control must have two finite values");
+        last_linear_control = control[0];
+        last_angular_control = control[1];
+    }
+
 	void Controller::setBrakingControlSequence() {
 		control_sequence.fill(0.0);
-		if (!use_car_like_dyn) return;
+		if (!use_car_like_dyn) {
+			double speed = last_linear_control, angular = last_angular_control;
+			for (size_t t = 0; t + 1 < time_steps; ++t) {
+				speed = limitSpeed(0.0, speed);
+				angular = angular_accel_limit > 0.0 ?
+					std::clamp(0.0, angular - angular_accel_limit * dt, angular + angular_accel_limit * dt) : 0.0;
+				control_sequence(t, 0) = speed;
+				control_sequence(t, 1) = angular;
+			}
+			return;
+		}
 		xt::xtensor<double, 1> state = xt::view(generated_trajectories, 0, 0);
 		for (size_t t = 0; t + 1 < time_steps; ++t) {
 			xt::xtensor<double, 1> desired = {car_like_dyn.brakingJerk(state, dt), 0.0};
@@ -849,6 +1060,9 @@ namespace mppica {
 			alg_params.anchor_guided_fraction < 0.0 || alg_params.anchor_guided_fraction > 1.0)
 			throw std::invalid_argument("Anchor guided fraction must be finite and in [0, 1]");
 		anchor_guided_fraction = alg_params.anchor_guided_fraction;
+		if (!std::isfinite(alg_params.anchor_yield_after) || alg_params.anchor_yield_after < 0.0)
+			throw std::invalid_argument("Anchor yield delay must be finite and nonnegative");
+		anchor_yield_after = alg_params.anchor_yield_after;
 		time_steps = alg_params.time_steps;
 		batch_size = alg_params.batch_size;
 		mean = alg_params.mean;
@@ -953,16 +1167,20 @@ namespace mppica {
 		auto curr_pos = xt::view(generated_trajectories, batch, 0, xt::range(0, POSITION_DIM));
 		auto goal_pos = xt::view(goal_state, xt::range(0, 2));
 		auto goal_dist = xt::linalg::norm(curr_pos - goal_pos, 2);
-        if (goal_dist < ma_en_close_to_goal_dist and time_step > ma_en_close_to_goal_ts)
-			return;
+        const bool close_to_goal = goal_dist < ma_en_close_to_goal_dist && time_step > ma_en_close_to_goal_ts;
+        if (use_car_like_dyn && close_to_goal) return;
 
 		double min_dist = std::numeric_limits<double>::max();
 
 		for (int agent = 0; agent < neighbors_num; ++agent) {
-			double dist = xt::linalg::norm(
-					xt::view(neighbors_traj, agent, time_step, xt::all()) -
-					xt::view(generated_trajectories, batch, time_step, xt::range(0, POSITION_DIM))
-					, 2);
+            double rx = generated_trajectories(batch,time_step,0)-neighbors_traj(agent,time_step,0);
+            double ry = generated_trajectories(batch,time_step,1)-neighbors_traj(agent,time_step,1);
+            double dx = generated_trajectories(batch,time_step+1,0)-neighbors_traj(agent,time_step+1,0)-rx;
+            double dy = generated_trajectories(batch,time_step+1,1)-neighbors_traj(agent,time_step+1,1)-ry;
+            double squared = dx*dx+dy*dy;
+            double fraction = squared > 0 ? std::clamp(-(rx*dx+ry*dy)/squared,0.0,1.0) : 0;
+            double dist = std::hypot(rx+fraction*dx,ry+fraction*dy);
+            if (use_car_like_dyn) dist = std::hypot(rx,ry);
 			if (dist < min_dist)
 				min_dist = dist;
 			auto neighbor_size = neighbors_sizes[agent];
@@ -987,7 +1205,7 @@ namespace mppica {
 				return;
 			}
 		}
-		if (min_dist > ma_dist_threshold)
+		if (close_to_goal || min_dist > ma_dist_threshold)
 			return;
         // Match the zero cost outside the proximity range continuously.
         // A jump of weight/threshold made crossing that boundary expensive
@@ -1094,6 +1312,29 @@ namespace mppica {
 		double sigma0 = sample_std[{0, 0}];
 		double v_min = control_limits[{0, 0}];
 		double v_max = control_limits[{0, 1}];
+
+        if (!use_car_like_dyn) {
+            // In one dimension ORCA is an interval intersection. Solve the
+            // same L1 mean/std objective directly, including reachable speeds.
+            v_min = limitSpeed(v_min, last_linear_control);
+            v_max = limitSpeed(v_max, last_linear_control);
+            for (size_t i = 0; i < coefs.size(); ++i) {
+                if (coefs[i] > 1e-12) v_max = std::min(v_max, bounds[i]/coefs[i]);
+                else if (coefs[i] < -1e-12) v_min = std::max(v_min, bounds[i]/coefs[i]);
+                else if (bounds[i] < -1e-12) return {false, limitSpeed(0.0, last_linear_control)-control[0], 0.0};
+            }
+            if (v_min > v_max + 1e-12) return {false, limitSpeed(0.0, last_linear_control)-control[0], 0.0};
+            v_max = std::max(v_max, v_min);
+            const double k = std::abs(k_alpha);
+            double best_mean = v_min, best_std = 0, best_cost = std::numeric_limits<double>::infinity();
+            for (double m : {v_min, v_max, .5*(v_min+v_max), mu0, v_min+k*sigma0, v_max-k*sigma0}) {
+                m = std::clamp(m, v_min, v_max);
+                double s = k > 1e-12 ? std::min(sigma0, std::min(m-v_min, v_max-m)/k) : sigma0;
+                double cost = std::abs(m-mu0)+std::abs(s-sigma0);
+                if (cost < best_cost) { best_cost=cost; best_mean=m; best_std=s; }
+            }
+            return {true, best_mean-control[0], best_std};
+        }
 		if (use_car_like_dyn) {
 			std::tie(v_min, v_max) = car_like_dyn.jerkBounds(state, dt);
 		}

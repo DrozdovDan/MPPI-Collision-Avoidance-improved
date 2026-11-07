@@ -1,0 +1,66 @@
+{
+  "task_id": "warehouse2_s02_v02",
+  "robot_index": 23,
+  "baseline_max_detour_ratio": 1.8,
+  "reference_shortest_length": 24.182628509057224,
+  "reference_length_cap": 43.528731316303,
+  "isolated_changed_parameter": {
+    "max_detour_ratio": 2.0
+  },
+  "returned_routes_after_change": 3,
+  "candidates": [
+    {
+      "id": 0,
+      "reference_length": 24.182628509057224,
+      "final_length": 23.850918186036576,
+      "bottleneck_width": 0.8375399999998621,
+      "lane_audit": {
+        "split_sections": 4,
+        "shared_corridor_sections": 4,
+        "transition_sections": 4,
+        "minimum_right_offset": 0.3451680253164806,
+        "maximum_shared_deviation": 0.0
+      }
+    },
+    {
+      "id": 1,
+      "reference_length": 46.329287799110986,
+      "final_length": 53.49363240736239,
+      "bottleneck_width": 6.947723675152034,
+      "lane_audit": {
+        "split_sections": 18,
+        "shared_corridor_sections": 0,
+        "transition_sections": 2,
+        "minimum_right_offset": 1.5242878068232009,
+        "maximum_shared_deviation": 0.0
+      }
+    },
+    {
+      "id": 2,
+      "reference_length": 45.95993537656642,
+      "final_length": 41.12123468991692,
+      "bottleneck_width": 7.424226890762499,
+      "lane_audit": {
+        "split_sections": 15,
+        "shared_corridor_sections": 0,
+        "transition_sections": 2,
+        "minimum_right_offset": 1.4541416737678132,
+        "maximum_shared_deviation": 0.0
+      }
+    }
+  ],
+  "bottleneck_probabilities_if_sampling_new_set": [
+    0.055066933134292596,
+    0.45680186624543506,
+    0.4881312006202724
+  ],
+  "rrt_length_meters": 36.48931367118179,
+  "rrt_bottleneck_width": 7.442894675948654,
+  "planning_only": true,
+  "simulation_rerun": false,
+  "benchmark_sources_unchanged": true,
+  "binary_sha256": "80eae29e61af7ea0c2fcea5318c8fe3abf8cb1e587bbb7470520a887e826dc23",
+  "frozen_map_bundle_sha256": "c0fe4f450ca5a0486848ab31060468a781db0e34af880e3f2ce3cc52eccd2736",
+  "tested_budget_up_to": 1024,
+  "diagnostic_directory": "benchmarks/results/warehouse_disappear_route_diagnosis/warehouse2_s02_v02/r23"
+}

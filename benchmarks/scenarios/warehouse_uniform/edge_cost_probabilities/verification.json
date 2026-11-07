@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "queries": 8000,
+  "routes": 25381,
+  "zero_edge_candidates": 680,
+  "all_empty_candidate_sets": 178,
+  "independent_calculation": "numpy.longdouble direct user equations, independent of selector functions",
+  "maximum_absolute_probability_error": 1.0389475738059595e-14,
+  "normalization_checks": 8000,
+  "original_graph_generation_hashes_match": true,
+  "implementation_hashes_match": true,
+  "unit_tests_passed": 17,
+  "simulations_run": 0,
+  "output_sha256": {
+    "comparison.svg": "ad97d8a57ed45afb3d73834b0174046207b7450bb5abfcc4472676723cd09291",
+    "by_scenario.json": "ff705f97cfde62a160294b8f12fea439c976e1bc6cf819348466745b21e9a386",
+    "examples.json": "b137979daa359ed89ccb5c637422ff9b0cbd8be0eba376e36fc5b8ba064a890d",
+    "README.md": "9492b31b813f48a4ac3da6d21a1aa01ec4f49e041ee9bfdf0bbfff49e3ad97b6",
+    "queries.csv": "d86c775d4cb77f514dcfa762633a15177dfe82318c85f7f39224a20265ec81f7",
+    "summary.json": "1cd9fa806a3753f53b6614c56852f31f3e2a15673269db5e4785fb5cae7acc0d",
+    "comparison.png": "ba770320a235b602c38b7f1e1557fe06484a4d2b15ada341a75a70907adbaf36",
+    "probabilities.csv": "8757f70ce10a628985f77e311c4ce504f743d5f19a49cd50e2c61c70dc21ed32",
+    "inputs.json": "849d8fbd4827951188306061b7de24585f192cfe0d771028690e6e57a9672399"
+  }
+}

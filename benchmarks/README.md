@@ -1,5 +1,21 @@
 # Bench-MR polygon evaluation
 
+The revised [uniform-agent warehouse benchmark](WAREHOUSE_UNIFORM_BENCHMARK.md)
+contains **250 tasks: 25 designs × 5 endpoint variants on each of two maps**.
+Every task has 32 identical differential-drive agents, with diameters from
+0.6 to 1.0 m under an explicitly documented map calibration.
+
+The [bottleneck-width selection experiment](WAREHOUSE_BOTTLENECK_BENCHMARK.md)
+samples one of the same K-route candidates in proportion to its narrowest
+corridor width. Its [results](WAREHOUSE_BOTTLENECK_RESULTS.md) compare all 250
+tasks against uniform K-route selection and RRT, with scenario averages,
+independent geometry and motion audits, and recorded GIFs.
+
+The [disappear-at-target results](WAREHOUSE_DISAPPEAR_RESULTS.md) cover all five
+methods on the same 250 tasks (1,250 executions). They provide standalone
+disappearance tables and figures, five-variant scenario averages, size and
+traffic-pattern breakdowns, and paired comparisons with stay-at-target.
+
 The [50-task multi-agent benchmark](MULTI_AGENT_BENCHMARK.md) adds reproducible
 scenario generation, car-like parking and differential-drive warehouse fleets,
 individual motion-feasibility witnesses, a shared-controller RRT/K-route runner,

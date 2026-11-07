@@ -187,12 +187,14 @@ class Generator:
                 # traffic use other map regions if a narrow staging strip is
                 # full. A one-dimensional queue's capacity is not map capacity.
                 expanded_traffic = index >= 8 and attempt >= self.config["max_pair_attempts"] // 2
-                assignment_feature = None if expanded_traffic else feature
+                outside_core = index >= self.config.get('focused_core_robot_count', count)
+                assignment_feature = None if expanded_traffic or outside_core else feature
+                assignment_junction = None if outside_core else junction
                 if number == 7 and index % 2:
                     previous = robots[-1]
                     start_id, goal_id = previous["geometry_evidence"]["end_node"], previous["geometry_evidence"]["start_node"]
                 else:
-                    start_id, goal_id = self._pair(graph, rng, number, index, assignment_feature, junction)
+                    start_id, goal_id = self._pair(graph, rng, number, index, assignment_feature, assignment_junction)
                 start, goal = graph.points[[start_id, goal_id]]
                 if not self._compatible(start, profile["radius"], occupied_starts) or not self._compatible(goal, profile["radius"], occupied_goals):
                     self.rejections["endpoint_packing"] += 1
@@ -205,7 +207,7 @@ class Generator:
                 if assignment_feature is not None and (class_id == 0 or number not in (9, 10)) and assignment_feature["id"] not in {f[0] for f in resource_uses}:
                     self.rejections["does_not_cross_selected_resource"] += 1
                     continue
-                if junction is not None and not graph.features_for_path(path, [junction]):
+                if assignment_junction is not None and not graph.features_for_path(path, [assignment_junction]):
                     self.rejections["does_not_cross_selected_junction"] += 1
                     continue
                 witness = self._witness(class_id, start_id, goal_id, path)
@@ -227,7 +229,7 @@ class Generator:
                                        radius=goal_radius, heading_required=False))
                 alternative = graph.alternative(path, feature) if number == 8 and feature in self.alternative_features else None
                 robot["geometry_evidence"] = dict(start_node=start_id, end_node=goal_id,
-                    focused_assignment=assignment_feature is not None or junction is not None,
+                    focused_assignment=assignment_feature is not None or assignment_junction is not None,
                     shortest_length=float(LineString(path).length),
                     resource_uses=resource_uses,
                     junction_uses=graph.features_for_path(path, self.graphs[0].junction_features),
@@ -404,6 +406,9 @@ def write_generation_provenance(folder):
 def validate_suite(folder):
     from .geometry import load_suite
     manifest, worlds, tasks = load_suite(folder)
+    if manifest.get("suite_type") == "warehouse_uniform_v1":
+        from .warehouse_generation import validate_warehouse_suite
+        return validate_warehouse_suite(folder)
     if len(tasks) != 50 or Counter(t["source_map"] for t in tasks) != Counter({m: 10 for m in MAP_NAMES}):
         raise ValueError("Suite must have exactly ten tasks on each of five maps")
     if len({t["id"] for t in tasks}) != 50:

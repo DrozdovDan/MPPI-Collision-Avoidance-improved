@@ -1,0 +1,152 @@
+[
+  {
+    "target_policy": "disappear",
+    "planner": "k_routes",
+    "runs": 250,
+    "successes": 39,
+    "fleet_success_rate": 0.156,
+    "mean_agent_completion_fraction": 0.693,
+    "successful_makespan_mean_seconds": 134.3230769230769,
+    "successful_makespan_std_seconds": 42.61343661049981,
+    "successful_makespan_sample_count": 39,
+    "outcomes": {
+      "deadlock": 211,
+      "success": 39
+    }
+  },
+  {
+    "target_policy": "disappear",
+    "planner": "k_routes_edge_cost",
+    "runs": 250,
+    "successes": 100,
+    "fleet_success_rate": 0.4,
+    "mean_agent_completion_fraction": 0.7055,
+    "successful_makespan_mean_seconds": 91.79599999999999,
+    "successful_makespan_std_seconds": 27.221593181765382,
+    "successful_makespan_sample_count": 100,
+    "outcomes": {
+      "deadlock": 150,
+      "success": 100
+    }
+  },
+  {
+    "target_policy": "disappear",
+    "planner": "k_routes_edge_cost_l2_t10",
+    "runs": 250,
+    "successes": 102,
+    "fleet_success_rate": 0.408,
+    "mean_agent_completion_fraction": 0.732,
+    "successful_makespan_mean_seconds": 93.42941176470589,
+    "successful_makespan_std_seconds": 26.657373502031117,
+    "successful_makespan_sample_count": 102,
+    "outcomes": {
+      "deadlock": 148,
+      "success": 102
+    }
+  },
+  {
+    "target_policy": "disappear",
+    "planner": "k_routes_width",
+    "runs": 250,
+    "successes": 92,
+    "fleet_success_rate": 0.368,
+    "mean_agent_completion_fraction": 0.818125,
+    "successful_makespan_mean_seconds": 128.81304347826088,
+    "successful_makespan_std_seconds": 41.216982036751176,
+    "successful_makespan_sample_count": 92,
+    "outcomes": {
+      "deadlock": 158,
+      "success": 92
+    }
+  },
+  {
+    "target_policy": "disappear",
+    "planner": "rrt",
+    "runs": 250,
+    "successes": 84,
+    "fleet_success_rate": 0.336,
+    "mean_agent_completion_fraction": 0.749125,
+    "successful_makespan_mean_seconds": 90.71190476190475,
+    "successful_makespan_std_seconds": 23.39038729937828,
+    "successful_makespan_sample_count": 84,
+    "outcomes": {
+      "deadlock": 166,
+      "success": 84
+    }
+  },
+  {
+    "target_policy": "park",
+    "planner": "k_routes",
+    "runs": 250,
+    "successes": 10,
+    "fleet_success_rate": 0.04,
+    "mean_agent_completion_fraction": 0.65225,
+    "successful_makespan_mean_seconds": 156.46,
+    "successful_makespan_std_seconds": 27.056861935150163,
+    "successful_makespan_sample_count": 10,
+    "outcomes": {
+      "deadlock": 240,
+      "success": 10
+    }
+  },
+  {
+    "target_policy": "park",
+    "planner": "k_routes_edge_cost",
+    "runs": 250,
+    "successes": 43,
+    "fleet_success_rate": 0.172,
+    "mean_agent_completion_fraction": 0.674625,
+    "successful_makespan_mean_seconds": 96.11627906976744,
+    "successful_makespan_std_seconds": 22.162451409798834,
+    "successful_makespan_sample_count": 43,
+    "outcomes": {
+      "deadlock": 207,
+      "success": 43
+    }
+  },
+  {
+    "target_policy": "park",
+    "planner": "k_routes_edge_cost_l2_t10",
+    "runs": 250,
+    "successes": 50,
+    "fleet_success_rate": 0.2,
+    "mean_agent_completion_fraction": 0.703125,
+    "successful_makespan_mean_seconds": 99.152,
+    "successful_makespan_std_seconds": 21.406781683401558,
+    "successful_makespan_sample_count": 50,
+    "outcomes": {
+      "deadlock": 200,
+      "success": 50
+    }
+  },
+  {
+    "target_policy": "park",
+    "planner": "k_routes_width",
+    "runs": 250,
+    "successes": 35,
+    "fleet_success_rate": 0.14,
+    "mean_agent_completion_fraction": 0.780625,
+    "successful_makespan_mean_seconds": 134.2114285714286,
+    "successful_makespan_std_seconds": 35.38335244507085,
+    "successful_makespan_sample_count": 35,
+    "outcomes": {
+      "deadlock": 215,
+      "success": 35
+    }
+  },
+  {
+    "target_policy": "park",
+    "planner": "rrt",
+    "runs": 250,
+    "successes": 43,
+    "fleet_success_rate": 0.172,
+    "mean_agent_completion_fraction": 0.719125,
+    "successful_makespan_mean_seconds": 94.59534883720931,
+    "successful_makespan_std_seconds": 21.224737964486852,
+    "successful_makespan_sample_count": 43,
+    "outcomes": {
+      "deadlock": 207,
+      "success": 43
+    }
+  }
+]

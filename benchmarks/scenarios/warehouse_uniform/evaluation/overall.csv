@@ -1,0 +1,3 @@
+planner,runs,successes,fleet_success_rate,mean_agent_completion_fraction,successful_makespan_mean_seconds,successful_makespan_std_seconds,successful_makespan_sample_count,outcomes,global_planning_successes,global_planning_success_rate,fleet_success_rate_given_global_plan,mean_agent_completion_given_global_plan,runs_with_observed_mutual_obstruction
+k_routes,250,10,0.04,0.65225,156.46,27.056861935150163,10,"{""deadlock"": 240, ""success"": 10}",250,1.0,0.04,0.65225,220
+rrt,250,43,0.172,0.719125,94.59534883720931,21.224737964486856,43,"{""deadlock"": 207, ""success"": 43}",250,1.0,0.172,0.719125,173

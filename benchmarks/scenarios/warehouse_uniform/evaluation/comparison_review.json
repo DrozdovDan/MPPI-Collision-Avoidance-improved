@@ -1,0 +1,255 @@
+{
+  "benchmark_runs": 500,
+  "uniform_choices_replayed": 8000,
+  "route_availability": {
+    "warehouse2": {
+      "2": 603,
+      "5": 1414,
+      "1": 538,
+      "4": 768,
+      "3": 677
+    },
+    "warehouse": {
+      "3": 887,
+      "2": 1346,
+      "5": 822,
+      "4": 352,
+      "1": 593
+    }
+  },
+  "route_search_shortfalls": {
+    "warehouse2": {
+      "shortfalls": 2586,
+      "shortfalls_at_candidate_limit": 2586
+    },
+    "warehouse": {
+      "shortfalls": 3178,
+      "shortfalls_at_candidate_limit": 3178
+    }
+  },
+  "mean_anchor_length": {
+    "warehouse": {
+      "rrt": 42.067575831092974,
+      "k_routes": 54.65807436424383
+    },
+    "warehouse2": {
+      "rrt": 48.677807277053844,
+      "k_routes": 69.8613268322569
+    }
+  },
+  "passing_checks": 6,
+  "passing_checks_passed": 6,
+  "full_solo_checks": 128,
+  "full_solo_checks_passed": 128,
+  "no_wait_ablation": [
+    {
+      "task_id": "warehouse2_s01_v01",
+      "planner": "k_routes",
+      "original_status": "deadlock",
+      "no_wait_status": "deadlock",
+      "original_completed": 26,
+      "no_wait_completed": 26,
+      "original_seconds": 184.0,
+      "no_wait_seconds": 184.0
+    },
+    {
+      "task_id": "warehouse2_s01_v01",
+      "planner": "rrt",
+      "original_status": "deadlock",
+      "no_wait_status": "deadlock",
+      "original_completed": 31,
+      "no_wait_completed": 31,
+      "original_seconds": 115.0,
+      "no_wait_seconds": 115.0
+    },
+    {
+      "task_id": "warehouse_s01_v04",
+      "planner": "k_routes",
+      "original_status": "deadlock",
+      "no_wait_status": "deadlock",
+      "original_completed": 25,
+      "no_wait_completed": 25,
+      "original_seconds": 125.0,
+      "no_wait_seconds": 124.0
+    },
+    {
+      "task_id": "warehouse_s01_v04",
+      "planner": "rrt",
+      "original_status": "deadlock",
+      "no_wait_status": "deadlock",
+      "original_completed": 26,
+      "no_wait_completed": 26,
+      "original_seconds": 105.0,
+      "no_wait_seconds": 102.0
+    }
+  ],
+  "shortest_returned_ablation": [
+    {
+      "task_id": "warehouse2_s01_v01",
+      "rrt_completed": 31,
+      "uniform_k_completed": 26,
+      "shortest_returned_k_completed": 31,
+      "shortest_status": "deadlock"
+    },
+    {
+      "task_id": "warehouse_s01_v04",
+      "rrt_completed": 26,
+      "uniform_k_completed": 25,
+      "shortest_returned_k_completed": 28,
+      "shortest_status": "deadlock"
+    }
+  ],
+  "candidate_budget_ablation": [
+    {
+      "source_map": "warehouse",
+      "queries": 32,
+      "candidates_before": 24,
+      "candidates_after": 128,
+      "returned_counts_before": [
+        3,
+        2,
+        5,
+        5,
+        3,
+        5,
+        2,
+        5,
+        5,
+        5,
+        4,
+        1,
+        2,
+        4,
+        1,
+        5,
+        3,
+        5,
+        5,
+        3,
+        1,
+        5,
+        5,
+        1,
+        1,
+        5,
+        2,
+        5,
+        5,
+        5,
+        3,
+        3
+      ],
+      "returned_counts_after": [
+        3,
+        2,
+        5,
+        5,
+        4,
+        5,
+        2,
+        5,
+        5,
+        5,
+        4,
+        1,
+        2,
+        4,
+        1,
+        5,
+        3,
+        5,
+        5,
+        4,
+        1,
+        5,
+        5,
+        1,
+        1,
+        5,
+        3,
+        5,
+        5,
+        5,
+        3,
+        3
+      ],
+      "improved_route_sets": 3
+    },
+    {
+      "source_map": "warehouse2",
+      "queries": 32,
+      "candidates_before": 24,
+      "candidates_after": 128,
+      "returned_counts_before": [
+        2,
+        5,
+        1,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        4,
+        5,
+        3,
+        3,
+        2,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        3,
+        1,
+        2,
+        5,
+        4,
+        1,
+        1,
+        1,
+        5,
+        5
+      ],
+      "returned_counts_after": [
+        2,
+        5,
+        1,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        3,
+        3,
+        2,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        3,
+        1,
+        2,
+        5,
+        5,
+        1,
+        1,
+        1,
+        5,
+        5
+      ],
+      "improved_route_sets": 2
+    }
+  ],
+  "diagnostic_scope": "The controlled checks cover selected assignments and are not a new 250-task success-rate estimate."
+}

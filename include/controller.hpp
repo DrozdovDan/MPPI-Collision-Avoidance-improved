@@ -76,6 +76,8 @@ namespace mppica {
 		double anchor_acquisition_scale = 1.0;
 		// Fraction of car rollouts seeded by bounded tracking/offset proposals.
 		double anchor_guided_fraction = 0.0;
+		// Optional differential-drive waiting after sustained blocked no-progress.
+		double anchor_yield_after = 0.0;
 
 		int max_safe_distr_step = 0; // TODO: Add constraints for several steps
 		size_t max_neighbors_num = 100; // TODO: Sort neighbors by distance
@@ -119,6 +121,7 @@ namespace mppica {
 			double stoppingDistance(const xt::xtensor<double, 1> &state) const;
 
             void setObstacles(const std::vector<Polygon> &polygons);
+            void setAppliedControl(const xt::xtensor<double, 1> &control);
 
 			// An empty path disables path following. Otherwise the points define an
 			// ordered polyline; they are not treated as a closed polygon.
@@ -135,13 +138,23 @@ namespace mppica {
 			std::vector<std::array<double, 4>> obstacle_bounds;
 			std::vector<Point2> anchor_path;
 			std::vector<std::array<double, 4>> anchor_segment_bounds;
+            struct AnchorNode { std::array<double,4> bounds; size_t first, last, left, right; };
+            std::vector<AnchorNode> anchor_tree;
 			std::vector<double> anchor_path_lengths;
 			double anchor_path_length = 0.0;
 			double anchor_progress = 0.0;
 			bool anchor_progress_initialized = false;
+			double anchor_yield_after = 0.0, anchor_progress_reference = 0.0;
+			double anchor_goal_reference = 0.0, anchor_stagnant_seconds = 0.0;
+			double anchor_blocked_seconds = 0.0, anchor_clear_seconds = 0.0;
+			bool anchor_yield_initialized = false, anchor_yielding = false;
+			void updateAnchorYield(const xt::xtensor<double,1> &state,
+				const xt::xtensor<double,2> &neighbors, const xt::xtensor<double,1> &sizes,
+				const xt::xtensor<double,1> &goal);
             bool obstacleCollision(const Point2 &a, const Point2 &b) const;
             bool controlSequenceCollides(const xt::xtensor<double, 1> &neighbors_sizes);
 			void setBrakingControlSequence();
+            void generateDDGuidedSamples();
 			PathProjection projectToAnchorPath(const Point2 &point, double min_progress) const;
 			Point2 anchorPointAt(double progress) const;
 			void resetControlSeq();

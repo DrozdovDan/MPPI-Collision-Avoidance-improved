@@ -1,0 +1,42 @@
+{
+  "config": {
+    "speed_mps": 1.2,
+    "batch_size": 128,
+    "horizon_states": 31,
+    "anchor_yield_after_seconds": 15.0,
+    "selection_seed": 42,
+    "controller_seed": 42,
+    "k": 5,
+    "deadlock_window_seconds": 30.0,
+    "stall_window_seconds": 45.0,
+    "progress_threshold_meters": 0.15,
+    "stationary_speed_mps": 0.03,
+    "obstruction_clearance_meters": 0.04,
+    "persistence_fraction": 0.85,
+    "minimum_duration_seconds": 600.0,
+    "reference_time_multiplier": 6.0,
+    "reference_time_allowance_seconds": 180.0,
+    "wall_limit_seconds": 7200.0
+  },
+  "workers": 20,
+  "expected_runs": 500,
+  "frozen_manifest_sha256": "56f8aaf500b2b88f53eb89c7d7827e717f8c5bd33e5dc24075ea9d7d538bffda",
+  "operating_speed_source": "OMRON LD-250 manual I642, maximum translational speed 1.2 m/s",
+  "speed_reference_url": "https://assets.omron.eu/downloads/manual/en/v3/i642_ld-250_user_s_guide_users_manual_en.pdf",
+  "deadlock_definition": "30 seconds stationary/no-progress with persistent obstruction of the forward route within the 3-second MPPI horizon; all unfinished agents blocked by cycles or robots parked at their goals. Observed controller deadlock under fixed routes and parking policy, not proof of task infeasibility.",
+  "stalled_definition": "45 seconds with no route or best-goal improvement for every unfinished robot, without sufficient mutual-deadlock evidence",
+  "physics": "Original DiffDriveDyn integration and motion bounds; MPPI/ORCA plus synchronous joint braking certificate, no pose changes",
+  "joint_feasibility_required": true,
+  "supplemental_execution": {
+    "workers": 4,
+    "purpose": "Earlier coverage of the second map using identical frozen evaluation identities; completed runs are reused by the main sweep.",
+    "task_ids": [
+      "warehouse2_s01_v05",
+      "warehouse2_s02_v05",
+      "warehouse2_s11_v05",
+      "warehouse2_s13_v05",
+      "warehouse2_s21_v05",
+      "warehouse2_s24_v05"
+    ]
+  }
+}

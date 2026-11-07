@@ -1,9 +1,12 @@
 """Bidirectional RRT-Connect for point anchors in polygonal workspaces."""
 
 from dataclasses import dataclass
+from functools import lru_cache
+from collections import deque
 import math
 
 import numpy as np
+import shapely
 from shapely.geometry import LineString, Point, Polygon, box
 from shapely.ops import unary_union
 
@@ -11,6 +14,24 @@ from shapely.ops import unary_union
 TRAPPED = 0
 ADVANCED = 1
 REACHED = 2
+
+
+@lru_cache(maxsize=16)
+def _sampling_mesh(blocked_wkb, bounds):
+    """A configuration-space mesh guides samples, never supplies the RRT path."""
+    free = box(*bounds).difference(shapely.from_wkb(blocked_wkb))
+    triangles = shapely.get_parts(shapely.constrained_delaunay_triangles(free))
+    tree = shapely.STRtree(triangles)
+    adjacency = [[] for _ in triangles]
+    edges = {}
+    for i, triangle in enumerate(triangles):
+        vertices = list(triangle.exterior.coords)
+        for a, b in zip(vertices, vertices[1:]):
+            key = tuple(sorted((a, b)))
+            if key in edges:
+                j = edges[key]; adjacency[i].append(j); adjacency[j].append(i)
+            else: edges[key] = i
+    return triangles, tree, adjacency
 
 
 @dataclass(frozen=True)
@@ -31,18 +52,21 @@ class _Node:
 class _Tree:
     def __init__(self, root, rooted_at_start):
         self.nodes = [_Node(np.asarray(root, dtype=float), None)]
+        self.points = np.empty((1024, 2))
+        self.points[0] = root
         self.rooted_at_start = rooted_at_start
 
     def add(self, point, parent):
+        if len(self.nodes) == len(self.points):
+            self.points = np.resize(self.points, (2 * len(self.points), 2))
+        self.points[len(self.nodes)] = point
         self.nodes.append(_Node(np.asarray(point, dtype=float), parent))
         return len(self.nodes) - 1
 
     def nearest(self, point):
         point = np.asarray(point, dtype=float)
-        return min(
-            range(len(self.nodes)),
-            key=lambda index: float(np.sum((self.nodes[index].point - point) ** 2)),
-        )
+        delta = self.points[:len(self.nodes)] - point
+        return int(np.argmin(np.einsum('ij,ij->i', delta, delta)))
 
     def branch(self, index):
         result = []
@@ -71,6 +95,7 @@ class RRTConnectPlanner:
         goal_sample_rate=0.05,
         smoothing_iterations=250,
         seed=None,
+        guided_sampling=False,
     ):
         bounds = np.asarray(bounds, dtype=float)
         if bounds.shape != (4,) or not np.isfinite(bounds).all():
@@ -98,12 +123,36 @@ class RRTConnectPlanner:
         self.bounds = bounds
         self.workspace = box(*bounds)
         obstacle_union = unary_union(polygons) if polygons else Polygon()
-        self.blocked = obstacle_union.buffer(robot_radius + clearance)
+        # GEOS round buffers inscribe circular arcs. Circumscribe them so a
+        # shortcut cannot cut a corner inside the requested disk clearance.
+        self.blocked = obstacle_union.buffer((robot_radius + clearance) / math.cos(math.pi/128), quad_segs=32)
         self.step_size = float(step_size)
         self.max_iterations = int(max_iterations)
         self.goal_sample_rate = float(goal_sample_rate)
         self.smoothing_iterations = int(smoothing_iterations)
         self.rng = np.random.default_rng(seed)
+        self.guided_sampling = guided_sampling
+        self.sampling_triangles = None
+
+    def _guide_samples(self, start, goal):
+        triangles, tree, adjacency = _sampling_mesh(self.blocked.wkb, tuple(self.bounds))
+        starts = tree.query(Point(start), predicate="intersects")
+        goals = set(tree.query(Point(goal), predicate="intersects"))
+        queue = deque(map(int, starts)); parent = {int(i): None for i in starts}
+        reached = None
+        while queue:
+            node = queue.popleft()
+            if node in goals:
+                reached = node; break
+            for other in adjacency[node]:
+                if other not in parent:
+                    parent[other] = node; queue.append(other)
+        if reached is None:
+            raise RuntimeError("Endpoints are disconnected in the free configuration space")
+        route = []
+        while reached is not None:
+            route.append(reached); reached = parent[reached]
+        self.sampling_triangles = np.array([np.asarray(triangles[i].exterior.coords)[:3] for i in route])
 
     @staticmethod
     def _point(value, name):
@@ -121,8 +170,14 @@ class RRTConnectPlanner:
         return self.workspace.covers(segment) and not self.blocked.intersects(segment)
 
     def _sample(self, other_root):
-        if self.rng.random() < self.goal_sample_rate:
+        choice = self.rng.random()
+        if choice < self.goal_sample_rate:
             return other_root.copy()
+        if self.sampling_triangles is not None and choice < .8:
+            triangle = self.sampling_triangles[self.rng.integers(len(self.sampling_triangles))]
+            a, b = self.rng.random(2)
+            if a + b > 1: a, b = 1-a, 1-b
+            return triangle[0] + a*(triangle[1]-triangle[0]) + b*(triangle[2]-triangle[0])
         return self.rng.uniform(self.bounds[:2], self.bounds[2:])
 
     def _extend(self, tree, target):
@@ -195,6 +250,9 @@ class RRTConnectPlanner:
         if self.segment_is_free(start, goal):
             direct = [start.tolist(), goal.tolist()]
             return RRTConnectResult(direct, direct.copy(), 0)
+
+        if self.guided_sampling:
+            self._guide_samples(start, goal)
 
         tree_a = _Tree(start, rooted_at_start=True)
         tree_b = _Tree(goal, rooted_at_start=False)

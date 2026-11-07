@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "frames": 691,
+  "width": 2400,
+  "height": 1400,
+  "playback_duration_seconds": 75.9,
+  "snapshot_pixels_match_encoded_gif": true,
+  "source_recording_hashes_unchanged": true,
+  "gif_megabytes": 10.2,
+  "encoding_tests_passed": 2
+}

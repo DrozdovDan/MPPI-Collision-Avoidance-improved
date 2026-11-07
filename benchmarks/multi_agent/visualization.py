@@ -97,9 +97,15 @@ def overview(task, world, filename, *, zoom=False):
         if task["robot_count"] <= 12:
             ax.annotate("", goal[:2], xytext=start[:2], arrowprops=dict(arrowstyle="->", color=color, alpha=.18, lw=.6))
     model = "car-like rectangles" if task["robots"][0]["model"] == "car_like" else "differential-drive disks"
-    ax.set_title(f"{task['id']} · {task['category']} · N={task['robot_count']}\n"
-                 f"{model} · intended {task['intended_difficulty']}" + (" · conflict zoom" if zoom else ""), fontsize=10)
-    fig.text(.5, .02, "Filled footprint + arrow: start / heading     Outline + star: goal     Yellow: geometric resource     Units: native map units", ha="center", fontsize=7)
+    calibrated = task.get("physical_scale", {}).get("meters_per_map_unit") == 1.
+    if calibrated:
+        ax.set_xlabel("x (m)"); ax.set_ylabel("y (m)")
+    detail = (f"diameter {task['physical_scale']['diameter_meters']:.1f} m · variant {task['variant_index']}/5"
+              if calibrated else f"intended {task['intended_difficulty']}")
+    ax.set_title(f"{task['id']} · {task.get('traffic_pattern', task['category'])} · N={task['robot_count']}\n"
+                 f"{model} · {detail}" + (" · conflict zoom" if zoom else ""), fontsize=10)
+    units = "meters (benchmark calibration: 1 map unit = 1 m)" if calibrated else "native map units"
+    fig.text(.5, .02, "Filled footprint + arrow: start / heading     Outline + star: goal     Yellow: geometric resource\nUnits: " + units, ha="center", fontsize=7)
     fig.savefig(filename, dpi=120)
     plt.close(fig)
 
@@ -122,7 +128,10 @@ def contact_sheet(images, filename, *, columns, tile=(420, 310)):
 
 def visualize_suite(folder):
     folder = Path(folder)
-    _, worlds, tasks = load_suite(folder)
+    manifest, worlds, tasks = load_suite(folder)
+    if manifest.get("suite_type") == "warehouse_uniform_v1":
+        from .warehouse_generation import visualize_warehouse_suite
+        return visualize_warehouse_suite(folder)
     output = folder / "visualizations"; output.mkdir(exist_ok=True)
     images, by_map = [], {}
     for task in tasks:
@@ -139,26 +148,56 @@ def visualize_suite(folder):
     return output
 
 
-def animate_run(task, world, states, filename, *, result=None, frame_count=48):
+def animate_run(task, world, states, filename, *, result=None, frame_count=48, focus=None,anchor_paths=None):
     plt = _plotting()
     from matplotlib.animation import FuncAnimation, PillowWriter
+    from matplotlib.patches import Circle, Polygon
     frames = np.unique(np.linspace(0, len(states)-1, min(frame_count, len(states))).astype(int))
     fig, axes = plt.subplots(1, 2, figsize=(12, 5), constrained_layout=True)
     colors = plt.get_cmap("tab20")
-    center, radius = conflict_region(task)
+    center, radius = conflict_region(task) if focus is None else focus
+    for ax in axes:
+        _map(ax, world)
+        if task.get('physical_scale',{}).get('meters_per_map_unit')==1.:
+            ax.set(xlabel='x (m)',ylabel='y (m)')
+        if anchor_paths is not None:
+            for i,path in enumerate(anchor_paths):
+                path=np.asarray(path);ax.plot(*path.T,'--',color=colors(i%20),lw=.8,alpha=.35)
+    if anchor_paths is not None:
+        from matplotlib.lines import Line2D
+        axes[0].legend([Line2D([],[],color='black',ls='--',lw=.8),Line2D([],[],color='black',lw=1.)],
+            ['Chosen anchor','Recorded motion'],loc='lower left',fontsize=7)
+    axes[1].set(xlim=(center[0]-radius, center[0]+radius), ylim=(center[1]-radius, center[1]+radius), title="Observed terminal region" if focus is not None else "Intended conflict region")
+    artists=[]
+    for i,robot in enumerate(task['robots']):
+        color=colors(i%20);pose=states[0,i];length=robot['length']*.6
+        for ax in axes:
+            line,=ax.plot([],[],color=color,lw=1.,alpha=.7)
+            if robot['footprint']=='rectangle':
+                body=Polygon(np.asarray(footprints([pose],robot)[0].exterior.coords),
+                    facecolor=color,edgecolor='black',linewidth=.65,alpha=.75,zorder=5)
+            else:
+                body=Circle(pose[:2],robot['radius'],facecolor=color,edgecolor='black',
+                    linewidth=.6,alpha=.8,zorder=5)
+            ax.add_patch(body)
+            arrow=ax.arrow(pose[0],pose[1],length*math.cos(pose[2]),length*math.sin(pose[2]),
+                width=0.,head_width=robot['width']*.32,color='black',linewidth=.6,zorder=6,
+                length_includes_head=True)
+            ax.plot(*robot['goal']['pose'][:2],'*',ms=5,color=color)
+            artists.append((i,robot,line,body,arrow,length))
+    status = result["status"] if result else "recorded motion"
     def update(frame):
         step = frames[frame]
-        for ax in axes:
-            ax.clear(); _map(ax, world)
-        axes[1].set(xlim=(center[0]-radius, center[0]+radius), ylim=(center[1]-radius, center[1]+radius), title="Intended conflict region")
-        for i, robot in enumerate(task["robots"]):
-            color = colors(i % 20)
-            for ax in axes:
-                ax.plot(states[:step+1, i, 0], states[:step+1, i, 1], color=color, lw=1., alpha=.7)
-                draw_body(ax, robot, states[step, i], color)
-                ax.plot(*robot["goal"]["pose"][:2], "*", ms=5, color=color)
-        status = result["status"] if result else "recorded motion"
+        for i,robot,line,body,arrow,length in artists:
+            pose=states[step,i]
+            line.set_data(states[:step+1,i,0],states[:step+1,i,1])
+            if robot['footprint']=='rectangle':
+                body.set_xy(np.asarray(footprints([pose],robot)[0].exterior.coords))
+            else:body.center=pose[:2]
+            arrow.set_data(x=pose[0],y=pose[1],dx=length*math.cos(pose[2]),dy=length*math.sin(pose[2]))
         axes[0].set_title(f"{task['id']} · {step*task['dt']:.1f} s\n{status} at end of observation", fontsize=10)
+    # Reuse static map/goal artists and the initial layout for every frame.
+    update(0);fig.canvas.draw();fig.set_layout_engine(None)
     movie = FuncAnimation(fig, update, frames=len(frames), interval=125)
     Path(filename).parent.mkdir(parents=True, exist_ok=True)
     movie.save(filename, writer=PillowWriter(fps=8)); plt.close(fig)

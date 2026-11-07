@@ -1,0 +1,5 @@
+planner,runs,successes,fleet_success_rate,mean_agent_completion_fraction,successful_makespan_mean_seconds,successful_makespan_std_seconds,successful_makespan_sample_count,outcomes
+k_routes,250,10,0.04,0.65225,156.46,27.056861935150163,10,"{""deadlock"": 240, ""success"": 10}"
+k_routes_edge_cost,250,43,0.172,0.674625,96.11627906976744,22.162451409798834,43,"{""deadlock"": 207, ""success"": 43}"
+k_routes_width,250,35,0.14,0.780625,134.21142857142863,35.38335244507085,35,"{""deadlock"": 215, ""success"": 35}"
+rrt,250,43,0.172,0.719125,94.59534883720931,21.224737964486856,43,"{""deadlock"": 207, ""success"": 43}"

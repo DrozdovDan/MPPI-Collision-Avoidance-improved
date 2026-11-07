@@ -1,0 +1,8 @@
+{
+  "recovered_complete_frames": 995,
+  "discarded_incomplete_tail_bytes": 19,
+  "retained_prefix_bytes": 15194613,
+  "retained_prefix_sha256": "9233a2aab9ae1f4fdb77742a55b31b133aa6a03c9e621588d14fb712c0900502",
+  "resumed_renderer_sha256": "b7bbb4e23a3eca210da9f5d2bd59a8cf53c94aaf9db8a8808fe66bc2e8f94c1a",
+  "original_renderer_sha256": "42a46495eea499d62784495eca1c505dac386c5b9bd4b6f4f0b5ec93cb5d5c97"
+}

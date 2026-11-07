@@ -1,0 +1,98 @@
+[
+  {
+    "source_map": "both",
+    "reference": "rrt",
+    "tasks": 250,
+    "both_successful_tasks": 29,
+    "agent_completion_difference": -0.016,
+    "new_minus_reference_makespan_seconds": 7.703448275862067
+  },
+  {
+    "source_map": "both",
+    "reference": "k_routes",
+    "tasks": 250,
+    "both_successful_tasks": 9,
+    "agent_completion_difference": 0.050875,
+    "new_minus_reference_makespan_seconds": -50.16666666666667
+  },
+  {
+    "source_map": "both",
+    "reference": "k_routes_width",
+    "tasks": 250,
+    "both_successful_tasks": 24,
+    "agent_completion_difference": -0.0775,
+    "new_minus_reference_makespan_seconds": -42.09583333333334
+  },
+  {
+    "source_map": "both",
+    "reference": "k_routes_edge_cost",
+    "tasks": 250,
+    "both_successful_tasks": 38,
+    "agent_completion_difference": 0.0285,
+    "new_minus_reference_makespan_seconds": 1.9605263157894726
+  },
+  {
+    "source_map": "warehouse",
+    "reference": "rrt",
+    "tasks": 125,
+    "both_successful_tasks": 4,
+    "agent_completion_difference": 0.06225,
+    "new_minus_reference_makespan_seconds": 5.774999999999995
+  },
+  {
+    "source_map": "warehouse",
+    "reference": "k_routes",
+    "tasks": 125,
+    "both_successful_tasks": 0,
+    "agent_completion_difference": 0.09375,
+    "new_minus_reference_makespan_seconds": null
+  },
+  {
+    "source_map": "warehouse",
+    "reference": "k_routes_width",
+    "tasks": 125,
+    "both_successful_tasks": 4,
+    "agent_completion_difference": -0.0265,
+    "new_minus_reference_makespan_seconds": -30.925
+  },
+  {
+    "source_map": "warehouse",
+    "reference": "k_routes_edge_cost",
+    "tasks": 125,
+    "both_successful_tasks": 10,
+    "agent_completion_difference": 0.01225,
+    "new_minus_reference_makespan_seconds": 3.7700000000000005
+  },
+  {
+    "source_map": "warehouse2",
+    "reference": "rrt",
+    "tasks": 125,
+    "both_successful_tasks": 25,
+    "agent_completion_difference": -0.09425,
+    "new_minus_reference_makespan_seconds": 8.011999999999999
+  },
+  {
+    "source_map": "warehouse2",
+    "reference": "k_routes",
+    "tasks": 125,
+    "both_successful_tasks": 9,
+    "agent_completion_difference": 0.008,
+    "new_minus_reference_makespan_seconds": -50.16666666666667
+  },
+  {
+    "source_map": "warehouse2",
+    "reference": "k_routes_width",
+    "tasks": 125,
+    "both_successful_tasks": 20,
+    "agent_completion_difference": -0.1285,
+    "new_minus_reference_makespan_seconds": -44.33
+  },
+  {
+    "source_map": "warehouse2",
+    "reference": "k_routes_edge_cost",
+    "tasks": 125,
+    "both_successful_tasks": 28,
+    "agent_completion_difference": 0.04475,
+    "new_minus_reference_makespan_seconds": 1.3142857142857127
+  }
+]

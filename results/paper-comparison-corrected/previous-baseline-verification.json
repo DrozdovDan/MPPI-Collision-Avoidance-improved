@@ -1,0 +1,18 @@
+{
+  "previous_baseline_used_the_same_noisy_simulator": true,
+  "simulator_and_baseline_adapter_match_archived_pre_fix_sources": true,
+  "baseline_binaries_unchanged": true,
+  "source_file_sha256": {
+    "simulation.py": "1ead42f0776fadd568707f119a79dbf28ba65325c09bd9bf8bb7328bb5e38768",
+    "controller.py": "f9eda8891834b47f846c54873dcf391d43969b32849adc58bcd4f024fb87f8cf"
+  },
+  "old_noise_settings": {
+    "position_std": 0.1,
+    "observed_velocity_std": 0.1,
+    "execution_std": [
+      0.1,
+      0.2
+    ]
+  },
+  "previous_manifest_sha256": "dcac0f45c6d58f2fd841209ac512cbe8244ec5f31b411d8b2f4c6ecca738ed0e"
+}

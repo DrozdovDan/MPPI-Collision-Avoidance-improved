@@ -1,0 +1,2519 @@
+{
+  "passed": true,
+  "source_map": "warehouse",
+  "weighted_runs": 125,
+  "weighted_agent_runs": 4000,
+  "baseline_contract": {
+    "baseline_audit_sha256": "9b1d8c9846da5b3e6ebc6bf2abd10f0b9815098911d8474c190d8ab99d8f97e0",
+    "baseline_experiment_sha256": "50446316dde798d0684bbf42a69a23139ac12d30a5d9be32db25e9f0ce6a47f4",
+    "frozen_manifest_sha256": "56f8aaf500b2b88f53eb89c7d7827e717f8c5bd33e5dc24075ea9d7d538bffda",
+    "historical_harness_sources": [
+      {
+        "source": "benchmarks/multi_agent/warehouse_evaluation.py",
+        "executed_sha256": "cce1aef585e2aa7e21c8a346e0059cff262ef05acd24a180e96df5af312767f2",
+        "snapshot": "benchmarks/results/warehouse_uniform_corrected/source_snapshots/warehouse_evaluation.cce1aef585e2aa7e21c8a346e0059cff262ef05acd24a180e96df5af312767f2.py"
+      }
+    ],
+    "controller_library_sha256": "89c8f63eb674d780cf500434c0eaa59a1e4b7a7d6c83ed73f7fa08a859bb3c39",
+    "normal_mppi_module_sha256": "bdbfbf7e9d5f1fd0f03251140a4329a23f164a9c1a70219b40c13c8dff79b4a4"
+  },
+  "weighted_source_and_binary_hashes": {
+    "benchmarks/multi_agent/warehouse_evaluation.py": "afc8f343ab761ab4da5f8539ffaa5dc44bd8c6a0a5f6bd02702364317ed2bd3e",
+    "src/controller.cpp": "829b8ad124c1e0a0940e6b3ff20c8324879e9ebc385ff1d0f9b9775969b76351",
+    "example/utils.py": "b139c65b6f62f66ddceac2c53a3d615507785e88737ac1e17b9a51f6b4e945c6",
+    "example/dyn_models.py": "edf9f19dfe30f547c2a8eb3e0ba7848bea3ac2966b27d2c63c196deec179f48f",
+    "benchmarks/multi_agent/runner.py": "85ecd1f9b469b58ecc8d288c8a7a6831189f0ba8a44495f69e78d799b28c6570",
+    "benchmarks/multi_agent/metrics.py": "c8d0a728b19acf3144105aa3919fb546c6fbee98898356faa818ed6acdf52257",
+    "example/mppi_safety.py": "6462eaa3ed75bd10d6a0c1fe489549da8a082a4c598cd0317eaa1cbb46abfd7d",
+    "benchmarks/rrt_connect.py": "7bd1b10b11c0d30d5692a595a343d23af6fea348b86237db695b0653cb29e514",
+    "benchmarks/multi_agent/warehouse_preflight.py": "1b6790b31eb8d8f7cfca41a06b37ba6cc160b76c50210735f91788b9a5ca8e01",
+    "benchmarks/multi_agent/geometry.py": "9ac65af820245093e950a12ea7d58ab9090ef677a32ef37c47b842d2c7b9d0cf",
+    "build/release/libcontroller_library.so": "89c8f63eb674d780cf500434c0eaa59a1e4b7a7d6c83ed73f7fa08a859bb3c39",
+    "build/release/mppi_ca_cpp.so": "bdbfbf7e9d5f1fd0f03251140a4329a23f164a9c1a70219b40c13c8dff79b4a4",
+    "build/routes/corridor_plan": "80eae29e61af7ea0c2fcea5318c8fe3abf8cb1e587bbb7470520a887e826dc23",
+    "benchmarks/multi_agent/warehouse_width_benchmark.py": "fec1bd5b61abcb122af6456484af48147cdf0b19482f0a19f231a7ba3c51c3ca",
+    "benchmarks/multi_agent/bottleneck_selection.py": "2a670be63d6e66fc6657e22d00188596bc54a336ec77fc7a35a0d2fb9cadd61d"
+  },
+  "auditor_sha256": "b3f8dc6e29eff0ba19183b184770c0f5347536695e8b1e78f37b13f817103136",
+  "candidate_routes_checked": 11464,
+  "identical_anchor_runs_reproduced": 1,
+  "collisions": 0,
+  "traces": [
+    {
+      "run_id": "warehouse_s01_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1150,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "c07762d17c1e8bb596bc679460c85a22df3f4510a600737f8afda778be8e0fac",
+      "run_sha256": "fa3364652d01094e6330d00c2c4f94704bc2912902e4b24147a763bc8d363faa",
+      "width_and_lane_counts": {
+        "split_sections": 2393,
+        "shared_corridor_sections": 191,
+        "transition_sections": 422,
+        "candidate_routes": 114
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s01_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1080,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "f01672516aa686fcae65117e1fe69cec7eb887da9a595ae7936325507be04e12",
+      "run_sha256": "454054243017f10abb87fd1e31d65dc24e11e40eaf352da719748dd84b8860ce",
+      "width_and_lane_counts": {
+        "split_sections": 3052,
+        "shared_corridor_sections": 370,
+        "transition_sections": 485,
+        "candidate_routes": 125
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s01_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1360,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "e0d7772941b9d7df41a2202c7402a6b2495cbc119915be72ecada4e1a79f513b",
+      "run_sha256": "44970bb98c106671072e8d883dfb230e2e817bd425682ca3d1ab60bd809e8d5b",
+      "width_and_lane_counts": {
+        "split_sections": 3171,
+        "shared_corridor_sections": 477,
+        "transition_sections": 464,
+        "candidate_routes": 129
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 10,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s01_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1150,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "7677b9b0bde66f2ef3497c40909b247c1fbb4f3d793b0e2ac4c07349c4630381",
+      "run_sha256": "56247dd9e129bf9c5787c0700b13a1cddf019781ee30a6c08c1489d1f10350b8",
+      "width_and_lane_counts": {
+        "split_sections": 3169,
+        "shared_corridor_sections": 245,
+        "transition_sections": 512,
+        "candidate_routes": 130
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s01_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1250,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "cfed294d082216cc3bdfd320eb020ef0467ec5dc56697feb1109327d3ac080cd",
+      "run_sha256": "cbb834fda1f9488a2c18b7582a83b6960cc4596f49ad0fd231ebac52df9383a9",
+      "width_and_lane_counts": {
+        "split_sections": 2514,
+        "shared_corridor_sections": 154,
+        "transition_sections": 410,
+        "candidate_routes": 108
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s02_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 740,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "19252b56696bcf89d50e1b79d7f17d490405a82ff2705e655767a8997e2781e3",
+      "run_sha256": "8666f708d392dee2c1cbd0895921d8a1a97151a5c139ed3faebce5e479fb6f4b",
+      "width_and_lane_counts": {
+        "split_sections": 776,
+        "shared_corridor_sections": 443,
+        "transition_sections": 224,
+        "candidate_routes": 75
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 31,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s02_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 740,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "5c8606129c459f32e1817be784dd0176fd32c43718c6e65a5e53db8efb051141",
+      "run_sha256": "c8b60a4fcc49e3a643bb1eab16347a6cb16d7d3cd1d195720cae70f6a109d134",
+      "width_and_lane_counts": {
+        "split_sections": 520,
+        "shared_corridor_sections": 375,
+        "transition_sections": 169,
+        "candidate_routes": 61
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 30,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": true
+    },
+    {
+      "run_id": "warehouse_s02_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 760,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "cf3dde034f8de35ac3126553a37f153315802f407c4a72b887d0b38b26531ff2",
+      "run_sha256": "2e5c2cfd23b235f281be26f66914c465f90ac6ce33e76fc9d049604ce0574f9b",
+      "width_and_lane_counts": {
+        "split_sections": 759,
+        "shared_corridor_sections": 419,
+        "transition_sections": 198,
+        "candidate_routes": 72
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 24,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s02_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 870,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "1c6271082fd07373112b7b1becda9b97cb5b73de6b297381e6aba4b3c5e5285d",
+      "run_sha256": "112476efc5e6d91e6a48436bae8e5eee4573902b85d1fc5ffbd55dbc3f36068d",
+      "width_and_lane_counts": {
+        "split_sections": 585,
+        "shared_corridor_sections": 378,
+        "transition_sections": 167,
+        "candidate_routes": 62
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 31,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s02_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 840,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "9a73e9b04a6011825f290e48b2f193b467ff0c459aece388a98a92fa794d4a3a",
+      "run_sha256": "898601eaeabbca6d7ef484c3568258525571fad2a1ff9496b46f53d962c51975",
+      "width_and_lane_counts": {
+        "split_sections": 607,
+        "shared_corridor_sections": 351,
+        "transition_sections": 171,
+        "candidate_routes": 62
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 31,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s03_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1560,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "c5a1f2ab677ef3051694c774d159f6c2ec4e6cab8bf51e0fb4c8c8d08dc2a6a7",
+      "run_sha256": "c67ba9cd129b37b78006c621b7eda1be1f8555e8ff4a1c82eb70a3c0a41b98ec",
+      "width_and_lane_counts": {
+        "split_sections": 1083,
+        "shared_corridor_sections": 281,
+        "transition_sections": 370,
+        "candidate_routes": 87
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 1,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s03_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1020,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "09ce0896e0e4ebadff0a3df9baa367aac06c0e796d483c0e42750a32ed15b5a4",
+      "run_sha256": "176272b391b8785c29159f64f831b2c766ecd7aa1fd8a3607efa03e70c5fcbd0",
+      "width_and_lane_counts": {
+        "split_sections": 1237,
+        "shared_corridor_sections": 280,
+        "transition_sections": 354,
+        "candidate_routes": 91
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 8,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s03_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1810,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "ab9fa87eb00eec4040f756b95ab18c481946d2dc6967d109a74475b2aedd0abb",
+      "run_sha256": "e937341e863ec9927cd004cde3a3495a3b6e27e820c1e48bae419f567a32be65",
+      "width_and_lane_counts": {
+        "split_sections": 1029,
+        "shared_corridor_sections": 251,
+        "transition_sections": 362,
+        "candidate_routes": 89
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 1,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s03_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1610,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "f532a87c1fc058d6f6c5563ce816fa9f6b1de28f3cd17adc596d7a70d3d12350",
+      "run_sha256": "648d57e3dc677abc6eeaf2d2aad2a999a8c924f5c3e3983e128b9664164e130a",
+      "width_and_lane_counts": {
+        "split_sections": 1248,
+        "shared_corridor_sections": 309,
+        "transition_sections": 394,
+        "candidate_routes": 97
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 9,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s03_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1580,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "76633f957b5e79973f19dd4f4bc148017ada647e838504afc5ca0ca395b8be87",
+      "run_sha256": "88b6dbf9b794f19ff8f448fe5bd5378fe4fe90596a3e1b71e10c7748ea0dc10e",
+      "width_and_lane_counts": {
+        "split_sections": 978,
+        "shared_corridor_sections": 204,
+        "transition_sections": 368,
+        "candidate_routes": 87
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 8,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s04_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1100,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "72fd64adb3b8ade07dd071b212ac9d915ab8ecedcf42009b2b00b4b35cf9a0c1",
+      "run_sha256": "6ccf1237d09057d12914219443d5cfe305a852e92b080dd9f3d7630dd7dc420d",
+      "width_and_lane_counts": {
+        "split_sections": 2582,
+        "shared_corridor_sections": 184,
+        "transition_sections": 486,
+        "candidate_routes": 120
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s04_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1107,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "0fe807c7d7d635605a81b5cecc7d9e9e52371afa7f6d14ad71c311160474e300",
+      "run_sha256": "414b29679969971e22d9cf15f25ce024702a6c50b098c362f6492930c1cb881b",
+      "width_and_lane_counts": {
+        "split_sections": 3098,
+        "shared_corridor_sections": 126,
+        "transition_sections": 486,
+        "candidate_routes": 132
+      },
+      "deadlock_geometry": null,
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s04_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1100,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "b7a1c66a2b5171b568444fca475d4c4fa109945c5a30563f4c8452a3ce4ed458",
+      "run_sha256": "2a16af8b38ba5487dd7329fa8f3576b1258262d568cce85ab25abbbea7008813",
+      "width_and_lane_counts": {
+        "split_sections": 3166,
+        "shared_corridor_sections": 160,
+        "transition_sections": 428,
+        "candidate_routes": 118
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 2,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s04_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1130,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "7ec540040b4a56ac1f3e38cde4d9d0741a502ee74c026382059935d4f4c33020",
+      "run_sha256": "86d803ab8dfb213c9409da27fb98f361a01f1096cd0162061649d2658901b659",
+      "width_and_lane_counts": {
+        "split_sections": 2552,
+        "shared_corridor_sections": 146,
+        "transition_sections": 437,
+        "candidate_routes": 117
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s04_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1161,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "7bed64dffd6bfc55eec3ac2e210f1bd43306c56cd7d3ac2e2b9af430e23ff274",
+      "run_sha256": "08074ebd60abd11c472e73006deb5bea1f68cce9b5e61b05bf090fd65cfe5d7f",
+      "width_and_lane_counts": {
+        "split_sections": 3222,
+        "shared_corridor_sections": 170,
+        "transition_sections": 500,
+        "candidate_routes": 138
+      },
+      "deadlock_geometry": null,
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s05_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 760,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "08a944519fd7b0293c3cc3e32f70ab15994107118b25aa8ab49f4f60d96bf42b",
+      "run_sha256": "b58f4e669271c56bfe13ae64bf91db3e3f0d25f5dea18214e36638bbb5686ff3",
+      "width_and_lane_counts": {
+        "split_sections": 776,
+        "shared_corridor_sections": 356,
+        "transition_sections": 265,
+        "candidate_routes": 82
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 21,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s05_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 700,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "9ca801fd820928392effe755a3fa4f82eae96f80c7d775bec58f85900866b3a4",
+      "run_sha256": "05882fcf640f371a014221b6bbe3f798bb682911139b773b6c16b2e60c65dd42",
+      "width_and_lane_counts": {
+        "split_sections": 559,
+        "shared_corridor_sections": 280,
+        "transition_sections": 217,
+        "candidate_routes": 74
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 22,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s05_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 790,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "ad475e0360a25a490fc52ae19b9b96113dd44551ea91e80acaa8e79abc6dc373",
+      "run_sha256": "1581c511eaeb36dbb5920c3f9d970199436275a2a5efcb87a7b1c447e3152dfe",
+      "width_and_lane_counts": {
+        "split_sections": 584,
+        "shared_corridor_sections": 274,
+        "transition_sections": 202,
+        "candidate_routes": 71
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 27,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s05_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 770,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "394b898d1111c8989e7911ba3890082c5ce8eb28e7658d4bfc305784a84b8d9c",
+      "run_sha256": "f6a24ebbfd8168b2c7eb80742d766de209a97331942f089468f5db9e817dca05",
+      "width_and_lane_counts": {
+        "split_sections": 808,
+        "shared_corridor_sections": 337,
+        "transition_sections": 263,
+        "candidate_routes": 85
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 21,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s05_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 860,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "a86076abb2a08dc8e24b51e1393ccf4a5357751af8ed4fdc592cf4b309fde2dd",
+      "run_sha256": "864b845f7915dc4c1506efbb85d91c35b142f57d64a740be9558699fad302a47",
+      "width_and_lane_counts": {
+        "split_sections": 588,
+        "shared_corridor_sections": 300,
+        "transition_sections": 204,
+        "candidate_routes": 66
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 28,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s06_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1270,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "e7656ecfee714e14ab7e3d998aefba5aa1c0aa674a303671fde3658a0204a4f9",
+      "run_sha256": "174daed32eac90da236c7379d8ee475a43c1f132b2dca40a54cb35c76eddb112",
+      "width_and_lane_counts": {
+        "split_sections": 2760,
+        "shared_corridor_sections": 484,
+        "transition_sections": 482,
+        "candidate_routes": 123
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 9,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s06_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1800,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "e86db19130839ebee9669bd893c725982d1534aed3c2d7759f0a91d4e146d2c0",
+      "run_sha256": "4b1968964d1692a2cf9673fabbe4ac32f10fa2c28f444cccf66f792253f8234a",
+      "width_and_lane_counts": {
+        "split_sections": 3310,
+        "shared_corridor_sections": 511,
+        "transition_sections": 526,
+        "candidate_routes": 125
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s06_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1450,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "9c51b383991d2a014015a65b6c21290aa4e55531b91b2e86059ec0341071d0dc",
+      "run_sha256": "6348e7078e53395dd06ae48eaae9144ae70ba68ea600736da2cd6ccb2f16b1c0",
+      "width_and_lane_counts": {
+        "split_sections": 3060,
+        "shared_corridor_sections": 331,
+        "transition_sections": 513,
+        "candidate_routes": 132
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 2,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s06_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1730,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "95bdcfd1db47fa1935cda07922dd7013e87db59dbdd93765ef6d2167741a029a",
+      "run_sha256": "c95502bc513b7b04f55e3ca4ce9e2850859300781f69ec9cf53f82f3e36feb00",
+      "width_and_lane_counts": {
+        "split_sections": 2516,
+        "shared_corridor_sections": 342,
+        "transition_sections": 425,
+        "candidate_routes": 112
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s06_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1100,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "0c6cc840432668f635ccb0e996e1d123b788aee620b9e9ff2468ee91635ae071",
+      "run_sha256": "8fac23c16f48047f618cffdfa20c8d50a65ec1be01d65029b2339e874f95747d",
+      "width_and_lane_counts": {
+        "split_sections": 2511,
+        "shared_corridor_sections": 334,
+        "transition_sections": 448,
+        "candidate_routes": 116
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s07_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 930,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "0969b409bfcb7830e5384b642ad7e1878f42665e6d027a4eaaa6ea753332f6be",
+      "run_sha256": "b196acc75bf531d928e4142b16cc8bf88d5b7e2089b4e59b61dc4da92428d774",
+      "width_and_lane_counts": {
+        "split_sections": 439,
+        "shared_corridor_sections": 369,
+        "transition_sections": 163,
+        "candidate_routes": 60
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 31,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s07_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 710,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "f95be23c5da4e0e89cd6e90f0ae62c406b55b3b43596cb2b91c9849a4ce3f55b",
+      "run_sha256": "e0c6ebb23089315edd74f44d125d3a8fe25a76789ba71c17a8a76a1977b04e69",
+      "width_and_lane_counts": {
+        "split_sections": 403,
+        "shared_corridor_sections": 340,
+        "transition_sections": 146,
+        "candidate_routes": 59
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 29,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s07_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 610,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "ea63f9f6a2f603d450a034bbb2595c04bdfbde5b04bdacab48b649f20374d4d4",
+      "run_sha256": "53626c32e8a29a5b1d73c01de3ef46ec1f186cc5591a691c1a10f9052493b71b",
+      "width_and_lane_counts": {
+        "split_sections": 498,
+        "shared_corridor_sections": 400,
+        "transition_sections": 174,
+        "candidate_routes": 64
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 32,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s07_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 750,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "0cb2f920487f7a897679176f7475f767380bd4a82c36486dfe73eb1a76427c78",
+      "run_sha256": "6e04b6ea87b4e94be6282d937bc2a07db46b853f76a5fa87ccc9a6c09a14503e",
+      "width_and_lane_counts": {
+        "split_sections": 460,
+        "shared_corridor_sections": 393,
+        "transition_sections": 174,
+        "candidate_routes": 66
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 32,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s07_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 720,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "403a7cb9a108304f41aa68239c6dea4fba4e680ee71d291467944b4bfe501219",
+      "run_sha256": "3383969698831fa8b114df24d95282e6312c91e6e04b5523056be591cf32112f",
+      "width_and_lane_counts": {
+        "split_sections": 416,
+        "shared_corridor_sections": 338,
+        "transition_sections": 166,
+        "candidate_routes": 61
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 32,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s08_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 2340,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "60f0b9b408ea0eaf9fb46c12ca368a99a8c0d5dc371783bee9e0bba600f7ae0f",
+      "run_sha256": "8dc4e90415444a38932829ab7682ae0edab36f513dd67639bacca730254de7c9",
+      "width_and_lane_counts": {
+        "split_sections": 1725,
+        "shared_corridor_sections": 715,
+        "transition_sections": 338,
+        "candidate_routes": 86
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 6,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s08_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 2360,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "31150ebfe9cfd340949ec7f3ca3d683dca440eb2e8c5d32c40d838329e16a26d",
+      "run_sha256": "5e922004534cba60e483264fda7cfc423ec226ba44a002b4061e9c458ae72fdd",
+      "width_and_lane_counts": {
+        "split_sections": 2484,
+        "shared_corridor_sections": 1075,
+        "transition_sections": 442,
+        "candidate_routes": 98
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 10,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s08_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 2380,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "d729d55a838ef51295aba9d9e7dea7e99135adef51fd29586c0aebf1c22cf76a",
+      "run_sha256": "e38c2f54d7115b22b48d9fc804bbe162378c2eedd375df586d7ff7a4ff3fcead",
+      "width_and_lane_counts": {
+        "split_sections": 2362,
+        "shared_corridor_sections": 1004,
+        "transition_sections": 382,
+        "candidate_routes": 90
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 8,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s08_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 2140,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "0cae0bda1b18a687f40813a90f8003b99111e74ef1c24516a8294f15d5b8fe3a",
+      "run_sha256": "f30807a2cf2e68f64b5adf571f1d4b954c34dd3c79da5a19210226e3d98cbf74",
+      "width_and_lane_counts": {
+        "split_sections": 1979,
+        "shared_corridor_sections": 864,
+        "transition_sections": 389,
+        "candidate_routes": 98
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s08_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 2320,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "55311f5888a8eee3dc98ba77abdcdd13bca5a947ef35b1159ee2ac169675a1d7",
+      "run_sha256": "4c70c271327d538253aeb74fb507573da7acd71c2a2132dacf82da83690a2fed",
+      "width_and_lane_counts": {
+        "split_sections": 1175,
+        "shared_corridor_sections": 536,
+        "transition_sections": 291,
+        "candidate_routes": 78
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 6,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s09_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1470,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "a43a0b49e224ac447beb03b9e37d09996e53d4176fff4a5ac5a7374a0dac0bf0",
+      "run_sha256": "4663940fafd1a5ba89e890e7a1dca7189680051d11db814e6371edb1fcc8e307",
+      "width_and_lane_counts": {
+        "split_sections": 2446,
+        "shared_corridor_sections": 410,
+        "transition_sections": 440,
+        "candidate_routes": 120
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s09_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1380,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "ef2e991c6503c80cb8e14e4f9fa67efbd75b6d599cd929197ab3fa4d36caebf2",
+      "run_sha256": "93e434d00e12e936fd05d82efaa6d5b4f936ab8df85c4095eb6a6186269ec300",
+      "width_and_lane_counts": {
+        "split_sections": 3072,
+        "shared_corridor_sections": 482,
+        "transition_sections": 498,
+        "candidate_routes": 124
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s09_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1286,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "4bcfbbe88d45bee5f1eef8808271abf58a271b921ed3e154387f5c18d943ccf3",
+      "run_sha256": "eaff3593443b34feabad78eebcd20d0999da9679a54edcb789f3240cf4c7eddf",
+      "width_and_lane_counts": {
+        "split_sections": 3006,
+        "shared_corridor_sections": 308,
+        "transition_sections": 425,
+        "candidate_routes": 119
+      },
+      "deadlock_geometry": null,
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s09_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1360,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "fe1c37513797a5c54ca1243c7a87c19fda15104b337c9d735800b67c99fe9f9d",
+      "run_sha256": "ed763e9e9ea8ca50ade65d80610c6d9b01516f360d1865979adea9c6a0a33ecf",
+      "width_and_lane_counts": {
+        "split_sections": 2959,
+        "shared_corridor_sections": 417,
+        "transition_sections": 459,
+        "candidate_routes": 124
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s09_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1590,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "4b35b8a68083b66c9894be8084fb9aea1f797f931a69c41e0a2e4c1804a78d1a",
+      "run_sha256": "f7a674ce661edb5eaef9ffa289770b3f873a3712d8e151d317ce55bce9912b93",
+      "width_and_lane_counts": {
+        "split_sections": 2804,
+        "shared_corridor_sections": 554,
+        "transition_sections": 480,
+        "candidate_routes": 114
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 12,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s10_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 710,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "83f7122769f4d49f90d83b91205daed6e09c0b03f535504c57f03d314ef32c98",
+      "run_sha256": "263d6c68bb7a6005979e2de3d7680c6985a8bd1ca490a8aa3770cf3c06acd2e8",
+      "width_and_lane_counts": {
+        "split_sections": 416,
+        "shared_corridor_sections": 326,
+        "transition_sections": 153,
+        "candidate_routes": 67
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 32,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s10_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 640,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "8585fee712f6e5d80b6d6fcdc4d899618250e6208cdd50fa37e7cf565885c200",
+      "run_sha256": "56b53b6b740fa5dd4c0fd1c713291cdebcd756f02f9ca8a30a51ea5051b412ec",
+      "width_and_lane_counts": {
+        "split_sections": 443,
+        "shared_corridor_sections": 293,
+        "transition_sections": 164,
+        "candidate_routes": 63
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 30,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s10_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 820,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "575074fdfbea3ea570739cedeb72b941756fcaf2b48fe423d105e899a5ff2358",
+      "run_sha256": "d8edc074be86a0ecf483bbe2c3143cec5e54d887c26af6d0138748600e98e264",
+      "width_and_lane_counts": {
+        "split_sections": 377,
+        "shared_corridor_sections": 304,
+        "transition_sections": 154,
+        "candidate_routes": 66
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 32,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s10_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 610,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "38c7578371b67a7baeeceabd9bc39ce60012d99db97b0de47038d49bf84fe3ab",
+      "run_sha256": "c6cc9e1fd7fcf4cdab4ec6762e7edba7d340b9bf13c04f5fcf47218c729f3727",
+      "width_and_lane_counts": {
+        "split_sections": 371,
+        "shared_corridor_sections": 324,
+        "transition_sections": 145,
+        "candidate_routes": 62
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 29,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s10_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 740,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "c730e1c610894a41698ddd9ed4eaf3b6b966c3e11c36153b1ccf2d8e7de3b86c",
+      "run_sha256": "fce37d96d3d746181b4b8db49603c904e7dc84007c9557a826dcef6ec6a7d12a",
+      "width_and_lane_counts": {
+        "split_sections": 478,
+        "shared_corridor_sections": 331,
+        "transition_sections": 177,
+        "candidate_routes": 70
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 31,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s11_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1040,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "0f6c7c2f457641e73c4a80363b7d2993bc551a1c08b98d53f01007054d507963",
+      "run_sha256": "8a00f456c7d609a5bddad0b08a743629009f93428ff1d2d9e37ce9d4c839dd51",
+      "width_and_lane_counts": {
+        "split_sections": 1747,
+        "shared_corridor_sections": 135,
+        "transition_sections": 334,
+        "candidate_routes": 101
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s11_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1230,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "cf165dec83d173cff44eb5ed371d3cb75a9b603acaf4702d7f5256422479c092",
+      "run_sha256": "b0e6e039aa5d37c413e63f9940f2b183a482fe68de8169af24e4e3ed3740673d",
+      "width_and_lane_counts": {
+        "split_sections": 2274,
+        "shared_corridor_sections": 138,
+        "transition_sections": 326,
+        "candidate_routes": 100
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 2,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s11_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1040,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "e65d7355a3ce00e9e9264860eaf420be9315be3261157353b85557ac17943a56",
+      "run_sha256": "93af1e55a6e5bf5bfa80933afc4ec83537ee2ed4535f5a133d5c2283445892d9",
+      "width_and_lane_counts": {
+        "split_sections": 2589,
+        "shared_corridor_sections": 188,
+        "transition_sections": 440,
+        "candidate_routes": 114
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s11_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1270,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "3db5e28f4112a82303cdf99218861e5897295751fc5ec86afbfa27ea05c21859",
+      "run_sha256": "6a3296e84a1b106ac56133fcc9e7d6f20d479145838841937a2baea895933cbf",
+      "width_and_lane_counts": {
+        "split_sections": 3462,
+        "shared_corridor_sections": 212,
+        "transition_sections": 509,
+        "candidate_routes": 131
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 2,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s11_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1230,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "5eb211e488162e96c31c409e1cc5d3b4c3424397d84d472c785b38c4655a7ad6",
+      "run_sha256": "dbfbf89b47a5c56857af6ce4490d92f16cbd2acac5ddd5184ac0a6d21337e8ca",
+      "width_and_lane_counts": {
+        "split_sections": 2642,
+        "shared_corridor_sections": 172,
+        "transition_sections": 408,
+        "candidate_routes": 107
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 2,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s12_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1470,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "4ca30af0dd013c87a0f9e98b197b7ec890bacc7e153310ed489edc44408dea3f",
+      "run_sha256": "599a13bcbd8fa07d91d00a45e6a012f7ecd46f105fa31b62dbb603883997bfec",
+      "width_and_lane_counts": {
+        "split_sections": 2345,
+        "shared_corridor_sections": 402,
+        "transition_sections": 310,
+        "candidate_routes": 95
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 9,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s12_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1230,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "a4538c1d6346da2d29ea613f7a8b5072118098aae07917304967610f7850fb9f",
+      "run_sha256": "175622beb8ace5c918a645bd3733261c10d2eb11fdc20577799551bc34a22421",
+      "width_and_lane_counts": {
+        "split_sections": 1925,
+        "shared_corridor_sections": 360,
+        "transition_sections": 323,
+        "candidate_routes": 94
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 12,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s12_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1310,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "63c706398850aa56ef5f0dd5ba0e9abc75e6a3e322472f9e75940854c46d28ac",
+      "run_sha256": "08b8eebb8b3566fa40568a4ec42fb6996733d9eb86af4a4718d7011c6d0518a7",
+      "width_and_lane_counts": {
+        "split_sections": 2483,
+        "shared_corridor_sections": 283,
+        "transition_sections": 360,
+        "candidate_routes": 97
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 13,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s12_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1360,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "8e705900e5e3439c2aeeebc0015a3919606a782b3d8b32c3a7f920a1b0e2541c",
+      "run_sha256": "38041288816cca6cba8bb54595fe12d8a50c13315f4c842c313e3b0c9aa21b7a",
+      "width_and_lane_counts": {
+        "split_sections": 2534,
+        "shared_corridor_sections": 411,
+        "transition_sections": 380,
+        "candidate_routes": 100
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 13,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s12_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1630,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "6529e72dd527dc25b409cfefa2907987b74b66013529e6a1ce4ae983e8403cb4",
+      "run_sha256": "e4742cec68e0c4327104aaa010047f425d532e104a97f63483b4b3e5f39ac92e",
+      "width_and_lane_counts": {
+        "split_sections": 2619,
+        "shared_corridor_sections": 334,
+        "transition_sections": 348,
+        "candidate_routes": 101
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 11,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s13_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 680,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "05da0afd64d35ed5e0426592dc2dd90fa5b8bdde66f82d8368221e790aedd758",
+      "run_sha256": "25b6787ae54a8852ca9ccdd5f7cca4c0c7d52718b277476ff709e7321a6d44f9",
+      "width_and_lane_counts": {
+        "split_sections": 450,
+        "shared_corridor_sections": 55,
+        "transition_sections": 179,
+        "candidate_routes": 65
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s13_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 690,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "7a18bb2c9ba43292c29eaef0a02bafea3f916e8f9cd4b99a76e35391a5e3aabf",
+      "run_sha256": "e9b939bf9101e0802078fb518f866d3114fe9b44f735ce38df2d528b99009a9b",
+      "width_and_lane_counts": {
+        "split_sections": 387,
+        "shared_corridor_sections": 56,
+        "transition_sections": 176,
+        "candidate_routes": 64
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s13_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 740,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "672b4f5397b79e20bac7adb17c1f5a122c59e97a9a5a14c15c6d3ba067a1a88a",
+      "run_sha256": "c7cf60e35b37747032191e38ca414b0e3f07752e55b58c19366e5fca75dded0a",
+      "width_and_lane_counts": {
+        "split_sections": 528,
+        "shared_corridor_sections": 69,
+        "transition_sections": 214,
+        "candidate_routes": 70
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s13_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 890,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "b62ff83cf0eec0b66a8447bca2f5656d67d31f4a4e1488bb9d48f5f1a71ad926",
+      "run_sha256": "5bc5536018b3914140d33a628c10c5d627b199542438c2c88d30847b52d8f500",
+      "width_and_lane_counts": {
+        "split_sections": 567,
+        "shared_corridor_sections": 114,
+        "transition_sections": 202,
+        "candidate_routes": 69
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 2,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s13_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 580,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "9ce4b0383e11efb8e788d6cbe1fab07a8d7662e528b600891c37a81385cc2a4c",
+      "run_sha256": "42329dd28aa725174950de23634f85b9b0097d0395b088ac98069bb3b4a60b5f",
+      "width_and_lane_counts": {
+        "split_sections": 828,
+        "shared_corridor_sections": 111,
+        "transition_sections": 240,
+        "candidate_routes": 77
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s14_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1320,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "6dbd47c4713ea0dc333c83ec51975e84a0d8d7326c1c15de79bba099fec9d1be",
+      "run_sha256": "c357e5fd1f2437ead596c3e80e7ce2651517e469c3d89710d8a619ee2ddbb944",
+      "width_and_lane_counts": {
+        "split_sections": 3728,
+        "shared_corridor_sections": 238,
+        "transition_sections": 526,
+        "candidate_routes": 126
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s14_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1330,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "1f6ac2995a278d61bdc8b28311c9df95b747dda89fb64cdcc0354e5a15ba6344",
+      "run_sha256": "ffc708a239463c3564a9c81b85f9309eb8ff818f18f9582dc6543f537af4f98c",
+      "width_and_lane_counts": {
+        "split_sections": 2963,
+        "shared_corridor_sections": 196,
+        "transition_sections": 463,
+        "candidate_routes": 122
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s14_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1170,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "7715a690c0f66e7b003b4366d72b567bff354e901d9d7737dcd8c552267429c4",
+      "run_sha256": "40e589db8ad47db661db6679d797b34f026a167756bd785465c623e5ce8d5282",
+      "width_and_lane_counts": {
+        "split_sections": 2068,
+        "shared_corridor_sections": 120,
+        "transition_sections": 372,
+        "candidate_routes": 98
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 1,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s14_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1130,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "50273a78caa37486536fd69e2c18e42f332a9575cb0207933bb2677c208003f4",
+      "run_sha256": "99d63307964d22eaf7da9af71180f64f588f5928155587ada1cbba583198fa7a",
+      "width_and_lane_counts": {
+        "split_sections": 2092,
+        "shared_corridor_sections": 196,
+        "transition_sections": 316,
+        "candidate_routes": 90
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 8,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s14_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1110,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "4fdec4da53e1d16f9ce68e7b20a49ed2ea07e141ff89f853a8fc14c646d0a067",
+      "run_sha256": "84d5ee48813b3b3a5334a7c3dc4e724c0c93dedaf4271d2adc9259de82b0209d",
+      "width_and_lane_counts": {
+        "split_sections": 2237,
+        "shared_corridor_sections": 164,
+        "transition_sections": 383,
+        "candidate_routes": 105
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 6,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s15_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 970,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "838131eaab2520e3e73554ea9dfc289ff6cd4411f3087212fcb87a3edcaf8765",
+      "run_sha256": "529e347806a053a3658225bb121dda2b5ace89d1ad96c3fb3b8c1c7ef577e4a4",
+      "width_and_lane_counts": {
+        "split_sections": 996,
+        "shared_corridor_sections": 107,
+        "transition_sections": 239,
+        "candidate_routes": 76
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 6,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s15_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1020,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "5aac9281c124f5a052b56e9bf7a17fd022af5494c32596255fb05bf0857d2780",
+      "run_sha256": "e69b61148ea3ae7c039fff2c117387aecbdedbb8b3460152daaea511d4570a74",
+      "width_and_lane_counts": {
+        "split_sections": 933,
+        "shared_corridor_sections": 117,
+        "transition_sections": 243,
+        "candidate_routes": 72
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 8,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s15_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1010,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "d5a7db5eda7d3b6079206e38761d65605f7b83193ef1090afe9406bbceeacadb",
+      "run_sha256": "3b79bf42e5d1a7426ce1c2b7480016cd48ed2167ff94cbd7ac7fbda4a4b86565",
+      "width_and_lane_counts": {
+        "split_sections": 967,
+        "shared_corridor_sections": 129,
+        "transition_sections": 246,
+        "candidate_routes": 71
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 11,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s15_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 810,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "e6a730840c5670f008eb0d6bf637a99e654d59762d4947ff3fed18fb67abe116",
+      "run_sha256": "71610e1184f9f49ea5e87b675cbfea4273839e16e242cf78065660927173b4b0",
+      "width_and_lane_counts": {
+        "split_sections": 990,
+        "shared_corridor_sections": 111,
+        "transition_sections": 264,
+        "candidate_routes": 76
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 13,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s15_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 770,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "bb1f35d590d832357be88c89fdb7a7b8d26b2a527e9c09695d39bb01d44bc584",
+      "run_sha256": "28be3e4eb994f55bd94b6903b08be6ef779c4ded0cb837385d0cac2c83f9e628",
+      "width_and_lane_counts": {
+        "split_sections": 871,
+        "shared_corridor_sections": 113,
+        "transition_sections": 228,
+        "candidate_routes": 67
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 12,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s16_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1140,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "6952c7855088011fb2822d63ddedfc906239553c1219c5ead0b28d67912a85ac",
+      "run_sha256": "b6b4964115713ec6b511907e3356b5fe9400381c2c42d88f81a174244940dded",
+      "width_and_lane_counts": {
+        "split_sections": 2956,
+        "shared_corridor_sections": 207,
+        "transition_sections": 542,
+        "candidate_routes": 124
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s16_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1320,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "4922ebe78f094ff34d636c142a1f91fd3704bbc84966dd85678dddd5502a20bc",
+      "run_sha256": "c6e5daa6a0fa59d98746bb216dc24e6db49477f7993720ed4d74753991fa4811",
+      "width_and_lane_counts": {
+        "split_sections": 2949,
+        "shared_corridor_sections": 185,
+        "transition_sections": 484,
+        "candidate_routes": 115
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 1,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s16_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1401,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "362aae7b9633fbb2af82b7a471736a503bd75f4f396a8d527cb78f49e83aae33",
+      "run_sha256": "51831f6d2e9863ae77c4057f72592e5b1f7970e134c2d2e3c1ef7ace657d6a7f",
+      "width_and_lane_counts": {
+        "split_sections": 2438,
+        "shared_corridor_sections": 172,
+        "transition_sections": 440,
+        "candidate_routes": 104
+      },
+      "deadlock_geometry": null,
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s16_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1280,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "da27cb9bd8aec68100ec1adddb993bd215efef25035c5795d5ad623ade4f469b",
+      "run_sha256": "2d09127f648a5fab90a41bd87297245c226dce31dbc85a37954801e8db07c069",
+      "width_and_lane_counts": {
+        "split_sections": 1952,
+        "shared_corridor_sections": 161,
+        "transition_sections": 395,
+        "candidate_routes": 102
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 1,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s16_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1270,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "cf426e4a7b881c800b219df2e4abdb344615b4449f6da55f60c790cc3e612d06",
+      "run_sha256": "bc21ba03e82faa035002df6f7f707d04ee1364ec0eee7d31ca258417864af675",
+      "width_and_lane_counts": {
+        "split_sections": 2540,
+        "shared_corridor_sections": 176,
+        "transition_sections": 454,
+        "candidate_routes": 107
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s17_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 920,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "44442d32fd31433920549e0d9a4f03ebbb306b4dd9aecf4f4e4348391a7e5798",
+      "run_sha256": "101735854f2f672a56ee992f3ef913495cdf971590e50c5a7624d5f954843b39",
+      "width_and_lane_counts": {
+        "split_sections": 1230,
+        "shared_corridor_sections": 161,
+        "transition_sections": 304,
+        "candidate_routes": 84
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 9,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s17_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 890,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "d00b1f6d3847b835ae5439f70b4b145ecef5343fc2bdbd13688a16fcaf550604",
+      "run_sha256": "832c37386866675daf39caaf1efed2593ebab640ec9465267e23eecfa04f8737",
+      "width_and_lane_counts": {
+        "split_sections": 1055,
+        "shared_corridor_sections": 136,
+        "transition_sections": 254,
+        "candidate_routes": 74
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 8,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s17_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 740,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "d180d675502a159c22cee6301824a45f47e034ee3aac233de5e500f50d30bce6",
+      "run_sha256": "52fef9bc9a26c1e8a5a6d4a379a2b48640513842c389627d46ef84fe7f1cf517",
+      "width_and_lane_counts": {
+        "split_sections": 1033,
+        "shared_corridor_sections": 152,
+        "transition_sections": 279,
+        "candidate_routes": 78
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 8,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s17_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 770,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "a79a09236c121da05e1ea240beb0a1666d163e9fad27aed1e39e36a5e640b613",
+      "run_sha256": "6af3dd4f5c8b2b50f477b4ccd4cd4cbbe0e301e75ee71162ab1a743c8091dd69",
+      "width_and_lane_counts": {
+        "split_sections": 1074,
+        "shared_corridor_sections": 131,
+        "transition_sections": 257,
+        "candidate_routes": 79
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 6,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s17_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 710,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "914c73ae0657b661dfac9b907fc313957bcc67f9b38cd10a6c73057ee99b1adf",
+      "run_sha256": "5710a2c0d2abfdf148e4a516965ed6848888390295b28f78fdb082ea6f674020",
+      "width_and_lane_counts": {
+        "split_sections": 955,
+        "shared_corridor_sections": 125,
+        "transition_sections": 264,
+        "candidate_routes": 79
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 9,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s18_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 680,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "54030297533254da1b76526d2054216b1008084c1af4afb5270a62ba7a8efe1b",
+      "run_sha256": "4b53d63786c3048d0263bd8b0e790345d7835b0c744bfed02803d31916d83634",
+      "width_and_lane_counts": {
+        "split_sections": 346,
+        "shared_corridor_sections": 68,
+        "transition_sections": 166,
+        "candidate_routes": 63
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s18_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 650,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "92a5c79052f91ac9781ef1fe142923a11b60ae7cd7dea0315b1c08ff559980e5",
+      "run_sha256": "ffee900d25a3cfbee7f9100d9927bad0eb3170009170fdffa75fcd790c03548e",
+      "width_and_lane_counts": {
+        "split_sections": 341,
+        "shared_corridor_sections": 54,
+        "transition_sections": 168,
+        "candidate_routes": 66
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s18_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 660,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "e52906af309ebfe767d3b83f2acc9043657e3b0ec16b1e4c0213fb32c8d5e8d0",
+      "run_sha256": "478cc458347c0a2d321616aebac22d366b7e8d50dd34434bcd94d0e21f52b85c",
+      "width_and_lane_counts": {
+        "split_sections": 346,
+        "shared_corridor_sections": 50,
+        "transition_sections": 188,
+        "candidate_routes": 70
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s18_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 690,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "bc22b4ae9f719a7c77810d5f1e92a769aa56ff6295e60131ee5c2cda7ffe232c",
+      "run_sha256": "46dd8b7b57e708c67ffcd0c10d25d6995b111707fa682d38ad72c856dd47532b",
+      "width_and_lane_counts": {
+        "split_sections": 417,
+        "shared_corridor_sections": 62,
+        "transition_sections": 171,
+        "candidate_routes": 62
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s18_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 680,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "5e0ce22d7dfb477605f449aac0e85132edff32d4c11ed65abe6e10ecc63ba59f",
+      "run_sha256": "7bec884f5cd8c21b1cbea9164d144c752599eb2680f2c802df81a7028a607bba",
+      "width_and_lane_counts": {
+        "split_sections": 337,
+        "shared_corridor_sections": 57,
+        "transition_sections": 161,
+        "candidate_routes": 60
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s19_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1110,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "a7dc88a4c2517fbbe881a5f46e0983798eb9430023bb7b9f73d2e0c6c6cad567",
+      "run_sha256": "8abd1b6d9fcc0d80803821f26c81ae048de9be7934549ebea9241cbd3f4d248d",
+      "width_and_lane_counts": {
+        "split_sections": 2508,
+        "shared_corridor_sections": 166,
+        "transition_sections": 424,
+        "candidate_routes": 114
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s19_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1270,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "73c51f7143168ae7410bc589093ae8140e5400875b1c68d8f6142fe30e9ecd6b",
+      "run_sha256": "875a762737bd945ea244365389636c5a6f779921eb1f51a5f95a98710d478a6b",
+      "width_and_lane_counts": {
+        "split_sections": 3585,
+        "shared_corridor_sections": 240,
+        "transition_sections": 551,
+        "candidate_routes": 126
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s19_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1100,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "dec2205556f44403404e6709843acad2f6b1f0974f7dda7ba7f68cc7033b9bf8",
+      "run_sha256": "dd12663c7c4be7e54eeae40fbab8a17dff5c81145365457bca76b275c1e3ae2a",
+      "width_and_lane_counts": {
+        "split_sections": 1786,
+        "shared_corridor_sections": 120,
+        "transition_sections": 319,
+        "candidate_routes": 88
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 1,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s19_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1110,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "40400a911a2f5ae239a47290fc2db9658084d2d62da5acef87dec00d7ff151c7",
+      "run_sha256": "c13c2f37d2c61f12937360fda1c60d37a42e3e25a3116cdd4787334086b6d2a5",
+      "width_and_lane_counts": {
+        "split_sections": 3582,
+        "shared_corridor_sections": 214,
+        "transition_sections": 540,
+        "candidate_routes": 122
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 9,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s19_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1320,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "48e3bae6db32752310b6efc0bd7b813c173a3076716806e205c5978ad266bcf4",
+      "run_sha256": "8c62b777eb5012788acf3b7cba7b97353567ebd059db856b3beceb0cffd7f90f",
+      "width_and_lane_counts": {
+        "split_sections": 2345,
+        "shared_corridor_sections": 184,
+        "transition_sections": 509,
+        "candidate_routes": 108
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s20_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 840,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "3ef447589f4b3790574c9e2f6336ff88fae911eebfdcc778e34bfeb9a39de81c",
+      "run_sha256": "548e8ebb9818a44bbacb305d29fe4a5e9ce68ebe47a027ccb6faee43e8c601cb",
+      "width_and_lane_counts": {
+        "split_sections": 1176,
+        "shared_corridor_sections": 141,
+        "transition_sections": 279,
+        "candidate_routes": 82
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s20_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 720,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "55743a3786c97dc5c8b4e330d2048fee874ca7ff419ee03f342199eeeb29c847",
+      "run_sha256": "3a45b23339794e717dc3b127c37a0134dc98c11ae37a3a9f01e4c82353fbf0b3",
+      "width_and_lane_counts": {
+        "split_sections": 921,
+        "shared_corridor_sections": 130,
+        "transition_sections": 251,
+        "candidate_routes": 73
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s20_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 700,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "b39b782619665b902075fd039b4820b6170696691a10fc35202a37251d1783db",
+      "run_sha256": "326cab871536c583e49e54a0e1514eb9dc3b55446dff99ccab4403b638924c88",
+      "width_and_lane_counts": {
+        "split_sections": 1062,
+        "shared_corridor_sections": 133,
+        "transition_sections": 283,
+        "candidate_routes": 78
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s20_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 770,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "5a6c162998f2c808799b9ccce200b19eaf35bb7b6558d9e5a519587f63eb6e9a",
+      "run_sha256": "c1dc1aebd1ded7290a5118dbb732f3a2553b5b62c2f5696ce54ce8447714c313",
+      "width_and_lane_counts": {
+        "split_sections": 1212,
+        "shared_corridor_sections": 155,
+        "transition_sections": 281,
+        "candidate_routes": 84
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 15,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s20_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 790,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "8464ecb4d4ee4cfd21719a4ff2975076d13d656e1fd3136558244fc4bddb7f0f",
+      "run_sha256": "bd3a86fd04031db138ad9349ad77b9b5e7f26e86f7d09792d6d74556f49fefb4",
+      "width_and_lane_counts": {
+        "split_sections": 984,
+        "shared_corridor_sections": 110,
+        "transition_sections": 261,
+        "candidate_routes": 76
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s21_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 990,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "c44a1f7f6b3e67289741b30852b27c34b558ec2262162f0610c0df65cc94c445",
+      "run_sha256": "1c43cfd7bd755bb83df350fd3aadb5e582a09f0856dfcf5047bbd1707739b433",
+      "width_and_lane_counts": {
+        "split_sections": 2077,
+        "shared_corridor_sections": 199,
+        "transition_sections": 435,
+        "candidate_routes": 110
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s21_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1030,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "986af9fea3bffc5775a1917db9415d11f5e5a859308fc4675553d0b3e55192a0",
+      "run_sha256": "f14a452079d8d66480412335b00618d85a52c884854f28bafe0c59e7626f690b",
+      "width_and_lane_counts": {
+        "split_sections": 2498,
+        "shared_corridor_sections": 242,
+        "transition_sections": 510,
+        "candidate_routes": 113
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s21_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1376,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "a242b97abae11baceee6312f96c27fc10e2f4ac0be9a0c4985701ac02ab845c1",
+      "run_sha256": "f95ea70e357f22b5fef034c5a2fbaaa9ce63b0a60934529f51a763e2e51b6e1d",
+      "width_and_lane_counts": {
+        "split_sections": 2703,
+        "shared_corridor_sections": 212,
+        "transition_sections": 502,
+        "candidate_routes": 117
+      },
+      "deadlock_geometry": null,
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s21_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1350,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "0b55af22e0a28c1f8fa8087f12d39b744627b3750f2b33b54ac365c61a2c5e58",
+      "run_sha256": "23d13c3e1b402c5987027a4c4a3dc4371c2b0c01df2258df0ec7688c5863deb3",
+      "width_and_lane_counts": {
+        "split_sections": 2650,
+        "shared_corridor_sections": 253,
+        "transition_sections": 501,
+        "candidate_routes": 115
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s21_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1060,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "706eea9fb1418fbd2fc5e7fb152173055f80c51836620873d1d02d07989bd354",
+      "run_sha256": "e5f511e8cf885b4e81a6545abccff0bf227faa41f4ad76b72598213a47fc800d",
+      "width_and_lane_counts": {
+        "split_sections": 2058,
+        "shared_corridor_sections": 204,
+        "transition_sections": 424,
+        "candidate_routes": 103
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s22_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 740,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "16ca4b13e78da346fc3d78fccce9f3c52d16fe89c9c9a42689bf1a68a44f80ad",
+      "run_sha256": "a8bca5dad9f9ac3f0034563d15b043cd8411f65918b4a8ad2c9a8c0b3b75dc76",
+      "width_and_lane_counts": {
+        "split_sections": 945,
+        "shared_corridor_sections": 101,
+        "transition_sections": 253,
+        "candidate_routes": 74
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s22_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 740,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "385c2fff0d858163cbfe3aee3c6abad80a3ee8c7105098210670b287f9237edb",
+      "run_sha256": "60fc796a7643990ab273dfbfb99f5b97f162287b10af11ad0a832bb02df3728a",
+      "width_and_lane_counts": {
+        "split_sections": 825,
+        "shared_corridor_sections": 106,
+        "transition_sections": 246,
+        "candidate_routes": 74
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 9,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s22_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 870,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "b340bf008c09636f97556c29e90c3f623d322c517774fcbf74cee70469ad3846",
+      "run_sha256": "cb40a81651a4650b2cf27a927d70a5ce0910d5a47c927dd98021e84a7a4bd6c1",
+      "width_and_lane_counts": {
+        "split_sections": 976,
+        "shared_corridor_sections": 113,
+        "transition_sections": 279,
+        "candidate_routes": 77
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 10,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s22_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 980,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "aae5c6a54f7537fb34ed39dde64f72fd090c39fd8e6a0e865b8df128f9759ac4",
+      "run_sha256": "c94020ce952dcd550942b26eed3fc02d13e925875e65178865a5fd13a0e52c2e",
+      "width_and_lane_counts": {
+        "split_sections": 1364,
+        "shared_corridor_sections": 128,
+        "transition_sections": 325,
+        "candidate_routes": 89
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 6,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s22_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 740,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "a0daab0fb84014ec9b9417d95c7b42a3313c3b6b16b55d14b46a4d8bb2214f77",
+      "run_sha256": "94cda31d331f7d70f074a6f19664434c9fc06ad91401da70bfb239dbf077f90b",
+      "width_and_lane_counts": {
+        "split_sections": 981,
+        "shared_corridor_sections": 113,
+        "transition_sections": 247,
+        "candidate_routes": 72
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 11,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s23_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 640,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "4811eca3fa35475596819606e40eab52e45e1686771a91c2540b7a11975d2017",
+      "run_sha256": "ed15691d3cf7877c1a0f01135bd945e80d2bebf3e78ab629cec2367bb4869c4f",
+      "width_and_lane_counts": {
+        "split_sections": 559,
+        "shared_corridor_sections": 77,
+        "transition_sections": 212,
+        "candidate_routes": 71
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 10,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s23_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 700,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "7212ecbea22cf4dae3f27266d5855fda5d161032f6a98a1aa38844c33d077d02",
+      "run_sha256": "b9a9bf06eb9f17cd0bb212a6303f1ad258b035a4ccc2c8b800126f225fbc0ca9",
+      "width_and_lane_counts": {
+        "split_sections": 619,
+        "shared_corridor_sections": 86,
+        "transition_sections": 215,
+        "candidate_routes": 73
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 9,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s23_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 560,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "787fe1f91e5fbffa35da3f5b242b5ad0dc4ffda883998775a8c2fe2e9af78a44",
+      "run_sha256": "9d2c4cdecb0c5ff7cd0f34049d62744fecc9d60c3cc15a0fb017e29d50c2c6da",
+      "width_and_lane_counts": {
+        "split_sections": 583,
+        "shared_corridor_sections": 75,
+        "transition_sections": 219,
+        "candidate_routes": 71
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 6,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s23_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 620,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "b47961df651ad600f6506d8fd40c293bae0bfc58da3b907c76c7f771cd4d616d",
+      "run_sha256": "95a069e7198430a9f3a789020c6994cfa203666af512add600413fa47ce944ce",
+      "width_and_lane_counts": {
+        "split_sections": 471,
+        "shared_corridor_sections": 68,
+        "transition_sections": 193,
+        "candidate_routes": 64
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 18,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s23_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 690,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "49889ba711527daf08f4fce54fd8f5763744a968fca2d8232e8741ce68943d06",
+      "run_sha256": "9fa0039eef5f8e63a73591330848fc916156848eee03797d7d566f2d40956acd",
+      "width_and_lane_counts": {
+        "split_sections": 718,
+        "shared_corridor_sections": 88,
+        "transition_sections": 210,
+        "candidate_routes": 72
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s24_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1400,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "ee4d43f051aa29e0889af70c95cd415857f86f413067b90a465140c93ec7bb3b",
+      "run_sha256": "43d6e62986d3d5857b3e844675d1bb3f4fceec0088e561a6623675ff18bff0e6",
+      "width_and_lane_counts": {
+        "split_sections": 2860,
+        "shared_corridor_sections": 254,
+        "transition_sections": 571,
+        "candidate_routes": 125
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s24_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 870,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "00823f19b4f8f62f13d5e5c7c86b8e71bbf9bbfbfac039cd60d1027cd688c288",
+      "run_sha256": "41f95b39681aa8ce411b7ab0d99292045423f8323fec73dfcdc3b0c1ee35fd0a",
+      "width_and_lane_counts": {
+        "split_sections": 3159,
+        "shared_corridor_sections": 246,
+        "transition_sections": 546,
+        "candidate_routes": 120
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s24_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1090,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "cd576e61f90bb79a08223cd19dcfb550a5be3be1ecc7addf342465d44ce18701",
+      "run_sha256": "b6eace9de9384424998c654b157f3f273baf98c2b63122675bfcbb09b1d69c85",
+      "width_and_lane_counts": {
+        "split_sections": 1786,
+        "shared_corridor_sections": 184,
+        "transition_sections": 376,
+        "candidate_routes": 99
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s24_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1210,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "2ddac4d16939534f4965492a52aa2b48df671cc54cce08079e505d206c0d5643",
+      "run_sha256": "401eed5933cc065c96b34c43d6809a303c9224bca745b6de88908151fdffb50d",
+      "width_and_lane_counts": {
+        "split_sections": 2833,
+        "shared_corridor_sections": 192,
+        "transition_sections": 529,
+        "candidate_routes": 120
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 4,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s24_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 1313,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "387c113881e6120717397b1ecb1a1a8bd83ab14454220c384838eed5597f06a1",
+      "run_sha256": "a0df9aa997ba77451a6ef44be571c386d423e94fe134b31b9b95290f2e9038f6",
+      "width_and_lane_counts": {
+        "split_sections": 2766,
+        "shared_corridor_sections": 226,
+        "transition_sections": 464,
+        "candidate_routes": 123
+      },
+      "deadlock_geometry": null,
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s25_v01__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 830,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "47d80fb9dc05937f2cee9f321e0ff5cc8d60c415f2f4bd0765e478184b577c28",
+      "run_sha256": "9d348d230e2d5b8d5e0939eb70f4852cb5aa94252282b42547018fd0f2d80c10",
+      "width_and_lane_counts": {
+        "split_sections": 1054,
+        "shared_corridor_sections": 128,
+        "transition_sections": 262,
+        "candidate_routes": 76
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 5,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s25_v02__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 750,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "4904df7a1a012cf45a5866d8a067619283fb266939fe87eec2ce211401087d9c",
+      "run_sha256": "aefcc6924b882e6293b472df78fe6286b382c00483696b221d3ac9dfac3b43ff",
+      "width_and_lane_counts": {
+        "split_sections": 957,
+        "shared_corridor_sections": 117,
+        "transition_sections": 271,
+        "candidate_routes": 78
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 8,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s25_v03__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 870,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "8384420d42bddeeba3e5d2caf6bbbbbefee2bd9cabcd67c87a31f1f2bb12092e",
+      "run_sha256": "46be621305db20f443336826cc1a17b617b3e804ebb1afd01f97940946799864",
+      "width_and_lane_counts": {
+        "split_sections": 1078,
+        "shared_corridor_sections": 149,
+        "transition_sections": 298,
+        "candidate_routes": 79
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 7,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s25_v04__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 840,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "fa05d10550624fc48da50d108af325e33cc9f2db2e29cf519b44767efb28884e",
+      "run_sha256": "374a00a7b5924a4b2ff993e2eef82d6afcaf189809eaf207fb88c51cfea258fa",
+      "width_and_lane_counts": {
+        "split_sections": 1000,
+        "shared_corridor_sections": 130,
+        "transition_sections": 275,
+        "candidate_routes": 77
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 3,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    },
+    {
+      "run_id": "warehouse_s25_v05__k_routes_width__p42__c42",
+      "passed": true,
+      "checked_steps": 720,
+      "checked_agent_runs": 32,
+      "trajectory_sha256": "334d936ecf34a03d82d35d70121a3c9ab4194f7cc5a87382ea9fe08a77f973e5",
+      "run_sha256": "e6385d1645a70fb88576b7852104f14fc7dd238e29cf1816318ed012617e52a9",
+      "width_and_lane_counts": {
+        "split_sections": 981,
+        "shared_corridor_sections": 132,
+        "transition_sections": 260,
+        "candidate_routes": 77
+      },
+      "deadlock_geometry": {
+        "passed": true,
+        "checked_blocked_robots": 14,
+        "visible_projection_corroborations": []
+      },
+      "identical_to_uniform_anchors": false
+    }
+  ]
+}

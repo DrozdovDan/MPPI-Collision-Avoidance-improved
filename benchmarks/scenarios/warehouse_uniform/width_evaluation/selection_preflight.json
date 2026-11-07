@@ -1,0 +1,1054 @@
+{
+  "passed": true,
+  "tasks": 250,
+  "baseline_contract": {
+    "baseline_audit_sha256": "9b1d8c9846da5b3e6ebc6bf2abd10f0b9815098911d8474c190d8ab99d8f97e0",
+    "baseline_experiment_sha256": "50446316dde798d0684bbf42a69a23139ac12d30a5d9be32db25e9f0ce6a47f4",
+    "frozen_manifest_sha256": "56f8aaf500b2b88f53eb89c7d7827e717f8c5bd33e5dc24075ea9d7d538bffda",
+    "historical_harness_sources": [
+      {
+        "source": "benchmarks/multi_agent/warehouse_evaluation.py",
+        "executed_sha256": "cce1aef585e2aa7e21c8a346e0059cff262ef05acd24a180e96df5af312767f2",
+        "snapshot": "benchmarks/results/warehouse_uniform_corrected/source_snapshots/warehouse_evaluation.cce1aef585e2aa7e21c8a346e0059cff262ef05acd24a180e96df5af312767f2.py"
+      }
+    ],
+    "controller_library_sha256": "89c8f63eb674d780cf500434c0eaa59a1e4b7a7d6c83ed73f7fa08a859bb3c39",
+    "normal_mppi_module_sha256": "bdbfbf7e9d5f1fd0f03251140a4329a23f164a9c1a70219b40c13c8dff79b4a4"
+  },
+  "maps": [
+    {
+      "source_map": "warehouse",
+      "passed": true,
+      "tasks": 125,
+      "selection_inputs": [
+        {
+          "task_id": "warehouse_s01_v01",
+          "sha256": "bec4cded5f6eaa50fac53b5143526a829eb3d996b9fabbdc13238151069072d0"
+        },
+        {
+          "task_id": "warehouse_s01_v02",
+          "sha256": "4da1fc4a49d48f1fcc22e9c0f2509ecc0fe8eea2871161a07a3904c849eabf32"
+        },
+        {
+          "task_id": "warehouse_s01_v03",
+          "sha256": "c0828bd4ada2ff6a40524dca338153af26b380bcef984908c831cf8182460d63"
+        },
+        {
+          "task_id": "warehouse_s01_v04",
+          "sha256": "ce764ca28ed6dad1c49dadd1279e309b007910228586406d495e79a7fec4dd27"
+        },
+        {
+          "task_id": "warehouse_s01_v05",
+          "sha256": "1410ed4cb4ca2c4d8940bbbf1b2f17782d5c914c370083223f7ef5ce9e060e86"
+        },
+        {
+          "task_id": "warehouse_s02_v01",
+          "sha256": "6af02ceecccbf0b4d71fd3753ed5d5cf0e0c4008b08701277072d0cbd819e176"
+        },
+        {
+          "task_id": "warehouse_s02_v02",
+          "sha256": "d92dcba15a5286d90cf68843e1711291a4a2a4dedbff4fff4f81591ffd044c84"
+        },
+        {
+          "task_id": "warehouse_s02_v03",
+          "sha256": "614f05379389a0f46a74351314c38ad1b2c81be48d3562be315da5de75bf3309"
+        },
+        {
+          "task_id": "warehouse_s02_v04",
+          "sha256": "c94c2b57bd7cc986aa59a711294a1892892079b7352258597571f259167fae5c"
+        },
+        {
+          "task_id": "warehouse_s02_v05",
+          "sha256": "b7a0107da9d67c99ceaf4a67eb9dd14a067273989ee836b4aef69d74f2ebb000"
+        },
+        {
+          "task_id": "warehouse_s03_v01",
+          "sha256": "d5fe5d1b5bf69678c19f5290b8d3ae014e0299328d9b14b895fc24f41cae7636"
+        },
+        {
+          "task_id": "warehouse_s03_v02",
+          "sha256": "4b1c46b05c9daa0ca5496baf69bb616d0ce71584117ff53ba01aa8db2700dd22"
+        },
+        {
+          "task_id": "warehouse_s03_v03",
+          "sha256": "c9e2601dd7a49a9adc4062e007c9d15190658db89f6acae8b420e6ff46faf29c"
+        },
+        {
+          "task_id": "warehouse_s03_v04",
+          "sha256": "48d65f78612d95b52441bf8dd1f586c75556f6bcf42a60b159513be66c5d48a0"
+        },
+        {
+          "task_id": "warehouse_s03_v05",
+          "sha256": "d8a7f85b4191f1b7a52b8d2ab5348ea68580245d58aec0e07317d23a38bcb457"
+        },
+        {
+          "task_id": "warehouse_s04_v01",
+          "sha256": "c7552a4b646b2e7da95863d2e743c67c6c8d07e109fec93a6ac3ca299fae0403"
+        },
+        {
+          "task_id": "warehouse_s04_v02",
+          "sha256": "3257d2c165ed87b104b7cb81543cb10e82724c4231c7101ed0c72080bbdb7689"
+        },
+        {
+          "task_id": "warehouse_s04_v03",
+          "sha256": "1bfcaf6da8caa24df37a91e2a79f83fa865b6d841dd141e7be5b498b742f297b"
+        },
+        {
+          "task_id": "warehouse_s04_v04",
+          "sha256": "744d0029e23e30f9fda385577243577d6fceeb575b603f6f71c777d5d144d5c8"
+        },
+        {
+          "task_id": "warehouse_s04_v05",
+          "sha256": "2aa2d53b26621870c83ca6c5c8a466552c22861b9eb59dc6dfc0f2815aaa6a38"
+        },
+        {
+          "task_id": "warehouse_s05_v01",
+          "sha256": "f3db254e35d9829aa5cd7c6c0ac8474115f945c7445dd328356d59a6a4c14d4d"
+        },
+        {
+          "task_id": "warehouse_s05_v02",
+          "sha256": "67b5ad348bf4a72fedcbaa2273e8bb2116536c45187f21f338b20dedf7073c62"
+        },
+        {
+          "task_id": "warehouse_s05_v03",
+          "sha256": "2e66fb685092e2a81601da4b1b52f502095165036406bd2254ed7ee03fa08d25"
+        },
+        {
+          "task_id": "warehouse_s05_v04",
+          "sha256": "89fc9088b8b5144b4a066adb183ccc071d061cfb63fb75feeb2043ad6b71f177"
+        },
+        {
+          "task_id": "warehouse_s05_v05",
+          "sha256": "1e826e82a5bd34a6651ddf438d8de48fa655b5051b9886998b235da3f4fa1ee9"
+        },
+        {
+          "task_id": "warehouse_s06_v01",
+          "sha256": "f775c3838948111b8317ae8bd3e1643e56f7365de4c25a7a00566a0d21b01b7a"
+        },
+        {
+          "task_id": "warehouse_s06_v02",
+          "sha256": "626e5c015e2a023803ec4d88eb13a6380b489c29185db845b0ae54193927221e"
+        },
+        {
+          "task_id": "warehouse_s06_v03",
+          "sha256": "288fba7faf7540f4717bd033c4bc534f98cf226c96de1318790fb2b2a7650a56"
+        },
+        {
+          "task_id": "warehouse_s06_v04",
+          "sha256": "e8ef5580cde5fec19c8589a1aac7d3a431e798071fd4ee575ba6a5082aef58c9"
+        },
+        {
+          "task_id": "warehouse_s06_v05",
+          "sha256": "ddda61c08d360b7aa2b38da0ee64e4dcf298c7f5ffc75dd8adc0281440837d3f"
+        },
+        {
+          "task_id": "warehouse_s07_v01",
+          "sha256": "270cc89914b1096c7301b9fe4c002bd289ca743265324a1e325695f43b9fc141"
+        },
+        {
+          "task_id": "warehouse_s07_v02",
+          "sha256": "d589d761d9671092787f23d19b9a284fef9c78a3db58d03485e2e0d7c7f87d7b"
+        },
+        {
+          "task_id": "warehouse_s07_v03",
+          "sha256": "b4c391608af61d44f7a4d0655e09b5303281c76621cee946e5a1ec5ba99fec1c"
+        },
+        {
+          "task_id": "warehouse_s07_v04",
+          "sha256": "389f7378bb590aa2ff21f0bfda1681a32bb85b167a847981518c8c8c06f4c3c3"
+        },
+        {
+          "task_id": "warehouse_s07_v05",
+          "sha256": "4a81f58a55fdb1467fc4613af47988217777d58f934a30989c027e1905a28cf1"
+        },
+        {
+          "task_id": "warehouse_s08_v01",
+          "sha256": "60dec45279b189c330dba6b692ce3c9b810058d7f45fc2e82f9300d70ffb0158"
+        },
+        {
+          "task_id": "warehouse_s08_v02",
+          "sha256": "b149dbb48a17aba15c27c3eaac9432ec2c90b76da843c650f27eea3998546257"
+        },
+        {
+          "task_id": "warehouse_s08_v03",
+          "sha256": "bdce239418e31480579530f99ed1c1478af1708b4a08a96fd15da108f2a65767"
+        },
+        {
+          "task_id": "warehouse_s08_v04",
+          "sha256": "1c40840c7e9e9d146d66419dc68ca4fbb02ede2110ae36aa6dd3bf95dea75c16"
+        },
+        {
+          "task_id": "warehouse_s08_v05",
+          "sha256": "a7343054eba326fae56f71a3671ddd4f3db6ba8786b5e531352aff90cd469fa7"
+        },
+        {
+          "task_id": "warehouse_s09_v01",
+          "sha256": "a5718d5157b59db6ecf19d54d69a5becd1e9a0e9d72d2d4b01d7a8fd700b4901"
+        },
+        {
+          "task_id": "warehouse_s09_v02",
+          "sha256": "464de7ae77b7b13eeeb6e45ad5082335a62fb1983b0493460cafe9bf3bd32a58"
+        },
+        {
+          "task_id": "warehouse_s09_v03",
+          "sha256": "f588a1c70675ac0676846d4671e1cf457b514de51c99b178f654ae84ef326f0e"
+        },
+        {
+          "task_id": "warehouse_s09_v04",
+          "sha256": "a2ca5ddb1aa5a17fdcf8016095efb417cecebb1b10f1d07a1ad0b51b0358dfcc"
+        },
+        {
+          "task_id": "warehouse_s09_v05",
+          "sha256": "2aa2a3dd6cb6c6d17a8a480b6cf7da11be51163ec1404796aa19a3e6cb7aaa61"
+        },
+        {
+          "task_id": "warehouse_s10_v01",
+          "sha256": "d69f12e898d2057895a19d687ac90558941d7141c1579ac589320c8eb50bdecc"
+        },
+        {
+          "task_id": "warehouse_s10_v02",
+          "sha256": "b01bc14c3fe0cc9d2c030d411e3d776f3855711d72d3dd49d33bcb44aebca51d"
+        },
+        {
+          "task_id": "warehouse_s10_v03",
+          "sha256": "fc1fb8159175a388dec5b5514b739e51080900705ead0c9a3b237fa1ae3ae9a4"
+        },
+        {
+          "task_id": "warehouse_s10_v04",
+          "sha256": "11e0d01734631472903b3d098632af4f5c3ed4539a6dfe293c72531c2ef7cd3b"
+        },
+        {
+          "task_id": "warehouse_s10_v05",
+          "sha256": "2a0293a9ae8a109b469dab1bd52998e4496de20948905d13ab98c33ae67bbf14"
+        },
+        {
+          "task_id": "warehouse_s11_v01",
+          "sha256": "e4fb3466a129ce08857978a97fe3d27ca87905f1a4dff4b72bf2aba08873dbbe"
+        },
+        {
+          "task_id": "warehouse_s11_v02",
+          "sha256": "afc39639c096f3dc70a0eccaf13072f17f687a9437af20a005d98471f99ec6be"
+        },
+        {
+          "task_id": "warehouse_s11_v03",
+          "sha256": "85b14310e2cf271d4147bcd360c141ece983f25084f838d222088bc3fb21e9b2"
+        },
+        {
+          "task_id": "warehouse_s11_v04",
+          "sha256": "5c82879f90ba250cdd4c0d149d98f7b0f8d912340f350c8a98bc239c6110279f"
+        },
+        {
+          "task_id": "warehouse_s11_v05",
+          "sha256": "4175995d6bcabccea26a6b6ff674a83a0e5dc419ff236d43690052e1a91d798d"
+        },
+        {
+          "task_id": "warehouse_s12_v01",
+          "sha256": "ae263bd203d8fcb938e84de98a9fd56ef5eff575377f9940ade0c96ad9e13267"
+        },
+        {
+          "task_id": "warehouse_s12_v02",
+          "sha256": "308aba9eb14f1c275d272c60d60e3d0461c7b9af92886864fd42079d76feb92d"
+        },
+        {
+          "task_id": "warehouse_s12_v03",
+          "sha256": "0ac68d864c50486a19740685b9062dcd9bf807c1027331ad83a1a26f41ca3051"
+        },
+        {
+          "task_id": "warehouse_s12_v04",
+          "sha256": "1549a7885ab42b352740a62c878edad597869816a346c5921a72ae3688c7d6d9"
+        },
+        {
+          "task_id": "warehouse_s12_v05",
+          "sha256": "9357cc9265a96d10e2eec309c1887cef8df06a7929806c95e96bd624304f0f4a"
+        },
+        {
+          "task_id": "warehouse_s13_v01",
+          "sha256": "56de0fcec3ca4faeaefb2063381da294adb87e96d1e9802d073ec64bfe017fd5"
+        },
+        {
+          "task_id": "warehouse_s13_v02",
+          "sha256": "b8bf2e45d08492762dbe121667947e345eb80ada35048817a1b3bacb5d3d8d27"
+        },
+        {
+          "task_id": "warehouse_s13_v03",
+          "sha256": "c74b93a89a03fe6040af069faa06836355acbb290461d4bb3df6686b644fb0c5"
+        },
+        {
+          "task_id": "warehouse_s13_v04",
+          "sha256": "373bdb2f1058a663da8670eb3b38bf872c69bd5ea0e325da85fdcd4a1ad49025"
+        },
+        {
+          "task_id": "warehouse_s13_v05",
+          "sha256": "282c7a34465c476330b94798a7870c66852e662d0fc6ebd3e0802c7717565d6d"
+        },
+        {
+          "task_id": "warehouse_s14_v01",
+          "sha256": "2dee2fa0e3097233db3698341a0f2cbf777a80d2fde89beef1d053910a4a922a"
+        },
+        {
+          "task_id": "warehouse_s14_v02",
+          "sha256": "e2c6332a69015e9f5e33904ce0c6ca2df5817dfa214219a20e8cd2cf39c163d2"
+        },
+        {
+          "task_id": "warehouse_s14_v03",
+          "sha256": "92588c9614092acab285a9047cf4f37c2886416452c27463af4b94798e993116"
+        },
+        {
+          "task_id": "warehouse_s14_v04",
+          "sha256": "0f60827b67c7ac42660f1d965bea0590454ad3b90d3b11954f0058570e63fee1"
+        },
+        {
+          "task_id": "warehouse_s14_v05",
+          "sha256": "d6aea5ca673a14019f5ff5aa548c0d77e58a9b2b7afec2563c2280e0ff960ae2"
+        },
+        {
+          "task_id": "warehouse_s15_v01",
+          "sha256": "2d1d9e1c29f3a7b5735c85b43006b76c7f0052bdeb27b3a2a2c9b068d91d7f28"
+        },
+        {
+          "task_id": "warehouse_s15_v02",
+          "sha256": "5c922638facbd2000f4b8796319d018c922a19df27874a41460e9c2189a9482f"
+        },
+        {
+          "task_id": "warehouse_s15_v03",
+          "sha256": "9a25cf67f8897d3389806861ed13ee89062c9527bea22293ad2c917d1eb70f88"
+        },
+        {
+          "task_id": "warehouse_s15_v04",
+          "sha256": "3d322dee62c72f208442b209f38d3462b972a6f94a36050bdb16e44c2ab6c076"
+        },
+        {
+          "task_id": "warehouse_s15_v05",
+          "sha256": "45118cb45785912445dbc20afb59c081279f5551571da6f0f92e7b938171598b"
+        },
+        {
+          "task_id": "warehouse_s16_v01",
+          "sha256": "7b891b9e510f3d11f9e1b8d34aa3812785c53e02f798c58bf28b67fcec406721"
+        },
+        {
+          "task_id": "warehouse_s16_v02",
+          "sha256": "bf00a656a0b54e5264ae18daedb7a663a959286da6770c07dbafe4828c282fc2"
+        },
+        {
+          "task_id": "warehouse_s16_v03",
+          "sha256": "eabf84a9bc3db3d2d3cdd5020f033c8fff0f313126ab125d80150dfd45db0ce8"
+        },
+        {
+          "task_id": "warehouse_s16_v04",
+          "sha256": "f2846e41cb1001548465a22744e3de7923dcf5fb0097abadb893696443b62cb2"
+        },
+        {
+          "task_id": "warehouse_s16_v05",
+          "sha256": "e88c43407ec076c0df18ebe0d3ef46809604f9d1d73d2b8c815fa0b25c0b3ca1"
+        },
+        {
+          "task_id": "warehouse_s17_v01",
+          "sha256": "867018abf1eb86bd4592dfd5a99289e573500ba555a3e3fa6b51bd06750028bf"
+        },
+        {
+          "task_id": "warehouse_s17_v02",
+          "sha256": "b88a1caf63dbc88daa89171068d97f4aebd6dc39e81f8fd108af004e4cab9b09"
+        },
+        {
+          "task_id": "warehouse_s17_v03",
+          "sha256": "7b1985568658fa3170f9801947959dcfc5bc3a8b33ad1881adad628939e0719f"
+        },
+        {
+          "task_id": "warehouse_s17_v04",
+          "sha256": "08de77a917c1703ca3c57f9b4db280696f40c537e68ca124b897b50ef3af1f32"
+        },
+        {
+          "task_id": "warehouse_s17_v05",
+          "sha256": "fc5e8a0708bc0c8de93c5f8470805625fa34902964590e18c14a5f5e9fc5957e"
+        },
+        {
+          "task_id": "warehouse_s18_v01",
+          "sha256": "5b02aeee631775665061b5acfab21b9727c7e64ce30f079faba720016c68189c"
+        },
+        {
+          "task_id": "warehouse_s18_v02",
+          "sha256": "47e19ee96a2a7dcfa5006b8f2a26cda382dd28094da8d43ca0ed727f345a37ed"
+        },
+        {
+          "task_id": "warehouse_s18_v03",
+          "sha256": "fdc8ac8f197505efda65620b7d644f7d1563932aebd8f567156f53d9cd4290e7"
+        },
+        {
+          "task_id": "warehouse_s18_v04",
+          "sha256": "1c475e0b94300091b566ccde1f272ff11df807e6c6e836d943ea7c58b0365071"
+        },
+        {
+          "task_id": "warehouse_s18_v05",
+          "sha256": "f3818ba9847471ce0faf651be38acebe7b07ccb61bc74f000303a2e23b15fc4e"
+        },
+        {
+          "task_id": "warehouse_s19_v01",
+          "sha256": "2e34e3612ac097f1fc576dc3b12db2347f5d3bf4337a67767559a17ba3b5a59f"
+        },
+        {
+          "task_id": "warehouse_s19_v02",
+          "sha256": "af673f0deba85f70f987b018b6586e506b364e7a36197b83788167fe2f8c4c8c"
+        },
+        {
+          "task_id": "warehouse_s19_v03",
+          "sha256": "247879aa1237f5a21105466a4e670d35acbdfe6f04b070c2f2fa8b64abe76838"
+        },
+        {
+          "task_id": "warehouse_s19_v04",
+          "sha256": "e01e808661c7ff23804eafb20860a5723e5f184ee5198286664b03dae2ffa136"
+        },
+        {
+          "task_id": "warehouse_s19_v05",
+          "sha256": "28c5db4480095f8a9391a0470e92726db278334c08010637427ebbced0967597"
+        },
+        {
+          "task_id": "warehouse_s20_v01",
+          "sha256": "5e6be536741028fbd7832e5a5bc9cdfcd80153383ac01fd038a86439105c043f"
+        },
+        {
+          "task_id": "warehouse_s20_v02",
+          "sha256": "0894e5fac526a33af06dfe2a517f7fe38785c9f67217f682a874896d46afa360"
+        },
+        {
+          "task_id": "warehouse_s20_v03",
+          "sha256": "aab20b6730bab70b49f86f3c7c485b1e384faca1791ff635561ea29909e65d6f"
+        },
+        {
+          "task_id": "warehouse_s20_v04",
+          "sha256": "bd97ecdc808e2e34a4f314f29e6aa429a6639ec7cd28bf9e838a01bf74d0cf7a"
+        },
+        {
+          "task_id": "warehouse_s20_v05",
+          "sha256": "dedf689662e3c5f89a1308299d1bb4b00e7a2836f4f88a9a26e0fe3364633b55"
+        },
+        {
+          "task_id": "warehouse_s21_v01",
+          "sha256": "11f9250c70d98d421aebb9e690494a81a05fadeaad391033dc7274dbfa3ca276"
+        },
+        {
+          "task_id": "warehouse_s21_v02",
+          "sha256": "2cde44484f77b504402702d41bc651c3af4233617e5e8cdfbed525fe9783e666"
+        },
+        {
+          "task_id": "warehouse_s21_v03",
+          "sha256": "941543112db2b8407b06706eef297393a54e70b18c2c76f968973625b32bceeb"
+        },
+        {
+          "task_id": "warehouse_s21_v04",
+          "sha256": "86c45bded2b280d6c99a9e7b0154d06cb664975aeb3d0be8c8bccf9c90c02aea"
+        },
+        {
+          "task_id": "warehouse_s21_v05",
+          "sha256": "cf8976d9101125d8fab395de35abd37cdb55de4733aa1488f6603c4fb24641ee"
+        },
+        {
+          "task_id": "warehouse_s22_v01",
+          "sha256": "88a191fe5d081729e0e1018453b34e02a198cfa166e19afed808f33557628d22"
+        },
+        {
+          "task_id": "warehouse_s22_v02",
+          "sha256": "c3957ff3a6be1b0c9856b98afbb99648bc3da858da56353e6391e8ccd410b4c6"
+        },
+        {
+          "task_id": "warehouse_s22_v03",
+          "sha256": "bc81168922bb29f1d4015e4b5f785d9db95584f3dd932d85419298a028da78ad"
+        },
+        {
+          "task_id": "warehouse_s22_v04",
+          "sha256": "bbf5c9af15f397cb650bf66d97dfce6490c24e1cb8833a774ddf36e39541badf"
+        },
+        {
+          "task_id": "warehouse_s22_v05",
+          "sha256": "6a8916fbc570bcbc325de476acfecddf8b0f703908eb03cd9176fb738c645df3"
+        },
+        {
+          "task_id": "warehouse_s23_v01",
+          "sha256": "7aad227c9128abf8f489f0f73c071262d8db99fa816def493b6f804b7d45b980"
+        },
+        {
+          "task_id": "warehouse_s23_v02",
+          "sha256": "b1abce240793708fda1e75c5542d297db22057845f0b724c3c6074625247e860"
+        },
+        {
+          "task_id": "warehouse_s23_v03",
+          "sha256": "18a79b0be6446ea25b2296ec3fd3558582378453e0cda8e6a33d3da4d233f744"
+        },
+        {
+          "task_id": "warehouse_s23_v04",
+          "sha256": "a491acb0a7e1c55abab7248b1854c6da44e699649a93099a133b24b210a6ff4c"
+        },
+        {
+          "task_id": "warehouse_s23_v05",
+          "sha256": "a005f30fedde857cf8c0ed928c233ca71042f0e4a549aeb7e5ce65d444c5fed1"
+        },
+        {
+          "task_id": "warehouse_s24_v01",
+          "sha256": "eb0c55b3514ebf2645dbafdce5dc17874bd3d98224ac630c50b0170450950ca8"
+        },
+        {
+          "task_id": "warehouse_s24_v02",
+          "sha256": "8212e947fd3c30f9c226124c4f2f477d304618abac3178a8f232ce4a711904b1"
+        },
+        {
+          "task_id": "warehouse_s24_v03",
+          "sha256": "3b5de17cfc0c4e35a82d318c0c80be10342413c6adf204e24e472a2aa354f54d"
+        },
+        {
+          "task_id": "warehouse_s24_v04",
+          "sha256": "e61a24165d884baf868ce71377ec80a93bb98503791631ea2a91cd5c1e1fe796"
+        },
+        {
+          "task_id": "warehouse_s24_v05",
+          "sha256": "d242ddd29a76f6ac6fc0698cbce52a4e8451e6085a8fcc49a198504f88865fa9"
+        },
+        {
+          "task_id": "warehouse_s25_v01",
+          "sha256": "1a2c12e0c9149fbee4f9a4729f7b1d41cb3c96bd677f2eb1bc609e07eb9b53aa"
+        },
+        {
+          "task_id": "warehouse_s25_v02",
+          "sha256": "d9f03baeaebc1e2b071aec9bb9097fa667ad96083afecf1cec3420b1109c549a"
+        },
+        {
+          "task_id": "warehouse_s25_v03",
+          "sha256": "2bb983c83f8c8cc045c1485f62d612c63f30022cb75f80c439bcc742853a0196"
+        },
+        {
+          "task_id": "warehouse_s25_v04",
+          "sha256": "ea50cdc1510ed982931e732e779280fa14d7d39b2917fc333b0f7fe9f298d43a"
+        },
+        {
+          "task_id": "warehouse_s25_v05",
+          "sha256": "55131f76811a705bfe11fa5a4d711adab99b33809a8c1b24842e77d09a97f3d8"
+        }
+      ],
+      "counts": {
+        "candidate_routes": 11464,
+        "split_sections": 206382,
+        "shared_corridor_sections": 30690,
+        "transition_sections": 41589
+      },
+      "minimum_right_offset": 0.0003578596475862141,
+      "maximum_shared_deviation": 0.0
+    },
+    {
+      "source_map": "warehouse2",
+      "passed": true,
+      "tasks": 125,
+      "selection_inputs": [
+        {
+          "task_id": "warehouse2_s01_v01",
+          "sha256": "853afbea23ccf2c0a3f9d6da1b4326f582b12a519b7b1c121cbb1882eae14b1a"
+        },
+        {
+          "task_id": "warehouse2_s01_v02",
+          "sha256": "431d1f7c968cc75b48acdbfa8ce5ed9af389f1b53bf17597441cb32c1fe05b8a"
+        },
+        {
+          "task_id": "warehouse2_s01_v03",
+          "sha256": "782a4605ae2952d133cc7af060bb5846c44e21f4a57a4ac1278a4eca1ffdec69"
+        },
+        {
+          "task_id": "warehouse2_s01_v04",
+          "sha256": "e43763873220ad726a1bed87326e055f25ef7b25548e09f1698a1cc5337953b2"
+        },
+        {
+          "task_id": "warehouse2_s01_v05",
+          "sha256": "fc2e6dd3ebea0966d5aed466164695f4ee10edc417f9bf81da55ab78a5f147bc"
+        },
+        {
+          "task_id": "warehouse2_s02_v01",
+          "sha256": "6a03adfc92cb7b7b497d5dca28b74b35c423ac6df84a5c2349d2af4019771bd7"
+        },
+        {
+          "task_id": "warehouse2_s02_v02",
+          "sha256": "8fdd70e2b77185b4c62234212941ceaa93c9064cfb2fc6e2703c049cab17969f"
+        },
+        {
+          "task_id": "warehouse2_s02_v03",
+          "sha256": "56846ffc3d7e1d240a4f73dd7af1f69aa6e2c050f4137670e864070bfab12725"
+        },
+        {
+          "task_id": "warehouse2_s02_v04",
+          "sha256": "08a64adb37ed7f79bc9cd8126a93b00eae49ce692bd7baa964e37f0b77396d89"
+        },
+        {
+          "task_id": "warehouse2_s02_v05",
+          "sha256": "5b15e7e701227940154b78e77f4dc062f808c823483dfa3acc8897024ba86ee0"
+        },
+        {
+          "task_id": "warehouse2_s03_v01",
+          "sha256": "5cbb448f5ac900934ee766717f252fcc2c5387f8b3775362bc3a67020382992c"
+        },
+        {
+          "task_id": "warehouse2_s03_v02",
+          "sha256": "8700a6b4b3c8d14277085ae4e291e085a28b38a017f1c67e32dcc0e13982a918"
+        },
+        {
+          "task_id": "warehouse2_s03_v03",
+          "sha256": "3d0075e6996a4f06d693080da3e472640a999e40c984d3f6169f4b6a83155de6"
+        },
+        {
+          "task_id": "warehouse2_s03_v04",
+          "sha256": "801a67063e50a7ab7f4fe15c37f28cea0d85e9908d9ecb036b09e4abc29298d7"
+        },
+        {
+          "task_id": "warehouse2_s03_v05",
+          "sha256": "08206ff9b5359bf39645be0ad76cad3d5e4f055863f00285b7ef1cd4e15f7360"
+        },
+        {
+          "task_id": "warehouse2_s04_v01",
+          "sha256": "f2e447365cdba8745a44fdf43325b586904942b695598cea02ac3960f0c6c849"
+        },
+        {
+          "task_id": "warehouse2_s04_v02",
+          "sha256": "40451cbea0402749d126af34e151fee026904488b4854a198d278803dd379c5a"
+        },
+        {
+          "task_id": "warehouse2_s04_v03",
+          "sha256": "10b1b471ceab034d67bc009fbe2009c40a7fccce16a7c0f6cd74687dc891cebd"
+        },
+        {
+          "task_id": "warehouse2_s04_v04",
+          "sha256": "3ff9d7ca830595a43bbc823365df066bc8fd094ed97cf0eb64312417ce853731"
+        },
+        {
+          "task_id": "warehouse2_s04_v05",
+          "sha256": "c804e602bdb33674cf67fdbabbaaff90119605878caae681a22b1e57a536add8"
+        },
+        {
+          "task_id": "warehouse2_s05_v01",
+          "sha256": "24c1481a62e5f3bd11fe6b05abe7b252dd6ec2cf86e99555cfbf94ef13c0a10f"
+        },
+        {
+          "task_id": "warehouse2_s05_v02",
+          "sha256": "fe44dc18b12f6ac9210c56343ab073692eae9ca22f5ede7c0eaf0ee7d45d5591"
+        },
+        {
+          "task_id": "warehouse2_s05_v03",
+          "sha256": "bd5685471a2ac85307ffb41bf1f90e9d7f7d8da89704db95aa0c738729b2441c"
+        },
+        {
+          "task_id": "warehouse2_s05_v04",
+          "sha256": "f6c6ea97d4767694a18dae94f0fec06aa55aad95ec1149a14e13b9748987229e"
+        },
+        {
+          "task_id": "warehouse2_s05_v05",
+          "sha256": "1f081e6fc529e48c7f7b7a9e38112b41f7bd6d2ab0a590b3bf67ded4d2a18f25"
+        },
+        {
+          "task_id": "warehouse2_s06_v01",
+          "sha256": "69b4d598e4c1985bb9580b831272d8598a2c3282807480455762e8d9a51ee0d1"
+        },
+        {
+          "task_id": "warehouse2_s06_v02",
+          "sha256": "7dfab02311182473ff2cc68cd6ebd78fbcef3d66ecd2cfaed13766bdfad7e50f"
+        },
+        {
+          "task_id": "warehouse2_s06_v03",
+          "sha256": "cd328cdc1cc4c5159adfc8b3d49a6748dee205ffe7d376d984da5ed99e5967b9"
+        },
+        {
+          "task_id": "warehouse2_s06_v04",
+          "sha256": "fb731894d3f0a3b44394b9bf55c0164850f9896fa10fb2b4d10d42296dff8a66"
+        },
+        {
+          "task_id": "warehouse2_s06_v05",
+          "sha256": "87414f34a506770fb67f976e56667c7d2f52756edaa41ae95a5c436f26b8a953"
+        },
+        {
+          "task_id": "warehouse2_s07_v01",
+          "sha256": "72d87b8d3a9e4bdf94992e41925ec288117d45be30a1cbffb704b4164ae63ba5"
+        },
+        {
+          "task_id": "warehouse2_s07_v02",
+          "sha256": "0c3ef5e8bfc1c579b5b1dc9407aa3398e5d6973a5d728eb34c958e9c46e32101"
+        },
+        {
+          "task_id": "warehouse2_s07_v03",
+          "sha256": "c56bab786ba4a21862d232ff8129fae7c593d3d2c2c0f67fb16edd57ab1bf70a"
+        },
+        {
+          "task_id": "warehouse2_s07_v04",
+          "sha256": "09709246862b9a3753a45020eaa81fa7f85b7bcf245ae4c6f95889df26591085"
+        },
+        {
+          "task_id": "warehouse2_s07_v05",
+          "sha256": "3d789080ff6f27344419dbd6858cca3f614757e025c60f3ec91527160e2e451c"
+        },
+        {
+          "task_id": "warehouse2_s08_v01",
+          "sha256": "152ffeddaebd445f7bf074db8a84dd76fa935d61598dd741322a0983935789b6"
+        },
+        {
+          "task_id": "warehouse2_s08_v02",
+          "sha256": "844f6d397965fac65dfb419556c5df0dd59fae3be7287e874d17b2c6cc619dfb"
+        },
+        {
+          "task_id": "warehouse2_s08_v03",
+          "sha256": "2174003c58d763177a2eee2b01689861824f213e98bf0dd971cddd5b591e3cab"
+        },
+        {
+          "task_id": "warehouse2_s08_v04",
+          "sha256": "ea3ac771311573472bc10389efc52cc7d1f10709a5e374586c61d4c68f00efbf"
+        },
+        {
+          "task_id": "warehouse2_s08_v05",
+          "sha256": "58d54810e9ab92c374fb683cbd6824493f6b8b5514f312505ed364a2a0e9094a"
+        },
+        {
+          "task_id": "warehouse2_s09_v01",
+          "sha256": "03720a29634ba0a0898efa36753911adea6f822bcb22988a9fcfe3371e2b1ab9"
+        },
+        {
+          "task_id": "warehouse2_s09_v02",
+          "sha256": "28c18ed4b9ea295b78e7d04a5daa049cd74f081ff042d21209ce072d8d27755c"
+        },
+        {
+          "task_id": "warehouse2_s09_v03",
+          "sha256": "4109b616d0ba96e8883a287860b22579ecb246239d0dea3846ccbce73ffc995e"
+        },
+        {
+          "task_id": "warehouse2_s09_v04",
+          "sha256": "48df74da2942bd2a838511c78e048fb4291c74e6fa1103ddc0ba9e5161bbe47b"
+        },
+        {
+          "task_id": "warehouse2_s09_v05",
+          "sha256": "676094516f0d0a5ec09987aaff76314570ca1a5b9dda84707cc5f7837478987d"
+        },
+        {
+          "task_id": "warehouse2_s10_v01",
+          "sha256": "9f3a6db93b6be185156e5cee3e90a559cd04e62160bcee81e9f25ef4587e1e2c"
+        },
+        {
+          "task_id": "warehouse2_s10_v02",
+          "sha256": "0ad2b4b0e95c9d300cbac806a60ff2e6419f7e8456e6bb5aedaed4af29388274"
+        },
+        {
+          "task_id": "warehouse2_s10_v03",
+          "sha256": "98b7d91f561e0d8646078c41dc9415a3c3d2b891340c58b377a161a16730266d"
+        },
+        {
+          "task_id": "warehouse2_s10_v04",
+          "sha256": "a2fa2a054875e429aa9a9c197331da2f9579803042c07cf2b44180267885e8aa"
+        },
+        {
+          "task_id": "warehouse2_s10_v05",
+          "sha256": "45270d8055d12cbd7c8653367dbee7a6998e8f714a20457d637b476705bf3ae1"
+        },
+        {
+          "task_id": "warehouse2_s11_v01",
+          "sha256": "aa726f1758ff72642272a4a27385f08d47c6f5e7e1fdaa3383953f8732dde081"
+        },
+        {
+          "task_id": "warehouse2_s11_v02",
+          "sha256": "0ed2e9e7ba79d80041655a7dfa173685c01b85e142401416e21f4e2bc1996b7f"
+        },
+        {
+          "task_id": "warehouse2_s11_v03",
+          "sha256": "4d70c1ff87a0bc77a256b1019373d670890c666839c6ab75f6581f286cf45f11"
+        },
+        {
+          "task_id": "warehouse2_s11_v04",
+          "sha256": "2d022b85c05ad31ca160e5ab53015c36ab3955f69483a7b7368e8e1b21f66b34"
+        },
+        {
+          "task_id": "warehouse2_s11_v05",
+          "sha256": "a4a96d2bbc555abb025e4370478f46c4fac830285e5ba5b362498e001940f862"
+        },
+        {
+          "task_id": "warehouse2_s12_v01",
+          "sha256": "22f5d6d5430a2e060da13b80a06bf8c2aa61db99972744cdc4b24c35654b4743"
+        },
+        {
+          "task_id": "warehouse2_s12_v02",
+          "sha256": "2efc0a277801a40cd03468a50cbc294dc00756a4ba6e3fc3d0d0f58f70d7e172"
+        },
+        {
+          "task_id": "warehouse2_s12_v03",
+          "sha256": "68771324456fb63bba9bc2bf3c46a7ec6b0c90236eb4ec1b0ba54718186439fd"
+        },
+        {
+          "task_id": "warehouse2_s12_v04",
+          "sha256": "107f5fe66c278a9a5a6e31c9035277eee0d74a7ac604b84deeff4d6b1b637349"
+        },
+        {
+          "task_id": "warehouse2_s12_v05",
+          "sha256": "c4588eba072e99816335efeb4b4ed5bc64bcb6f70494ad3b2c53c8d7c07ae910"
+        },
+        {
+          "task_id": "warehouse2_s13_v01",
+          "sha256": "5793e5f2fb3e811b91408572f36bd48a7581d307f956508ea7e20b87d5d67798"
+        },
+        {
+          "task_id": "warehouse2_s13_v02",
+          "sha256": "4856af6185d7c692c0658fb29d0678f51a82e888f49384c5b12e3b6445251989"
+        },
+        {
+          "task_id": "warehouse2_s13_v03",
+          "sha256": "46dee0b098b172d14aa9352bd45e97cfab9b0a8d72ac1f31e53061a7c0199cf1"
+        },
+        {
+          "task_id": "warehouse2_s13_v04",
+          "sha256": "e1808135ff682c1475898547476b1b22de550412dec8c6968695d79b8a0a6fa2"
+        },
+        {
+          "task_id": "warehouse2_s13_v05",
+          "sha256": "d0577df2929167e629a87af470027d9c9cd2fc99378e10b89ece949660826f06"
+        },
+        {
+          "task_id": "warehouse2_s14_v01",
+          "sha256": "3ee8cd1714f6dfc8cc7c82830a8bf1b0a669d138c4c63fbb278fed5b932c7dc9"
+        },
+        {
+          "task_id": "warehouse2_s14_v02",
+          "sha256": "9817fe17252ce02e56897f9f8a0d9c88ee9f6e4b989c10d5aafe9cb13f5be156"
+        },
+        {
+          "task_id": "warehouse2_s14_v03",
+          "sha256": "d3d6b3647b7995f7f647fa7119356dc666f50b204e82c74543a10e76e17f4b88"
+        },
+        {
+          "task_id": "warehouse2_s14_v04",
+          "sha256": "755c26c481d3687407ffee7e861716df33a80aa1c98c32829d73d85db95a6cd3"
+        },
+        {
+          "task_id": "warehouse2_s14_v05",
+          "sha256": "aa0f53dae4f43f722b1ae7da658f6948e91619b31e3db55092dfe6adac3ae490"
+        },
+        {
+          "task_id": "warehouse2_s15_v01",
+          "sha256": "3c4f3a35dc149fabc4d977e969f3d5c24ebf6f6daa77152a5a1058a04c320338"
+        },
+        {
+          "task_id": "warehouse2_s15_v02",
+          "sha256": "b633ed2c28e1e3ac9f5c3fe86b31fbd242e3f1ca7a8f51493519b567abc379f3"
+        },
+        {
+          "task_id": "warehouse2_s15_v03",
+          "sha256": "30cb535fa098a6e2c6aa97529ee68f848ef7dc5695bd0405f38da05d91ac208d"
+        },
+        {
+          "task_id": "warehouse2_s15_v04",
+          "sha256": "7fce9a0b04fd2a50ceb7a860afb7c7b077dde8395a4ff847c0317ceaab6cb878"
+        },
+        {
+          "task_id": "warehouse2_s15_v05",
+          "sha256": "5a8e71edba5878c6c2c30d45b222e929b32e7a29221530a2a8f1c2b08d9373b2"
+        },
+        {
+          "task_id": "warehouse2_s16_v01",
+          "sha256": "60c606b2b1ec5f79bb91471f52d883fb305c5ea8403ed8d0e2e7732725ad45df"
+        },
+        {
+          "task_id": "warehouse2_s16_v02",
+          "sha256": "c20a4369d430a64a867cf37246f53494d0c0a47e7190e5253eded44bcbb5cee9"
+        },
+        {
+          "task_id": "warehouse2_s16_v03",
+          "sha256": "af1471b5945b7662aa0340361a9575548a97acd64d9488fa26cb42f880acd573"
+        },
+        {
+          "task_id": "warehouse2_s16_v04",
+          "sha256": "54177b6c1001299a2e31efafbeb17d74df31a0245506703192d7a35e7db8490c"
+        },
+        {
+          "task_id": "warehouse2_s16_v05",
+          "sha256": "63b4e2a94e2ae5f3af557399bd2ce931271ec28d2c8ac3999c0c1635ebc4cd8c"
+        },
+        {
+          "task_id": "warehouse2_s17_v01",
+          "sha256": "20b4a874e1e62e7503e6597c647928318140c292b7531c30e5fcf756d4013ac0"
+        },
+        {
+          "task_id": "warehouse2_s17_v02",
+          "sha256": "f548ec10f195bf67c7ea3d743af8940bb66ab0d134f258bb7803bdcabaced7a1"
+        },
+        {
+          "task_id": "warehouse2_s17_v03",
+          "sha256": "fca52360d8132ff0a3477f4cfad1e68d394f89c58fd765fbf9db6fe90423cea3"
+        },
+        {
+          "task_id": "warehouse2_s17_v04",
+          "sha256": "0979f4fd7467b4cb08c046e9ca4b9429b73259807299934eca803cd90056b6e4"
+        },
+        {
+          "task_id": "warehouse2_s17_v05",
+          "sha256": "2745ba52d060f63e99b25fb2c7dcc2c47adf5da930253e797c832d57dd4f0411"
+        },
+        {
+          "task_id": "warehouse2_s18_v01",
+          "sha256": "d83a9bd320eac8954047c81b40388b3763fcd0782bddc27e980fcdc14f13e504"
+        },
+        {
+          "task_id": "warehouse2_s18_v02",
+          "sha256": "15b842136d06a25a3ba08d8af384016ddc957d18c3f655252a049314cda3a2a0"
+        },
+        {
+          "task_id": "warehouse2_s18_v03",
+          "sha256": "a4177a741e5b6d7f9efda5b1d5b395d22b9918dc8a479e8fa3d94adeaf146f4a"
+        },
+        {
+          "task_id": "warehouse2_s18_v04",
+          "sha256": "82d9412a5f026d4218ad0cbb02f8d24ef00bf572f1f431725f9a340822429671"
+        },
+        {
+          "task_id": "warehouse2_s18_v05",
+          "sha256": "1bf4be94a1f9eaf089eda6ba1d9f180daf380e10868ecc45e25fbe2cf049409a"
+        },
+        {
+          "task_id": "warehouse2_s19_v01",
+          "sha256": "30c2b15c101391770e58be4db1eec8420f74ac336cedf5c1141a2204a6f16339"
+        },
+        {
+          "task_id": "warehouse2_s19_v02",
+          "sha256": "899f63212bc77727875a67a524a94cfac4384b1a90a551f63957706f528e57ef"
+        },
+        {
+          "task_id": "warehouse2_s19_v03",
+          "sha256": "7ef9f47c2bfb94d790fd74f4a81806f65cb555ccafad9290bd3bfe0379958b65"
+        },
+        {
+          "task_id": "warehouse2_s19_v04",
+          "sha256": "31bfa6ad021b5e7b664d71e4f62f8f927473eeba76a5e45b821598062b4cea70"
+        },
+        {
+          "task_id": "warehouse2_s19_v05",
+          "sha256": "3249c849bd0489a171f6852124f1a5256fa76fb62128f72a6b2e83d43d5825ca"
+        },
+        {
+          "task_id": "warehouse2_s20_v01",
+          "sha256": "77ba62cc717654dec8b3924ce49ac39dd9d3cd66eb4cf1b98b3933cf395fe5d5"
+        },
+        {
+          "task_id": "warehouse2_s20_v02",
+          "sha256": "3b4c9fd31d530bd11ec2e46b11a5b09d94a465e33250d3cdcd370514ca8c6fa4"
+        },
+        {
+          "task_id": "warehouse2_s20_v03",
+          "sha256": "f8a5b8bee791f746650c358373bf9066376a078a29e04958547ec257f97ebe48"
+        },
+        {
+          "task_id": "warehouse2_s20_v04",
+          "sha256": "77b96b62475b125ad6587894c4adf9193924351e1b78180ec6dd0b180302ee35"
+        },
+        {
+          "task_id": "warehouse2_s20_v05",
+          "sha256": "38b416ae93fb4997ad81d55da746f5ad1f1f9a80b2447ce34ad97f0b97993e9d"
+        },
+        {
+          "task_id": "warehouse2_s21_v01",
+          "sha256": "98a0de5237d6ec07a405b1d855cfd1233953ab1c7766e34dba482a3cbb093d29"
+        },
+        {
+          "task_id": "warehouse2_s21_v02",
+          "sha256": "38d1d63c9d27dacc46f5f5615de344d8108bb2de8490f0534e22892f49e01263"
+        },
+        {
+          "task_id": "warehouse2_s21_v03",
+          "sha256": "f3924a0cd3ddb8f14222694971507560b5b6154b8cd3eed09f8cd526b10fec28"
+        },
+        {
+          "task_id": "warehouse2_s21_v04",
+          "sha256": "00aa78340b98cb9c1af36bbece20de0df36cd492dc7fe1b66b8a9ca755cd2b9f"
+        },
+        {
+          "task_id": "warehouse2_s21_v05",
+          "sha256": "423396b2644a7272e15d0f75b4931fadbc42f41046d45725f336e727b416d8a9"
+        },
+        {
+          "task_id": "warehouse2_s22_v01",
+          "sha256": "ae03711d921577ba6491fd47e93fc9a23da4800cf320d1fb716482492ad2ee27"
+        },
+        {
+          "task_id": "warehouse2_s22_v02",
+          "sha256": "44028149ac3154f68b7c491d92b1423e1eebb45539e75dde1a4d65ccb5514149"
+        },
+        {
+          "task_id": "warehouse2_s22_v03",
+          "sha256": "31f1825357a4d614363969f9a3e15755b215a16638165cd493151bb7dfbd35a3"
+        },
+        {
+          "task_id": "warehouse2_s22_v04",
+          "sha256": "0123f05dd97b5dd807f964b571b747cc3655fda7399cb7a2d64b1d3c4503a0a5"
+        },
+        {
+          "task_id": "warehouse2_s22_v05",
+          "sha256": "87869f44f380eda6b910080404df6a5fef9494a2479a6a49e40fe60c80e30ed4"
+        },
+        {
+          "task_id": "warehouse2_s23_v01",
+          "sha256": "e48913dbb658fb4a7cb258685e81c0ddd71357521da2684dc67c9ccffa060339"
+        },
+        {
+          "task_id": "warehouse2_s23_v02",
+          "sha256": "b45df4611e7750a372d955940863fa0be2f334ef5929816cc2461bced794e445"
+        },
+        {
+          "task_id": "warehouse2_s23_v03",
+          "sha256": "1d588561a8ccc9565c935e661c3ecab64f5e0202bcbb77486e32a26ba09f47a6"
+        },
+        {
+          "task_id": "warehouse2_s23_v04",
+          "sha256": "5844f508008e9be7199c291a4c73f3f4e7f38d0a3f83c125c8e909fc154187f4"
+        },
+        {
+          "task_id": "warehouse2_s23_v05",
+          "sha256": "f8e803b35d7165075b469bd6bd50eccd1d42088746ba1b8ced0eb332de38b77a"
+        },
+        {
+          "task_id": "warehouse2_s24_v01",
+          "sha256": "d223c955dff2484b7d21991a146c53642aac629a05e8603d89f1414c4011b77a"
+        },
+        {
+          "task_id": "warehouse2_s24_v02",
+          "sha256": "a0784a4d6cb8f15d3a9f427e5e747ab632f0cddfc36736ccab9e654042d1d762"
+        },
+        {
+          "task_id": "warehouse2_s24_v03",
+          "sha256": "15b4e41383f8c0c70feb67c90bee63ff890ba838b59738881fed201f6e1e306b"
+        },
+        {
+          "task_id": "warehouse2_s24_v04",
+          "sha256": "47f2bc2c54f83aea3ad067b9525e8e97b1a78d3d0c93a4fc5ca52a0387231a3d"
+        },
+        {
+          "task_id": "warehouse2_s24_v05",
+          "sha256": "12eb24854a4546e26bc069c6a6c3934613f63f46439ee9e48737bcec9ef9d136"
+        },
+        {
+          "task_id": "warehouse2_s25_v01",
+          "sha256": "39c6cf7cb7dddcc3af2ec7f8928912a494ff269006ef42a73e4b3accdbf1bbd2"
+        },
+        {
+          "task_id": "warehouse2_s25_v02",
+          "sha256": "a033b330e49a818edc605ca55189081bbf7b283e552f189fda9bf84ccbaffb90"
+        },
+        {
+          "task_id": "warehouse2_s25_v03",
+          "sha256": "76ca8ca6a338ada98b49b7f657c31b3cf0e2ddb182c821500014b725ea779a61"
+        },
+        {
+          "task_id": "warehouse2_s25_v04",
+          "sha256": "bcc1a03842eb9d6c0f44c58abd12560e4f3e75f145aa65f21b786e91611283c0"
+        },
+        {
+          "task_id": "warehouse2_s25_v05",
+          "sha256": "80e642dc08f59502b7f17c736774bdf1871c41e654cbe341908fbef727a32868"
+        }
+      ],
+      "counts": {
+        "candidate_routes": 13917,
+        "split_sections": 336452,
+        "shared_corridor_sections": 24611,
+        "transition_sections": 44276
+      },
+      "minimum_right_offset": 0.00030617697351605164,
+      "maximum_shared_deviation": 0.0
+    }
+  ],
+  "candidate_routes": 25381,
+  "width_definition": "Minimum full wall-to-wall free cross-section normal to the physical reference path, before lane displacement; no radius subtraction.",
+  "rule": "p_i = w_i / sum_j w_j",
+  "jitter_seed_tag": 1464419412
+}

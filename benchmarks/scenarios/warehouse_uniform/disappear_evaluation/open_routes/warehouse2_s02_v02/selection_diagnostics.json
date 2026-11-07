@@ -1,0 +1,104 @@
+[
+  {
+    "method": "k_routes",
+    "mean_length": 67.14025158653635,
+    "max_length": 153.97536164303006,
+    "gate_crossing_agents": [
+      0,
+      5,
+      6,
+      7,
+      9,
+      12,
+      17,
+      19,
+      22
+    ]
+  },
+  {
+    "method": "k_routes_edge_cost",
+    "mean_length": 41.69165867181677,
+    "max_length": 72.46586318788373,
+    "gate_crossing_agents": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      25,
+      26,
+      27,
+      29,
+      31
+    ]
+  },
+  {
+    "method": "k_routes_edge_cost_l2_t10",
+    "mean_length": 43.068295948074706,
+    "max_length": 72.46586318788373,
+    "gate_crossing_agents": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      13,
+      14,
+      16,
+      17,
+      19,
+      21,
+      22,
+      23,
+      26,
+      27,
+      29,
+      31
+    ]
+  },
+  {
+    "method": "k_routes_width",
+    "mean_length": 69.7388583416617,
+    "max_length": 153.97536164303006,
+    "gate_crossing_agents": [
+      6,
+      7,
+      9,
+      12,
+      22
+    ]
+  },
+  {
+    "method": "rrt",
+    "mean_length": 39.456029805628624,
+    "max_length": 59.56111655612181,
+    "gate_crossing_agents": [
+      3,
+      10,
+      14,
+      16
+    ]
+  }
+]

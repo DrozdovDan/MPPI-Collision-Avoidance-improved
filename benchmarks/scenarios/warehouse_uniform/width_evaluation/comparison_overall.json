@@ -1,0 +1,44 @@
+[
+  {
+    "planner": "k_routes",
+    "runs": 250,
+    "successes": 10,
+    "fleet_success_rate": 0.04,
+    "mean_agent_completion_fraction": 0.65225,
+    "successful_makespan_mean_seconds": 156.46,
+    "successful_makespan_std_seconds": 27.056861935150163,
+    "successful_makespan_sample_count": 10,
+    "outcomes": {
+      "deadlock": 240,
+      "success": 10
+    }
+  },
+  {
+    "planner": "k_routes_width",
+    "runs": 250,
+    "successes": 35,
+    "fleet_success_rate": 0.14,
+    "mean_agent_completion_fraction": 0.780625,
+    "successful_makespan_mean_seconds": 134.21142857142863,
+    "successful_makespan_std_seconds": 35.38335244507085,
+    "successful_makespan_sample_count": 35,
+    "outcomes": {
+      "deadlock": 215,
+      "success": 35
+    }
+  },
+  {
+    "planner": "rrt",
+    "runs": 250,
+    "successes": 43,
+    "fleet_success_rate": 0.172,
+    "mean_agent_completion_fraction": 0.719125,
+    "successful_makespan_mean_seconds": 94.59534883720931,
+    "successful_makespan_std_seconds": 21.224737964486856,
+    "successful_makespan_sample_count": 43,
+    "outcomes": {
+      "deadlock": 207,
+      "success": 43
+    }
+  }
+]

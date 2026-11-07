@@ -59,6 +59,26 @@ MapData obstacleGrid() {
     return m;
 }
 void placementRegressions() {
+    {
+        auto spurData = straight();
+        spurData.nodes = {{0,{2,0}}, {1,{15,-.15}}, {2,{28,0}}};
+        spurData.edges = {edge(7,0,1,{{2,0},{15,0},{15,-.15}},3,42),
+                          edge(8,1,2,{{15,-.15},{15,0},{28,0}},3,42)};
+        CorridorMap spurMap(spurData);
+        CompleteRoute spur;
+        for (const auto &e : spurData.edges) {
+            RouteSegment s; s.physical_edge_id=e.id;
+            s.geometry=s.reference_geometry=e.reference_geometry;
+            s.reference_distances=e.reference_distances;
+            spur.segments.push_back(s);
+            for (const auto &p:e.reference_geometry)
+                if (spur.path.empty() || dist(spur.path.back(),p)>1e-8) spur.path.push_back(p);
+        }
+        check(applyLanePlacement(spurMap,{.3,.04},{},spur),"junction retracing spur rejected all lanes");
+        check(validateCompleteRoute(spurMap,spur,{.3,.04},{}),"junction spur repair is uncertified");
+        check(pathSelfIntersections(spur.path)==0 && spur.metrics.split_length>20,
+              "junction spur repair left a loop or disabled keep-right lanes");
+    }
     const auto data = obstacleGrid();
     CorridorMap map(data);
     CompleteRoute route;

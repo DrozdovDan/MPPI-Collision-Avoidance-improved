@@ -84,6 +84,8 @@ mppica::MPPIParams convertAlgParams(const py::dict &params_dict) {
 		params.anchor_acquisition_scale = params_dict["anchor_acquisition_scale"].cast<double>();
 	if (params_dict.contains("anchor_guided_fraction"))
 		params.anchor_guided_fraction = params_dict["anchor_guided_fraction"].cast<double>();
+	if (params_dict.contains("anchor_yield_after"))
+		params.anchor_yield_after = params_dict["anchor_yield_after"].cast<double>();
 	params.car_like_dyn = getValue(params_dict, "car_like_dyn", params.car_like_dyn);
 	if (params.car_like_dyn) {
 		params.dist_between_axles = getValue(params_dict, "dist_between_axles", params.dist_between_axles);

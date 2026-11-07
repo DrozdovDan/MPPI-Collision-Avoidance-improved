@@ -1,0 +1,7 @@
+source_map,reference,tasks,weighted_fleet_success_rate,reference_fleet_success_rate,mean_paired_agent_completion_difference,both_successful_tasks,paired_makespan_difference_seconds
+warehouse,rrt,125,0.048,0.072,0.08875,2,33.3
+warehouse,k_routes,125,0.048,0.0,0.12025,0,
+warehouse2,rrt,125,0.232,0.272,0.03425,17,49.005882352941185
+warehouse2,k_routes,125,0.232,0.08,0.1365,9,-2.755555555555552
+both,rrt,250,0.14,0.172,0.0615,19,47.352631578947374
+both,k_routes,250,0.14,0.04,0.128375,9,-2.755555555555552

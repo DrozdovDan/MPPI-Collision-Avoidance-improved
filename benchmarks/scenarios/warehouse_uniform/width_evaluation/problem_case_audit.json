@@ -1,0 +1,383 @@
+{
+  "run_id": "warehouse2_s07_v05__k_routes_width__p42__c42",
+  "passed": true,
+  "checked_steps": 1320,
+  "checked_agent_runs": 32,
+  "trajectory_sha256": "e673af621f909172609e8d894f3b0296eed2cf739b5b21fb51daa9134588e9cc",
+  "run_sha256": "5f8b277f01dd17de62922db093d44f7cbda743d6bcf5dd571504bd0b8bd3f439",
+  "width_and_lane_counts": {
+    "split_sections": 2690,
+    "shared_corridor_sections": 326,
+    "transition_sections": 308,
+    "candidate_routes": 110
+  },
+  "deadlock_geometry": null,
+  "identical_to_uniform_anchors": false,
+  "raw_terminal_status": "stalled",
+  "verified_terminal_outcome": "deadlock",
+  "terminal_adjudication": {
+    "passed": true,
+    "raw_status": "stalled",
+    "verified_terminal_outcome": "deadlock",
+    "evidence_window_seconds": 30.0,
+    "observed_seconds": 132.0,
+    "unfinished_robot_ids": [
+      0,
+      2,
+      5,
+      7,
+      12,
+      14,
+      16,
+      17,
+      20,
+      21,
+      25,
+      26,
+      27,
+      28,
+      30
+    ],
+    "blocked_robot_ids": [
+      0,
+      2,
+      5,
+      7,
+      12,
+      14,
+      16,
+      17,
+      20,
+      21,
+      25,
+      26,
+      27,
+      28,
+      30
+    ],
+    "mutual_obstruction_groups": [
+      [
+        2,
+        5,
+        7,
+        14,
+        17,
+        20,
+        21,
+        25,
+        27
+      ]
+    ],
+    "obstruction_edges": [
+      [
+        0,
+        20
+      ],
+      [
+        0,
+        30
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        14
+      ],
+      [
+        2,
+        27
+      ],
+      [
+        5,
+        17
+      ],
+      [
+        5,
+        21
+      ],
+      [
+        5,
+        27
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        7,
+        20
+      ],
+      [
+        12,
+        2
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        12,
+        17
+      ],
+      [
+        12,
+        27
+      ],
+      [
+        14,
+        7
+      ],
+      [
+        14,
+        17
+      ],
+      [
+        14,
+        27
+      ],
+      [
+        16,
+        2
+      ],
+      [
+        16,
+        7
+      ],
+      [
+        16,
+        14
+      ],
+      [
+        16,
+        30
+      ],
+      [
+        17,
+        7
+      ],
+      [
+        17,
+        14
+      ],
+      [
+        17,
+        27
+      ],
+      [
+        20,
+        2
+      ],
+      [
+        20,
+        7
+      ],
+      [
+        20,
+        14
+      ],
+      [
+        20,
+        27
+      ],
+      [
+        21,
+        7
+      ],
+      [
+        21,
+        17
+      ],
+      [
+        21,
+        27
+      ],
+      [
+        25,
+        5
+      ],
+      [
+        25,
+        17
+      ],
+      [
+        25,
+        21
+      ],
+      [
+        25,
+        27
+      ],
+      [
+        26,
+        2
+      ],
+      [
+        26,
+        7
+      ],
+      [
+        26,
+        14
+      ],
+      [
+        26,
+        17
+      ],
+      [
+        26,
+        27
+      ],
+      [
+        27,
+        5
+      ],
+      [
+        27,
+        17
+      ],
+      [
+        27,
+        21
+      ],
+      [
+        27,
+        25
+      ],
+      [
+        28,
+        8
+      ],
+      [
+        30,
+        2
+      ],
+      [
+        30,
+        7
+      ],
+      [
+        30,
+        14
+      ]
+    ],
+    "original_edge_corroboration": {
+      "passed": true,
+      "checked_blocked_robots": 14,
+      "visible_projection_corroborations": []
+    },
+    "added_visible_join_evidence": [
+      {
+        "robot_index": 27,
+        "hidden_nearest_projection": [
+          91.85417740056631,
+          -38.764718855645725
+        ],
+        "hidden_join_clearance_meters": -0.35,
+        "visible_join": [
+          100.51077280635437,
+          -32.57978200435295
+        ],
+        "visible_join_clearance_meters": 0.045237359405996214,
+        "visible_anchor_station_meters": 0.32052293827870393,
+        "checked_forward_section": [
+          [
+            91.20602611539582,
+            -32.33707579865461
+          ],
+          [
+            94.80480205284222,
+            -32.43094673162528
+          ]
+        ],
+        "persistent_blocker_ratios": {
+          "5": 1.0,
+          "17": 1.0,
+          "21": 1.0,
+          "25": 1.0
+        }
+      }
+    ],
+    "mean_state_speed_and_yaw_rate": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.010313769664666022,
+      0.0,
+      0.0,
+      0.0,
+      0.000266666666666435,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "position_excursion_meters": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.2502023134114517,
+      0.0,
+      0.0,
+      0.0,
+      0.007999999999993049,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "raw_motion_unchanged": true,
+    "adjudicator_sha256": "d914e19f8cc50cae49d227d440fe39fe3abee328dbda5bede0ee1ff70aa7f5d0",
+    "run_sha256": "5f8b277f01dd17de62922db093d44f7cbda743d6bcf5dd571504bd0b8bd3f439",
+    "trajectory_sha256": "e673af621f909172609e8d894f3b0296eed2cf739b5b21fb51daa9134588e9cc"
+  }
+}
